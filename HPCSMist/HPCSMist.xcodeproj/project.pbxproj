@@ -1,0 +1,412 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AF1D24681679151800454661 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1D24671679151800454661 /* Foundation.framework */; };
+		AF1D246D1679151800454661 /* HPCSMist.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AF1D246C1679151800454661 /* HPCSMist.h */; };
+		AF1D246F1679151800454661 /* HPCSMist.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D246E1679151800454661 /* HPCSMist.m */; };
+		AF1D24771679151800454661 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1D24761679151800454661 /* SenTestingKit.framework */; };
+		AF1D24791679151800454661 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1D24781679151800454661 /* UIKit.framework */; };
+		AF1D247A1679151800454661 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1D24671679151800454661 /* Foundation.framework */; };
+		AF1D247D1679151800454661 /* libHPCSMist.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1D24641679151800454661 /* libHPCSMist.a */; };
+		AF1D24831679151800454661 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AF1D24811679151800454661 /* InfoPlist.strings */; };
+		AF1D24861679151800454661 /* HPCSMistTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D24851679151800454661 /* HPCSMistTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AF1D247B1679151800454661 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF1D245B1679151800454661 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF1D24631679151800454661;
+			remoteInfo = HPCSMist;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AF1D24621679151800454661 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+				AF1D246D1679151800454661 /* HPCSMist.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		AF1D24641679151800454661 /* libHPCSMist.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libHPCSMist.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF1D24671679151800454661 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AF1D246B1679151800454661 /* HPCSMist-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HPCSMist-Prefix.pch"; sourceTree = "<group>"; };
+		AF1D246C1679151800454661 /* HPCSMist.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HPCSMist.h; sourceTree = "<group>"; };
+		AF1D246E1679151800454661 /* HPCSMist.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HPCSMist.m; sourceTree = "<group>"; };
+		AF1D24751679151800454661 /* HPCSMistTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HPCSMistTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF1D24761679151800454661 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		AF1D24781679151800454661 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		AF1D24801679151800454661 /* HPCSMistTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HPCSMistTests-Info.plist"; sourceTree = "<group>"; };
+		AF1D24821679151800454661 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AF1D24841679151800454661 /* HPCSMistTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HPCSMistTests.h; sourceTree = "<group>"; };
+		AF1D24851679151800454661 /* HPCSMistTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HPCSMistTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AF1D24611679151800454661 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF1D24681679151800454661 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF1D24711679151800454661 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF1D24771679151800454661 /* SenTestingKit.framework in Frameworks */,
+				AF1D24791679151800454661 /* UIKit.framework in Frameworks */,
+				AF1D247A1679151800454661 /* Foundation.framework in Frameworks */,
+				AF1D247D1679151800454661 /* libHPCSMist.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AF1D24591679151800454661 = {
+			isa = PBXGroup;
+			children = (
+				AF1D24691679151800454661 /* HPCSMist */,
+				AF1D247E1679151800454661 /* HPCSMistTests */,
+				AF1D24661679151800454661 /* Frameworks */,
+				AF1D24651679151800454661 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AF1D24651679151800454661 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AF1D24641679151800454661 /* libHPCSMist.a */,
+				AF1D24751679151800454661 /* HPCSMistTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AF1D24661679151800454661 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AF1D24671679151800454661 /* Foundation.framework */,
+				AF1D24761679151800454661 /* SenTestingKit.framework */,
+				AF1D24781679151800454661 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AF1D24691679151800454661 /* HPCSMist */ = {
+			isa = PBXGroup;
+			children = (
+				AF1D246C1679151800454661 /* HPCSMist.h */,
+				AF1D246E1679151800454661 /* HPCSMist.m */,
+				AF1D246A1679151800454661 /* Supporting Files */,
+			);
+			path = HPCSMist;
+			sourceTree = "<group>";
+		};
+		AF1D246A1679151800454661 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AF1D246B1679151800454661 /* HPCSMist-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AF1D247E1679151800454661 /* HPCSMistTests */ = {
+			isa = PBXGroup;
+			children = (
+				AF1D24841679151800454661 /* HPCSMistTests.h */,
+				AF1D24851679151800454661 /* HPCSMistTests.m */,
+				AF1D247F1679151800454661 /* Supporting Files */,
+			);
+			path = HPCSMistTests;
+			sourceTree = "<group>";
+		};
+		AF1D247F1679151800454661 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AF1D24801679151800454661 /* HPCSMistTests-Info.plist */,
+				AF1D24811679151800454661 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AF1D24631679151800454661 /* HPCSMist */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF1D24891679151800454661 /* Build configuration list for PBXNativeTarget "HPCSMist" */;
+			buildPhases = (
+				AF1D24601679151800454661 /* Sources */,
+				AF1D24611679151800454661 /* Frameworks */,
+				AF1D24621679151800454661 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HPCSMist;
+			productName = HPCSMist;
+			productReference = AF1D24641679151800454661 /* libHPCSMist.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		AF1D24741679151800454661 /* HPCSMistTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF1D248C1679151800454661 /* Build configuration list for PBXNativeTarget "HPCSMistTests" */;
+			buildPhases = (
+				AF1D24701679151800454661 /* Sources */,
+				AF1D24711679151800454661 /* Frameworks */,
+				AF1D24721679151800454661 /* Resources */,
+				AF1D24731679151800454661 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF1D247C1679151800454661 /* PBXTargetDependency */,
+			);
+			name = HPCSMistTests;
+			productName = HPCSMistTests;
+			productReference = AF1D24751679151800454661 /* HPCSMistTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AF1D245B1679151800454661 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Mike Hagedorn";
+			};
+			buildConfigurationList = AF1D245E1679151800454661 /* Build configuration list for PBXProject "HPCSMist" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AF1D24591679151800454661;
+			productRefGroup = AF1D24651679151800454661 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AF1D24631679151800454661 /* HPCSMist */,
+				AF1D24741679151800454661 /* HPCSMistTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AF1D24721679151800454661 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF1D24831679151800454661 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AF1D24731679151800454661 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AF1D24601679151800454661 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF1D246F1679151800454661 /* HPCSMist.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF1D24701679151800454661 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF1D24861679151800454661 /* HPCSMistTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AF1D247C1679151800454661 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF1D24631679151800454661 /* HPCSMist */;
+			targetProxy = AF1D247B1679151800454661 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AF1D24811679151800454661 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF1D24821679151800454661 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AF1D24871679151800454661 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		AF1D24881679151800454661 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AF1D248A1679151800454661 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/HPCSMist.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HPCSMist/HPCSMist-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		AF1D248B1679151800454661 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/HPCSMist.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HPCSMist/HPCSMist-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		AF1D248D1679151800454661 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HPCSMist/HPCSMist-Prefix.pch";
+				INFOPLIST_FILE = "HPCSMistTests/HPCSMistTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		AF1D248E1679151800454661 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HPCSMist/HPCSMist-Prefix.pch";
+				INFOPLIST_FILE = "HPCSMistTests/HPCSMistTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AF1D245E1679151800454661 /* Build configuration list for PBXProject "HPCSMist" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF1D24871679151800454661 /* Debug */,
+				AF1D24881679151800454661 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF1D24891679151800454661 /* Build configuration list for PBXNativeTarget "HPCSMist" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF1D248A1679151800454661 /* Debug */,
+				AF1D248B1679151800454661 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AF1D248C1679151800454661 /* Build configuration list for PBXNativeTarget "HPCSMistTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF1D248D1679151800454661 /* Debug */,
+				AF1D248E1679151800454661 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AF1D245B1679151800454661 /* Project object */;
+}

@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'HPCSMist' target in the 'HPCSMist' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
