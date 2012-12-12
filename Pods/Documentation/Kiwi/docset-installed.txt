@@ -1,0 +1,4 @@
+Documentation set was installed to Xcode!
+
+Path: /Users/mhagedorn/Library/Developer/Shared/Documentation/DocSets/org.cocoapods.Kiwi-1.1.1.docset
+Time: 2012-12-12 21:25:46 +0000

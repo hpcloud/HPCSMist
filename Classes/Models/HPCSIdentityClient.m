@@ -135,7 +135,6 @@ NSString * const HPCSKeystoneCredentialsDidChangeNotification = @"com.hp.cloud.k
 }
 
 -(void)credentialsChanged:(NSNotification *)note{
-  DDLogVerbose(@"credentials where changed, dumping cached token");
   self.token = nil;
 }
 
@@ -329,26 +328,21 @@ NSString * const HPCSKeystoneCredentialsDidChangeNotification = @"com.hp.cloud.k
 
 - (HPCSToken *)token {
   if (_token){
-    DDLogVerbose(@"returning cached token");
     return _token;
   }
   id tokenInfo = [[KeychainWrapper keychainStringFromMatchingIdentifier:TOKEN] propertyList];
   if (tokenInfo){
-    DDLogVerbose(@"returning token from Keychain");
      _token = [[HPCSToken alloc] initWithAttributes:tokenInfo];
      return _token;
   }
-  DDLogVerbose(@"returning nil token");
   return nil;
 }
 
 - (void)setToken:(HPCSToken *)token1 {
   _token = token1;
   if (IsEmpty(token1)){
-    DDLogVerbose(@"deleting token from keychain");
     [KeychainWrapper deleteItemFromKeychainWithIdentifier:TOKEN];
   }else{
-    DDLogVerbose(@"Saving token to keychain ");
     [KeychainWrapper createKeychainValue:[token1.toDictionary description] forIdentifier:TOKEN withDescription:@"HPCS access token"];
   }
 
@@ -356,7 +350,6 @@ NSString * const HPCSKeystoneCredentialsDidChangeNotification = @"com.hp.cloud.k
 
 - (NSArray *)serviceCatalog {
   if (_serviceCatalog){
-    DDLogVerbose(@"using cached serviceCatalog");
     return _serviceCatalog;
   }
   id catalogInfo = [[NSUserDefaults standardUserDefaults] objectForKey:SERVICE_CATALOG];

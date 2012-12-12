@@ -94,8 +94,7 @@
 
 + (BOOL)createKeychainValue:(NSString *)value forIdentifier:(NSString *)identifier 
 {
-   [self createKeychainValue:value forIdentifier:identifier withDescription:nil];
-
+  return [self createKeychainValue:value forIdentifier:identifier withDescription:nil];
 }
 
 + (BOOL)updateKeychainValue:(NSString *)value forIdentifier:(NSString *)identifier 
