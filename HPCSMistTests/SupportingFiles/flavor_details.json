@@ -1,0 +1,20 @@
+{"flavor":{
+    "rxtx_quota":0,
+    "name":"standard.xsmall",
+    "links":[
+        {
+            "href":"https://az-1.region-a.geo-1.compute.hpcloudsvc.com/v1.1/57457043554366/flavors/100",
+            "rel":"self"
+        },
+        {
+            "href":"https://az-1.region-a.geo-1.compute.hpcloudsvc.com/57457043554366/flavors/100",
+            "rel":"bookmark"
+        }
+    ],
+    "ram":1024,
+    "vcpus":1,
+    "rxtx_cap":0,
+    "swap":0,
+    "disk":30,
+    "id":100
+}}

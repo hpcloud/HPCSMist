@@ -1,0 +1,88 @@
+{"access": {
+    "token": {
+        "expires": "2012-01-20T07:24:45.281Z",
+        "id": "HPAuth_4f186dfde4b04d7c46dc868c",
+        "tenant": {}
+    },
+    "user": {
+        "id": "18004019989023",
+        "name": "falken@wg.com",
+        "roles": [
+            {
+                "id": "00000000004004",
+                "serviceId": "100",
+                "name": "domainuser"
+            },
+            {
+                "id": "00000000004003",
+                "serviceId": "100",
+                "name": "domainadmin"
+            }
+        ]
+    },
+    "serviceCatalog": [
+        {
+            "name": "CDN",
+            "type": "hpext:cdn",
+            "endpoints": [{
+                "tenantId": "72020596871800",
+                "publicURL": "https:\/\/az1-region-a.geo-1.cdnmgmt.hpcloudsvc.com\/v1.0\/72020596871800",
+                "region": "region-a.geo-1",
+                "id": "1.0"
+            }]
+        },
+        {
+            "name": "Object Storage",
+            "type": "object-store",
+            "endpoints": [{
+                "tenantId": "72020596871800",
+                "adminURL": "https:\/\/az1-region-a.geo-1.objects.hpcloudsvc.com\/v1.0\/",
+                "publicURL": "https:\/\/az1-region-a.geo-1.objects.hpcloudsvc.com\/v1.0\/72020596871800",
+                "region": "region-a.geo-1",
+                "id": "1.0"
+            }]
+        },
+        {
+            "name": "Identity",
+            "type": "identity",
+            "endpoints": [{
+                "publicURL": "https:\/\/region-a.geo-1.identity.hpcloudsvc.com:35357\/v2.0\/",
+                "region": "region-a.geo-1",
+                "id": "2.0",
+                "list": "https:\/\/region-a.geo-1.identity.hpcloudsvc.com:35357\/extension"
+            }]
+        },
+        {
+            "name": "Image Management",
+            "type": "image",
+            "endpoints": [{
+                "tenantId": "72020596871800",
+                "publicURL": "https:\/\/az1-region-a.geo-1.glance.hpcloudsvc.com:9292\/v1.0",
+                "region": "az-1.region-a.geo-1",
+                "id": "1.0"
+            }]
+        },
+        {
+            "name": "Block Storage",
+            "type": "hpext:block-store",
+            "endpoints": [{
+                "tenantId": "72020596871800",
+                "publicURL": "https:\/\/az-1.region-a.geo-1.compute.hpcloudsvc.com\/v1.1\/",
+                "region": "az-1.region-a.geo-1",
+                "id": "1.1",
+                "list": "https:\/\/az-1.region-a.geo-1.compute.hpcloudsvc.com"
+            }]
+        },
+        {
+            "name": "Compute",
+            "type": "compute",
+            "endpoints": [{
+                "tenantId": "72020596871800",
+                "publicURL": "http:\/\/az1-region-a.geo-1.compute.hpcloudsvc.com:8774\/v1.1\/72020596871800",
+                "region": "az-1.region-a.geo-1",
+                "id": "1.1",
+                "list": "http:\/\/az1-region-a.geo-1.compute.hpcloudsvc.com:8774"
+            }]
+        }
+    ]
+}}

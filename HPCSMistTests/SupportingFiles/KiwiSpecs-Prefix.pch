@@ -1,0 +1,17 @@
+//
+// Prefix header for all source files of the 'KiwiSpecs' target in the 'KiwiSpecs' project
+//
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#endif
+
+#import <Availability.h>
+
+#if __IPHONE_OS_VERSION_MIN_REQUIRED
+#import <SystemConfiguration/SystemConfiguration.h>
+#import <MobileCoreServices/MobileCoreServices.h>
+#else
+#import <SystemConfiguration/SystemConfiguration.h>
+#import <CoreServices/CoreServices.h>
+#endif

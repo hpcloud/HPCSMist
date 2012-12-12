@@ -1,0 +1,33 @@
+{
+    "access": {
+        "token": {
+            "expires": "2012-01-20T07:28:46.727Z",
+            "id": "HPAuth_4f18696de4b04d7c46dc84ad",
+            "tenant": {}
+        },
+        "user": {
+            "id": "18004019989023",
+            "name": "falken@wg.com",
+            "roles": [{
+                "id": "00000000004004",
+                "serviceId": "100",
+                "name": "domainuser"
+            },
+                {
+                    "id": "00000000004003",
+                    "serviceId": "100",
+                    "name": "domainadmin"
+                }]
+        },
+        "serviceCatalog": [{
+            "name": "Identity",
+            "type": "identity",
+            "endpoints": [{
+                "publicURL": "https:\/\/region-a.geo-1.identity.hpcloudsvc.com:35357\/v2.0\/",
+                "region": "region-a.geo-1",
+                "id": "2.0",
+                "list": "https:\/\/region-a.geo-1.identity.hpcloudsvc.com:35357\/extension"
+            }]
+        }]
+    }
+}

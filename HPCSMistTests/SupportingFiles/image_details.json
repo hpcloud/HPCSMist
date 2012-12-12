@@ -1,0 +1,27 @@
+{"image":{
+    "status":"ACTIVE",
+    "updated":"2012-10-08T15:52:19Z",
+    "name":"ActiveState Stackato v2.2.3 - Partner Image",
+    "links":[
+        {
+            "href":"https://az-1.region-a.geo-1.compute.hpcloudsvc.com/v1.1/57457043554366/images/60815",
+            "rel":"self"
+        },
+        {
+            "href":"https://az-1.region-a.geo-1.compute.hpcloudsvc.com/57457043554366/images/60815",
+            "rel":"bookmark"
+        }
+    ],
+    "created":"2012-10-08T15:48:51Z",
+    "progress":100,
+    "id":"60815",
+    "metadata":{
+        "image_location":"local",
+        "image_state":"available",
+        "min_ram":"0",
+        "owner":"55587226903523",
+        "architecture":"amd64",
+        "min_disk":"0",
+        "project_id":"None"
+    }
+}}

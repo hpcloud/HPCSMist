@@ -1,0 +1,10 @@
+{
+    "unauthorized" : {
+        "anies" : null,
+        "code" : 401,
+        "details" : "Invalid credentials",
+        "message" : "UNAUTHORIZED",
+        "otherAttributes" : {
+        }
+    }
+}
