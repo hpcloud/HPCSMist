@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AF1D24631679151800454661"
-               BuildableName = "libHPCSMist.a"
+               BlueprintIdentifier = "AF1D24ED167927C700454661"
+               BuildableName = "HPCSMist.app"
                BlueprintName = "HPCSMist"
                ReferencedContainer = "container:HPCSMist.xcodeproj">
             </BuildableReference>
@@ -32,13 +32,22 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AF1D24741679151800454661"
+               BlueprintIdentifier = "AF1D2517167927C800454661"
                BuildableName = "HPCSMistTests.octest"
                BlueprintName = "HPCSMistTests"
                ReferencedContainer = "container:HPCSMist.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "AF1D24ED167927C700454661"
+            BuildableName = "HPCSMist.app"
+            BlueprintName = "HPCSMist"
+            ReferencedContainer = "container:HPCSMist.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
@@ -49,6 +58,15 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "AF1D24ED167927C700454661"
+            BuildableName = "HPCSMist.app"
+            BlueprintName = "HPCSMist"
+            ReferencedContainer = "container:HPCSMist.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -58,6 +76,15 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "AF1D24ED167927C700454661"
+            BuildableName = "HPCSMist.app"
+            BlueprintName = "HPCSMist"
+            ReferencedContainer = "container:HPCSMist.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

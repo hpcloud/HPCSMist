@@ -7,260 +7,336 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AF1D24681679151800454661 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1D24671679151800454661 /* Foundation.framework */; };
-		AF1D24771679151800454661 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1D24761679151800454661 /* SenTestingKit.framework */; };
-		AF1D24791679151800454661 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1D24781679151800454661 /* UIKit.framework */; };
-		AF1D247A1679151800454661 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1D24671679151800454661 /* Foundation.framework */; };
-		AF1D247D1679151800454661 /* libHPCSMist.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1D24641679151800454661 /* libHPCSMist.a */; };
-		AF1D24831679151800454661 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AF1D24811679151800454661 /* InfoPlist.strings */; };
-		AF1D24A41679231F00454661 /* Environment.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D24941679231F00454661 /* Environment.m */; };
-		AF1D24A51679231F00454661 /* Environment.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D24941679231F00454661 /* Environment.m */; };
-		AF1D24A61679231F00454661 /* HPCSAuthorizedHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D24961679231F00454661 /* HPCSAuthorizedHTTPClient.m */; };
-		AF1D24A71679231F00454661 /* HPCSAuthorizedHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D24961679231F00454661 /* HPCSAuthorizedHTTPClient.m */; };
-		AF1D24A81679231F00454661 /* HPCSComputeClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D24981679231F00454661 /* HPCSComputeClient.m */; };
-		AF1D24A91679231F00454661 /* HPCSComputeClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D24981679231F00454661 /* HPCSComputeClient.m */; };
-		AF1D24AA1679231F00454661 /* HPCSIdentityClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D249A1679231F00454661 /* HPCSIdentityClient.m */; };
-		AF1D24AB1679231F00454661 /* HPCSIdentityClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D249A1679231F00454661 /* HPCSIdentityClient.m */; };
-		AF1D24AC1679231F00454661 /* HPCSSwiftClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D249D1679231F00454661 /* HPCSSwiftClient.m */; };
-		AF1D24AD1679231F00454661 /* HPCSSwiftClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D249D1679231F00454661 /* HPCSSwiftClient.m */; };
-		AF1D24AE1679231F00454661 /* HPCSTenant.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D249F1679231F00454661 /* HPCSTenant.m */; };
-		AF1D24AF1679231F00454661 /* HPCSTenant.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D249F1679231F00454661 /* HPCSTenant.m */; };
-		AF1D24B01679231F00454661 /* HPCSToken.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D24A11679231F00454661 /* HPCSToken.m */; };
-		AF1D24B11679231F00454661 /* HPCSToken.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D24A11679231F00454661 /* HPCSToken.m */; };
-		AF1D24B21679231F00454661 /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D24A31679231F00454661 /* KeychainWrapper.m */; };
-		AF1D24B31679231F00454661 /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D24A31679231F00454661 /* KeychainWrapper.m */; };
-		AF1D24BA1679236100454661 /* EnvironmentSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D24B41679236100454661 /* EnvironmentSpec.m */; };
-		AF1D24BB1679236100454661 /* EnvironmentSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D24B41679236100454661 /* EnvironmentSpec.m */; };
-		AF1D24BC1679236100454661 /* HPCSIdentityClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D24B51679236100454661 /* HPCSIdentityClientSpec.m */; };
-		AF1D24BD1679236100454661 /* HPCSIdentityClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D24B51679236100454661 /* HPCSIdentityClientSpec.m */; };
-		AF1D24BE1679236100454661 /* HPCSNovaClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D24B61679236100454661 /* HPCSNovaClientSpec.m */; };
-		AF1D24BF1679236100454661 /* HPCSNovaClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D24B61679236100454661 /* HPCSNovaClientSpec.m */; };
-		AF1D24C01679236100454661 /* HPCSSwiftClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D24B71679236100454661 /* HPCSSwiftClientSpec.m */; };
-		AF1D24C11679236100454661 /* HPCSSwiftClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D24B71679236100454661 /* HPCSSwiftClientSpec.m */; };
-		AF1D24C21679236100454661 /* KWSpec+WaitFor.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D24B91679236100454661 /* KWSpec+WaitFor.m */; };
-		AF1D24C31679236100454661 /* KWSpec+WaitFor.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D24B91679236100454661 /* KWSpec+WaitFor.m */; };
-		AF1D24C51679237000454661 /* SwiftObjectSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D24C41679237000454661 /* SwiftObjectSpec.m */; };
-		AF1D24C61679237000454661 /* SwiftObjectSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D24C41679237000454661 /* SwiftObjectSpec.m */; };
-		AF1D24CE167923B300454661 /* authNoScopedToken.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D24C7167923B300454661 /* authNoScopedToken.json */; };
-		AF1D24CF167923B300454661 /* container_contents.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D24C8167923B300454661 /* container_contents.json */; };
-		AF1D24D0167923B300454661 /* containers.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D24C9167923B300454661 /* containers.json */; };
-		AF1D24D1167923B300454661 /* flavor_details.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D24CA167923B300454661 /* flavor_details.json */; };
-		AF1D24D2167923B300454661 /* flavors.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D24CB167923B300454661 /* flavors.json */; };
-		AF1D24D3167923B300454661 /* image_details.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D24CC167923B300454661 /* image_details.json */; };
-		AF1D24D4167923B300454661 /* images.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D24CD167923B300454661 /* images.json */; };
-		AF1D24DC1679241100454661 /* objects.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D24D51679241100454661 /* objects.json */; };
-		AF1D24DD1679241100454661 /* revokeResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D24D61679241100454661 /* revokeResponse.json */; };
-		AF1D24DE1679241100454661 /* server_details.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D24D71679241100454661 /* server_details.json */; };
-		AF1D24DF1679241100454661 /* servers.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D24D81679241100454661 /* servers.json */; };
-		AF1D24E01679241100454661 /* tokens.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D24D91679241100454661 /* tokens.json */; };
-		AF1D24E11679241100454661 /* tokensApiCreds.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D24DA1679241100454661 /* tokensApiCreds.json */; };
-		AF1D24E21679241100454661 /* unauthorized.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D24DB1679241100454661 /* unauthorized.json */; };
+		AF1D24F3167927C800454661 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1D24F2167927C800454661 /* UIKit.framework */; };
+		AF1D24F5167927C800454661 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1D24F4167927C800454661 /* Foundation.framework */; };
+		AF1D24F7167927C800454661 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1D24F6167927C800454661 /* CoreGraphics.framework */; };
+		AF1D251A167927C800454661 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1D2519167927C800454661 /* SenTestingKit.framework */; };
+		AF1D251B167927C800454661 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1D24F2167927C800454661 /* UIKit.framework */; };
+		AF1D251C167927C800454661 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1D24F4167927C800454661 /* Foundation.framework */; };
+		AF1D257516792B0300454661 /* HPCSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D255D16792B0300454661 /* HPCSAppDelegate.m */; };
+		AF1D257616792B0300454661 /* HPCSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D256016792B0300454661 /* HPCSViewController.m */; };
+		AF1D257716792B0300454661 /* Environment.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D256416792B0300454661 /* Environment.m */; };
+		AF1D257816792B0300454661 /* HPCSAuthorizedHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D256616792B0300454661 /* HPCSAuthorizedHTTPClient.m */; };
+		AF1D257916792B0300454661 /* HPCSComputeClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D256816792B0300454661 /* HPCSComputeClient.m */; };
+		AF1D257A16792B0300454661 /* HPCSIdentityClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D256A16792B0300454661 /* HPCSIdentityClient.m */; };
+		AF1D257B16792B0300454661 /* HPCSSwiftClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D256E16792B0300454661 /* HPCSSwiftClient.m */; };
+		AF1D257C16792B0300454661 /* HPCSTenant.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D257016792B0300454661 /* HPCSTenant.m */; };
+		AF1D257D16792B0300454661 /* HPCSToken.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D257216792B0300454661 /* HPCSToken.m */; };
+		AF1D257E16792B0300454661 /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D257416792B0300454661 /* KeychainWrapper.m */; };
+		AF1D25CE16792B6600454661 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25B316792B6600454661 /* InfoPlist.strings */; };
+		AF1D25CF16792B6600454661 /* EnvironmentSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D25B516792B6600454661 /* EnvironmentSpec.m */; };
+		AF1D25D016792B6600454661 /* HPCSIdentityClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D25B616792B6600454661 /* HPCSIdentityClientSpec.m */; };
+		AF1D25D116792B6600454661 /* HPCSMistTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25B716792B6600454661 /* HPCSMistTests-Info.plist */; };
+		AF1D25D216792B6600454661 /* HPCSNovaClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D25B816792B6600454661 /* HPCSNovaClientSpec.m */; };
+		AF1D25D316792B6600454661 /* HPCSSwiftClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D25B916792B6600454661 /* HPCSSwiftClientSpec.m */; };
+		AF1D25D416792B6600454661 /* KWSpec+WaitFor.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D25BB16792B6600454661 /* KWSpec+WaitFor.m */; };
+		AF1D25D516792B6600454661 /* authNoScopedToken.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25BD16792B6600454661 /* authNoScopedToken.json */; };
+		AF1D25D616792B6600454661 /* container_contents.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25BE16792B6600454661 /* container_contents.json */; };
+		AF1D25D716792B6600454661 /* containers.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25BF16792B6600454661 /* containers.json */; };
+		AF1D25D816792B6600454661 /* flavor_details.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25C016792B6600454661 /* flavor_details.json */; };
+		AF1D25D916792B6600454661 /* flavors.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25C116792B6600454661 /* flavors.json */; };
+		AF1D25DA16792B6600454661 /* image_details.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25C216792B6600454661 /* image_details.json */; };
+		AF1D25DB16792B6600454661 /* images.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25C316792B6600454661 /* images.json */; };
+		AF1D25DC16792B6600454661 /* KiwiSpecs-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25C416792B6600454661 /* KiwiSpecs-Info.plist */; };
+		AF1D25DD16792B6600454661 /* objects.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25C616792B6600454661 /* objects.json */; };
+		AF1D25DE16792B6600454661 /* revokeResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25C716792B6600454661 /* revokeResponse.json */; };
+		AF1D25DF16792B6600454661 /* server_details.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25C816792B6600454661 /* server_details.json */; };
+		AF1D25E016792B6600454661 /* servers.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25C916792B6600454661 /* servers.json */; };
+		AF1D25E116792B6600454661 /* tokens.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25CA16792B6600454661 /* tokens.json */; };
+		AF1D25E216792B6600454661 /* tokensApiCreds.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25CB16792B6600454661 /* tokensApiCreds.json */; };
+		AF1D25E316792B6600454661 /* unauthorized.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25CC16792B6600454661 /* unauthorized.json */; };
+		AF1D25E416792B6600454661 /* SwiftObjectSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D25CD16792B6600454661 /* SwiftObjectSpec.m */; };
+		AF1D25E916792B8F00454661 /* HPCSMist-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25E616792B8F00454661 /* HPCSMist-Info.plist */; };
+		AF1D25EA16792B8F00454661 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D25E816792B8F00454661 /* main.m */; };
+		AF1D25F716792BA600454661 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25ED16792BA600454661 /* Default-568h@2x.png */; };
+		AF1D25F816792BA600454661 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25EE16792BA600454661 /* Default.png */; };
+		AF1D25F916792BA600454661 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25EF16792BA600454661 /* Default@2x.png */; };
+		AF1D25FA16792BA600454661 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25F116792BA600454661 /* InfoPlist.strings */; };
+		AF1D25FB16792BA600454661 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25F316792BA600454661 /* MainStoryboard_iPad.storyboard */; };
+		AF1D25FC16792BA600454661 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25F516792BA600454661 /* MainStoryboard_iPhone.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		AF1D247B1679151800454661 /* PBXContainerItemProxy */ = {
+		AF1D251D167927C800454661 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = AF1D245B1679151800454661 /* Project object */;
+			containerPortal = AF1D24E5167927C700454661 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = AF1D24631679151800454661;
+			remoteGlobalIDString = AF1D24ED167927C700454661;
 			remoteInfo = HPCSMist;
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		AF1D24621679151800454661 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/${PRODUCT_NAME}";
-			dstSubfolderSpec = 16;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		AF1D24641679151800454661 /* libHPCSMist.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libHPCSMist.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		AF1D24671679151800454661 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		AF1D246B1679151800454661 /* HPCSMist-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HPCSMist-Prefix.pch"; sourceTree = "<group>"; };
-		AF1D24751679151800454661 /* HPCSMistTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HPCSMistTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AF1D24761679151800454661 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		AF1D24781679151800454661 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		AF1D24801679151800454661 /* HPCSMistTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HPCSMistTests-Info.plist"; sourceTree = "<group>"; };
-		AF1D24821679151800454661 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		AF1D24931679231F00454661 /* Environment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Environment.h; sourceTree = "<group>"; };
-		AF1D24941679231F00454661 /* Environment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Environment.m; sourceTree = "<group>"; };
-		AF1D24951679231F00454661 /* HPCSAuthorizedHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPCSAuthorizedHTTPClient.h; sourceTree = "<group>"; };
-		AF1D24961679231F00454661 /* HPCSAuthorizedHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPCSAuthorizedHTTPClient.m; sourceTree = "<group>"; };
-		AF1D24971679231F00454661 /* HPCSComputeClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPCSComputeClient.h; sourceTree = "<group>"; };
-		AF1D24981679231F00454661 /* HPCSComputeClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPCSComputeClient.m; sourceTree = "<group>"; };
-		AF1D24991679231F00454661 /* HPCSIdentityClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPCSIdentityClient.h; sourceTree = "<group>"; };
-		AF1D249A1679231F00454661 /* HPCSIdentityClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPCSIdentityClient.m; sourceTree = "<group>"; };
-		AF1D249B1679231F00454661 /* HPCSSecurityConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPCSSecurityConstants.h; sourceTree = "<group>"; };
-		AF1D249C1679231F00454661 /* HPCSSwiftClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPCSSwiftClient.h; sourceTree = "<group>"; };
-		AF1D249D1679231F00454661 /* HPCSSwiftClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPCSSwiftClient.m; sourceTree = "<group>"; };
-		AF1D249E1679231F00454661 /* HPCSTenant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPCSTenant.h; sourceTree = "<group>"; };
-		AF1D249F1679231F00454661 /* HPCSTenant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPCSTenant.m; sourceTree = "<group>"; };
-		AF1D24A01679231F00454661 /* HPCSToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPCSToken.h; sourceTree = "<group>"; };
-		AF1D24A11679231F00454661 /* HPCSToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPCSToken.m; sourceTree = "<group>"; };
-		AF1D24A21679231F00454661 /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainWrapper.h; sourceTree = "<group>"; };
-		AF1D24A31679231F00454661 /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainWrapper.m; sourceTree = "<group>"; };
-		AF1D24B41679236100454661 /* EnvironmentSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnvironmentSpec.m; sourceTree = "<group>"; };
-		AF1D24B51679236100454661 /* HPCSIdentityClientSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPCSIdentityClientSpec.m; sourceTree = "<group>"; };
-		AF1D24B61679236100454661 /* HPCSNovaClientSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPCSNovaClientSpec.m; sourceTree = "<group>"; };
-		AF1D24B71679236100454661 /* HPCSSwiftClientSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPCSSwiftClientSpec.m; sourceTree = "<group>"; };
-		AF1D24B81679236100454661 /* KWSpec+WaitFor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KWSpec+WaitFor.h"; sourceTree = "<group>"; };
-		AF1D24B91679236100454661 /* KWSpec+WaitFor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KWSpec+WaitFor.m"; sourceTree = "<group>"; };
-		AF1D24C41679237000454661 /* SwiftObjectSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwiftObjectSpec.m; sourceTree = "<group>"; };
-		AF1D24C7167923B300454661 /* authNoScopedToken.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = authNoScopedToken.json; path = SupportingFiles/authNoScopedToken.json; sourceTree = "<group>"; };
-		AF1D24C8167923B300454661 /* container_contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = container_contents.json; path = SupportingFiles/container_contents.json; sourceTree = "<group>"; };
-		AF1D24C9167923B300454661 /* containers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = containers.json; path = SupportingFiles/containers.json; sourceTree = "<group>"; };
-		AF1D24CA167923B300454661 /* flavor_details.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = flavor_details.json; path = SupportingFiles/flavor_details.json; sourceTree = "<group>"; };
-		AF1D24CB167923B300454661 /* flavors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = flavors.json; path = SupportingFiles/flavors.json; sourceTree = "<group>"; };
-		AF1D24CC167923B300454661 /* image_details.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = image_details.json; path = SupportingFiles/image_details.json; sourceTree = "<group>"; };
-		AF1D24CD167923B300454661 /* images.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = images.json; path = SupportingFiles/images.json; sourceTree = "<group>"; };
-		AF1D24D51679241100454661 /* objects.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = objects.json; path = SupportingFiles/objects.json; sourceTree = "<group>"; };
-		AF1D24D61679241100454661 /* revokeResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = revokeResponse.json; path = SupportingFiles/revokeResponse.json; sourceTree = "<group>"; };
-		AF1D24D71679241100454661 /* server_details.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = server_details.json; path = SupportingFiles/server_details.json; sourceTree = "<group>"; };
-		AF1D24D81679241100454661 /* servers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = servers.json; path = SupportingFiles/servers.json; sourceTree = "<group>"; };
-		AF1D24D91679241100454661 /* tokens.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = tokens.json; path = SupportingFiles/tokens.json; sourceTree = "<group>"; };
-		AF1D24DA1679241100454661 /* tokensApiCreds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = tokensApiCreds.json; path = SupportingFiles/tokensApiCreds.json; sourceTree = "<group>"; };
-		AF1D24DB1679241100454661 /* unauthorized.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = unauthorized.json; path = SupportingFiles/unauthorized.json; sourceTree = "<group>"; };
+		AF1D24EE167927C700454661 /* HPCSMist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HPCSMist.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF1D24F2167927C800454661 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		AF1D24F4167927C800454661 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AF1D24F6167927C800454661 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		AF1D2518167927C800454661 /* HPCSMistTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HPCSMistTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF1D2519167927C800454661 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		AF1D255C16792B0300454661 /* HPCSAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPCSAppDelegate.h; sourceTree = "<group>"; };
+		AF1D255D16792B0300454661 /* HPCSAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPCSAppDelegate.m; sourceTree = "<group>"; };
+		AF1D255F16792B0300454661 /* HPCSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPCSViewController.h; sourceTree = "<group>"; };
+		AF1D256016792B0300454661 /* HPCSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPCSViewController.m; sourceTree = "<group>"; };
+		AF1D256316792B0300454661 /* Environment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Environment.h; sourceTree = "<group>"; };
+		AF1D256416792B0300454661 /* Environment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Environment.m; sourceTree = "<group>"; };
+		AF1D256516792B0300454661 /* HPCSAuthorizedHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPCSAuthorizedHTTPClient.h; sourceTree = "<group>"; };
+		AF1D256616792B0300454661 /* HPCSAuthorizedHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPCSAuthorizedHTTPClient.m; sourceTree = "<group>"; };
+		AF1D256716792B0300454661 /* HPCSComputeClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPCSComputeClient.h; sourceTree = "<group>"; };
+		AF1D256816792B0300454661 /* HPCSComputeClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPCSComputeClient.m; sourceTree = "<group>"; };
+		AF1D256916792B0300454661 /* HPCSIdentityClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPCSIdentityClient.h; sourceTree = "<group>"; };
+		AF1D256A16792B0300454661 /* HPCSIdentityClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPCSIdentityClient.m; sourceTree = "<group>"; };
+		AF1D256B16792B0300454661 /* HPCSMist-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HPCSMist-Prefix.pch"; sourceTree = "<group>"; };
+		AF1D256C16792B0300454661 /* HPCSSecurityConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPCSSecurityConstants.h; sourceTree = "<group>"; };
+		AF1D256D16792B0300454661 /* HPCSSwiftClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPCSSwiftClient.h; sourceTree = "<group>"; };
+		AF1D256E16792B0300454661 /* HPCSSwiftClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPCSSwiftClient.m; sourceTree = "<group>"; };
+		AF1D256F16792B0300454661 /* HPCSTenant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPCSTenant.h; sourceTree = "<group>"; };
+		AF1D257016792B0300454661 /* HPCSTenant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPCSTenant.m; sourceTree = "<group>"; };
+		AF1D257116792B0300454661 /* HPCSToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPCSToken.h; sourceTree = "<group>"; };
+		AF1D257216792B0300454661 /* HPCSToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPCSToken.m; sourceTree = "<group>"; };
+		AF1D257316792B0300454661 /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainWrapper.h; sourceTree = "<group>"; };
+		AF1D257416792B0300454661 /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainWrapper.m; sourceTree = "<group>"; };
+		AF1D25B416792B6600454661 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AF1D25B516792B6600454661 /* EnvironmentSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnvironmentSpec.m; sourceTree = "<group>"; };
+		AF1D25B616792B6600454661 /* HPCSIdentityClientSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPCSIdentityClientSpec.m; sourceTree = "<group>"; };
+		AF1D25B716792B6600454661 /* HPCSMistTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "HPCSMistTests-Info.plist"; sourceTree = "<group>"; };
+		AF1D25B816792B6600454661 /* HPCSNovaClientSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPCSNovaClientSpec.m; sourceTree = "<group>"; };
+		AF1D25B916792B6600454661 /* HPCSSwiftClientSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPCSSwiftClientSpec.m; sourceTree = "<group>"; };
+		AF1D25BA16792B6600454661 /* KWSpec+WaitFor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KWSpec+WaitFor.h"; sourceTree = "<group>"; };
+		AF1D25BB16792B6600454661 /* KWSpec+WaitFor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KWSpec+WaitFor.m"; sourceTree = "<group>"; };
+		AF1D25BD16792B6600454661 /* authNoScopedToken.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = authNoScopedToken.json; sourceTree = "<group>"; };
+		AF1D25BE16792B6600454661 /* container_contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = container_contents.json; sourceTree = "<group>"; };
+		AF1D25BF16792B6600454661 /* containers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = containers.json; sourceTree = "<group>"; };
+		AF1D25C016792B6600454661 /* flavor_details.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = flavor_details.json; sourceTree = "<group>"; };
+		AF1D25C116792B6600454661 /* flavors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = flavors.json; sourceTree = "<group>"; };
+		AF1D25C216792B6600454661 /* image_details.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = image_details.json; sourceTree = "<group>"; };
+		AF1D25C316792B6600454661 /* images.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = images.json; sourceTree = "<group>"; };
+		AF1D25C416792B6600454661 /* KiwiSpecs-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "KiwiSpecs-Info.plist"; sourceTree = "<group>"; };
+		AF1D25C516792B6600454661 /* KiwiSpecs-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KiwiSpecs-Prefix.pch"; sourceTree = "<group>"; };
+		AF1D25C616792B6600454661 /* objects.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = objects.json; sourceTree = "<group>"; };
+		AF1D25C716792B6600454661 /* revokeResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = revokeResponse.json; sourceTree = "<group>"; };
+		AF1D25C816792B6600454661 /* server_details.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = server_details.json; sourceTree = "<group>"; };
+		AF1D25C916792B6600454661 /* servers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = servers.json; sourceTree = "<group>"; };
+		AF1D25CA16792B6600454661 /* tokens.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tokens.json; sourceTree = "<group>"; };
+		AF1D25CB16792B6600454661 /* tokensApiCreds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tokensApiCreds.json; sourceTree = "<group>"; };
+		AF1D25CC16792B6600454661 /* unauthorized.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = unauthorized.json; sourceTree = "<group>"; };
+		AF1D25CD16792B6600454661 /* SwiftObjectSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwiftObjectSpec.m; sourceTree = "<group>"; };
+		AF1D25E616792B8F00454661 /* HPCSMist-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "HPCSMist-Info.plist"; sourceTree = "<group>"; };
+		AF1D25E716792B8F00454661 /* HPCSMist-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HPCSMist-Prefix.pch"; sourceTree = "<group>"; };
+		AF1D25E816792B8F00454661 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AF1D25ED16792BA600454661 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		AF1D25EE16792BA600454661 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		AF1D25EF16792BA600454661 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		AF1D25F216792BA600454661 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AF1D25F416792BA600454661 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		AF1D25F616792BA600454661 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		AF1D24611679151800454661 /* Frameworks */ = {
+		AF1D24EB167927C700454661 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF1D24681679151800454661 /* Foundation.framework in Frameworks */,
+				AF1D24F3167927C800454661 /* UIKit.framework in Frameworks */,
+				AF1D24F5167927C800454661 /* Foundation.framework in Frameworks */,
+				AF1D24F7167927C800454661 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AF1D24711679151800454661 /* Frameworks */ = {
+		AF1D2514167927C800454661 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF1D24771679151800454661 /* SenTestingKit.framework in Frameworks */,
-				AF1D24791679151800454661 /* UIKit.framework in Frameworks */,
-				AF1D247A1679151800454661 /* Foundation.framework in Frameworks */,
-				AF1D247D1679151800454661 /* libHPCSMist.a in Frameworks */,
+				AF1D251A167927C800454661 /* SenTestingKit.framework in Frameworks */,
+				AF1D251B167927C800454661 /* UIKit.framework in Frameworks */,
+				AF1D251C167927C800454661 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AF1D24591679151800454661 = {
+		AF1D24E3167927C700454661 = {
 			isa = PBXGroup;
 			children = (
-				AF1D24691679151800454661 /* Classes */,
-				AF1D247E1679151800454661 /* HPCSMistTests */,
-				AF1D24661679151800454661 /* Frameworks */,
-				AF1D24651679151800454661 /* Products */,
+				AF1D255A16792B0300454661 /* Classes */,
+				AF1D25B216792B6600454661 /* HPCSMistTests */,
+				AF1D25E516792B8F00454661 /* Other Sources */,
+				AF1D25EB16792BA600454661 /* Resources */,
+				AF1D24F1167927C800454661 /* Frameworks */,
+				AF1D24EF167927C700454661 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		AF1D24651679151800454661 /* Products */ = {
+		AF1D24EF167927C700454661 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AF1D24641679151800454661 /* libHPCSMist.a */,
-				AF1D24751679151800454661 /* HPCSMistTests.octest */,
+				AF1D24EE167927C700454661 /* HPCSMist.app */,
+				AF1D2518167927C800454661 /* HPCSMistTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AF1D24661679151800454661 /* Frameworks */ = {
+		AF1D24F1167927C800454661 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AF1D24671679151800454661 /* Foundation.framework */,
-				AF1D24761679151800454661 /* SenTestingKit.framework */,
-				AF1D24781679151800454661 /* UIKit.framework */,
+				AF1D24F2167927C800454661 /* UIKit.framework */,
+				AF1D24F4167927C800454661 /* Foundation.framework */,
+				AF1D24F6167927C800454661 /* CoreGraphics.framework */,
+				AF1D2519167927C800454661 /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		AF1D24691679151800454661 /* Classes */ = {
+		AF1D255A16792B0300454661 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				AF1D24931679231F00454661 /* Environment.h */,
-				AF1D24941679231F00454661 /* Environment.m */,
-				AF1D24951679231F00454661 /* HPCSAuthorizedHTTPClient.h */,
-				AF1D24961679231F00454661 /* HPCSAuthorizedHTTPClient.m */,
-				AF1D24971679231F00454661 /* HPCSComputeClient.h */,
-				AF1D24981679231F00454661 /* HPCSComputeClient.m */,
-				AF1D24991679231F00454661 /* HPCSIdentityClient.h */,
-				AF1D249A1679231F00454661 /* HPCSIdentityClient.m */,
-				AF1D249B1679231F00454661 /* HPCSSecurityConstants.h */,
-				AF1D249C1679231F00454661 /* HPCSSwiftClient.h */,
-				AF1D249D1679231F00454661 /* HPCSSwiftClient.m */,
-				AF1D249E1679231F00454661 /* HPCSTenant.h */,
-				AF1D249F1679231F00454661 /* HPCSTenant.m */,
-				AF1D24A01679231F00454661 /* HPCSToken.h */,
-				AF1D24A11679231F00454661 /* HPCSToken.m */,
-				AF1D24A21679231F00454661 /* KeychainWrapper.h */,
-				AF1D24A31679231F00454661 /* KeychainWrapper.m */,
-				AF1D246A1679151800454661 /* Supporting Files */,
+				AF1D255B16792B0300454661 /* AppDelegate */,
+				AF1D255E16792B0300454661 /* Controllers */,
+				AF1D256116792B0300454661 /* Helpers */,
+				AF1D256216792B0300454661 /* Models */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		AF1D246A1679151800454661 /* Supporting Files */ = {
+		AF1D255B16792B0300454661 /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
-				AF1D246B1679151800454661 /* HPCSMist-Prefix.pch */,
+				AF1D255C16792B0300454661 /* HPCSAppDelegate.h */,
+				AF1D255D16792B0300454661 /* HPCSAppDelegate.m */,
 			);
-			name = "Supporting Files";
+			path = AppDelegate;
 			sourceTree = "<group>";
 		};
-		AF1D247E1679151800454661 /* HPCSMistTests */ = {
+		AF1D255E16792B0300454661 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				AF1D24C41679237000454661 /* SwiftObjectSpec.m */,
-				AF1D24B41679236100454661 /* EnvironmentSpec.m */,
-				AF1D24B51679236100454661 /* HPCSIdentityClientSpec.m */,
-				AF1D24B61679236100454661 /* HPCSNovaClientSpec.m */,
-				AF1D24B71679236100454661 /* HPCSSwiftClientSpec.m */,
-				AF1D24B81679236100454661 /* KWSpec+WaitFor.h */,
-				AF1D24B91679236100454661 /* KWSpec+WaitFor.m */,
-				AF1D247F1679151800454661 /* Supporting Files */,
+				AF1D255F16792B0300454661 /* HPCSViewController.h */,
+				AF1D256016792B0300454661 /* HPCSViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		AF1D256116792B0300454661 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		AF1D256216792B0300454661 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AF1D256316792B0300454661 /* Environment.h */,
+				AF1D256416792B0300454661 /* Environment.m */,
+				AF1D256516792B0300454661 /* HPCSAuthorizedHTTPClient.h */,
+				AF1D256616792B0300454661 /* HPCSAuthorizedHTTPClient.m */,
+				AF1D256716792B0300454661 /* HPCSComputeClient.h */,
+				AF1D256816792B0300454661 /* HPCSComputeClient.m */,
+				AF1D256916792B0300454661 /* HPCSIdentityClient.h */,
+				AF1D256A16792B0300454661 /* HPCSIdentityClient.m */,
+				AF1D256B16792B0300454661 /* HPCSMist-Prefix.pch */,
+				AF1D256C16792B0300454661 /* HPCSSecurityConstants.h */,
+				AF1D256D16792B0300454661 /* HPCSSwiftClient.h */,
+				AF1D256E16792B0300454661 /* HPCSSwiftClient.m */,
+				AF1D256F16792B0300454661 /* HPCSTenant.h */,
+				AF1D257016792B0300454661 /* HPCSTenant.m */,
+				AF1D257116792B0300454661 /* HPCSToken.h */,
+				AF1D257216792B0300454661 /* HPCSToken.m */,
+				AF1D257316792B0300454661 /* KeychainWrapper.h */,
+				AF1D257416792B0300454661 /* KeychainWrapper.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AF1D25B216792B6600454661 /* HPCSMistTests */ = {
+			isa = PBXGroup;
+			children = (
+				AF1D25B316792B6600454661 /* InfoPlist.strings */,
+				AF1D25B516792B6600454661 /* EnvironmentSpec.m */,
+				AF1D25B616792B6600454661 /* HPCSIdentityClientSpec.m */,
+				AF1D25B716792B6600454661 /* HPCSMistTests-Info.plist */,
+				AF1D25B816792B6600454661 /* HPCSNovaClientSpec.m */,
+				AF1D25B916792B6600454661 /* HPCSSwiftClientSpec.m */,
+				AF1D25BA16792B6600454661 /* KWSpec+WaitFor.h */,
+				AF1D25BB16792B6600454661 /* KWSpec+WaitFor.m */,
+				AF1D25BC16792B6600454661 /* SupportingFiles */,
+				AF1D25CD16792B6600454661 /* SwiftObjectSpec.m */,
 			);
 			path = HPCSMistTests;
 			sourceTree = "<group>";
 		};
-		AF1D247F1679151800454661 /* Supporting Files */ = {
+		AF1D25BC16792B6600454661 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
-				AF1D24D51679241100454661 /* objects.json */,
-				AF1D24D61679241100454661 /* revokeResponse.json */,
-				AF1D24D71679241100454661 /* server_details.json */,
-				AF1D24D81679241100454661 /* servers.json */,
-				AF1D24D91679241100454661 /* tokens.json */,
-				AF1D24DA1679241100454661 /* tokensApiCreds.json */,
-				AF1D24DB1679241100454661 /* unauthorized.json */,
-				AF1D24C7167923B300454661 /* authNoScopedToken.json */,
-				AF1D24C8167923B300454661 /* container_contents.json */,
-				AF1D24C9167923B300454661 /* containers.json */,
-				AF1D24CA167923B300454661 /* flavor_details.json */,
-				AF1D24CB167923B300454661 /* flavors.json */,
-				AF1D24CC167923B300454661 /* image_details.json */,
-				AF1D24CD167923B300454661 /* images.json */,
-				AF1D24801679151800454661 /* HPCSMistTests-Info.plist */,
-				AF1D24811679151800454661 /* InfoPlist.strings */,
+				AF1D25BD16792B6600454661 /* authNoScopedToken.json */,
+				AF1D25BE16792B6600454661 /* container_contents.json */,
+				AF1D25BF16792B6600454661 /* containers.json */,
+				AF1D25C016792B6600454661 /* flavor_details.json */,
+				AF1D25C116792B6600454661 /* flavors.json */,
+				AF1D25C216792B6600454661 /* image_details.json */,
+				AF1D25C316792B6600454661 /* images.json */,
+				AF1D25C416792B6600454661 /* KiwiSpecs-Info.plist */,
+				AF1D25C516792B6600454661 /* KiwiSpecs-Prefix.pch */,
+				AF1D25C616792B6600454661 /* objects.json */,
+				AF1D25C716792B6600454661 /* revokeResponse.json */,
+				AF1D25C816792B6600454661 /* server_details.json */,
+				AF1D25C916792B6600454661 /* servers.json */,
+				AF1D25CA16792B6600454661 /* tokens.json */,
+				AF1D25CB16792B6600454661 /* tokensApiCreds.json */,
+				AF1D25CC16792B6600454661 /* unauthorized.json */,
 			);
-			name = "Supporting Files";
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		AF1D25E516792B8F00454661 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				AF1D25E616792B8F00454661 /* HPCSMist-Info.plist */,
+				AF1D25E716792B8F00454661 /* HPCSMist-Prefix.pch */,
+				AF1D25E816792B8F00454661 /* main.m */,
+			);
+			path = "Other Sources";
+			sourceTree = "<group>";
+		};
+		AF1D25EB16792BA600454661 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AF1D25EC16792BA600454661 /* Images */,
+				AF1D25F016792BA600454661 /* Nibs */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AF1D25EC16792BA600454661 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				AF1D25ED16792BA600454661 /* Default-568h@2x.png */,
+				AF1D25EE16792BA600454661 /* Default.png */,
+				AF1D25EF16792BA600454661 /* Default@2x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		AF1D25F016792BA600454661 /* Nibs */ = {
+			isa = PBXGroup;
+			children = (
+				AF1D25F116792BA600454661 /* InfoPlist.strings */,
+				AF1D25F316792BA600454661 /* MainStoryboard_iPad.storyboard */,
+				AF1D25F516792BA600454661 /* MainStoryboard_iPhone.storyboard */,
+			);
+			path = Nibs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AF1D24631679151800454661 /* HPCSMist */ = {
+		AF1D24ED167927C700454661 /* HPCSMist */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AF1D24891679151800454661 /* Build configuration list for PBXNativeTarget "HPCSMist" */;
+			buildConfigurationList = AF1D252A167927C800454661 /* Build configuration list for PBXNativeTarget "HPCSMist" */;
 			buildPhases = (
-				AF1D24601679151800454661 /* Sources */,
-				AF1D24611679151800454661 /* Frameworks */,
-				AF1D24621679151800454661 /* CopyFiles */,
+				AF1D24EA167927C700454661 /* Sources */,
+				AF1D24EB167927C700454661 /* Frameworks */,
+				AF1D24EC167927C700454661 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -268,82 +344,99 @@
 			);
 			name = HPCSMist;
 			productName = HPCSMist;
-			productReference = AF1D24641679151800454661 /* libHPCSMist.a */;
-			productType = "com.apple.product-type.library.static";
+			productReference = AF1D24EE167927C700454661 /* HPCSMist.app */;
+			productType = "com.apple.product-type.application";
 		};
-		AF1D24741679151800454661 /* HPCSMistTests */ = {
+		AF1D2517167927C800454661 /* HPCSMistTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AF1D248C1679151800454661 /* Build configuration list for PBXNativeTarget "HPCSMistTests" */;
+			buildConfigurationList = AF1D252D167927C800454661 /* Build configuration list for PBXNativeTarget "HPCSMistTests" */;
 			buildPhases = (
-				AF1D24701679151800454661 /* Sources */,
-				AF1D24711679151800454661 /* Frameworks */,
-				AF1D24721679151800454661 /* Resources */,
-				AF1D24731679151800454661 /* ShellScript */,
+				AF1D2513167927C800454661 /* Sources */,
+				AF1D2514167927C800454661 /* Frameworks */,
+				AF1D2515167927C800454661 /* Resources */,
+				AF1D2516167927C800454661 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				AF1D247C1679151800454661 /* PBXTargetDependency */,
+				AF1D251E167927C800454661 /* PBXTargetDependency */,
 			);
 			name = HPCSMistTests;
 			productName = HPCSMistTests;
-			productReference = AF1D24751679151800454661 /* HPCSMistTests.octest */;
+			productReference = AF1D2518167927C800454661 /* HPCSMistTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		AF1D245B1679151800454661 /* Project object */ = {
+		AF1D24E5167927C700454661 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = HPCS;
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Mike Hagedorn";
 			};
-			buildConfigurationList = AF1D245E1679151800454661 /* Build configuration list for PBXProject "HPCSMist" */;
+			buildConfigurationList = AF1D24E8167927C700454661 /* Build configuration list for PBXProject "HPCSMist" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = AF1D24591679151800454661;
-			productRefGroup = AF1D24651679151800454661 /* Products */;
+			mainGroup = AF1D24E3167927C700454661;
+			productRefGroup = AF1D24EF167927C700454661 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AF1D24631679151800454661 /* HPCSMist */,
-				AF1D24741679151800454661 /* HPCSMistTests */,
+				AF1D24ED167927C700454661 /* HPCSMist */,
+				AF1D2517167927C800454661 /* HPCSMistTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		AF1D24721679151800454661 /* Resources */ = {
+		AF1D24EC167927C700454661 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF1D24831679151800454661 /* InfoPlist.strings in Resources */,
-				AF1D24CE167923B300454661 /* authNoScopedToken.json in Resources */,
-				AF1D24CF167923B300454661 /* container_contents.json in Resources */,
-				AF1D24D0167923B300454661 /* containers.json in Resources */,
-				AF1D24D1167923B300454661 /* flavor_details.json in Resources */,
-				AF1D24D2167923B300454661 /* flavors.json in Resources */,
-				AF1D24D3167923B300454661 /* image_details.json in Resources */,
-				AF1D24D4167923B300454661 /* images.json in Resources */,
-				AF1D24DC1679241100454661 /* objects.json in Resources */,
-				AF1D24DD1679241100454661 /* revokeResponse.json in Resources */,
-				AF1D24DE1679241100454661 /* server_details.json in Resources */,
-				AF1D24DF1679241100454661 /* servers.json in Resources */,
-				AF1D24E01679241100454661 /* tokens.json in Resources */,
-				AF1D24E11679241100454661 /* tokensApiCreds.json in Resources */,
-				AF1D24E21679241100454661 /* unauthorized.json in Resources */,
+				AF1D25E916792B8F00454661 /* HPCSMist-Info.plist in Resources */,
+				AF1D25F716792BA600454661 /* Default-568h@2x.png in Resources */,
+				AF1D25F816792BA600454661 /* Default.png in Resources */,
+				AF1D25F916792BA600454661 /* Default@2x.png in Resources */,
+				AF1D25FA16792BA600454661 /* InfoPlist.strings in Resources */,
+				AF1D25FB16792BA600454661 /* MainStoryboard_iPad.storyboard in Resources */,
+				AF1D25FC16792BA600454661 /* MainStoryboard_iPhone.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF1D2515167927C800454661 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF1D25CE16792B6600454661 /* InfoPlist.strings in Resources */,
+				AF1D25D116792B6600454661 /* HPCSMistTests-Info.plist in Resources */,
+				AF1D25D516792B6600454661 /* authNoScopedToken.json in Resources */,
+				AF1D25D616792B6600454661 /* container_contents.json in Resources */,
+				AF1D25D716792B6600454661 /* containers.json in Resources */,
+				AF1D25D816792B6600454661 /* flavor_details.json in Resources */,
+				AF1D25D916792B6600454661 /* flavors.json in Resources */,
+				AF1D25DA16792B6600454661 /* image_details.json in Resources */,
+				AF1D25DB16792B6600454661 /* images.json in Resources */,
+				AF1D25DC16792B6600454661 /* KiwiSpecs-Info.plist in Resources */,
+				AF1D25DD16792B6600454661 /* objects.json in Resources */,
+				AF1D25DE16792B6600454661 /* revokeResponse.json in Resources */,
+				AF1D25DF16792B6600454661 /* server_details.json in Resources */,
+				AF1D25E016792B6600454661 /* servers.json in Resources */,
+				AF1D25E116792B6600454661 /* tokens.json in Resources */,
+				AF1D25E216792B6600454661 /* tokensApiCreds.json in Resources */,
+				AF1D25E316792B6600454661 /* unauthorized.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		AF1D24731679151800454661 /* ShellScript */ = {
+		AF1D2516167927C800454661 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -359,71 +452,84 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		AF1D24601679151800454661 /* Sources */ = {
+		AF1D24EA167927C700454661 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF1D24A41679231F00454661 /* Environment.m in Sources */,
-				AF1D24A61679231F00454661 /* HPCSAuthorizedHTTPClient.m in Sources */,
-				AF1D24A81679231F00454661 /* HPCSComputeClient.m in Sources */,
-				AF1D24AA1679231F00454661 /* HPCSIdentityClient.m in Sources */,
-				AF1D24AC1679231F00454661 /* HPCSSwiftClient.m in Sources */,
-				AF1D24AE1679231F00454661 /* HPCSTenant.m in Sources */,
-				AF1D24B01679231F00454661 /* HPCSToken.m in Sources */,
-				AF1D24B21679231F00454661 /* KeychainWrapper.m in Sources */,
-				AF1D24BA1679236100454661 /* EnvironmentSpec.m in Sources */,
-				AF1D24BC1679236100454661 /* HPCSIdentityClientSpec.m in Sources */,
-				AF1D24BE1679236100454661 /* HPCSNovaClientSpec.m in Sources */,
-				AF1D24C01679236100454661 /* HPCSSwiftClientSpec.m in Sources */,
-				AF1D24C21679236100454661 /* KWSpec+WaitFor.m in Sources */,
-				AF1D24C51679237000454661 /* SwiftObjectSpec.m in Sources */,
+				AF1D257516792B0300454661 /* HPCSAppDelegate.m in Sources */,
+				AF1D257616792B0300454661 /* HPCSViewController.m in Sources */,
+				AF1D257716792B0300454661 /* Environment.m in Sources */,
+				AF1D257816792B0300454661 /* HPCSAuthorizedHTTPClient.m in Sources */,
+				AF1D257916792B0300454661 /* HPCSComputeClient.m in Sources */,
+				AF1D257A16792B0300454661 /* HPCSIdentityClient.m in Sources */,
+				AF1D257B16792B0300454661 /* HPCSSwiftClient.m in Sources */,
+				AF1D257C16792B0300454661 /* HPCSTenant.m in Sources */,
+				AF1D257D16792B0300454661 /* HPCSToken.m in Sources */,
+				AF1D257E16792B0300454661 /* KeychainWrapper.m in Sources */,
+				AF1D25EA16792B8F00454661 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AF1D24701679151800454661 /* Sources */ = {
+		AF1D2513167927C800454661 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF1D24A51679231F00454661 /* Environment.m in Sources */,
-				AF1D24A71679231F00454661 /* HPCSAuthorizedHTTPClient.m in Sources */,
-				AF1D24A91679231F00454661 /* HPCSComputeClient.m in Sources */,
-				AF1D24AB1679231F00454661 /* HPCSIdentityClient.m in Sources */,
-				AF1D24AD1679231F00454661 /* HPCSSwiftClient.m in Sources */,
-				AF1D24AF1679231F00454661 /* HPCSTenant.m in Sources */,
-				AF1D24B11679231F00454661 /* HPCSToken.m in Sources */,
-				AF1D24B31679231F00454661 /* KeychainWrapper.m in Sources */,
-				AF1D24BB1679236100454661 /* EnvironmentSpec.m in Sources */,
-				AF1D24BD1679236100454661 /* HPCSIdentityClientSpec.m in Sources */,
-				AF1D24BF1679236100454661 /* HPCSNovaClientSpec.m in Sources */,
-				AF1D24C11679236100454661 /* HPCSSwiftClientSpec.m in Sources */,
-				AF1D24C31679236100454661 /* KWSpec+WaitFor.m in Sources */,
-				AF1D24C61679237000454661 /* SwiftObjectSpec.m in Sources */,
+				AF1D25CF16792B6600454661 /* EnvironmentSpec.m in Sources */,
+				AF1D25D016792B6600454661 /* HPCSIdentityClientSpec.m in Sources */,
+				AF1D25D216792B6600454661 /* HPCSNovaClientSpec.m in Sources */,
+				AF1D25D316792B6600454661 /* HPCSSwiftClientSpec.m in Sources */,
+				AF1D25D416792B6600454661 /* KWSpec+WaitFor.m in Sources */,
+				AF1D25E416792B6600454661 /* SwiftObjectSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		AF1D247C1679151800454661 /* PBXTargetDependency */ = {
+		AF1D251E167927C800454661 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AF1D24631679151800454661 /* HPCSMist */;
-			targetProxy = AF1D247B1679151800454661 /* PBXContainerItemProxy */;
+			target = AF1D24ED167927C700454661 /* HPCSMist */;
+			targetProxy = AF1D251D167927C800454661 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		AF1D24811679151800454661 /* InfoPlist.strings */ = {
+		AF1D25B316792B6600454661 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				AF1D24821679151800454661 /* en */,
+				AF1D25B416792B6600454661 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		AF1D25F116792BA600454661 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF1D25F216792BA600454661 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		AF1D25F316792BA600454661 /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF1D25F416792BA600454661 /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		AF1D25F516792BA600454661 /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF1D25F616792BA600454661 /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		AF1D24871679151800454661 /* Debug */ = {
+		AF1D2528167927C800454661 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -432,6 +538,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -447,10 +554,11 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		AF1D24881679151800454661 /* Release */ = {
+		AF1D2529167927C800454661 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -459,44 +567,46 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		AF1D248A1679151800454661 /* Debug */ = {
+		AF1D252B167927C800454661 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DSTROOT = /tmp/HPCSMist.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HPCSMist/HPCSMist-Prefix.pch";
-				OTHER_LDFLAGS = "-ObjC";
+				INFOPLIST_FILE = "$(SRCROOT)/Other Sources/HPCSMist-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
-		AF1D248B1679151800454661 /* Release */ = {
+		AF1D252C167927C800454661 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DSTROOT = /tmp/HPCSMist.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HPCSMist/HPCSMist-Prefix.pch";
-				OTHER_LDFLAGS = "-ObjC";
+				INFOPLIST_FILE = "$(SRCROOT)/Other Sources/HPCSMist-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};
-		AF1D248D1679151800454661 /* Debug */ = {
+		AF1D252E167927C800454661 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HPCSMist.app/HPCSMist";
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
@@ -505,13 +615,15 @@
 				GCC_PREFIX_HEADER = "HPCSMist/HPCSMist-Prefix.pch";
 				INFOPLIST_FILE = "HPCSMistTests/HPCSMistTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
-		AF1D248E1679151800454661 /* Release */ = {
+		AF1D252F167927C800454661 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HPCSMist.app/HPCSMist";
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
@@ -520,6 +632,7 @@
 				GCC_PREFIX_HEADER = "HPCSMist/HPCSMist-Prefix.pch";
 				INFOPLIST_FILE = "HPCSMistTests/HPCSMistTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
@@ -527,34 +640,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AF1D245E1679151800454661 /* Build configuration list for PBXProject "HPCSMist" */ = {
+		AF1D24E8167927C700454661 /* Build configuration list for PBXProject "HPCSMist" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AF1D24871679151800454661 /* Debug */,
-				AF1D24881679151800454661 /* Release */,
+				AF1D2528167927C800454661 /* Debug */,
+				AF1D2529167927C800454661 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AF1D24891679151800454661 /* Build configuration list for PBXNativeTarget "HPCSMist" */ = {
+		AF1D252A167927C800454661 /* Build configuration list for PBXNativeTarget "HPCSMist" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AF1D248A1679151800454661 /* Debug */,
-				AF1D248B1679151800454661 /* Release */,
+				AF1D252B167927C800454661 /* Debug */,
+				AF1D252C167927C800454661 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AF1D248C1679151800454661 /* Build configuration list for PBXNativeTarget "HPCSMistTests" */ = {
+		AF1D252D167927C800454661 /* Build configuration list for PBXNativeTarget "HPCSMistTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AF1D248D1679151800454661 /* Debug */,
-				AF1D248E1679151800454661 /* Release */,
+				AF1D252E167927C800454661 /* Debug */,
+				AF1D252F167927C800454661 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = AF1D245B1679151800454661 /* Project object */;
+	rootObject = AF1D24E5167927C700454661 /* Project object */;
 }

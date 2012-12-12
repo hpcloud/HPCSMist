@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <Group
+      location = "group:Classes"
+      name = "Classes">
+      <Group
+         location = "group:AppDelegate"
+         name = "AppDelegate">
+         <FileRef
+            location = "group:HPCSAppDelegate.h">
+         </FileRef>
+         <FileRef
+            location = "group:HPCSAppDelegate.m">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:Controllers"
+         name = "Controllers">
+         <FileRef
+            location = "group:HPCSViewController.h">
+         </FileRef>
+         <FileRef
+            location = "group:HPCSViewController.m">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:Helpers"
+         name = "Helpers">
+      </Group>
+      <Group
+         location = "group:Models"
+         name = "Models">
+         <FileRef
+            location = "group:Environment.h">
+         </FileRef>
+         <FileRef
+            location = "group:Environment.m">
+         </FileRef>
+         <FileRef
+            location = "group:HPCSAuthorizedHTTPClient.h">
+         </FileRef>
+         <FileRef
+            location = "group:HPCSAuthorizedHTTPClient.m">
+         </FileRef>
+         <FileRef
+            location = "group:HPCSComputeClient.h">
+         </FileRef>
+         <FileRef
+            location = "group:HPCSComputeClient.m">
+         </FileRef>
+         <FileRef
+            location = "group:HPCSIdentityClient.h">
+         </FileRef>
+         <FileRef
+            location = "group:HPCSIdentityClient.m">
+         </FileRef>
+         <FileRef
+            location = "group:HPCSMist-Prefix.pch">
+         </FileRef>
+         <FileRef
+            location = "group:HPCSSecurityConstants.h">
+         </FileRef>
+         <FileRef
+            location = "group:HPCSSwiftClient.h">
+         </FileRef>
+         <FileRef
+            location = "group:HPCSSwiftClient.m">
+         </FileRef>
+         <FileRef
+            location = "group:HPCSTenant.h">
+         </FileRef>
+         <FileRef
+            location = "group:HPCSTenant.m">
+         </FileRef>
+         <FileRef
+            location = "group:HPCSToken.h">
+         </FileRef>
+         <FileRef
+            location = "group:HPCSToken.m">
+         </FileRef>
+         <FileRef
+            location = "group:KeychainWrapper.h">
+         </FileRef>
+         <FileRef
+            location = "group:KeychainWrapper.m">
+         </FileRef>
+      </Group>
+   </Group>
+</Workspace>
