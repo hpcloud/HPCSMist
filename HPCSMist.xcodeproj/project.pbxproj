@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		AF4BB8B816793CBE0019C57C /* Documentation */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = AF4BB8B916793CBE0019C57C /* Build configuration list for PBXAggregateTarget "Documentation" */;
+			buildPhases = (
+				AF4BB8BC16793CC50019C57C /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = Documentation;
+			productName = Documentation;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		56877366D9B04AEA836AB5D6 /* libPods-HPCSMistTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F8C673EB98845D7BCF23BA7 /* libPods-HPCSMistTests.a */; };
 		AF1D24F3167927C800454661 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1D24F2167927C800454661 /* UIKit.framework */; };
@@ -403,6 +417,7 @@
 			targets = (
 				AF1D24ED167927C700454661 /* HPCSMist */,
 				AF1D2517167927C800454661 /* HPCSMistTests */,
+				AF4BB8B816793CBE0019C57C /* Documentation */,
 			);
 		};
 /* End PBXProject section */
@@ -472,6 +487,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		AF4BB8BC16793CC50019C57C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export NOVA_HOST=\"15.184.93.121\"\nexport KEYFILE=\"/Users/mhagedorn/develop/hpcskeys/st2key.pem\"\n\n# Build an Xcode documentation\n/usr/local/bin/appledoc \\\n--project-name \"HPCSMist\" \\\n--project-company \"HP Cloud Services\" \\\n--project-version \"0.0.1\" \\\n--company-id \"com.hpcloud\" \\\n--output \"~/help\" \\\n--docset-feed-url \"http://${NOVA_HOST}/HPCSMist/%DOCSETATOMFILENAME\" \\\n--docset-package-url \"http://${NOVA_HOST}/HPCSMist/%DOCSETPACKAGEFILENAME\" \\\n--publish-docset \\\n--logformat xcode \\\n--keep-undocumented-objects \\\n--keep-undocumented-members \\\n--keep-intermediate-files \\\n--no-repeat-first-par \\\n--no-warn-invalid-crossref \\\n--ignore \"*.m\" \\\n--ignore \"Pods\" \\\n--ignore \"Vendor\" \\\n--ignore \"App/Models\" \\\n--ignore \"App/Controllers\" \\\n--ignore \"App/Utility\" \\\n--ignore \"Vendor\" \\\n--ignore \"KiwiSpecs\" \\\n--ignore \"AppDelegate.h\" \\\n--index-desc \"${PROJECT_DIR}/readme.markdown\" \\\n\"${PROJECT_DIR}\";\nrsync --rsh \"ssh -i ${KEYFILE}\"  --rsync-path \"sudo rsync\" -avz ~/help/publish/ ubuntu@${NOVA_HOST}:/usr/share/nginx/HPCSMist/;\nrsync --rsh \"ssh -i ${KEYFILE}\"  --rsync-path \"sudo rsync\" -avz ~/help/html/ ubuntu@${NOVA_HOST}:/usr/share/nginx/HPCSMist/;\n";
 		};
 		E8D7928AF50F4A85BDAA4B9F /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -673,6 +701,20 @@
 			};
 			name = Release;
 		};
+		AF4BB8BA16793CBE0019C57C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		AF4BB8BB16793CBE0019C57C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -702,6 +744,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		AF4BB8B916793CBE0019C57C /* Build configuration list for PBXAggregateTarget "Documentation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF4BB8BA16793CBE0019C57C /* Debug */,
+				AF4BB8BB16793CBE0019C57C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
