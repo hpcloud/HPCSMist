@@ -82,7 +82,7 @@
 		AF1D24591679151800454661 = {
 			isa = PBXGroup;
 			children = (
-				AF1D24691679151800454661 /* HPCSMist */,
+				AF1D24691679151800454661 /* Classes */,
 				AF1D247E1679151800454661 /* HPCSMistTests */,
 				AF1D24661679151800454661 /* Frameworks */,
 				AF1D24651679151800454661 /* Products */,
@@ -108,14 +108,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		AF1D24691679151800454661 /* HPCSMist */ = {
+		AF1D24691679151800454661 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				AF1D246C1679151800454661 /* HPCSMist.h */,
 				AF1D246E1679151800454661 /* HPCSMist.m */,
 				AF1D246A1679151800454661 /* Supporting Files */,
 			);
-			path = HPCSMist;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		AF1D246A1679151800454661 /* Supporting Files */ = {
@@ -397,6 +397,7 @@
 				AF1D248B1679151800454661 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AF1D248C1679151800454661 /* Build configuration list for PBXNativeTarget "HPCSMistTests" */ = {
 			isa = XCConfigurationList;
@@ -405,6 +406,7 @@
 				AF1D248E1679151800454661 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
