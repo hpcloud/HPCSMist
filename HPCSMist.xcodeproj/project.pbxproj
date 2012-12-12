@@ -8,14 +8,53 @@
 
 /* Begin PBXBuildFile section */
 		AF1D24681679151800454661 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1D24671679151800454661 /* Foundation.framework */; };
-		AF1D246D1679151800454661 /* HPCSMist.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AF1D246C1679151800454661 /* HPCSMist.h */; };
-		AF1D246F1679151800454661 /* HPCSMist.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D246E1679151800454661 /* HPCSMist.m */; };
 		AF1D24771679151800454661 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1D24761679151800454661 /* SenTestingKit.framework */; };
 		AF1D24791679151800454661 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1D24781679151800454661 /* UIKit.framework */; };
 		AF1D247A1679151800454661 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1D24671679151800454661 /* Foundation.framework */; };
 		AF1D247D1679151800454661 /* libHPCSMist.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1D24641679151800454661 /* libHPCSMist.a */; };
 		AF1D24831679151800454661 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AF1D24811679151800454661 /* InfoPlist.strings */; };
-		AF1D24861679151800454661 /* HPCSMistTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D24851679151800454661 /* HPCSMistTests.m */; };
+		AF1D24A41679231F00454661 /* Environment.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D24941679231F00454661 /* Environment.m */; };
+		AF1D24A51679231F00454661 /* Environment.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D24941679231F00454661 /* Environment.m */; };
+		AF1D24A61679231F00454661 /* HPCSAuthorizedHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D24961679231F00454661 /* HPCSAuthorizedHTTPClient.m */; };
+		AF1D24A71679231F00454661 /* HPCSAuthorizedHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D24961679231F00454661 /* HPCSAuthorizedHTTPClient.m */; };
+		AF1D24A81679231F00454661 /* HPCSComputeClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D24981679231F00454661 /* HPCSComputeClient.m */; };
+		AF1D24A91679231F00454661 /* HPCSComputeClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D24981679231F00454661 /* HPCSComputeClient.m */; };
+		AF1D24AA1679231F00454661 /* HPCSIdentityClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D249A1679231F00454661 /* HPCSIdentityClient.m */; };
+		AF1D24AB1679231F00454661 /* HPCSIdentityClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D249A1679231F00454661 /* HPCSIdentityClient.m */; };
+		AF1D24AC1679231F00454661 /* HPCSSwiftClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D249D1679231F00454661 /* HPCSSwiftClient.m */; };
+		AF1D24AD1679231F00454661 /* HPCSSwiftClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D249D1679231F00454661 /* HPCSSwiftClient.m */; };
+		AF1D24AE1679231F00454661 /* HPCSTenant.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D249F1679231F00454661 /* HPCSTenant.m */; };
+		AF1D24AF1679231F00454661 /* HPCSTenant.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D249F1679231F00454661 /* HPCSTenant.m */; };
+		AF1D24B01679231F00454661 /* HPCSToken.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D24A11679231F00454661 /* HPCSToken.m */; };
+		AF1D24B11679231F00454661 /* HPCSToken.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D24A11679231F00454661 /* HPCSToken.m */; };
+		AF1D24B21679231F00454661 /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D24A31679231F00454661 /* KeychainWrapper.m */; };
+		AF1D24B31679231F00454661 /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D24A31679231F00454661 /* KeychainWrapper.m */; };
+		AF1D24BA1679236100454661 /* EnvironmentSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D24B41679236100454661 /* EnvironmentSpec.m */; };
+		AF1D24BB1679236100454661 /* EnvironmentSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D24B41679236100454661 /* EnvironmentSpec.m */; };
+		AF1D24BC1679236100454661 /* HPCSIdentityClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D24B51679236100454661 /* HPCSIdentityClientSpec.m */; };
+		AF1D24BD1679236100454661 /* HPCSIdentityClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D24B51679236100454661 /* HPCSIdentityClientSpec.m */; };
+		AF1D24BE1679236100454661 /* HPCSNovaClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D24B61679236100454661 /* HPCSNovaClientSpec.m */; };
+		AF1D24BF1679236100454661 /* HPCSNovaClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D24B61679236100454661 /* HPCSNovaClientSpec.m */; };
+		AF1D24C01679236100454661 /* HPCSSwiftClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D24B71679236100454661 /* HPCSSwiftClientSpec.m */; };
+		AF1D24C11679236100454661 /* HPCSSwiftClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D24B71679236100454661 /* HPCSSwiftClientSpec.m */; };
+		AF1D24C21679236100454661 /* KWSpec+WaitFor.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D24B91679236100454661 /* KWSpec+WaitFor.m */; };
+		AF1D24C31679236100454661 /* KWSpec+WaitFor.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D24B91679236100454661 /* KWSpec+WaitFor.m */; };
+		AF1D24C51679237000454661 /* SwiftObjectSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D24C41679237000454661 /* SwiftObjectSpec.m */; };
+		AF1D24C61679237000454661 /* SwiftObjectSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D24C41679237000454661 /* SwiftObjectSpec.m */; };
+		AF1D24CE167923B300454661 /* authNoScopedToken.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D24C7167923B300454661 /* authNoScopedToken.json */; };
+		AF1D24CF167923B300454661 /* container_contents.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D24C8167923B300454661 /* container_contents.json */; };
+		AF1D24D0167923B300454661 /* containers.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D24C9167923B300454661 /* containers.json */; };
+		AF1D24D1167923B300454661 /* flavor_details.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D24CA167923B300454661 /* flavor_details.json */; };
+		AF1D24D2167923B300454661 /* flavors.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D24CB167923B300454661 /* flavors.json */; };
+		AF1D24D3167923B300454661 /* image_details.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D24CC167923B300454661 /* image_details.json */; };
+		AF1D24D4167923B300454661 /* images.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D24CD167923B300454661 /* images.json */; };
+		AF1D24DC1679241100454661 /* objects.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D24D51679241100454661 /* objects.json */; };
+		AF1D24DD1679241100454661 /* revokeResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D24D61679241100454661 /* revokeResponse.json */; };
+		AF1D24DE1679241100454661 /* server_details.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D24D71679241100454661 /* server_details.json */; };
+		AF1D24DF1679241100454661 /* servers.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D24D81679241100454661 /* servers.json */; };
+		AF1D24E01679241100454661 /* tokens.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D24D91679241100454661 /* tokens.json */; };
+		AF1D24E11679241100454661 /* tokensApiCreds.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D24DA1679241100454661 /* tokensApiCreds.json */; };
+		AF1D24E21679241100454661 /* unauthorized.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D24DB1679241100454661 /* unauthorized.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +74,6 @@
 			dstPath = "include/${PRODUCT_NAME}";
 			dstSubfolderSpec = 16;
 			files = (
-				AF1D246D1679151800454661 /* HPCSMist.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,15 +83,49 @@
 		AF1D24641679151800454661 /* libHPCSMist.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libHPCSMist.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF1D24671679151800454661 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AF1D246B1679151800454661 /* HPCSMist-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HPCSMist-Prefix.pch"; sourceTree = "<group>"; };
-		AF1D246C1679151800454661 /* HPCSMist.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HPCSMist.h; sourceTree = "<group>"; };
-		AF1D246E1679151800454661 /* HPCSMist.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HPCSMist.m; sourceTree = "<group>"; };
 		AF1D24751679151800454661 /* HPCSMistTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HPCSMistTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF1D24761679151800454661 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		AF1D24781679151800454661 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		AF1D24801679151800454661 /* HPCSMistTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HPCSMistTests-Info.plist"; sourceTree = "<group>"; };
 		AF1D24821679151800454661 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		AF1D24841679151800454661 /* HPCSMistTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HPCSMistTests.h; sourceTree = "<group>"; };
-		AF1D24851679151800454661 /* HPCSMistTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HPCSMistTests.m; sourceTree = "<group>"; };
+		AF1D24931679231F00454661 /* Environment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Environment.h; sourceTree = "<group>"; };
+		AF1D24941679231F00454661 /* Environment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Environment.m; sourceTree = "<group>"; };
+		AF1D24951679231F00454661 /* HPCSAuthorizedHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPCSAuthorizedHTTPClient.h; sourceTree = "<group>"; };
+		AF1D24961679231F00454661 /* HPCSAuthorizedHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPCSAuthorizedHTTPClient.m; sourceTree = "<group>"; };
+		AF1D24971679231F00454661 /* HPCSComputeClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPCSComputeClient.h; sourceTree = "<group>"; };
+		AF1D24981679231F00454661 /* HPCSComputeClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPCSComputeClient.m; sourceTree = "<group>"; };
+		AF1D24991679231F00454661 /* HPCSIdentityClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPCSIdentityClient.h; sourceTree = "<group>"; };
+		AF1D249A1679231F00454661 /* HPCSIdentityClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPCSIdentityClient.m; sourceTree = "<group>"; };
+		AF1D249B1679231F00454661 /* HPCSSecurityConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPCSSecurityConstants.h; sourceTree = "<group>"; };
+		AF1D249C1679231F00454661 /* HPCSSwiftClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPCSSwiftClient.h; sourceTree = "<group>"; };
+		AF1D249D1679231F00454661 /* HPCSSwiftClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPCSSwiftClient.m; sourceTree = "<group>"; };
+		AF1D249E1679231F00454661 /* HPCSTenant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPCSTenant.h; sourceTree = "<group>"; };
+		AF1D249F1679231F00454661 /* HPCSTenant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPCSTenant.m; sourceTree = "<group>"; };
+		AF1D24A01679231F00454661 /* HPCSToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPCSToken.h; sourceTree = "<group>"; };
+		AF1D24A11679231F00454661 /* HPCSToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPCSToken.m; sourceTree = "<group>"; };
+		AF1D24A21679231F00454661 /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainWrapper.h; sourceTree = "<group>"; };
+		AF1D24A31679231F00454661 /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainWrapper.m; sourceTree = "<group>"; };
+		AF1D24B41679236100454661 /* EnvironmentSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnvironmentSpec.m; sourceTree = "<group>"; };
+		AF1D24B51679236100454661 /* HPCSIdentityClientSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPCSIdentityClientSpec.m; sourceTree = "<group>"; };
+		AF1D24B61679236100454661 /* HPCSNovaClientSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPCSNovaClientSpec.m; sourceTree = "<group>"; };
+		AF1D24B71679236100454661 /* HPCSSwiftClientSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPCSSwiftClientSpec.m; sourceTree = "<group>"; };
+		AF1D24B81679236100454661 /* KWSpec+WaitFor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KWSpec+WaitFor.h"; sourceTree = "<group>"; };
+		AF1D24B91679236100454661 /* KWSpec+WaitFor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KWSpec+WaitFor.m"; sourceTree = "<group>"; };
+		AF1D24C41679237000454661 /* SwiftObjectSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwiftObjectSpec.m; sourceTree = "<group>"; };
+		AF1D24C7167923B300454661 /* authNoScopedToken.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = authNoScopedToken.json; path = SupportingFiles/authNoScopedToken.json; sourceTree = "<group>"; };
+		AF1D24C8167923B300454661 /* container_contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = container_contents.json; path = SupportingFiles/container_contents.json; sourceTree = "<group>"; };
+		AF1D24C9167923B300454661 /* containers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = containers.json; path = SupportingFiles/containers.json; sourceTree = "<group>"; };
+		AF1D24CA167923B300454661 /* flavor_details.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = flavor_details.json; path = SupportingFiles/flavor_details.json; sourceTree = "<group>"; };
+		AF1D24CB167923B300454661 /* flavors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = flavors.json; path = SupportingFiles/flavors.json; sourceTree = "<group>"; };
+		AF1D24CC167923B300454661 /* image_details.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = image_details.json; path = SupportingFiles/image_details.json; sourceTree = "<group>"; };
+		AF1D24CD167923B300454661 /* images.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = images.json; path = SupportingFiles/images.json; sourceTree = "<group>"; };
+		AF1D24D51679241100454661 /* objects.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = objects.json; path = SupportingFiles/objects.json; sourceTree = "<group>"; };
+		AF1D24D61679241100454661 /* revokeResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = revokeResponse.json; path = SupportingFiles/revokeResponse.json; sourceTree = "<group>"; };
+		AF1D24D71679241100454661 /* server_details.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = server_details.json; path = SupportingFiles/server_details.json; sourceTree = "<group>"; };
+		AF1D24D81679241100454661 /* servers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = servers.json; path = SupportingFiles/servers.json; sourceTree = "<group>"; };
+		AF1D24D91679241100454661 /* tokens.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = tokens.json; path = SupportingFiles/tokens.json; sourceTree = "<group>"; };
+		AF1D24DA1679241100454661 /* tokensApiCreds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = tokensApiCreds.json; path = SupportingFiles/tokensApiCreds.json; sourceTree = "<group>"; };
+		AF1D24DB1679241100454661 /* unauthorized.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = unauthorized.json; path = SupportingFiles/unauthorized.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,8 +183,23 @@
 		AF1D24691679151800454661 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				AF1D246C1679151800454661 /* HPCSMist.h */,
-				AF1D246E1679151800454661 /* HPCSMist.m */,
+				AF1D24931679231F00454661 /* Environment.h */,
+				AF1D24941679231F00454661 /* Environment.m */,
+				AF1D24951679231F00454661 /* HPCSAuthorizedHTTPClient.h */,
+				AF1D24961679231F00454661 /* HPCSAuthorizedHTTPClient.m */,
+				AF1D24971679231F00454661 /* HPCSComputeClient.h */,
+				AF1D24981679231F00454661 /* HPCSComputeClient.m */,
+				AF1D24991679231F00454661 /* HPCSIdentityClient.h */,
+				AF1D249A1679231F00454661 /* HPCSIdentityClient.m */,
+				AF1D249B1679231F00454661 /* HPCSSecurityConstants.h */,
+				AF1D249C1679231F00454661 /* HPCSSwiftClient.h */,
+				AF1D249D1679231F00454661 /* HPCSSwiftClient.m */,
+				AF1D249E1679231F00454661 /* HPCSTenant.h */,
+				AF1D249F1679231F00454661 /* HPCSTenant.m */,
+				AF1D24A01679231F00454661 /* HPCSToken.h */,
+				AF1D24A11679231F00454661 /* HPCSToken.m */,
+				AF1D24A21679231F00454661 /* KeychainWrapper.h */,
+				AF1D24A31679231F00454661 /* KeychainWrapper.m */,
 				AF1D246A1679151800454661 /* Supporting Files */,
 			);
 			path = Classes;
@@ -129,8 +216,13 @@
 		AF1D247E1679151800454661 /* HPCSMistTests */ = {
 			isa = PBXGroup;
 			children = (
-				AF1D24841679151800454661 /* HPCSMistTests.h */,
-				AF1D24851679151800454661 /* HPCSMistTests.m */,
+				AF1D24C41679237000454661 /* SwiftObjectSpec.m */,
+				AF1D24B41679236100454661 /* EnvironmentSpec.m */,
+				AF1D24B51679236100454661 /* HPCSIdentityClientSpec.m */,
+				AF1D24B61679236100454661 /* HPCSNovaClientSpec.m */,
+				AF1D24B71679236100454661 /* HPCSSwiftClientSpec.m */,
+				AF1D24B81679236100454661 /* KWSpec+WaitFor.h */,
+				AF1D24B91679236100454661 /* KWSpec+WaitFor.m */,
 				AF1D247F1679151800454661 /* Supporting Files */,
 			);
 			path = HPCSMistTests;
@@ -139,6 +231,20 @@
 		AF1D247F1679151800454661 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AF1D24D51679241100454661 /* objects.json */,
+				AF1D24D61679241100454661 /* revokeResponse.json */,
+				AF1D24D71679241100454661 /* server_details.json */,
+				AF1D24D81679241100454661 /* servers.json */,
+				AF1D24D91679241100454661 /* tokens.json */,
+				AF1D24DA1679241100454661 /* tokensApiCreds.json */,
+				AF1D24DB1679241100454661 /* unauthorized.json */,
+				AF1D24C7167923B300454661 /* authNoScopedToken.json */,
+				AF1D24C8167923B300454661 /* container_contents.json */,
+				AF1D24C9167923B300454661 /* containers.json */,
+				AF1D24CA167923B300454661 /* flavor_details.json */,
+				AF1D24CB167923B300454661 /* flavors.json */,
+				AF1D24CC167923B300454661 /* image_details.json */,
+				AF1D24CD167923B300454661 /* images.json */,
 				AF1D24801679151800454661 /* HPCSMistTests-Info.plist */,
 				AF1D24811679151800454661 /* InfoPlist.strings */,
 			);
@@ -217,6 +323,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF1D24831679151800454661 /* InfoPlist.strings in Resources */,
+				AF1D24CE167923B300454661 /* authNoScopedToken.json in Resources */,
+				AF1D24CF167923B300454661 /* container_contents.json in Resources */,
+				AF1D24D0167923B300454661 /* containers.json in Resources */,
+				AF1D24D1167923B300454661 /* flavor_details.json in Resources */,
+				AF1D24D2167923B300454661 /* flavors.json in Resources */,
+				AF1D24D3167923B300454661 /* image_details.json in Resources */,
+				AF1D24D4167923B300454661 /* images.json in Resources */,
+				AF1D24DC1679241100454661 /* objects.json in Resources */,
+				AF1D24DD1679241100454661 /* revokeResponse.json in Resources */,
+				AF1D24DE1679241100454661 /* server_details.json in Resources */,
+				AF1D24DF1679241100454661 /* servers.json in Resources */,
+				AF1D24E01679241100454661 /* tokens.json in Resources */,
+				AF1D24E11679241100454661 /* tokensApiCreds.json in Resources */,
+				AF1D24E21679241100454661 /* unauthorized.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,7 +363,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF1D246F1679151800454661 /* HPCSMist.m in Sources */,
+				AF1D24A41679231F00454661 /* Environment.m in Sources */,
+				AF1D24A61679231F00454661 /* HPCSAuthorizedHTTPClient.m in Sources */,
+				AF1D24A81679231F00454661 /* HPCSComputeClient.m in Sources */,
+				AF1D24AA1679231F00454661 /* HPCSIdentityClient.m in Sources */,
+				AF1D24AC1679231F00454661 /* HPCSSwiftClient.m in Sources */,
+				AF1D24AE1679231F00454661 /* HPCSTenant.m in Sources */,
+				AF1D24B01679231F00454661 /* HPCSToken.m in Sources */,
+				AF1D24B21679231F00454661 /* KeychainWrapper.m in Sources */,
+				AF1D24BA1679236100454661 /* EnvironmentSpec.m in Sources */,
+				AF1D24BC1679236100454661 /* HPCSIdentityClientSpec.m in Sources */,
+				AF1D24BE1679236100454661 /* HPCSNovaClientSpec.m in Sources */,
+				AF1D24C01679236100454661 /* HPCSSwiftClientSpec.m in Sources */,
+				AF1D24C21679236100454661 /* KWSpec+WaitFor.m in Sources */,
+				AF1D24C51679237000454661 /* SwiftObjectSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,7 +384,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF1D24861679151800454661 /* HPCSMistTests.m in Sources */,
+				AF1D24A51679231F00454661 /* Environment.m in Sources */,
+				AF1D24A71679231F00454661 /* HPCSAuthorizedHTTPClient.m in Sources */,
+				AF1D24A91679231F00454661 /* HPCSComputeClient.m in Sources */,
+				AF1D24AB1679231F00454661 /* HPCSIdentityClient.m in Sources */,
+				AF1D24AD1679231F00454661 /* HPCSSwiftClient.m in Sources */,
+				AF1D24AF1679231F00454661 /* HPCSTenant.m in Sources */,
+				AF1D24B11679231F00454661 /* HPCSToken.m in Sources */,
+				AF1D24B31679231F00454661 /* KeychainWrapper.m in Sources */,
+				AF1D24BB1679236100454661 /* EnvironmentSpec.m in Sources */,
+				AF1D24BD1679236100454661 /* HPCSIdentityClientSpec.m in Sources */,
+				AF1D24BF1679236100454661 /* HPCSNovaClientSpec.m in Sources */,
+				AF1D24C11679236100454661 /* HPCSSwiftClientSpec.m in Sources */,
+				AF1D24C31679236100454661 /* KWSpec+WaitFor.m in Sources */,
+				AF1D24C61679237000454661 /* SwiftObjectSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
