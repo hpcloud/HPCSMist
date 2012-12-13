@@ -18,6 +18,10 @@
 
 @interface KeychainWrapper : NSObject
 
+///--------------------
+/// @name Searching for values in Keychain
+///--------------------
+
 /**
  Generic exposed method to search the keychain for a given value. Limit one result per search.
  @param identifier key for the stored item
@@ -31,6 +35,12 @@
  
  */
 + (NSString *)keychainStringFromMatchingIdentifier:(NSString *)identifier;
+
+
+///--------------------
+/// @name Create, update or Delete Keychain items
+///--------------------
+
 
 /** Default initializer to store a value in the keychain.
 Associated properties are handled for you - setting Data Protection Access, Company Identifer (to uniquely identify string, etc).
