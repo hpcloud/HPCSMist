@@ -34,6 +34,7 @@ extern NSString * const kHPCSAuthAccessKeyCredentialsKey;
 extern NSString * const kHPCSAuthAccessKey;
 extern NSString * const kHPCSAuthSecretKey;
 
+/**Allows Access to the HP Cloud Services authorization system (Control Services).*/
 
 @interface HPCSIdentityClient : AFHTTPClient
 
@@ -96,6 +97,11 @@ extern NSString * const kHPCSAuthSecretKey;
 /** NSDictionary which holds either username/password type information or accessKey/secretKey type of information */
 -(NSDictionary *)authorizationInfo;
 
+
+///------------------------------------------------------
+/// @name Authenticating with Control Services (Keystone)
+///------------------------------------------------------
+
 /** Authenticate to HP Cloud Services Identity Services
     
     initiates the login to the HPCS IS system and returns HPCSToken
@@ -109,9 +115,6 @@ extern NSString * const kHPCSAuthSecretKey;
  
  */
 
-///------------------------------------------------------
-/// @name Authenticating with Control Services (Keystone)
-///------------------------------------------------------
 
 //TODO need to send a message about network not available
 -(void) authenticate:(void (^)(NSArray *serviceCatalog))block failure:(void (^)(NSHTTPURLResponse *responseObject, NSError *error))failure;
