@@ -53,7 +53,7 @@ for error details.  Question: support changes-since param?
 
  @param block returns an NSArray of flavors, or an empty NSArray if it fails
  @param failure block called for a failed call
- @discussion emits event **HPCSNovaFlavorsDidFailNotification** with userInfo["NSError"] for error details
+ @discussion emits event **HPCSNovaFlavorsDidFailNotification** on failure with userInfo["NSError"] for error details
  */
 -(void)flavors:(void (^)(NSArray *records))block failure:(void (^)(NSHTTPURLResponse *response,NSError *error))failure;
 
@@ -61,7 +61,7 @@ for error details.  Question: support changes-since param?
  Retrieves the list of images available to launch (from Glance)
 @param block returns an NSArray of Glance images, or an empty NSArray if it fails
 @param failure block called for a failed call
-@discussion emits **HPCSNovaImagesDidFailNotification** with userInfo["NSError"] for error details
+@discussion emits **HPCSNovaImagesDidFailNotification** on failure with userInfo["NSError"] for error details
 */
 -(void)images:(void (^)(NSArray *records))block failure:(void (^)(NSHTTPURLResponse *response,NSError *error))failure;
 
@@ -70,7 +70,7 @@ for error details.  Question: support changes-since param?
 @param serverInfo object that must respond to serverId
 @param block block that returns an NSDictionary of information about the server
 @param failure block called for a failed call
-@discussion emits **HPCSNovaServersShowDidFailNotification** with userInfo["NSError"] for error details
+@discussion emits **HPCSNovaServersShowDidFailNotification** on failure with userInfo["NSError"] for error details
  
  */
 -(void) serverDetailsFor:(id) serverInfo success:(void (^)(id serverInfo))block failure:(void (^)(NSHTTPURLResponse *response,NSError *error))failure;
@@ -81,7 +81,7 @@ for error details.  Question: support changes-since param?
 @param flavorInfo object that must respond to flavorId
 @param block block that returns an NSDictionary of information about the flavor
 @param failure block called for a failed call
-@discussion emits **HPCSNovaFlavorDetailsDidFailNotification** with userInfo["NSError"] for error details
+@discussion emits **HPCSNovaFlavorDetailsDidFailNotification** on failure with userInfo["NSError"] for error details
  */
 -(void) flavorDetailsFor:(id) flavorInfo success:(void (^)(id flavorInfo))block failure:(void (^)(NSHTTPURLResponse *response,NSError *error))failure;
 
@@ -91,7 +91,7 @@ Detailed version of image details
 @param imageInfo object that must respond to imageId
 @param block block that returns an NSDictionary of information about the image
 @param failure block called for a failed call
-@discussion emits **HPCSNovaImageDetailsDidFailNotification** with userInfo["NSError"] for error details
+@discussion emits **HPCSNovaImageDetailsDidFailNotification** on failure with userInfo["NSError"] for error details
  */
 -(void) imageDetailsFor:(id) imageInfo success:(void (^)(id imageInfo))block failure:(void (^)(NSHTTPURLResponse *response,NSError *error))failure;
 
@@ -102,7 +102,7 @@ Detailed version of image details
     @param serverInfo object that must respond to serverId
     @param success block which returns the NSHTTPURLResponse
     @param failure block which is called in case of a failure
-    @discussion emits event **HPCSNovaServersDeleteDidFailNotification** with userInfo["NSError"] with error details
+    @discussion emits event **HPCSNovaServersDeleteDidFailNotification** on failure with userInfo["NSError"] with error details
  
  */
 - (void)terminateServer:(id)serverInfo
