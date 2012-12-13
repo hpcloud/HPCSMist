@@ -1,4 +1,5 @@
 HPCSMist
 ========
 
-a delightful interface to HP Cloud Services for IOS
+a delightful interface to HP Cloud Services for IOS and OSX
+
