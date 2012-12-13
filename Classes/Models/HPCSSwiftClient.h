@@ -11,9 +11,7 @@
 
 
 @class HPCSIdentityClient;
-/**
- Posted when an authentication fails.
- */
+
 extern NSString * const HPCSSwiftContainersListDidFailNotification;
 extern NSString * const HPCSSwiftContainerSaveDidFailNotification;
 extern NSString * const HPCSSwiftContainerDeleteDidFailNotification;
@@ -21,7 +19,7 @@ extern NSString * const HPCSSwiftObjectSaveDidFailNotification;
 extern NSString * const HPCSSwiftObjectShowDidFailNotification;
 extern NSString * const HPCSSwiftObjectDeleteDidFailNotification;
 
-/** header return values */
+
 extern NSString * const HPCSSwiftContainerObjectCountHeaderKey;
 extern NSString * const HPCSSwiftContainerBytesUsedHeaderKey;
 extern NSString * const HPCSSwiftAccountObjectCountHeaderKey;
@@ -29,7 +27,9 @@ extern NSString * const HPCSSwiftAccountBytesUsedHeaderKey;
 extern NSString * const HPCSSwiftAccountContainerCountHeaderKey;
 
 
-
+/**
+ The interface to the object storage system
+ */
 
 @interface HPCSSwiftClient :  AFHTTPClient
 
