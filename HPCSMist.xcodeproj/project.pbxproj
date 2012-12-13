@@ -146,6 +146,7 @@
 		AF1D25F616792BA600454661 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		AF4BB8AD167933660019C57C /* HPCSCommonMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPCSCommonMacros.h; sourceTree = "<group>"; };
 		AF4BB8AE167933D10019C57C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		AF4BB8C5167A40E50019C57C /* scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = scripts; sourceTree = "<group>"; };
 		EFEC43993DAE4ABBA4461FA0 /* Pods-HPCSMistTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HPCSMistTests.xcconfig"; path = "Pods/Pods-HPCSMistTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -179,6 +180,7 @@
 		AF1D24E3167927C700454661 = {
 			isa = PBXGroup;
 			children = (
+				AF4BB8C5167A40E50019C57C /* scripts */,
 				AF4BB8AE167933D10019C57C /* Security.framework */,
 				AF1D255A16792B0300454661 /* Classes */,
 				AF1D25B216792B6600454661 /* HPCSMistTests */,
@@ -499,7 +501,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export NOVA_HOST=\"15.184.93.121\"\nexport KEYFILE=\"/Users/mhagedorn/develop/hpcskeys/st2key.pem\"\n\n# Build an Xcode documentation\n/usr/local/bin/appledoc \\\n--project-name \"HPCSMist\" \\\n--project-company \"HP Cloud Services\" \\\n--project-version \"0.0.1\" \\\n--company-id \"com.hpcloud\" \\\n--output \"~/help\" \\\n--docset-feed-url \"http://${NOVA_HOST}/HPCSMist/%DOCSETATOMFILENAME\" \\\n--docset-package-url \"http://${NOVA_HOST}/HPCSMist/%DOCSETPACKAGEFILENAME\" \\\n--publish-docset \\\n--logformat xcode \\\n--keep-undocumented-objects \\\n--keep-undocumented-members \\\n--keep-intermediate-files \\\n--no-repeat-first-par \\\n--no-warn-invalid-crossref \\\n--ignore \"*.m\" \\\n--ignore \"Pods\" \\\n--ignore \"Vendor\" \\\n--ignore \"App/Models\" \\\n--ignore \"App/Controllers\" \\\n--ignore \"App/Utility\" \\\n--ignore \"Vendor\" \\\n--ignore \"KiwiSpecs\" \\\n--ignore \"AppDelegate.h\" \\\n--index-desc \"${PROJECT_DIR}/readme.markdown\" \\\n\"${PROJECT_DIR}\";\nrsync --rsh \"ssh -i ${KEYFILE}\"  --rsync-path \"sudo rsync\" -avz ~/help/publish/ ubuntu@${NOVA_HOST}:/usr/share/nginx/HPCSMist/;\nrsync --rsh \"ssh -i ${KEYFILE}\"  --rsync-path \"sudo rsync\" -avz ~/help/html/ ubuntu@${NOVA_HOST}:/usr/share/nginx/HPCSMist/;\n";
+			shellScript = "cd  \"${PROJECT_DIR}\"\n\"./scripts/generate_docs.sh\"\n";
 		};
 		E8D7928AF50F4A85BDAA4B9F /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
