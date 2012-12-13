@@ -147,6 +147,7 @@
 		AF4BB8AD167933660019C57C /* HPCSCommonMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPCSCommonMacros.h; sourceTree = "<group>"; };
 		AF4BB8AE167933D10019C57C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		AF4BB8C5167A40E50019C57C /* scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = scripts; sourceTree = "<group>"; };
+		AF4BB8C6167A46820019C57C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		EFEC43993DAE4ABBA4461FA0 /* Pods-HPCSMistTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HPCSMistTests.xcconfig"; path = "Pods/Pods-HPCSMistTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -180,6 +181,7 @@
 		AF1D24E3167927C700454661 = {
 			isa = PBXGroup;
 			children = (
+				AF4BB8C6167A46820019C57C /* README.md */,
 				AF4BB8C5167A40E50019C57C /* scripts */,
 				AF4BB8AE167933D10019C57C /* Security.framework */,
 				AF1D255A16792B0300454661 /* Classes */,
