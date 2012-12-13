@@ -39,6 +39,14 @@ Associated properties are handled for you - setting Data Protection Access, Comp
  */
 + (BOOL)createKeychainValue:(NSString *)value forIdentifier:(NSString *)identifier;
 
+/** Stores a value and a description to the keychain
+ @param value value to set
+ @param identifier key for the stored item
+ @param description a text description of the parameter
+ @discussion descriptions are really only useful in OSX, since under IOS there is no way to browse the keychain like there is under OSX.  You can set it but there is no way to see it afterwards.
+ 
+*/
+
 + (BOOL)createKeychainValue:(NSString *)value forIdentifier:(NSString *)identifier withDescription:(NSString *)description;
 
 /** Updates a value in the keychain. 
