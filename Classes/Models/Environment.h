@@ -22,7 +22,9 @@ extern NSString * const kHPCSIdentityBaseURLString;
 /** the URL endpoint for the Enviroment in question, HP has several */
 @property (retain) NSString *HPCSIdentityURL;
 
-/** The singleton loaded from Environments.plist.  Picks the environment to set from Info.plist **Configuration** key */
+/** The singleton loaded from Environments.plist.  Picks the environment to set from Info.plist **Configuration** key 
+ @discussion if there is no Info.plist **Configuration** key, or there is no Environment defined for the **Configuration** key then it just returns the production identity URL value
+ */
 + (Environment *)sharedInstance;
 
 @end
