@@ -67,7 +67,7 @@ extern NSString * const kHPCSAuthSecretKey;
 
 /** Convenience method to get the HPCSIdentityClient 
  
- @discussion Returns a singleton. If you use this method, then you are using the initWithUsername:andPassword:andTenantId: method to constuct the identity client instance, as opposed to the initWithAccessKeyId:andSecretKey:andTenantId: method.
+ @discussion This is the designated initializer. Returns a singleton. If you use this method, then you are using the initWithUsername:andPassword:andTenantId: method to constuct the identity client instance, as opposed to the initWithAccessKeyId:andSecretKey:andTenantId: method.
  */
 +(HPCSIdentityClient *)sharedClient;
 
