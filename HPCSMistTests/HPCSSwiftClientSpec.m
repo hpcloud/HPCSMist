@@ -448,25 +448,10 @@ describe(@"HPCSSwiftClient", ^{
 //          });
 //          pending(@"returns a 412", ^{});
 //        });
-//        context(@"and the supplied ETag doesnt match hash", ^{
-//          beforeEach(^{
-//            stubEmptyResponseWithStatusCode(@"created",@"PUT",422);
-//          });
-//          afterEach(^{
-//            [OHHTTPStubs removeLastRequestHandler];
-//          });
-//          pending(@"returns a 422", ^{});
-//        });
-
-
+//
       });
-
-
     });
-
-
   });
-
 });
 
 

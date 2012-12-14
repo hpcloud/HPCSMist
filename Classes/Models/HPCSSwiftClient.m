@@ -54,17 +54,12 @@ NSString * const HPCSSwiftAccountContainerCountHeaderKey = @"X-Account-Container
           [mutableRecords addObject:entry];
         }
         if (success) {
-            success(operation.response, [NSArray arrayWithArray:mutableRecords]);
+          success(operation.response, [NSArray arrayWithArray:mutableRecords]);
         }
-
     }
     failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-
         [[NSNotificationCenter defaultCenter] postNotificationName:HPCSSwiftContainersListDidFailNotification object:self];
-       // TODO move this to view layer
-       // [PRPAlertView showWithTitle:@"Swift Error" message:@"Unable to retrieve container list" buttonTitle:@"OK"];
         if (failure) {
-
             failure(operation.response, error);
         }
     }];
@@ -82,39 +77,29 @@ NSString * const HPCSSwiftAccountContainerCountHeaderKey = @"X-Account-Container
             success:^(AFHTTPRequestOperation *operation, id JSON) {
               [self setDefaultHeader:@"Accept" value:@"application/json"];
                 if (success) {
-
-                    success(operation.response);
-
+                  success(operation.response);
                 }
             } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:HPCSSwiftContainerSaveDidFailNotification object:self];
-        //TODO move this to view layer
-        //[PRPAlertView showWithTitle:@"Swift Error" message:@"Unable to save container" buttonTitle:@"OK"];
-      [self setDefaultHeader:@"Accept" value:@"application/json"];
-      if (failure) {
-
-            failure(operation.response, error);
-
-        }
-    }];
+              [[NSNotificationCenter defaultCenter] postNotificationName:HPCSSwiftContainerSaveDidFailNotification object:self];
+              [self setDefaultHeader:@"Accept" value:@"application/json"];
+              if (failure) {
+                failure(operation.response, error);
+              }
+            }
+    ];
 }
 
-//TODO container should respond to:name
 - (void)deleteContainer:(id)container success:(void (^)(NSHTTPURLResponse *responseObject))success
                 failure:(void (^)(NSHTTPURLResponse *responseObject, NSError *error))failure {
    [self setDefaultHeader:@"Accept" value:nil];
     NSString *path = [NSString stringWithFormat:@"%@",[self URLEncodedString:[container valueForKeyPath:@"name"] ]];
     [self deletePath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id JSON) {
         if (success) {
-           [self setDefaultHeader:@"Accept" value:@"application/json"];
-            success(operation.response);
+          [self setDefaultHeader:@"Accept" value:@"application/json"];
+          success(operation.response);
         }
     }  failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-
         [[NSNotificationCenter defaultCenter] postNotificationName:HPCSSwiftContainerDeleteDidFailNotification object:self];
-        //TODO move this to view layer
-
-
         if (failure) {
           [self setDefaultHeader:@"Accept" value:@"application/json"];
           failure(operation.response, error);
@@ -135,11 +120,9 @@ NSString * const HPCSSwiftAccountContainerCountHeaderKey = @"X-Account-Container
           HPCSSwiftContainerObjectCountHeaderKey,nil];
 
   for (NSString *key in keys){
-
     if ([headers valueForKey:key]){
       [metadata setObject:[NSNumber numberWithInt:[[headers valueForKey:key] intValue]] forKey:key];
     }
-
   }
 
  return metadata;
@@ -161,13 +144,10 @@ NSString * const HPCSSwiftAccountContainerCountHeaderKey = @"X-Account-Container
           if (failure) {
             failure(operation.response, error);
           }
-        }];
-
-
-
+     }
+  ];
 }
 
-//TODO container should respond to:name
 - (void)objectsForContainer:(id)container
                     success:(void (^)(NSHTTPURLResponse *responseObject,NSArray *records))success
                     failure:(void (^)(NSHTTPURLResponse *responseObject, NSError *error))failure {
@@ -175,29 +155,23 @@ NSString * const HPCSSwiftAccountContainerCountHeaderKey = @"X-Account-Container
     [self getPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id JSON) {
         NSMutableArray *mutableRecords = [NSMutableArray array];
         for (id entry in JSON) {
-            NSMutableDictionary *attributes = [NSMutableDictionary dictionaryWithDictionary:entry];
-            [attributes setValue:container forKey:@"parent"];
-            NSString *objectPath = [path stringByAppendingFormat:@"/%@", [attributes valueForKey:@"name"]];
-            NSURL *url = [NSURL URLWithString:objectPath relativeToURL:self.baseURL];
-            [attributes setValue:url forKey:@"url"];
-            [mutableRecords addObject:attributes];
+          NSMutableDictionary *attributes = [NSMutableDictionary dictionaryWithDictionary:entry];
+          [attributes setValue:container forKey:@"parent"];
+          NSString *objectPath = [path stringByAppendingFormat:@"/%@", [attributes valueForKey:@"name"]];
+          NSURL *url = [NSURL URLWithString:objectPath relativeToURL:self.baseURL];
+          [attributes setValue:url forKey:@"url"];
+          [mutableRecords addObject:attributes];
         }
         if (success) {
-            success(operation.response,[NSArray arrayWithArray:mutableRecords]);
+          success(operation.response,[NSArray arrayWithArray:mutableRecords]);
         }
-
-    }
-
-    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    }  failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         [[NSNotificationCenter defaultCenter] postNotificationName:HPCSSwiftContainerShowDidFailNotification object:self];
-
-        //TODO move this to view layer
-        //[PRPAlertView showWithTitle:@"Swift Error" message:@"Unable to retrieve object list" buttonTitle:@"OK"];
-
         if (failure) {
-            failure(operation.response, error);
+          failure(operation.response, error);
         }
-    }];
+       }
+    ];
 
 }
 
@@ -217,9 +191,6 @@ NSString * const HPCSSwiftAccountContainerCountHeaderKey = @"X-Account-Container
               }  failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                 [self setDefaultHeader:@"Accept" value:@"application/json"];
                 [[NSNotificationCenter defaultCenter] postNotificationName:HPCSSwiftObjectDeleteDidFailNotification object:self];
-                //TODO move to view layer
-                //[PRPAlertView showWithTitle:@"Swift Error" message:@"Unable to delete container" buttonTitle:@"OK"];
-
                 if (failure) {
                   failure(operation.response, error);
                 }
@@ -227,7 +198,7 @@ NSString * const HPCSSwiftAccountContainerCountHeaderKey = @"X-Account-Container
     ];
 
 }
-  //TODO object has to respond to data
+
 - (void)saveObject:(id) object
       success:(void (^)(NSHTTPURLResponse *responseObject))success
           progress:(void (^)(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite))progress
@@ -246,12 +217,13 @@ NSString * const HPCSSwiftAccountContainerCountHeaderKey = @"X-Account-Container
                         success(responseObject);
                       }
 
-                    } failure:^(NSHTTPURLResponse *responseObject, NSError *error) {
+                    }  failure:^(NSHTTPURLResponse *responseObject, NSError *error) {
                       [self setDefaultHeader:@"Accept" value:@"application/json"];
                       if (failure){
                         failure(responseObject, error);
                       }
-    }];
+                    }
+    ];
 
 }
 
@@ -263,19 +235,16 @@ NSString * const HPCSSwiftAccountContainerCountHeaderKey = @"X-Account-Container
   [self getPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id data) {
       [self setDefaultHeader:@"Accept" value:@"application/json"];
       if (success) {
-          success(operation.response,data);
+        success(operation.response,data);
       }
-    }
-
-     failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    }  failure:^(AFHTTPRequestOperation *operation, NSError *error) {
        [self setDefaultHeader:@"Accept" value:@"application/json"];
-      //TODO move to view layer
-      //[PRPAlertView showWithTitle:@"Swift Error" message:@"Unable to retrieve object" buttonTitle:@"OK"];
-      [[NSNotificationCenter defaultCenter] postNotificationName:HPCSSwiftObjectShowDidFailNotification object:self];
-      if (failure) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:HPCSSwiftObjectShowDidFailNotification object:self];
+        if(failure) {
           failure(operation.response, error);
+        }
       }
-    }];
+  ];
 
 
 }
@@ -305,7 +274,21 @@ NSString * const HPCSSwiftAccountContainerCountHeaderKey = @"X-Account-Container
 - (void)headObject:(id) object
                    success:(void (^)(NSHTTPURLResponse *response))success
                    failure:(void (^)(NSHTTPURLResponse *responseObject, NSError *error))failure {
-  [[NSException exceptionWithName: NSInternalInconsistencyException reason: @"Unimplemented method" userInfo: nil] raise];
+  [self setDefaultHeader:@"Accept" value:nil];
+  NSString *path = [NSString stringWithFormat:@"%@", [self URLEncodedString:[object valueForKeyPath:@"name"] ]];
+
+  [self headPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id data) {
+    [self setDefaultHeader:@"Accept" value:@"application/json"];
+    if (success) {
+      success(operation.response);
+    }
+  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    [self setDefaultHeader:@"Accept" value:@"application/json"];
+    if (failure) {
+      failure(operation.response, error);
+    }
+  }
+  ];
 
 }
 
@@ -362,7 +345,6 @@ NSString * const HPCSSwiftAccountContainerCountHeaderKey = @"X-Account-Container
                      failure:(void (^)(NSHTTPURLResponse *responseObject, NSError *error))failure {
     [self setDefaultHeader:@"Content-Type" value:mimeType];
     NSURLRequest *request = [self requestWithMethod:method path:destinationPath parameters:parameters data:data];
-    //TODO - gzip here request.HTTPBody if needed
     AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request
                                                                       success:^(AFHTTPRequestOperation *operation, id responseObject) {
                                                                          if (success){
