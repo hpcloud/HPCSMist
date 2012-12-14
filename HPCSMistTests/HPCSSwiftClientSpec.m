@@ -9,7 +9,6 @@
 #import "Kiwi.h"
 #import "HPCSSwiftClient.h"
 #import "OHHTTPStubs.h"
-#import "AFNetworking.h"
 #import "HPCSIdentityClient.h"
 #import "KWSpec+WaitFor.h"
 
@@ -71,8 +70,11 @@ describe(@"HPCSSwiftClient", ^{
     identityClient = [[HPCSIdentityClient alloc] initWithUsername:userName andPassword:password andTenantId:tenantId];
 
     NSArray __block *authResult;
-    [identityClient authenticate:^(NSArray *records) {
-      authResult = records;
+
+    [identityClient authenticate:^(NSArray *serviceCatalog) {
+        authResult = serviceCatalog;
+    } failure:^(NSHTTPURLResponse *responseObject, NSError *error) {
+
     }];
 
     while (authResult == nil) {
@@ -376,14 +378,16 @@ describe(@"HPCSSwiftClient", ^{
             [objectToSave setValue:@"image/jpeg" forKey:@"mimeTypeForFile"];
             [objectToSave setValue:createDummyNSDataObject(430) forKey:@"data"];
 
-            [client saveObject:objectToSave success:^(NSHTTPURLResponse *response){
+            [client saveObject:objectToSave success:^(NSHTTPURLResponse *responseObject) {
               requestCompleted = YES;
-              saveOp = response;
-            } failure:^(NSHTTPURLResponse *response,NSError *error ){
+              saveOp = responseObject;
+            } progress:^(NSUInteger bytesWritten, long long int totalBytesWritten, long long int totalBytesExpectedToWrite) {
+
+            } failure:^(NSHTTPURLResponse *responseObject, NSError *error) {
               requestCompleted = YES;
-              saveOp = response;
-            }
-            ];
+              saveOp = responseObject;
+            }];
+
             [KWSpec waitWithTimeout:3.0 forCondition:^BOOL() {
               return requestCompleted;
             }];
@@ -407,10 +411,16 @@ describe(@"HPCSSwiftClient", ^{
               [objectToSave setValue:@"image/jpeg" forKey:@"mimeTypeForFile"];
               [objectToSave setValue:createDummyNSDataObject(430) forKey:@"data"];
 
-              [client saveObject:objectToSave success:^(NSHTTPURLResponse *operation){
+              [client saveObject:objectToSave success:^(NSHTTPURLResponse *responseObject) {
                 requestCompleted = YES;
-                saveOp = operation;
-              } failure:nil];
+                saveOp = responseObject;
+              } progress:^(NSUInteger bytesWritten, long long int totalBytesWritten, long long int totalBytesExpectedToWrite) {
+
+              } failure:^(NSHTTPURLResponse *responseObject, NSError *error) {
+                requestCompleted = YES;
+                saveOp = responseObject;
+              }];
+
               [KWSpec waitWithTimeout:3.0 forCondition:^BOOL() {
                 return requestCompleted;
               }];

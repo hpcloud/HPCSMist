@@ -30,8 +30,11 @@ SPEC_BEGIN(ComputeClientSpec)
         identityClient = [[HPCSIdentityClient alloc] initWithUsername:userName andPassword:password andTenantId:tenantId];
 
         NSArray __block *authResult;
-        [identityClient authenticate:^(NSArray *records) {
-          authResult = records;
+        [identityClient authenticate:^(NSArray *serviceCatalog) {
+          authResult = serviceCatalog;
+
+        } failure:^(NSHTTPURLResponse *responseObject, NSError *error) {
+
         }];
 
         while (authResult == nil) {

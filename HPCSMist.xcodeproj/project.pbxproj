@@ -58,7 +58,6 @@
 		AF1D25E116792B6600454661 /* tokens.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25CA16792B6600454661 /* tokens.json */; };
 		AF1D25E216792B6600454661 /* tokensApiCreds.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25CB16792B6600454661 /* tokensApiCreds.json */; };
 		AF1D25E316792B6600454661 /* unauthorized.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25CC16792B6600454661 /* unauthorized.json */; };
-		AF1D25E416792B6600454661 /* SwiftObjectSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D25CD16792B6600454661 /* SwiftObjectSpec.m */; };
 		AF1D25EA16792B8F00454661 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D25E816792B8F00454661 /* main.m */; };
 		AF1D25F716792BA600454661 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25ED16792BA600454661 /* Default-568h@2x.png */; };
 		AF1D25F816792BA600454661 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25EE16792BA600454661 /* Default.png */; };
@@ -67,6 +66,8 @@
 		AF1D25FB16792BA600454661 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25F316792BA600454661 /* MainStoryboard_iPad.storyboard */; };
 		AF1D25FC16792BA600454661 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25F516792BA600454661 /* MainStoryboard_iPhone.storyboard */; };
 		AF4BB8AF167933D10019C57C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF4BB8AE167933D10019C57C /* Security.framework */; };
+		AF4BB8CC167A97C20019C57C /* OHHTTPStubs.m in Sources */ = {isa = PBXBuildFile; fileRef = AF4BB8C9167A97C20019C57C /* OHHTTPStubs.m */; };
+		AF4BB8CD167A97C20019C57C /* OHHTTPStubsResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = AF4BB8CB167A97C20019C57C /* OHHTTPStubsResponse.m */; };
 		CCC949AEC10D4782B40CAB2E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B6CE0E57B1E4D57AB466D9B /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -134,7 +135,6 @@
 		AF1D25CA16792B6600454661 /* tokens.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tokens.json; sourceTree = "<group>"; };
 		AF1D25CB16792B6600454661 /* tokensApiCreds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tokensApiCreds.json; sourceTree = "<group>"; };
 		AF1D25CC16792B6600454661 /* unauthorized.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = unauthorized.json; sourceTree = "<group>"; };
-		AF1D25CD16792B6600454661 /* SwiftObjectSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwiftObjectSpec.m; sourceTree = "<group>"; };
 		AF1D25E616792B8F00454661 /* HPCSMist-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "HPCSMist-Info.plist"; sourceTree = "<group>"; };
 		AF1D25E716792B8F00454661 /* HPCSMist-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HPCSMist-Prefix.pch"; sourceTree = "<group>"; };
 		AF1D25E816792B8F00454661 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -145,9 +145,13 @@
 		AF1D25F416792BA600454661 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		AF1D25F616792BA600454661 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		AF4BB8AD167933660019C57C /* HPCSCommonMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPCSCommonMacros.h; sourceTree = "<group>"; };
-		AF4BB8AE167933D10019C57C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		AF4BB8AE167933D10019C57C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = ../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk/System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		AF4BB8C5167A40E50019C57C /* scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = scripts; sourceTree = "<group>"; };
 		AF4BB8C6167A46820019C57C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		AF4BB8C8167A97C20019C57C /* OHHTTPStubs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OHHTTPStubs.h; sourceTree = "<group>"; };
+		AF4BB8C9167A97C20019C57C /* OHHTTPStubs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OHHTTPStubs.m; sourceTree = "<group>"; };
+		AF4BB8CA167A97C20019C57C /* OHHTTPStubsResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OHHTTPStubsResponse.h; sourceTree = "<group>"; };
+		AF4BB8CB167A97C20019C57C /* OHHTTPStubsResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OHHTTPStubsResponse.m; sourceTree = "<group>"; };
 		EFEC43993DAE4ABBA4461FA0 /* Pods-HPCSMistTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HPCSMistTests.xcconfig"; path = "Pods/Pods-HPCSMistTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -183,7 +187,6 @@
 			children = (
 				AF4BB8C6167A46820019C57C /* README.md */,
 				AF4BB8C5167A40E50019C57C /* scripts */,
-				AF4BB8AE167933D10019C57C /* Security.framework */,
 				AF1D255A16792B0300454661 /* Classes */,
 				AF1D25B216792B6600454661 /* HPCSMistTests */,
 				AF1D25E516792B8F00454661 /* Other Sources */,
@@ -213,6 +216,7 @@
 				AF1D2519167927C800454661 /* SenTestingKit.framework */,
 				6B6CE0E57B1E4D57AB466D9B /* libPods.a */,
 				5F8C673EB98845D7BCF23BA7 /* libPods-HPCSMistTests.a */,
+				AF4BB8AE167933D10019C57C /* Security.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -282,6 +286,7 @@
 		AF1D25B216792B6600454661 /* HPCSMistTests */ = {
 			isa = PBXGroup;
 			children = (
+				AF4BB8C7167A97C20019C57C /* OHHTTPStubs */,
 				AF1D25B316792B6600454661 /* InfoPlist.strings */,
 				AF1D25B516792B6600454661 /* EnvironmentSpec.m */,
 				AF1D25B616792B6600454661 /* HPCSIdentityClientSpec.m */,
@@ -291,7 +296,6 @@
 				AF1D25BA16792B6600454661 /* KWSpec+WaitFor.h */,
 				AF1D25BB16792B6600454661 /* KWSpec+WaitFor.m */,
 				AF1D25BC16792B6600454661 /* SupportingFiles */,
-				AF1D25CD16792B6600454661 /* SwiftObjectSpec.m */,
 			);
 			path = HPCSMistTests;
 			sourceTree = "<group>";
@@ -354,6 +358,17 @@
 				AF1D25F516792BA600454661 /* MainStoryboard_iPhone.storyboard */,
 			);
 			path = Nibs;
+			sourceTree = "<group>";
+		};
+		AF4BB8C7167A97C20019C57C /* OHHTTPStubs */ = {
+			isa = PBXGroup;
+			children = (
+				AF4BB8C8167A97C20019C57C /* OHHTTPStubs.h */,
+				AF4BB8C9167A97C20019C57C /* OHHTTPStubs.m */,
+				AF4BB8CA167A97C20019C57C /* OHHTTPStubsResponse.h */,
+				AF4BB8CB167A97C20019C57C /* OHHTTPStubsResponse.m */,
+			);
+			path = OHHTTPStubs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -549,7 +564,8 @@
 				AF1D25D216792B6600454661 /* HPCSNovaClientSpec.m in Sources */,
 				AF1D25D316792B6600454661 /* HPCSSwiftClientSpec.m in Sources */,
 				AF1D25D416792B6600454661 /* KWSpec+WaitFor.m in Sources */,
-				AF1D25E416792B6600454661 /* SwiftObjectSpec.m in Sources */,
+				AF4BB8CC167A97C20019C57C /* OHHTTPStubs.m in Sources */,
+				AF4BB8CD167A97C20019C57C /* OHHTTPStubsResponse.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -682,7 +698,7 @@
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HPCSMist.app/HPCSMist";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "HPCSMist/HPCSMist-Prefix.pch";
+				GCC_PREFIX_HEADER = "Other Sources/HPCSMist-Prefix.pch";
 				INFOPLIST_FILE = "HPCSMistTests/HPCSMistTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -697,7 +713,7 @@
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HPCSMist.app/HPCSMist";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "HPCSMist/HPCSMist-Prefix.pch";
+				GCC_PREFIX_HEADER = "Other Sources/HPCSMist-Prefix.pch";
 				INFOPLIST_FILE = "HPCSMistTests/HPCSMistTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";

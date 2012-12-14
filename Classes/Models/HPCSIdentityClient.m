@@ -151,23 +151,23 @@ NSString * const HPCSKeystoneCredentialsDidChangeNotification = @"com.hp.cloud.k
         parameters:[self authorizationInfo]
            success:^(__unused AFHTTPRequestOperation *operation, id JSON) {
 
-               NSMutableArray *mutableRecords = [NSMutableArray array];
-               NSDictionary *tokenAtt = [JSON valueForKeyPath:@"access.token"];
-               self.token = [[HPCSToken alloc] initWithAttributes:tokenAtt];
+             NSMutableArray *mutableRecords = [NSMutableArray array];
+             NSDictionary *tokenAtt = [JSON valueForKeyPath:@"access.token"];
+             self.token = [[HPCSToken alloc] initWithAttributes:tokenAtt];
 
-               //TODO - serialize the service catalog on
-               NSArray *serviceItems = [JSON valueForKeyPath:@"access.serviceCatalog"];
+             //TODO - serialize the service catalog on
+             NSArray *serviceItems = [JSON valueForKeyPath:@"access.serviceCatalog"];
 
-               for (NSDictionary *attributes in serviceItems) {
-                     //hash with name, type, endpoints[]
-                     [mutableRecords addObject:[NSMutableDictionary dictionaryWithDictionary:attributes]];
-               }
-               self.serviceCatalog = [NSArray arrayWithArray:mutableRecords];
+             for (NSDictionary *attributes in serviceItems) {
+                   //hash with name, type, endpoints[]
+                   [mutableRecords addObject:[NSMutableDictionary dictionaryWithDictionary:attributes]];
+             }
+             self.serviceCatalog = [NSArray arrayWithArray:mutableRecords];
 
-               if (block) {
-                   block(self.serviceCatalog);
-               }
-               self.isTokenValid = YES;
+             if (block) {
+                 block(self.serviceCatalog);
+             }
+             self.isTokenValid = YES;
 
            }
            failure:^(__unused AFHTTPRequestOperation *operation, NSError *error) {
@@ -176,7 +176,7 @@ NSString * const HPCSKeystoneCredentialsDidChangeNotification = @"com.hp.cloud.k
                                                                    object:self
                                                                  userInfo:userInfo];
                if (failure) {
-                  failure(operation.response,error);
+                failure(operation.response,error);
                }
            }];
 
@@ -186,33 +186,12 @@ NSString * const HPCSKeystoneCredentialsDidChangeNotification = @"com.hp.cloud.k
 
 
 -(BOOL) isTokenExpired {
-    return (self.token ? ([self.token isExpired] ? YES : NO) : YES);
+  return (self.token ? ([self.token isExpired] ? YES : NO) : YES);
 }
 
 -(BOOL)isAuthenticated {
   return (![self isTokenExpired] && self.serviceCatalog);
 }
-
-//-(void) tokenCheckValid:(void (^)(AFHTTPRequestOperation *operation)) validBlock invalid:(void (^)(AFHTTPRequestOperation *operation))invalidBlock{
-//
-//    [self setDefaultHeader:@"X-Auth-Token" value:self.token.tokenId];
-//
-//    [self getPath:@"/v2.0/tenants" parameters:nil success:^(__unused AFHTTPRequestOperation *operation, id JSON) {
-//        if(validBlock){
-//            validBlock(operation);
-//        }
-//        self.isTokenValid = YES;
-//
-//    }
-//    failure:^(__unused AFHTTPRequestOperation *operation, NSError *error) {
-//        if(invalidBlock){
-//            invalidBlock(operation);
-//        }
-//        self.isTokenValid= NO;
-//    }];
-//
-//
-//}
 
 -(void) tokenInvalidate:(void (^)(NSHTTPURLResponse *response)) successBlock failure:(void (^)(NSHTTPURLResponse *response, NSError *error))failureBlock {
     [self setDefaultHeader:@"X-Auth-Token" value:self.token.tokenId];
@@ -221,14 +200,14 @@ NSString * const HPCSKeystoneCredentialsDidChangeNotification = @"com.hp.cloud.k
     [self deletePath:[NSString stringWithFormat:@"/v2.0/tokens/%@",self.token.tokenId] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         [self setDefaultHeader:@"Accept" value:@"application/json"];
         if(successBlock){
-            successBlock(operation.response);
+          successBlock(operation.response);
         }
         self.isTokenValid = NO;
         [self setToken:nil];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
       [self setDefaultHeader:@"Accept" value:@"application/json"];
         if(failureBlock){
-            failureBlock(operation.response,error);
+          failureBlock(operation.response,error);
         }
     }];
     
@@ -247,8 +226,6 @@ NSString * const HPCSKeystoneCredentialsDidChangeNotification = @"com.hp.cloud.k
     NSString *swiftURL = [self publicUrlForObjectStorage];
     if(IsEmpty(swiftURL)){
       [[NSNotificationCenter defaultCenter] postNotificationName:HPCSKeystoneSwiftCatalogIsEmptyNotification object:self];
-       //TODO move to view layer
-       //[PRPAlertView showWithTitle:@"Activation Error" message:@"No activated Object Storage service found." buttonTitle:@"OK"];
       return nil;
     }
     return  [[HPCSSwiftClient  alloc] initWithIdentityClient:self];
@@ -260,10 +237,10 @@ NSString * const HPCSKeystoneCredentialsDidChangeNotification = @"com.hp.cloud.k
     return nil;
   }
     for(id item in self.serviceCatalog){
-        if([[item valueForKey:@"type"] isEqualToString:@"compute"]){
-            NSDictionary *ep=[[item valueForKey:@"endpoints"] objectAtIndex:0];
-            return [ep valueForKey:@"publicURL"];
-        }
+      if([[item valueForKey:@"type"] isEqualToString:@"compute"]){
+        NSDictionary *ep=[[item valueForKey:@"endpoints"] objectAtIndex:0];
+        return [ep valueForKey:@"publicURL"];
+      }
     }
     return nil;
 }
@@ -273,10 +250,10 @@ NSString * const HPCSKeystoneCredentialsDidChangeNotification = @"com.hp.cloud.k
     return nil;
   }
     for(id item in self.serviceCatalog){
-        if([[item valueForKey:@"type"] isEqualToString:@"object-store"]){
-          NSDictionary *ep=[[item valueForKey:@"endpoints"] objectAtIndex:0];
-          return [ep valueForKey:@"publicURL"];
-        }
+      if([[item valueForKey:@"type"] isEqualToString:@"object-store"]){
+        NSDictionary *ep=[[item valueForKey:@"endpoints"] objectAtIndex:0];
+        return [ep valueForKey:@"publicURL"];
+      }
     }
     return nil;
 }

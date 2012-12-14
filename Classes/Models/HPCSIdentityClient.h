@@ -34,7 +34,10 @@ extern NSString * const kHPCSAuthAccessKeyCredentialsKey;
 extern NSString * const kHPCSAuthAccessKey;
 extern NSString * const kHPCSAuthSecretKey;
 
-/**Allows Access to the HP Cloud Services authorization system (Control Services).*/
+/**Allows Access to the HP Cloud Services authorization system (Control Services).
+
+  @discussion this classes listens for the notification HPCSKeystoneCredentialsDidChangeNotification so that it can dump the current cached token.  Use this to force the token to be dumped
+* */
 
 @interface HPCSIdentityClient : AFHTTPClient
 
