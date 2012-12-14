@@ -113,7 +113,7 @@
 		AF1D257216792B0300454661 /* HPCSToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPCSToken.m; sourceTree = "<group>"; };
 		AF1D257316792B0300454661 /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainWrapper.h; sourceTree = "<group>"; };
 		AF1D257416792B0300454661 /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainWrapper.m; sourceTree = "<group>"; };
-		AF1D25B416792B6600454661 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AF1D25B416792B6600454661 /* InfoPlist.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = ../en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AF1D25B516792B6600454661 /* EnvironmentSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnvironmentSpec.m; sourceTree = "<group>"; };
 		AF1D25B616792B6600454661 /* HPCSIdentityClientSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPCSIdentityClientSpec.m; sourceTree = "<group>"; };
 		AF1D25B716792B6600454661 /* HPCSMistTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "HPCSMistTests-Info.plist"; sourceTree = "<group>"; };
@@ -287,10 +287,8 @@
 			isa = PBXGroup;
 			children = (
 				AF4BB8C7167A97C20019C57C /* OHHTTPStubs */,
-				AF1D25B316792B6600454661 /* InfoPlist.strings */,
 				AF1D25B516792B6600454661 /* EnvironmentSpec.m */,
 				AF1D25B616792B6600454661 /* HPCSIdentityClientSpec.m */,
-				AF1D25B716792B6600454661 /* HPCSMistTests-Info.plist */,
 				AF1D25B816792B6600454661 /* HPCSNovaClientSpec.m */,
 				AF1D25B916792B6600454661 /* HPCSSwiftClientSpec.m */,
 				AF1D25BA16792B6600454661 /* KWSpec+WaitFor.h */,
@@ -317,6 +315,8 @@
 				AF1D25CA16792B6600454661 /* tokens.json */,
 				AF1D25CB16792B6600454661 /* tokensApiCreds.json */,
 				AF1D25CC16792B6600454661 /* unauthorized.json */,
+				AF1D25B716792B6600454661 /* HPCSMistTests-Info.plist */,
+				AF1D25B316792B6600454661 /* InfoPlist.strings */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -583,7 +583,7 @@
 		AF1D25B316792B6600454661 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				AF1D25B416792B6600454661 /* en */,
+				AF1D25B416792B6600454661 /* InfoPlist.strings */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
