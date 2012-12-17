@@ -63,7 +63,7 @@ extern NSString *const HPCSSwiftAccountContainerCountHeaderKey;
  *
  */
 - (void) containers:( void ( ^)(NSHTTPURLResponse * responseObject,NSArray * records) )success
-   failure         :( void ( ^)(NSHTTPURLResponse * responseObject, NSError * error) )failure;
+ failure           :( void ( ^)(NSHTTPURLResponse * responseObject, NSError * error) )failure;
 
 /**
    Creates a new container belonging to the account of the authenticated request sender.
@@ -81,7 +81,7 @@ extern NSString *const HPCSSwiftAccountContainerCountHeaderKey;
 
  */
 - (void) saveContainer:(id)container success:( void ( ^)(NSHTTPURLResponse *) )saved
-   failure            :( void ( ^)(NSHTTPURLResponse *, NSError *) )failure;
+ failure              :( void ( ^)(NSHTTPURLResponse *, NSError *) )failure;
 
 /**
    Deletes the specified container.
@@ -101,8 +101,8 @@ extern NSString *const HPCSSwiftAccountContainerCountHeaderKey;
  */
 
 - (void) deleteContainer:(id)container
-   success              :( void ( ^)(NSHTTPURLResponse * responseObject) )success
-   failure              :( void ( ^)(NSHTTPURLResponse * responseObject, NSError * error) )failure;
+ success                :( void ( ^)(NSHTTPURLResponse * responseObject) )success
+ failure                :( void ( ^)(NSHTTPURLResponse * responseObject, NSError * error) )failure;
 
 /** Gives metadata details about the given container
 
@@ -113,8 +113,8 @@ extern NSString *const HPCSSwiftAccountContainerCountHeaderKey;
  */
 
 - (void) headContainer:(id)container
-   success            :( void ( ^)(NSHTTPURLResponse * responseObject) )success
-   failure            :( void ( ^)(NSHTTPURLResponse * responseObject, NSError * error) )failure;
+ success              :( void ( ^)(NSHTTPURLResponse * responseObject) )success
+ failure              :( void ( ^)(NSHTTPURLResponse * responseObject, NSError * error) )failure;
 
 ///------------------------
 /// @name Object Operations
@@ -133,7 +133,7 @@ extern NSString *const HPCSSwiftAccountContainerCountHeaderKey;
  */
 
 - (void) objectsForContainer:(id)container success:( void ( ^)(NSHTTPURLResponse * responseObject,NSArray * records) )success
-   failure                  :( void ( ^)(NSHTTPURLResponse * responseObject, NSError * error) )failure;
+ failure                    :( void ( ^)(NSHTTPURLResponse * responseObject, NSError * error) )failure;
 
 /**
    Deletes the specified object.
@@ -151,8 +151,8 @@ extern NSString *const HPCSSwiftAccountContainerCountHeaderKey;
    404 If an incorrect account is specified.
  */
 - (void) deleteObject:(id)object
-   success           :( void ( ^)(NSHTTPURLResponse * responseObject) )success
-   failure           :( void ( ^)(NSHTTPURLResponse * responseObject, NSError * error) )failure;
+ success             :( void ( ^)(NSHTTPURLResponse * responseObject) )success
+ failure             :( void ( ^)(NSHTTPURLResponse * responseObject, NSError * error) )failure;
 
 /**
    Saves the specified object.
@@ -166,9 +166,9 @@ extern NSString *const HPCSSwiftAccountContainerCountHeaderKey;
 
  */
 - (void) saveObject:(id)object
-    success         :( void ( ^)(NSHTTPURLResponse * responseObject) )success
-   progress        :( void ( ^)(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) )progress
-    failure         :( void ( ^)(NSHTTPURLResponse * responseObject, NSError * error) )failure;
+  success           :( void ( ^)(NSHTTPURLResponse * responseObject) )success
+ progress          :( void ( ^)(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) )progress
+  failure           :( void ( ^)(NSHTTPURLResponse * responseObject, NSError * error) )failure;
 
 /**
    Retrieves the specified object.
@@ -180,8 +180,8 @@ extern NSString *const HPCSSwiftAccountContainerCountHeaderKey;
  */
 
 - (void) getObject:(id)object
-   success        :( void ( ^)(NSHTTPURLResponse * responseObject, NSData * data) )success
-   failure        :( void ( ^)(NSHTTPURLResponse * responseObject, NSError * error) )failure;
+ success          :( void ( ^)(NSHTTPURLResponse * responseObject, NSData * data) )success
+ failure          :( void ( ^)(NSHTTPURLResponse * responseObject, NSError * error) )failure;
 
 /**
    Retrieves information about an object for a user with read access without fetching the object.
@@ -201,31 +201,10 @@ extern NSString *const HPCSSwiftAccountContainerCountHeaderKey;
 
  */
 - (void) headObject:(id)object
-   success         :( void ( ^)(NSHTTPURLResponse * responseObject) )success
-   failure         :( void ( ^)(NSHTTPURLResponse * responseObject, NSError * error) )failure;
-
-/**
-   Adds an object to a container using forms.
-
-   @param path The NSString that represents the path to this resource
-   @param mimeType The mimeType of the resource
-   @param destinationPath Don know what this is
-   @param parameters The HTTP parameters for the POST operation
-   @param progress Block which takes an parameters for progress bars
-   @param success  Block returning NSHTTPURLResponse from Swift.
-   @param failure  Block returning NSHTTPURLResponse from Swift and NSError
-
-   @deprecated not used currently
+ success           :( void ( ^)(NSHTTPURLResponse * responseObject) )success
+ failure           :( void ( ^)(NSHTTPURLResponse * responseObject, NSError * error) )failure;
 
 
- */
-- (void) postObjectWithData:(NSString *)path
-          mimeType                :(NSString *)mimeType
-   destinationPath         :(NSString *)destinationPath
-        parameters              :(NSDictionary *)parameters
-          progress                :( void ( ^)(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) )progress
-           success                 :( void ( ^)(NSHTTPURLResponse * responseObject) )success
-           failure                 :( void ( ^)(NSHTTPURLResponse * responseObject, NSError * error) )failure;
 
 /**
    Adds an object to a bucket for a user that has write access to the bucket. A success response indicates the object was successfully stored; if the object already exists, it will be overwritten.
@@ -238,12 +217,12 @@ extern NSString *const HPCSSwiftAccountContainerCountHeaderKey;
    @param failure  Block returning NSHTTPURLResponse from Swift and NSError
  */
 - (void) putObjectWithData:(NSData *)data
-          mimeType               :(NSString *)mimeType
-   destinationPath        :(NSString *)destinationPath
-        parameters             :(NSDictionary *)parameters
-          progress               :( void ( ^)(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) )progress
-           success                :( void ( ^)(NSHTTPURLResponse * responseObject) )success
-           failure                :( void ( ^)(NSHTTPURLResponse * responseObject, NSError * error) )failure;
+        mimeType                 :(NSString *)mimeType
+ destinationPath          :(NSString *)destinationPath
+      parameters               :(NSDictionary *)parameters
+        progress                 :( void ( ^)(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) )progress
+         success                  :( void ( ^)(NSHTTPURLResponse * responseObject) )success
+         failure                  :( void ( ^)(NSHTTPURLResponse * responseObject, NSError * error) )failure;
 
 /**
    Returns the full path for an object

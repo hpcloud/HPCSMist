@@ -129,7 +129,7 @@ extern NSString *const HPCSNovaImageDetailsDidFailNotification;
 
  */
 - (void) terminateServer:(id)serverInfo
-   success              :( void ( ^)(NSHTTPURLResponse * response) )success
-   failure              :( void ( ^)(NSHTTPURLResponse * response, NSError * error) )failure;
+ success                :( void ( ^)(NSHTTPURLResponse * response) )success
+ failure                :( void ( ^)(NSHTTPURLResponse * response, NSError * error) )failure;
 
 @end

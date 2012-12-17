@@ -5,7 +5,7 @@
 //  Created by Mike Hagedorn on 12/12/12.
 //  Copyright (c) 2012 Mike Hagedorn. All rights reserved.
 //
-
+// COV_NF_START
 #import "HPCSViewController.h"
 
 @interface HPCSViewController ()
@@ -16,16 +16,18 @@
 
 - (void) viewDidLoad
 {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+  [super viewDidLoad];
+  // Do any additional setup after loading the view, typically from a nib.
 }
 
 
 - (void) didReceiveMemoryWarning
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+  [super didReceiveMemoryWarning];
+  // Dispose of any resources that can be recreated.
 }
 
 
 @end
+
+// COV_NF_END

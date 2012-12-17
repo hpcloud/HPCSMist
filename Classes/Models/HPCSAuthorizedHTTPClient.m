@@ -11,13 +11,13 @@
 
 - (void) setAuthorizationHeaderWithToken:(NSString *)token
 {
-    [self setDefaultHeader:@"X-Auth-Token" value:token];
+  [self setDefaultHeader:@"X-Auth-Token" value:token];
 }
 
 
 - (void) clearAuthorizationHeader
 {
-    [self setDefaultHeader:@"X-Auth-Token" value:nil];
+  [self setDefaultHeader:@"X-Auth-Token" value:nil];
 }
 
 

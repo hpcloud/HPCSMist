@@ -14,16 +14,16 @@
 
 - (id) initWithAttributes:(NSDictionary *)attributes
 {
-    self = [super init];
-    if (!self)
-    {
-        return nil;
-    }
+  self = [super init];
+  if (!self)
+  {
+    return nil;
+  }
 
-    self.name = [attributes valueForKeyPath:@"name"];
-    self.tenantId = [attributes valueForKeyPath:@"id"];
+  self.name = [attributes valueForKeyPath:@"name"];
+  self.tenantId = [attributes valueForKeyPath:@"id"];
 
-    return self;
+  return self;
 }
 
 

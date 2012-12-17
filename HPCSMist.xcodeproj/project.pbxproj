@@ -85,7 +85,7 @@
 		048D663BE13C4C10BCDB5371 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		5F8C673EB98845D7BCF23BA7 /* libPods-HPCSMistTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HPCSMistTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B6CE0E57B1E4D57AB466D9B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		AF1D24EE167927C700454661 /* HPCSMist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HPCSMist.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF1D24EE167927C700454661 /* HPCSMist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = HPCSMist.app; path = "../../../../Library/Caches/appCode10/DerivedData/HPCSMist-156636c1/Build/Products/Debug-iphonesimulator/HPCSMist.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF1D24F2167927C800454661 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AF1D24F4167927C800454661 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AF1D24F6167927C800454661 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -144,7 +144,6 @@
 		AF1D25F216792BA600454661 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AF1D25F416792BA600454661 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		AF1D25F616792BA600454661 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		AF26F0A3167BA810004405D1 /* Xcode.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; name = Xcode.app; path = ../../../../Applications/Xcode.app; sourceTree = "<group>"; };
 		AF4BB8AD167933660019C57C /* HPCSCommonMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPCSCommonMacros.h; sourceTree = "<group>"; };
 		AF4BB8AE167933D10019C57C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = ../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk/System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		AF4BB8C5167A40E50019C57C /* scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = scripts; sourceTree = "<group>"; };
@@ -186,7 +185,6 @@
 		AF1D24E3167927C700454661 = {
 			isa = PBXGroup;
 			children = (
-				AF26F0A3167BA810004405D1 /* Xcode.app */,
 				AF4BB8C6167A46820019C57C /* README.md */,
 				AF4BB8C5167A40E50019C57C /* scripts */,
 				AF1D255A16792B0300454661 /* Classes */,
@@ -194,7 +192,6 @@
 				AF1D25E516792B8F00454661 /* Other Sources */,
 				AF1D25EB16792BA600454661 /* Resources */,
 				AF1D24F1167927C800454661 /* Frameworks */,
-				AF1D24EF167927C700454661 /* Products */,
 				048D663BE13C4C10BCDB5371 /* Pods.xcconfig */,
 				EFEC43993DAE4ABBA4461FA0 /* Pods-HPCSMistTests.xcconfig */,
 			);
@@ -281,6 +278,7 @@
 				AF1D257216792B0300454661 /* HPCSToken.m */,
 				AF1D257316792B0300454661 /* KeychainWrapper.h */,
 				AF1D257416792B0300454661 /* KeychainWrapper.m */,
+				AF1D24EF167927C700454661 /* Products */,
 			);
 			path = Models;
 			sourceTree = "<group>";
