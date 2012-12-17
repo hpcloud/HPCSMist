@@ -318,6 +318,8 @@ describe(@"HPCSSwiftClient", ^{
           [[objectList should] beEmpty];
 
         });
+
+
       });
       context(@"#delete", ^{
         context(@"for objects that exist", ^{

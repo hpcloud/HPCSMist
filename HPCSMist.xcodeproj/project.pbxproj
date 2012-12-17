@@ -384,6 +384,7 @@
 				AF1D24EB167927C700454661 /* Frameworks */,
 				AF1D24EC167927C700454661 /* Resources */,
 				E8D7928AF50F4A85BDAA4B9F /* Copy Pods Resources */,
+				AF03237E167F8EF200D46904 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -495,6 +496,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Pods-HPCSMistTests-resources.sh\"\n";
+		};
+		AF03237E167F8EF200D46904 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
 		};
 		AF1D2516167927C800454661 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
