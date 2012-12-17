@@ -2,6 +2,6 @@
 
 @interface KWSpec (WaitFor)
 
-+ (void) waitWithTimeout:(NSTimeInterval)timeout forCondition:(BOOL(^)())conditionalBlock;
++ (void) waitWithTimeout:(NSTimeInterval)timeout forCondition:( BOOL ( ^)() )conditionalBlock;
 
 @end

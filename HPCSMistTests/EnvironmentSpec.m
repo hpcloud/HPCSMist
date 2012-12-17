@@ -12,21 +12,16 @@
 
 SPEC_BEGIN(EnvironmentSpec)
 
-  describe(@"Environment", ^{
-      context(@"when newly created", ^{
-          context(@"and there is no configuration specified in the main bundle", ^{
-            it(@"should have the correct identity URL", ^{
-                Environment *e = [Environment sharedInstance];
-                [[e.HPCSIdentityURL should] equal:@"https://region-a.geo-1.identity.hpcloudsvc.com:35357"];
+        describe(@"Environment", ^{
+            context(@"when newly created", ^{
+                context(@"and there is no configuration specified in the main bundle", ^{
+                    it(@"should have the correct identity URL", ^{
+                        Environment *e = [Environment sharedInstance];
+                        [[e.HPCSIdentityURL should] equal:@"https://region-a.geo-1.identity.hpcloudsvc.com:35357"];
+                    });
+                });
             });
-            it(@"should print the appropriate URL in its description", ^{
-              Environment *e = [Environment sharedInstance];
-              [[[e description] should] equal:@"https://region-a.geo-1.identity.hpcloudsvc.com:35357"];
-            });
-
-          });
-      });
-  });
+        });
 
 
 SPEC_END

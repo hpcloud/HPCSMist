@@ -287,7 +287,6 @@
 			isa = PBXGroup;
 			children = (
 				AF4BB8C7167A97C20019C57C /* OHHTTPStubs */,
-				AF1D25B516792B6600454661 /* EnvironmentSpec.m */,
 				AF1D25B616792B6600454661 /* HPCSIdentityClientSpec.m */,
 				AF1D25B816792B6600454661 /* HPCSNovaClientSpec.m */,
 				AF1D25B916792B6600454661 /* HPCSSwiftClientSpec.m */,
@@ -296,6 +295,7 @@
 				AF1D25BC16792B6600454661 /* SupportingFiles */,
 				AF1D25B716792B6600454661 /* HPCSMistTests-Info.plist */,
 				AF1D25B316792B6600454661 /* InfoPlist.strings */,
+				AF1D25B516792B6600454661 /* EnvironmentSpec.m */,
 			);
 			path = HPCSMistTests;
 			sourceTree = "<group>";

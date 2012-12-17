@@ -339,35 +339,6 @@ SPEC_BEGIN(SwiftClientSpec)
                   [[meta objectForKey:@"X-Container-Bytes-Used"] shouldNotBeNil];
                   [[client defaultValueForHeader:@"Accept"] shouldNotBeNil];
                 });
-                context(@"and it fails", ^{
-
-                  beforeEach(^{
-                    stubEmptyResponseWithStatusCode(@"parent", @"HEAD", 500);
-                  });
-                  afterEach(^{
-                    [OHHTTPStubs removeLastRequestHandler];
-                  });
-
-                  it(@"returns an error", ^{
-                    NSDictionary *subject = @{@"name" : @"parent"};
-                    NSError __block *saveErr;
-
-                    [client headContainer: subject
-                                  success:nil
-                                  failure:^(NSHTTPURLResponse *responseObject, NSError *error) {
-                                    requestCompleted = YES;
-                                    saveErr = error;
-
-                    }];
-
-
-                    [KWSpec waitWithTimeout:3.0 forCondition:^BOOL() {
-                      return requestCompleted;
-                    }];
-                    [saveErr shouldNotBeNil];
-
-                  });
-                });
               });
             });
             context(@"and you are working with objects", ^{
