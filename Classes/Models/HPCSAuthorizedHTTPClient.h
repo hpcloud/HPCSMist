@@ -9,5 +9,7 @@
 
 /** HTTPClient which adds the appropriate token to the request */
 @interface HPCSAuthorizedHTTPClient : AFHTTPClient
+//TODO make this the parent of compute, nova
+
 
 @end
