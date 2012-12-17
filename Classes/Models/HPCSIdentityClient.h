@@ -14,30 +14,28 @@
 #import "HPCSToken.h"
 #import "HPCSTenant.h"
 
+extern NSString *const HPCSNetworkingErrorDomain;
 
-extern NSString * const HPCSNetworkingErrorDomain;
+extern NSString *const HPCSAuthenticationDidFailNotification;
 
-extern NSString * const HPCSAuthenticationDidFailNotification;
+extern NSString *const HPCSKeystoneNovaCatalogIsEmptyNotification;
+extern NSString *const HPCSKeystoneSwiftCatalogIsEmptyNotification;
 
-extern NSString * const HPCSKeystoneNovaCatalogIsEmptyNotification;
-extern NSString * const HPCSKeystoneSwiftCatalogIsEmptyNotification;
+extern NSString *const HPCSKeystoneCredentialsDidChangeNotification;
 
-
-extern NSString * const HPCSKeystoneCredentialsDidChangeNotification;
-
-extern NSString * const kHPCSAuthUsernameKey;
-extern NSString * const kHPCSAuthPasswordKey;
-extern NSString * const kHPCSAuthKey;
-extern NSString * const kHPCSAuthPasswordCredentialsKey;
-extern NSString * const kHPCSAuthTenantIdKey;
-extern NSString * const kHPCSAuthAccessKeyCredentialsKey;
-extern NSString * const kHPCSAuthAccessKey;
-extern NSString * const kHPCSAuthSecretKey;
+extern NSString *const kHPCSAuthUsernameKey;
+extern NSString *const kHPCSAuthPasswordKey;
+extern NSString *const kHPCSAuthKey;
+extern NSString *const kHPCSAuthPasswordCredentialsKey;
+extern NSString *const kHPCSAuthTenantIdKey;
+extern NSString *const kHPCSAuthAccessKeyCredentialsKey;
+extern NSString *const kHPCSAuthAccessKey;
+extern NSString *const kHPCSAuthSecretKey;
 
 /**Allows Access to the HP Cloud Services authorization system (Control Services).
 
-  @discussion this classes listens for the notification HPCSKeystoneCredentialsDidChangeNotification so that it can dump the current cached token.  Use this to force the token to be dumped
-* */
+   @discussion this classes listens for the notification HPCSKeystoneCredentialsDidChangeNotification so that it can dump the current cached token.  Use this to force the token to be dumped
+ * */
 
 @interface HPCSIdentityClient : AFHTTPClient
 
@@ -48,19 +46,19 @@ extern NSString * const kHPCSAuthSecretKey;
 @property (retain) HPCSTenant *tenant;
 
 /** The NSArray of NSDictionary objects which represent services the current user can see. */
-@property (retain) NSArray* serviceCatalog;
+@property (retain) NSArray *serviceCatalog;
 
 /** Whether or not the current token is valid */
 @property (assign) BOOL isTokenValid;
 
-/** The access key for this user 
- @discussion will be nil if sharedClient is utilized for intitialization
+/** The access key for this user
+   @discussion will be nil if sharedClient is utilized for intitialization
  */
 @property (retain) NSString *accessKeyId;
 
-/** The access key for this user 
- 
- @discussion will be nil if sharedClient is utilized for intitialization
+/** The access key for this user
+
+   @discussion will be nil if sharedClient is utilized for intitialization
  */
 @property (retain) NSString *secretKey;
 
@@ -68,70 +66,63 @@ extern NSString * const kHPCSAuthSecretKey;
 /// @name Creating and Initializing HPCSIdentity Clients
 ///-----------------------------------------------------
 
+/** Convenience method to get the HPCSIdentityClient
 
-/** Convenience method to get the HPCSIdentityClient 
- 
- @discussion This is the designated initializer. Returns a singleton. If you use this method, then you are using the initWithUsername:andPassword:andTenantId: method to constuct the identity client instance, as opposed to the initWithAccessKeyId:andSecretKey:andTenantId: method.
+   @discussion This is the designated initializer. Returns a singleton. If you use this method, then you are using the initWithUsername:andPassword:andTenantId: method to constuct the identity client instance, as opposed to the initWithAccessKeyId:andSecretKey:andTenantId: method.
  */
-+(HPCSIdentityClient *)sharedClient;
++ (HPCSIdentityClient *) sharedClient;
 
 /** Initialize using username and password
 
- @param userName  The name that you use to login to the Management Console with
- @param password The password that you use to login to the Management Console with
- @param tenantId Your tenantId for your account
- @discussion HP Cloud Services allows either AccessKey and SecretKey based login or username and password based login.  sharedClient calls this one.
+   @param userName  The name that you use to login to the Management Console with
+   @param password The password that you use to login to the Management Console with
+   @param tenantId Your tenantId for your account
+   @discussion HP Cloud Services allows either AccessKey and SecretKey based login or username and password based login.  sharedClient calls this one.
  */
--(id) initWithUsername:(NSString *)userName andPassword:(NSString *)password andTenantId:(NSString *)tenantId;
+- (id) initWithUsername:(NSString *)userName andPassword:(NSString *)password andTenantId:(NSString *)tenantId;
 
 /** Initialize using accessKey and secret key
- 
- @param accessKey  Your access key
- @param secretKey  Your secret key
- @param tenantId Your tenantId for your account
- @discussion HP Cloud Services allows either AccessKey and SecretKey based login or username and password based login.
 
- 
+   @param accessKey  Your access key
+   @param secretKey  Your secret key
+   @param tenantId Your tenantId for your account
+   @discussion HP Cloud Services allows either AccessKey and SecretKey based login or username and password based login.
+
+
  */
 
-
--(id) initWithAccessKeyId:(NSString *)accessKey andSecretKey:(NSString *)secretKey andTenantId:(NSString *)tenantId;
+- (id) initWithAccessKeyId:(NSString *)accessKey andSecretKey:(NSString *)secretKey andTenantId:(NSString *)tenantId;
 
 /** NSDictionary which holds either username/password type information or accessKey/secretKey type of information */
--(NSDictionary *)authorizationInfo;
-
+- (NSDictionary *) authorizationInfo;
 
 ///------------------------------------------------------
 /// @name Authenticating with Control Services (Keystone)
 ///------------------------------------------------------
 
-/** Authenticate to HP Cloud Services Identity Services
-    
-    initiates the login to the HPCS IS system and returns HPCSToken
-  
+/** Authenticate to HP Cloud Services Identity Services and return security token
+
     @param block  a block which returns an NSArray of NSDictionary objects representing services available to you such as Compute, or Object Storage
- 
+
     @param failure the block called if the authenticate method failed
- 
+
     @discussion if the service catalog is empty, then your credentials where not valid. You can subscribe to HPCSAuthenticationDidFailNotification to take appropriate action if the credentials are bad
- 
- 
+
+
  */
 
-
 //TODO need to send a message about network not available
--(void) authenticate:(void (^)(NSArray *serviceCatalog))block failure:(void (^)(NSHTTPURLResponse *responseObject, NSError *error))failure;
-
+- (void) authenticate:( void ( ^)(NSArray * serviceCatalog) )block failure:( void ( ^)(NSHTTPURLResponse * responseObject, NSError * error) )failure;
 
 ///------------------------------------------------------
 /// @name Checking Your Authorization Status
 ///------------------------------------------------------
 
 /** Whether or not your HPCSToken is expired */
--(BOOL) isTokenExpired;
+- (BOOL) isTokenExpired;
 
 /** Whether or not you are logged in */
--(BOOL) isAuthenticated;
+- (BOOL) isAuthenticated;
 
 ///----------------------------
 /// @name Ending Your Session
@@ -139,83 +130,80 @@ extern NSString * const kHPCSAuthSecretKey;
 
 /** Invalidate your current token
 
- @param success block called if this operation succeeds
- @param failure block called if this operation fails
- @discussion  allows you to manually invalidate your current token/session on the Control Services server, this does not delete the local cached token, and that token will be invalid after the success of this method.
-*/
--(void) tokenInvalidate:(void (^)(NSHTTPURLResponse *response)) success failure:(void (^)(NSHTTPURLResponse *response, NSError *error))failure;
+   @param success block called if this operation succeeds
+   @param failure block called if this operation fails
+   @discussion  allows you to manually invalidate your current token/session on the Control Services server, this does not delete the local cached token, and that token will be invalid after the success of this method.
+ */
+- (void) tokenInvalidate:( void ( ^)(NSHTTPURLResponse * response) )success failure:( void ( ^)(NSHTTPURLResponse * response, NSError * error) )failure;
 
 ///-----------------------------------------------
 /// @name Getting Access To Authenticated Services
 ///-----------------------------------------------
 
 /** Retrieve an instance of the Compute Client,designated way to get an instance of the Compute (Nova) client
-    
-@returns nil if no compute resource is in the service catalog
-@discussion if the service catalog does not contain a compute service for this user the HPCSKeystoneNovaCatalogIsEmptyNotification is sent
 
-Normal Response Code(s): 204
+   @returns nil if no compute resource is in the service catalog
+   @discussion if the service catalog does not contain a compute service for this user the HPCSKeystoneNovaCatalogIsEmptyNotification is sent
 
-Error Response Code(s): unauthorized (401), forbidden (403), badRequest (400))
- 
+   Normal Response Code(s): 204
+
+   Error Response Code(s): unauthorized (401), forbidden (403), badRequest (400))
+
  */
 
-
--(HPCSComputeClient *)computeClient;
+- (HPCSComputeClient *) computeClient;
 
 /** the URL for the compute endpoint as listed in the Service Catalog */
--(NSString *)publicUrlForCompute;
+- (NSString *) publicUrlForCompute;
 
 /** Retrieve an instance of the Object Storage Client, designated way to get an instance of the object storage (Swift) client
- 
- @discussion if the service catalog does not contain a compute service for this user the HPCSKeystoneSwiftCatalogIsEmptyNotification is sent.
- 
- */
--(HPCSSwiftClient *)swiftClient;
 
+   @discussion if the service catalog does not contain a compute service for this user the HPCSKeystoneSwiftCatalogIsEmptyNotification is sent.
+
+ */
+- (HPCSSwiftClient *) swiftClient;
 
 /** the URL for the object storage endpoint as listed in the Service Catalog */
--(NSString *)publicUrlForObjectStorage;
+- (NSString *) publicUrlForObjectStorage;
 
 ///-----------------------------------------------
 /// @name Secure Management of Your Credentials
 ///-----------------------------------------------
 
-/** Stores the user name in the secure Keychain 
- @param userName your username
+/** Stores the user name in the secure Keychain
+   @param userName your username
  */
--(void) setUsername:(NSString*)userName;
+- (void) setUsername:(NSString *)userName;
 
 /** Get the stored username */
--(NSString *)username;
+- (NSString *) username;
 
 /**  Storage password in the secure Keychain
- 
-@param password the password to set 
-@discussion pass in nil to delete from Keychain
-*/
--(void) setPassword:(NSString *)password;
+
+   @param password the password to set
+   @discussion pass in nil to delete from Keychain
+ */
+- (void) setPassword:(NSString *)password;
 
 /** Get the password from the secure Keychain */
--(NSString *)password;
+- (NSString *) password;
 
 /** Store the tenantId in the secure Keychain
- @param tenantId the tenantId to store
+   @param tenantId the tenantId to store
  */
--(void)setTenantId:(NSString *)tenantId;
+- (void) setTenantId:(NSString *)tenantId;
 
 /** Get the tenantId from storage */
--(NSString *)tenantId;
+- (NSString *) tenantId;
 
 /** Get the token from the Keychain */
--(HPCSToken *)token;
+- (HPCSToken *) token;
 
-/** Store the token in the secure Keychain 
+/** Store the token in the secure Keychain
 
-@param token the token object to store in the Keychain
-@discussion pass in nil to delete token from Keychain, this will cause a relogin to occur the next time an authenticated service is called.  This essentially deletes the local cache of the token.
-*/
--(void) setToken:(HPCSToken *)token;
-
+   @param token the token object to store in the Keychain
+   @discussion pass in nil to delete token from Keychain, this will cause a relogin to occur the next time an authenticated service is called.  This essentially deletes the local cache of the token.
+ */
+- (void) setToken:(HPCSToken *)token;
 
 @end

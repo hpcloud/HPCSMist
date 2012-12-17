@@ -12,24 +12,22 @@
 /** Object which represents the credentials */
 @interface HPCSToken : NSObject
 /** When the token expires **/
-@property (readwrite,retain) NSDate* expires;
+@property (readwrite,retain) NSDate *expires;
 
 /** The token id which will be included in each authenticated call */
-@property (readwrite,retain) NSString* tokenId;
+@property (readwrite,retain) NSString *tokenId;
 
 /** The tenant */
-@property (retain) HPCSTenant* tenant;
+@property (retain) HPCSTenant *tenant;
 
 /** an NSDictionary representation of the token */
 @property (retain) NSDictionary *toDictionary;
-/** Create the tenant 
+/** Create the tenant
     designated intializer
     @param attributes stuff to create the tenant
  */
-- (id)initWithAttributes:(NSDictionary *)attributes;
+- (id) initWithAttributes:(NSDictionary *)attributes;
 /** is the token expired */
--(BOOL) isExpired;
-
-
+- (BOOL) isExpired;
 
 @end

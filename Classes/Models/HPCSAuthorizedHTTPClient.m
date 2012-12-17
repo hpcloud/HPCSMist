@@ -4,20 +4,20 @@
 // To change the template use AppCode | Preferences | File Templates.
 //
 
-
 #import "HPCSAuthorizedHTTPClient.h"
 
-
 @implementation HPCSAuthorizedHTTPClient {
-
 }
 
-- (void)setAuthorizationHeaderWithToken:(NSString *)token {
-  [self setDefaultHeader:@"X-Auth-Token" value:token];
+- (void) setAuthorizationHeaderWithToken:(NSString *)token
+{
+    [self setDefaultHeader:@"X-Auth-Token" value:token];
 }
 
-- (void)clearAuthorizationHeader {
-  [self setDefaultHeader:@"X-Auth-Token" value:nil];
+
+- (void) clearAuthorizationHeader
+{
+    [self setDefaultHeader:@"X-Auth-Token" value:nil];
 }
 
 

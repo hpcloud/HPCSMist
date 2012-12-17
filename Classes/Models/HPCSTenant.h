@@ -17,15 +17,15 @@
 @property (retain) NSString *tenantId;
 
 /** Initializes the category with the given attributes.
- 
- This is the designated initializer.
- 
- @param attributes The NSDictionary of attributes.
- 
- @discusssion The passed in NSDictionary must support the following keys:  **name** and **id**
- 
+
+   This is the designated initializer.
+
+   @param attributes The NSDictionary of attributes.
+
+   @discusssion The passed in NSDictionary must support the following keys:  **name** and **id**
+
  */
 
-- (id)initWithAttributes:(NSDictionary *)attributes;
+- (id) initWithAttributes:(NSDictionary *)attributes;
 
 @end
