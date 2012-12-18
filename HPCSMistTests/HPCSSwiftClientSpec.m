@@ -217,6 +217,27 @@ SPEC_BEGIN(SwiftClientSpec)
 
                   });
                 });
+                context(@"and there is an error",^{
+                  beforeEach(^{
+                    stubEmptyResponseWithStatusCode(@"test", @"PUT", 500);
+                  });
+                  it(@"returns an NSError", ^{
+                    NSError __block * err;
+                    NSMutableDictionary *attribs = [NSMutableDictionary dictionaryWithDictionary:stubObjectWithName(@"test")];
+                    [client saveContainer:attribs success:^(NSHTTPURLResponse *response) {
+                      requestCompleted = YES;
+                    }
+                     failure:^(NSHTTPURLResponse *operation, NSError *error) {
+                       requestCompleted = YES;
+                       err = error;
+                     }];
+                    [KWSpec waitWithTimeout:3.0 forCondition:^BOOL() {
+                      return requestCompleted;
+                    }];
+
+                    [err shouldNotBeNil];
+                  });
+                });
               });
               context(@"and you want to delete a container", ^{
                 NSDictionary __block *attribs;
@@ -287,6 +308,7 @@ SPEC_BEGIN(SwiftClientSpec)
                 });
 
               });
+
               context(@"and you want to get only the metadata of a container", ^{
                 beforeEach(^{
                   [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
@@ -301,6 +323,7 @@ SPEC_BEGIN(SwiftClientSpec)
                     }
                   }];
                 });
+
                 it(@"allows you to get metadata via HEAD", ^{
                   NSDictionary *subject = @{@"name" : @"parent"};
                   NSDictionary __block *headers;
@@ -320,6 +343,39 @@ SPEC_BEGIN(SwiftClientSpec)
                   [[headers objectForKey:@"X-Container-Object-Count"] shouldNotBeNil];
                   [[client defaultValueForHeader:@"Accept"] shouldNotBeNil];
                 });
+
+                context(@"and there is an error",^{
+                  beforeEach(^{
+                    [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
+                      if ([request.URL.absoluteString hasSuffix:@"parent"] && [request.HTTPMethod isEqualToString:@"HEAD"]) {
+                        NSString *basename = @"nonexistant";
+                        NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
+                        NSDictionary *headers = @{@"Content-Type" : @"text/json", @"X-Container-Object-Count" : @"7", @"X-Container-Bytes-Used" : @"12345"};
+                        id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName statusCode:500 responseTime:0.1 headers:headers];
+                        return stubResponse;
+                      } else {
+                        return nil; // Don't stub
+                      }
+                    }];
+                  });
+                  it(@"returns an NSError", ^{
+                    NSError __block * err;
+                    NSDictionary *subject = @{@"name" : @"parent"};
+                    [client headContainer:subject success:^(NSHTTPURLResponse *responseObject) {
+                      requestCompleted = YES;
+                    } failure:^(NSHTTPURLResponse *responseObject, NSError *error) {
+                      requestCompleted = YES;
+                      err = error;
+                    }];
+
+                    [KWSpec waitWithTimeout:3.0 forCondition:^BOOL() {
+                      return requestCompleted;
+                    }];
+
+                    [err shouldNotBeNil];
+                  });
+                });
+              });
 
                 it(@"allows you to get basic container info via helper method", ^{
                   NSDictionary *subject = @{@"name" : @"parent"};
@@ -341,6 +397,7 @@ SPEC_BEGIN(SwiftClientSpec)
                 });
               });
             });
+
             context(@"and you are working with objects", ^{
               __block BOOL requestCompleted = NO;
               NSDictionary __block *subject;
@@ -355,6 +412,81 @@ SPEC_BEGIN(SwiftClientSpec)
                 it(@"returns the URL", ^{
                   [[[client urlForObject:subject] should] equal:@"https://az1-region-a.geo-1.objects.hpcloudsvc.com/v1.0/72020596871800/parent/created"];
                 });
+              });
+              context(@"and you want to set metadata on an object", ^{
+                beforeEach(^{
+                  [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
+                    if ([request.URL.absoluteString hasSuffix:@"created"] &&
+                        [request.HTTPMethod isEqualToString:@"POST"] &&
+                        [request.allHTTPHeaderFields objectForKey:@"Accept"] == nil &&
+                        [request.allHTTPHeaderFields objectForKey:@"X-Object-Meta-Reviewed"] == @"true" ) {
+                      NSString *basename = @"nonexistant";
+                      NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
+                      id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName statusCode:202 responseTime:0.001 headers:nil];
+                      return stubResponse;
+                    } else {
+                      return nil; // Don't stub
+                    }
+                  }];
+                });
+                afterEach(^{
+                  [OHHTTPStubs removeLastRequestHandler];
+                });
+                it(@"sends a post request to set it", ^{
+                  NSHTTPURLResponse __block  *response;
+                  NSDictionary *meta = @{ @"X-Object-Meta-Reviewed": @"true"};
+                  [client setObject:subject metadata:meta success:^(NSHTTPURLResponse *responseObject) {
+                    response = responseObject;
+                    requestCompleted = YES;
+                  } failure:^(NSHTTPURLResponse *responseObject, NSError *error) {
+                    requestCompleted= YES;
+
+                  }];
+
+                  [KWSpec waitWithTimeout:3.0 forCondition:^BOOL() {
+                    return requestCompleted;
+                  }];
+                  [response shouldNotBeNil];
+
+                });
+                context(@"failure", ^{
+                  beforeEach(^{
+                    [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
+                      if ([request.URL.absoluteString hasSuffix:@"created"] &&
+                              [request.HTTPMethod isEqualToString:@"POST"] &&
+                              [request.allHTTPHeaderFields objectForKey:@"Accept"] == nil &&
+                              [request.allHTTPHeaderFields objectForKey:@"X-Object-Meta-Reviewed"] == @"true" ) {
+                        NSString *basename = @"nonexistant";
+                        NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
+                        id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName statusCode:404 responseTime:0.001 headers:nil];
+                        return stubResponse;
+                      } else {
+                        return nil; // Don't stub
+                      }
+                    }];
+                  });
+                  afterEach(^{
+                    [OHHTTPStubs removeLastRequestHandler];
+                  });
+
+                  it(@"returns an error", ^{
+                    NSError __block *localErr;
+                    NSDictionary *meta = @{ @"X-Object-Meta-Reviewed": @"true"};
+                    [client setObject:subject metadata:meta success:^(NSHTTPURLResponse *responseObject) {
+                      requestCompleted = YES;
+                    } failure:^(NSHTTPURLResponse *responseObject, NSError *error) {
+                      requestCompleted= YES;
+                      localErr = error;
+                    }];
+
+                    [KWSpec waitWithTimeout:3.0 forCondition:^BOOL() {
+                      return requestCompleted;
+                    }];
+                    [localErr shouldNotBeNil];
+                  });
+
+                });
+
               });
               context(@"and you want to get only the metadata", ^{
                 beforeEach(^{
@@ -375,8 +507,8 @@ SPEC_BEGIN(SwiftClientSpec)
                   [client headObject:subject success:^(NSHTTPURLResponse *responseObject) {
                     requestCompleted = YES;
                     headers = responseObject.allHeaderFields;
-
-                  }          failure:^(NSHTTPURLResponse *responseObject, NSError *error) {
+                  }
+                  failure:^(NSHTTPURLResponse *responseObject, NSError *error) {
                     requestCompleted = YES;
                   }];
 
@@ -387,7 +519,26 @@ SPEC_BEGIN(SwiftClientSpec)
                   [[headers objectForKey:@"X-Object-Meta-Test"] shouldNotBeNil];
                   [[client defaultValueForHeader:@"Accept"] shouldNotBeNil];
                 });
-                context(@"and it fails", ^{
+                context(@"via the helper method", ^{
+                  it(@"returns an error", ^{
+                    NSDictionary __block *headers;
+                    [client getObjectMetadata:subject success:^(NSHTTPURLResponse *responseObject, NSDictionary *meta) {
+                      requestCompleted = YES;
+                      headers = meta;
+                    }
+                    failure:^(NSHTTPURLResponse *responseObject, NSError *error) {
+                      requestCompleted = YES;
+                    }];
+
+                    [KWSpec waitWithTimeout:3.0 forCondition:^BOOL() {
+                      return requestCompleted;
+                    }];
+
+                    [[headers objectForKey:@"X-Object-Meta-Test"] shouldNotBeNil];
+                    [[client defaultValueForHeader:@"Accept"] shouldNotBeNil];
+                  });
+                });
+                context(@"and metadata get fails", ^{
                   beforeEach(^{
                     stubEmptyResponseWithStatusCode(@"child", @"HEAD", 500);
                   });
@@ -478,6 +629,38 @@ SPEC_BEGIN(SwiftClientSpec)
 
 
               });
+
+              context(@"and there is an error", ^{
+                NSDictionary __block *badSubject;
+                beforeEach(^{
+                  stubEmptyResponseWithStatusCode(@"nothere", @"GET", 500);
+                });
+                afterEach(^{
+                  [OHHTTPStubs removeLastRequestHandler];
+                });
+                it(@"should return an NSError", ^{
+                  NSError __block *err;
+                  badSubject = stubObjectWithName(@"nothere");
+                  [client objectsForContainer:badSubject success:^(NSHTTPURLResponse *response, NSArray *objects) {
+                    requestCompleted = YES;
+                  }
+                  failure:^(NSHTTPURLResponse *resp, NSError *error){
+                    requestCompleted = YES;
+                    err = error;
+                  }];
+
+                  [KWSpec waitWithTimeout:3.0 forCondition:^BOOL() {
+                    return requestCompleted;
+                  }];
+
+                  [err shouldNotBeNil];
+
+                });
+
+
+              });
+
+
               context(@"#delete", ^{
                 context(@"for objects that exist", ^{
                   beforeEach(^{
@@ -697,13 +880,11 @@ SPEC_BEGIN(SwiftClientSpec)
 
                     [err shouldNotBeNil];
 
-
                   });
                 });
               });
             });
           });
-        });
 
 
         SPEC_END

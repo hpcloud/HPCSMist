@@ -27,6 +27,8 @@ NSString *const HPCSSwiftAccountContainerCountHeaderKey = @"X-Account-Container-
 @implementation HPCSSwiftClient
 @synthesize identityClient;
 
+
+
 - (id) initWithIdentityClient:(HPCSIdentityClient *)identity
 {
   self = [super initWithBaseURL:[NSURL URLWithString:[identity publicUrlForObjectStorage]]];
@@ -299,6 +301,46 @@ NSString *const HPCSSwiftAccountContainerCountHeaderKey = @"X-Account-Container-
    }
   ];
   [self enqueueHTTPRequestOperation:operation];
+}
+
+- (void)setObject:(id)object
+         metadata:(NSDictionary *)metadata
+          success:(void (^)(NSHTTPURLResponse *))success
+          failure:(void (^)(NSHTTPURLResponse *, NSError *))failure {
+
+  [self setDefaultHeader:@"Accept" value:nil];
+  NSString *path = [NSString stringWithFormat:@"%@/%@", [self URLEncodedString:[object valueForKeyPath:@"parent.name"]], [self URLEncodedString:[object valueForKeyPath:@"name"]]];
+  NSMutableURLRequest *request = [self requestWithMethod:@"POST" path:path parameters:nil];
+  [self setDefaultHeader:@"Accept" value:@"application/json"];
+  [metadata enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+    [request addValue:obj forHTTPHeaderField:key];
+  }];
+  AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    if (success) {
+      success(operation.response);
+    }
+  }
+  failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    if (failure) {
+      failure(operation.response, error);
+    }
+  }];
+  [self enqueueHTTPRequestOperation:operation];
+}
+
+- (void)getObjectMetadata:(id)object
+                  success:(void (^)(NSHTTPURLResponse *, NSDictionary *))success
+                  failure:(void (^)(NSHTTPURLResponse *, NSError *))failure {
+  [self headObject:object success:^(NSHTTPURLResponse *responseObject) {
+    if (success){
+      success(responseObject, responseObject.allHeaderFields);
+    }
+  } failure:^(NSHTTPURLResponse *responseObject, NSError *error) {
+    if (failure){
+      failure(responseObject,error);
+    }
+
+  }];
 }
 
 - (void) headObject:(id)object

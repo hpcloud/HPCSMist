@@ -28,10 +28,10 @@ extern NSString *const HPCSSwiftAccountContainerCountHeaderKey;
    The interface to the object storage system
  */
 
-@interface HPCSSwiftClient :  AFHTTPClient
+@interface HPCSSwiftClient : AFHTTPClient
 
 /** The HPCSIdentityClient object used to get access to the HPCSToken. */
-@property (retain) HPCSIdentityClient *identityClient;
+@property(retain) HPCSIdentityClient *identityClient;
 
 ///-----------------------------------------------------
 /// @name Creating and Initializing HPCSSwift Clients
@@ -48,7 +48,7 @@ extern NSString *const HPCSSwiftAccountContainerCountHeaderKey;
     HPCSSwiftClient *swiftClient = [client swiftClient];
 
  */
-- (id) initWithIdentityClient:(HPCSIdentityClient *)client;
+- (id)initWithIdentityClient:(HPCSIdentityClient *)client;
 
 ///------------------------
 /// @name Container Operations
@@ -62,8 +62,8 @@ extern NSString *const HPCSSwiftAccountContainerCountHeaderKey;
    @return Calls either the success for failure block depending on HTTPStatus code returned
  *
  */
-- (void) containers:( void ( ^)(NSHTTPURLResponse * responseObject,NSArray * records) )success
- failure           :( void ( ^)(NSHTTPURLResponse * responseObject, NSError * error) )failure;
+- (void)containers:(void ( ^)(NSHTTPURLResponse *responseObject, NSArray *records))success
+           failure:(void ( ^)(NSHTTPURLResponse *responseObject, NSError *error))failure;
 
 /**
    Creates a new container belonging to the account of the authenticated request sender.
@@ -80,8 +80,8 @@ extern NSString *const HPCSSwiftAccountContainerCountHeaderKey;
    202 if the container already existed
 
  */
-- (void) saveContainer:(id)container success:( void ( ^)(NSHTTPURLResponse *) )saved
- failure              :( void ( ^)(NSHTTPURLResponse *, NSError *) )failure;
+- (void)saveContainer:(id)container success:(void ( ^)(NSHTTPURLResponse *))saved
+              failure:(void ( ^)(NSHTTPURLResponse *, NSError *))failure;
 
 /**
    Deletes the specified container.
@@ -100,9 +100,9 @@ extern NSString *const HPCSSwiftAccountContainerCountHeaderKey;
    409 container not empty
  */
 
-- (void) deleteContainer:(id)container
- success                :( void ( ^)(NSHTTPURLResponse * responseObject) )success
- failure                :( void ( ^)(NSHTTPURLResponse * responseObject, NSError * error) )failure;
+- (void)deleteContainer:(id)container
+                success:(void ( ^)(NSHTTPURLResponse *responseObject))success
+                failure:(void ( ^)(NSHTTPURLResponse *responseObject, NSError *error))failure;
 
 /** Gives metadata details about the given container
 
@@ -112,9 +112,9 @@ extern NSString *const HPCSSwiftAccountContainerCountHeaderKey;
 
  */
 
-- (void) headContainer:(id)container
- success              :( void ( ^)(NSHTTPURLResponse * responseObject) )success
- failure              :( void ( ^)(NSHTTPURLResponse * responseObject, NSError * error) )failure;
+- (void)headContainer:(id)container
+              success:(void ( ^)(NSHTTPURLResponse *responseObject))success
+              failure:(void ( ^)(NSHTTPURLResponse *responseObject, NSError *error))failure;
 
 ///------------------------
 /// @name Object Operations
@@ -132,8 +132,9 @@ extern NSString *const HPCSSwiftAccountContainerCountHeaderKey;
 
  */
 
-- (void) objectsForContainer:(id)container success:( void ( ^)(NSHTTPURLResponse * responseObject,NSArray * records) )success
- failure                    :( void ( ^)(NSHTTPURLResponse * responseObject, NSError * error) )failure;
+- (void)objectsForContainer:(id)container
+                    success:(void ( ^)(NSHTTPURLResponse *responseObject, NSArray *records))success
+                    failure:(void ( ^)(NSHTTPURLResponse *responseObject, NSError *error))failure;
 
 /**
    Deletes the specified object.
@@ -150,9 +151,9 @@ extern NSString *const HPCSSwiftAccountContainerCountHeaderKey;
 
    404 If an incorrect account is specified.
  */
-- (void) deleteObject:(id)object
- success             :( void ( ^)(NSHTTPURLResponse * responseObject) )success
- failure             :( void ( ^)(NSHTTPURLResponse * responseObject, NSError * error) )failure;
+- (void)deleteObject:(id)object
+             success:(void ( ^)(NSHTTPURLResponse *responseObject))success
+             failure:(void ( ^)(NSHTTPURLResponse *responseObject, NSError *error))failure;
 
 /**
    Saves the specified object.
@@ -165,10 +166,57 @@ extern NSString *const HPCSSwiftAccountContainerCountHeaderKey;
    @return Calls either the success or failure block depending on HTTPStatus code returned
 
  */
-- (void) saveObject:(id)object
-  success           :( void ( ^)(NSHTTPURLResponse * responseObject) )success
- progress          :( void ( ^)(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) )progress
-  failure           :( void ( ^)(NSHTTPURLResponse * responseObject, NSError * error) )failure;
+- (void)saveObject:(id)object
+           success:(void ( ^)(NSHTTPURLResponse *responseObject))success
+          progress:(void ( ^)(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite))progress
+           failure:(void ( ^)(NSHTTPURLResponse *responseObject, NSError *error))failure;
+
+/** Sets custom metadata on an object
+    @param object the object which you want the metadata on, must respond to **name** and **parent.name**
+    @param  metadata NSDictionary of key value pairs with keys of the form "X-Object-Meta-<ATTRIBUTE>"
+    @param success Block returning NSHTTPURLResponse from Swift
+    @param failure Block returning NSHTTPURLResponse from Swift and NSError
+    @discussion You cannot use the POST operation to change any of the following metadata:
+
+- Content-Length
+- ETag
+- Last-Modified
+
+To set custom metadata on an object use a header name with a prefix of X-Object-Meta-. After this prefix, you can pick any name meaningful to you. For example, X-Object-Meta-Reviewed could be used indicate that the contents of an object had been reviewed.
+
+    NSDictionary *meta = @{ @"X-Object-Meta-Reviewed": @"true"}
+    [client setObject:object metadata:meta success:^(NSHTTPURLResponse *responseObject){
+      NSLog(@"metadata set");
+    }
+    failure:^(NSHTTPURLResponse *responseObject, NSError *error){
+       NSLog(@"metadata not set");
+    }
+
+** HTTP Return Codes **
+
+- Success 202
+- Failure 404
+*/
+
+- (void)setObject:(id)object
+                  metadata:(NSDictionary *)metadata
+                  success :(void ( ^)(NSHTTPURLResponse *responseObject))success
+                  failure :(void ( ^)(NSHTTPURLResponse *responseObject, NSError *error))failure;
+
+
+/** Gets all metadata on an object, convenience version of headObject:
+
+@param the object which you want the metadata on, must respond to **name** and **parent.name**
+@param success metadata is the NSDictionary taken from the responseObject headers result
+@param failure called if there is an error
+
+
+@disussion this is really an alias for headObject:success:failure:
+*/
+-(void)getObjectMetadata:(id)object
+                 success:(void ( ^)(NSHTTPURLResponse *responseObject, NSDictionary *metadata))success
+                 failure:(void ( ^)(NSHTTPURLResponse *responseObject, NSError *error))failure;
+
 
 /**
    Retrieves the specified object.
@@ -179,9 +227,9 @@ extern NSString *const HPCSSwiftAccountContainerCountHeaderKey;
 
  */
 
-- (void) getObject:(id)object
- success          :( void ( ^)(NSHTTPURLResponse * responseObject, NSData * data) )success
- failure          :( void ( ^)(NSHTTPURLResponse * responseObject, NSError * error) )failure;
+- (void)getObject:(id)object
+          success:(void ( ^)(NSHTTPURLResponse *responseObject, NSData *data))success
+          failure:(void ( ^)(NSHTTPURLResponse *responseObject, NSError *error))failure;
 
 /**
    Retrieves information about an object for a user with read access without fetching the object.
@@ -195,15 +243,15 @@ extern NSString *const HPCSSwiftAccountContainerCountHeaderKey;
 
 
    @param failure Block returning NSHTTPURLResponse from Swift and NSError
+   @param success responseObject with metadata stored in httpresponse.
 
    @return Calls either the success or failure block depending on HTTPStatus code returned
 
 
  */
-- (void) headObject:(id)object
- success           :( void ( ^)(NSHTTPURLResponse * responseObject) )success
- failure           :( void ( ^)(NSHTTPURLResponse * responseObject, NSError * error) )failure;
-
+- (void)headObject:(id)object
+           success:(void ( ^)(NSHTTPURLResponse *responseObject))success
+           failure:(void ( ^)(NSHTTPURLResponse *responseObject, NSError *error))failure;
 
 
 /**
@@ -216,13 +264,13 @@ extern NSString *const HPCSSwiftAccountContainerCountHeaderKey;
    @param success  Block returning NSHTTPURLResponse from Swift.
    @param failure  Block returning NSHTTPURLResponse from Swift and NSError
  */
-- (void) putObjectWithData:(NSData *)data
-        mimeType                 :(NSString *)mimeType
- destinationPath          :(NSString *)destinationPath
-      parameters               :(NSDictionary *)parameters
-        progress                 :( void ( ^)(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) )progress
-         success                  :( void ( ^)(NSHTTPURLResponse * responseObject) )success
-         failure                  :( void ( ^)(NSHTTPURLResponse * responseObject, NSError * error) )failure;
+- (void)putObjectWithData:(NSData *)data
+                 mimeType:(NSString *)mimeType
+          destinationPath:(NSString *)destinationPath
+               parameters:(NSDictionary *)parameters
+                 progress:(void ( ^)(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite))progress
+                  success:(void ( ^)(NSHTTPURLResponse *responseObject))success
+                  failure:(void ( ^)(NSHTTPURLResponse *responseObject, NSError *error))failure;
 
 /**
    Returns the full path for an object
@@ -231,7 +279,7 @@ extern NSString *const HPCSSwiftAccountContainerCountHeaderKey;
    @return The NSString of the whole path to the object
 
  */
-- (NSString *) urlForObject:(id)object;
+- (NSString *)urlForObject:(id)object;
 
 /**
    Returns an NSDictionary of HTTP headers, usually used with a HEAD request to get object metadata
@@ -249,6 +297,6 @@ extern NSString *const HPCSSwiftAccountContainerCountHeaderKey;
    X-Account-Container-Count
 
  */
-- (NSDictionary *) metaDataFromResponse:(NSHTTPURLResponse *)response;
+- (NSDictionary *)metaDataFromResponse:(NSHTTPURLResponse *)response;
 
 @end

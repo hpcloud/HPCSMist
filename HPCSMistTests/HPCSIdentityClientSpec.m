@@ -11,6 +11,7 @@
 #import "Environment.h"
 #import "OHHTTPStubs.h"
 #import "AFNetworking.h"
+#import "KWSpec+WaitFor.h"
 
 
 static NSMutableArray *notifications;
@@ -19,19 +20,11 @@ SPEC_BEGIN(IdentityClientSpec)
 
 
         describe(@"HPCSIdentityClient", ^{
-
+          __block BOOL requestCompleted = NO;
+          afterEach(^{
+             requestCompleted = NO;
+          });
           context(@"when creating a new client", ^{
-            context( @"and the identity url is not defined", ^{
-              it(@"thows an NSError",^{
-                NSString *userName = @"abc";
-                NSString *password = @"password";
-                NSString *tenantId = @"12345";
-                id client = [[HPCSIdentityClient alloc] initWithUsername:userName andPassword:password andTenantId:tenantId];
-                [[client should] beNil];
-
-
-              });
-            });
             it(@"allows to see if you are authenticated", ^{
               NSString *userName = @"abc";
               NSString *password = @"password";
@@ -230,22 +223,21 @@ SPEC_BEGIN(IdentityClientSpec)
                     [OHHTTPStubs removeLastRequestHandler];
 
                   });
-                  it(@"sends back an empty array for service catalog", ^{
-                    NSArray __block *result;
+                  it(@"sends back an nserror", ^{
+                    NSError __block *err;
                     [client authenticate:^(NSArray *serviceCatalog) {
-                      result = serviceCatalog;
+                      requestCompleted = YES;
                     } failure:^(NSHTTPURLResponse *responseObject, NSError *error) {
-
+                      requestCompleted = YES;
+                      err = error;
                     }];
-                    while (result == nil)
-                    {
-                      // run runloop so that async dispatch can be handled on main thread AFTER the operation has
-                      // been marked as finished (even though the call backs haven't finished yet).
-                      [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode
-                                               beforeDate:[NSDate date]];
-                    }
 
-                    [[result should] beEmpty];
+                    [KWSpec waitWithTimeout:3.0 forCondition:^BOOL() {
+                      return requestCompleted;
+                    }];
+
+                    [err shouldNotBeNil];
+
                   });
                   it(@"emits a login failed event", ^{
 
@@ -253,21 +245,19 @@ SPEC_BEGIN(IdentityClientSpec)
                                                              selector:@selector(addObject:)
                                                                  name:HPCSAuthenticationDidFailNotification
                                                                object:nil];
-                    NSArray __block *result;
+                    NSError __block *err;
                     [client authenticate:^(NSArray *serviceCatalog) {
-                      result = serviceCatalog;
+                      requestCompleted = YES;
                     } failure:^(NSHTTPURLResponse *responseObject, NSError *error) {
-
+                      requestCompleted = YES;
+                      err = error;
                     }];
-                    while (result == nil)
-                    {
-                      // run runloop so that async dispatch can be handled on main thread AFTER the operation has
-                      // been marked as finished (even though the call backs haven't finished yet).
-                      [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode
-                                               beforeDate:[NSDate date]];
-                    }
 
-                    [[result should] beEmpty];
+                    [KWSpec waitWithTimeout:3.0 forCondition:^BOOL() {
+                      return requestCompleted;
+                    }];
+
+                    [err shouldNotBeNil];
                     [[notifications should] haveCountOf:1];
 
                     [[NSNotificationCenter defaultCenter] removeObserver:notifications];
