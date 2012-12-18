@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.homepage     = "https://git.hpcloud.net/hagedorm/HPCSMist"
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author       = { "Mike Hagedorn" => "mike.hagedorn@hp.com" }
-  s.source       = { :git => "https://git.hpcloud.net/hagedorm/HPCSMist"  }
+  s.source       = { :git => "https://git.hpcloud.net/hagedorm/HPCSMist", :tag => "0.0.1"  }
   s.ios.deployment_target = '6.0'
   s.osx.deployment_target = '10.7'
   s.source_files = 'Classes/Models/**/*.{h,m}'
