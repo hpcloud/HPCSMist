@@ -12,6 +12,7 @@
 #import "OHHTTPStubs.h"
 #import "AFNetworking.h"
 #import "KWSpec+WaitFor.h"
+#import "KeychainWrapper.h"
 
 
 static NSMutableArray *notifications;
@@ -23,6 +24,102 @@ SPEC_BEGIN(IdentityClientSpec)
           __block BOOL requestCompleted = NO;
           afterEach(^{
              requestCompleted = NO;
+          });
+
+          context(@"when dealing with stored credentials", ^{
+            HPCSIdentityClient __block *identity;
+            beforeEach(^{
+              NSString *userName = @"abc";
+              NSString *password = @"password";
+              NSString *tenantId = @"12345";
+              identity = [[HPCSIdentityClient alloc] initWithUsername:userName andPassword:password andTenantId:tenantId];
+            });
+            context(@"#serviceCatalog", ^{
+              it(@"is cached in UserDefaults", ^{
+               id userDefaults = [NSUserDefaults standardUserDefaults];
+               [[userDefaults should] receive:@selector(objectForKey:) withArguments:@"HPCSServiceCatalog"];
+               [identity serviceCatalog];
+              });
+            });
+            context(@"#token", ^{
+              it(@"is cached in the secure Keychain", ^{
+                [[KeychainWrapper should] receive:@selector(keychainStringFromMatchingIdentifier:) withArguments:@"HPCSToken"];
+                [identity token];
+              });
+              context(@"saving", ^{
+                context(@"and you pass in nil", ^{
+                  it(@"deletes it", ^{
+                    [[KeychainWrapper should] receive:@selector(deleteItemFromKeychainWithIdentifier:) withArguments:@"HPCSToken"];
+                    [identity setToken:nil];
+                  });
+                });
+                it(@"stores in the Keychain", ^{
+                  HPCSToken *token = [[HPCSToken alloc ]init ];
+                  [[KeychainWrapper should] receive:@selector(createKeychainValue:forIdentifier:withDescription:) withArguments:[token.toDictionary description],@"HPCSToken",@"HPCS access token"];
+                  [identity setToken:token];
+                });
+              });
+            });
+
+            context(@"#tenantId", ^{
+              it(@"is cached in the secure Keychain", ^{
+                [[KeychainWrapper should] receive:@selector(keychainStringFromMatchingIdentifier:) withArguments:@"tenantId"];
+                [identity tenantId];
+              });
+              context(@"saving", ^{
+                context(@"and you pass in nil", ^{
+                  it(@"deletes it", ^{
+                    [[KeychainWrapper should] receive:@selector(deleteItemFromKeychainWithIdentifier:) withArguments:@"tenantId"];
+                    [identity setTenantId:nil];
+                  });
+                });
+                it(@"stores in the Keychain", ^{
+                  [[KeychainWrapper should] receive:@selector(createKeychainValue:forIdentifier:withDescription:) withArguments:@"12345",@"tenantId",@"HPCS tenant id"];
+                  [identity setTenantId:@"12345"];
+                });
+              });
+            });
+
+            context(@"#username", ^{
+              it(@"is cached in the secure Keychain", ^{
+                [[KeychainWrapper should] receive:@selector(keychainStringFromMatchingIdentifier:) withArguments:@"username"];
+                [identity username];
+              });
+              context(@"saving", ^{
+                context(@"and you pass in nil", ^{
+                  it(@"deletes it", ^{
+                    [[KeychainWrapper should] receive:@selector(deleteItemFromKeychainWithIdentifier:) withArguments:@"username"];
+                     [identity setUsername:nil];
+                  });
+                });
+                it(@"stores in the Keychain", ^{
+                  [[KeychainWrapper should] receive:@selector(createKeychainValue:forIdentifier:withDescription:) withArguments:@"me",@"username",@"HPCS username"];
+                  [identity setUsername:@"me"];
+                });
+              });
+            });
+
+            context(@"#password", ^{
+              it(@"is cached in the secure Keychain", ^{
+                [[KeychainWrapper should] receive:@selector(keychainStringFromMatchingIdentifier:) withArguments:@"password"];
+                [identity password];
+              });
+              context(@"saving", ^{
+                context(@"and you pass in nil", ^{
+                  it(@"deletes it", ^{
+                    [[KeychainWrapper should] receive:@selector(deleteItemFromKeychainWithIdentifier:) withArguments:@"password"];
+                    [identity setPassword:nil];
+                  });
+                });
+                it(@"stores in the Keychain", ^{
+                  [[KeychainWrapper should] receive:@selector(createKeychainValue:forIdentifier:withDescription:) withArguments:@"secure",@"password",@"HPCS password"];
+                  [identity setPassword:@"secure"];
+                });
+              });
+            });
+
+
+
           });
           context(@"when creating a new client", ^{
             it(@"allows to see if you are authenticated", ^{
@@ -392,7 +489,6 @@ SPEC_BEGIN(IdentityClientSpec)
                   status = 999;
                 }];
 
-
                 while (successOp == nil)
                 {
                   // run runloop so that async dispatch can be handled on main thread AFTER the operation has
@@ -403,6 +499,49 @@ SPEC_BEGIN(IdentityClientSpec)
 
                 [[theValue(status) should] equal:theValue(204)];
                 NSLog(@" *** this fails because the content type of the return value is not JSON!!! (its nothing or text/plain) ***");
+              });
+              context(@"failure", ^{
+                beforeEach(^{
+                  [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse*(NSURLRequest *request, BOOL onlyCheck)
+                  {
+                    if ([request.URL.absoluteString hasSuffix:@"/v2.0/tokens/HPAuth_4f186cb2e4b04d7c46dc85a3"]) {
+                      NSDictionary *headers = [NSDictionary dictionaryWithObjectsAndKeys:
+                              @"Test Server", @"Server",
+                              @"no-cache", @"Pragma",
+                              @"-1", @"Expires",
+                              @"Thu, 23 Jan 2012 00:07:40 GMT", @"Date",nil];
+                      id stubResponse = [OHHTTPStubsResponse responseWithFile:nil statusCode:500 responseTime:0.2 headers:headers];
+                      return stubResponse;
+                    } else {
+                      return nil; // Don't stub
+                    }
+                  }];
+                });
+
+                afterEach(^{
+                  [OHHTTPStubs removeLastRequestHandler];
+                });
+
+                it(@"sends NSError", ^{
+                  NSError __block *err;
+
+                  [client tokenInvalidate:nil
+                  failure:^(NSHTTPURLResponse *response, NSError *error) {
+                    requestCompleted = YES;
+                    err = error;
+                  }];
+
+
+                [KWSpec waitWithTimeout:3.0 forCondition:^BOOL() {
+                  return requestCompleted;
+                }];
+
+                [err shouldNotBeNil];
+
+
+
+                });
+
               });
 
             });
@@ -496,7 +635,6 @@ SPEC_BEGIN(IdentityClientSpec)
             });
 
           });
-
 
         });
 

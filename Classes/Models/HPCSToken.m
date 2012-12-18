@@ -13,9 +13,19 @@
 @synthesize tokenId;
 @synthesize tenant;
 
+- (id) init {
+  self = [super init];
+  if (!self)
+  {
+    return nil;
+  }
+  self.toDictionary = @{};
+  return self;
+}
+
 - (id) initWithAttributes:(NSDictionary *)attributes
 {
-  self = [super init];
+  self = [self init];
   if (!self)
   {
     return nil;
