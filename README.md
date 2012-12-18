@@ -9,9 +9,7 @@ and other familiar Foundation technologies.
 
 
 ### Get The Source
-- [Download
- HPCSMist](https://git.hpcloud.net/hagedorm/HPCSMist) 
-
+- [Download HPCSMist](https://git.hpcloud.net/hagedorm/HPCSMist)
 
 ### Add HPCSMist To Your Project
 
@@ -22,15 +20,14 @@ HPCSMist as a dependency in your Podfile with pod 'HPCSMist',
 '0.0.1'.
 
 
-- Check out the [complete
-documentation](http://15.184.93.121/) for a
+- Check out the [complete documentation](http://15.184.93.121/) for a
 comprehensive look at the APIs available in HPCSMist
 
 ## Overview
 
 ### Authentication To Control Services
 
- ``` objective-c
+
   HPCSIdentityClient identity = [HPCSIdentityClient sharedClient];
   [identity setUsername:@"myuser"];
   [identity setPassword:@"mypassword"];
@@ -39,11 +36,10 @@ comprehensive look at the APIs available in HPCSMist
   //on success caches the auth token, assuming success, ignoring failures
   [identity authenticate:nil failure:nil]; 
 
- ``` 
 
 ### Get A Compute Instance
 
- ``` objective-c
+
   HPCSComputeClient *nova = [identity computeClient];
 
   //list active servers
@@ -53,11 +49,11 @@ comprehensive look at the APIs available in HPCSMist
   failure:^(NSHTTPURLResponse * response, NSError * error){
     NSLog(@"couldnt get server list");
   }
- ```
+
 
 ### Get An Object Storage Instance
 
- ``` objective-c
+
   HPCSSwiftClient *swift = [identity swiftClient];
 
   //list containers
@@ -67,7 +63,7 @@ comprehensive look at the APIs available in HPCSMist
   failure:^(NSHTTPURLResponse * response, NSError * error){
     NSLog(@"couldnt get container list");
   }
- ```
+
 
 
 

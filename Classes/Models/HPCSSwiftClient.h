@@ -206,7 +206,7 @@ To set custom metadata on an object use a header name with a prefix of X-Object-
 
 /** Gets all metadata on an object, convenience version of headObject:
 
-@param the object which you want the metadata on, must respond to **name** and **parent.name**
+@param object the object which you want the metadata on, must respond to **name** and **parent.name**
 @param success metadata is the NSDictionary taken from the responseObject headers result
 @param failure called if there is an error
 
