@@ -36,7 +36,7 @@ comprehensive look at the APIs available in HPCSMist
   [identity setPassword:@"mypassword"];
   [identity setTenantId:@"12345"];
 
-  //on success caches the auth token
+  //on success caches the auth token, assuming success, ignoring failures
   [identity authenticate:nil failure:nil]; 
 
  ``` 
@@ -45,12 +45,27 @@ comprehensive look at the APIs available in HPCSMist
 
  ``` objective-c
   HPCSComputeClient *nova = [identity computeClient];
+
+  //list active servers
+  [nova servers:^(NSArray * records){
+    NSLog(@"got an array of servers");
+  }
+  failure:^(NSHTTPURLResponse * response, NSError * error){
+    NSLog(@"couldnt get server list");
+  }
  ```
 
 ### Get An Object Storage Instance
 
  ``` objective-c
   HPCSSwiftClient *swift = [identity swiftClient];
+  //list containers
+    [swift containers:^(NSArray * records){
+      NSLog(@"got an array of containers");
+    }
+    failure:^(NSHTTPURLResponse * response, NSError * error){
+      NSLog(@"couldnt get container list");
+    }
  ```
 
 
