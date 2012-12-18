@@ -137,7 +137,9 @@ NSString *const HPCSKeystoneCredentialsDidChangeNotification = @"com.hp.cloud.ke
   [self setDefaultHeader:@"Accept" value:@"application/json"];
   [self setParameterEncoding:AFJSONParameterEncoding];
 
-  [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
+  #if TARGET_OS_IPHONE
+    [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
+  #endif
 
   return self;
 }
