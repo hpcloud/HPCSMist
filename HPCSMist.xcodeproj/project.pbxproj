@@ -188,12 +188,12 @@
 				AF4BB8C6167A46820019C57C /* README.md */,
 				AF4BB8C5167A40E50019C57C /* scripts */,
 				AF1D255A16792B0300454661 /* Classes */,
-				AF1D25B216792B6600454661 /* HPCSMistTests */,
 				AF1D25E516792B8F00454661 /* Other Sources */,
 				AF1D25EB16792BA600454661 /* Resources */,
 				AF1D24F1167927C800454661 /* Frameworks */,
 				048D663BE13C4C10BCDB5371 /* Pods.xcconfig */,
 				EFEC43993DAE4ABBA4461FA0 /* Pods-HPCSMistTests.xcconfig */,
+				AF1D25B216792B6600454661 /* HPCSMistTests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -297,6 +297,7 @@
 				AF1D25B316792B6600454661 /* InfoPlist.strings */,
 				AF1D25B516792B6600454661 /* EnvironmentSpec.m */,
 			);
+			name = HPCSMistTests;
 			path = HPCSMistTests;
 			sourceTree = "<group>";
 		};

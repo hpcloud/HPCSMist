@@ -85,9 +85,10 @@
     [dictionary setValue:[description dataUsingEncoding:NSUTF8StringEncoding] forKey:(__bridge id)kSecAttrDescription];
   }
 
-  // Protect the keychain entry so it's only valid when the device is unlocked.
-  [dictionary setObject:(__bridge id)kSecAttrAccessibleWhenUnlocked forKey:(__bridge id)kSecAttrAccessible];
-
+  #if TARGET_OS_IPHONE
+    // Protect the keychain entry so it's only valid when the device is unlocked.
+    [dictionary setObject:(__bridge id)kSecAttrAccessibleWhenUnlocked forKey:(__bridge id)kSecAttrAccessible];
+  #endif
   // Add.
   OSStatus status = SecItemAdd( (__bridge CFDictionaryRef)dictionary, NULL );
 
