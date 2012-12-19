@@ -279,7 +279,6 @@
 				AF1D257316792B0300454661 /* KeychainWrapper.h */,
 				AF1D257416792B0300454661 /* KeychainWrapper.m */,
 				AF1D24EF167927C700454661 /* Products */,
-				AF1D25B616792B6600454661 /* HPCSIdentityClientSpec.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -296,6 +295,7 @@
 				AF1D25B716792B6600454661 /* HPCSMistTests-Info.plist */,
 				AF1D25B316792B6600454661 /* InfoPlist.strings */,
 				AF1D25B516792B6600454661 /* EnvironmentSpec.m */,
+				AF1D25B616792B6600454661 /* HPCSIdentityClientSpec.m */,
 			);
 			name = HPCSMistTests;
 			path = HPCSMistTests;
