@@ -21,6 +21,7 @@
   // Specify we are using a password (rather than a certificate, internet password, etc).
   [searchDictionary setObject:(__bridge id)kSecClassGenericPassword forKey:(__bridge id)kSecClass];
   // Uniquely identify this keychain accessor.
+
   [searchDictionary setObject:APP_NAME forKey:(__bridge id)kSecAttrService];
 
   // Uniquely identify the account who will be accessing the keychain.

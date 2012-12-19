@@ -279,6 +279,7 @@
 				AF1D257316792B0300454661 /* KeychainWrapper.h */,
 				AF1D257416792B0300454661 /* KeychainWrapper.m */,
 				AF1D24EF167927C700454661 /* Products */,
+				AF1D25B616792B6600454661 /* HPCSIdentityClientSpec.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -287,7 +288,6 @@
 			isa = PBXGroup;
 			children = (
 				AF4BB8C7167A97C20019C57C /* OHHTTPStubs */,
-				AF1D25B616792B6600454661 /* HPCSIdentityClientSpec.m */,
 				AF1D25B816792B6600454661 /* HPCSNovaClientSpec.m */,
 				AF1D25B916792B6600454661 /* HPCSSwiftClientSpec.m */,
 				AF1D25BA16792B6600454661 /* KWSpec+WaitFor.h */,

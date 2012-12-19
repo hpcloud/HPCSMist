@@ -316,11 +316,13 @@ NSString *const HPCSSwiftAccountContainerCountHeaderKey = @"X-Account-Container-
     [request addValue:obj forHTTPHeaderField:key];
   }];
   AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [self setDefaultHeader:@"Accept" value:@"application/json"];
     if (success) {
       success(operation.response);
     }
   }
   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    [self setDefaultHeader:@"Accept" value:@"application/json"];
     if (failure) {
       failure(operation.response, error);
     }
@@ -406,18 +408,18 @@ NSString *const HPCSSwiftAccountContainerCountHeaderKey = @"X-Account-Container-
   [self setDefaultHeader:@"Content-Type" value:mimeType];
   NSURLRequest *request = [self requestWithMethod:method path:destinationPath parameters:parameters data:data];
   AFHTTPRequestOperation *localOperation = [self HTTPRequestOperationWithRequest:request
-                                                                    success: ^(AFHTTPRequestOperation * operation, id responseObject) {
+                                       success: ^(AFHTTPRequestOperation * op, id responseObject) {
                                          if (success)
                                          {
-                                           success (operation.response);
+                                           success (op.response);
                                          }
                                        }
-                                       failure: ^(AFHTTPRequestOperation *operation,  NSError *error) {
+                                       failure: ^(AFHTTPRequestOperation *op,  NSError *error) {
                                          [[NSNotificationCenter defaultCenter] postNotificationName:HPCSSwiftObjectSaveDidFailNotification object:self];
 
                                          if (failure)
                                          {
-                                           failure (operation.response,error);
+                                           failure (op.response,error);
                                          }
                                        }
                                       ];

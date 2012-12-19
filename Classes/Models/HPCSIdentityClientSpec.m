@@ -25,12 +25,7 @@ SPEC_BEGIN(IdentityClientSpec)
           afterEach(^{
              requestCompleted = NO;
           });
-          context(@"when loaded with no bundle", ^{
-             it(@'takes default APP_NAME',^{
-               [[theValue(APP_NAME) should] equal:@"HPCSMist"];
-             });
-          });
-
+        
           context(@"when dealing with stored credentials", ^{
             HPCSIdentityClient __block *identity;
             beforeEach(^{
