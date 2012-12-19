@@ -64,6 +64,12 @@ comprehensive look at the APIs available in HPCSMist
       }
 
 
+### TODO
+
+- server side copy
+- ACL
+- File Compression (should this be done at a higher level?)
+
 
 
 
