@@ -10,7 +10,7 @@
 #import "HPCSIdentityClient.h"
 #import "Environment.h"
 #import "OHHTTPStubs.h"
-#import "AFNetworking.h"
+#import "HPCSSecurityConstants.h"
 #import "KWSpec+WaitFor.h"
 #import "KeychainWrapper.h"
 
@@ -24,6 +24,11 @@ SPEC_BEGIN(IdentityClientSpec)
           __block BOOL requestCompleted = NO;
           afterEach(^{
              requestCompleted = NO;
+          });
+          context(@"when loaded with no bundle", ^{
+             it(@'takes default APP_NAME',^{
+               [[theValue(APP_NAME) should] equal:@"HPCSMist"];
+             });
           });
 
           context(@"when dealing with stored credentials", ^{
