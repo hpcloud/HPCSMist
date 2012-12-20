@@ -60,7 +60,7 @@ NSString *const HPCSKeystoneCredentialsDidChangeNotification = @"com.hp.cloud.ke
                 }
                 );
 
-  [[NSNotificationCenter defaultCenter] addObserver:self
+  [[NSNotificationCenter defaultCenter] addObserver: _sharedClient
                                            selector:@selector(credentialsChanged:)
                                                name:HPCSKeystoneCredentialsDidChangeNotification
                                              object:nil];
