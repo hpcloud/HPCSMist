@@ -312,7 +312,6 @@ NSString *const HPCSKeystoneCredentialsDidChangeNotification = @"com.hp.cloud.ke
   else
   {
     [KeychainWrapper createKeychainValue:userName forIdentifier:kHPCSAuthUsernameKey withDescription:@"HPCS username"];
-    [[self authInfo] setValue:userName forKey:kHPCSAuthUsernameKey];
     [self.authInfo setValue:userName
                  forKeyPath:[NSString stringWithFormat:@"%@.%@.%@",kHPCSAuthKey,kHPCSAuthPasswordCredentialsKey,kHPCSAuthUsernameKey]];
   }
