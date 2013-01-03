@@ -1,9 +1,9 @@
 //
 //  KeychainWrapper.m
-//  ChristmasKeeper
+//  HPCSMist
 //
-//  Created by Ray Wenderlich on 12/6/11.
-//  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
+//  Based on code created by Ray Wenderlich on 12/6/11.
+//  Copyright (c) 2012 HP Cloud Services, Mike Hagedorn . All rights reserved.
 //
 
 #import "KeychainWrapper.h"
