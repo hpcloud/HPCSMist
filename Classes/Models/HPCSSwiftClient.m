@@ -266,10 +266,13 @@ NSString *const HPCSSwiftAccountContainerCountHeaderKey = @"X-Account-Container-
            success:( void ( ^)(NSHTTPURLResponse * responseObject, NSData * data) )success
            failure:( void ( ^)(NSHTTPURLResponse * responseObject, NSError * error) )failure
 {
+  //because you want the raw bytes here, i.e NSData
+  [self unregisterHTTPOperationClass:[AFJSONRequestOperation class]];
   [self setDefaultHeader:@"Accept" value:nil];
   NSString *path = [NSString stringWithFormat:@"%@/%@", [self URLEncodedString:[object valueForKeyPath:@"parent.name"] ], [self URLEncodedString:[object valueForKeyPath:@"name"] ]];
   [self getPath:path parameters:nil success: ^(AFHTTPRequestOperation * operation, id data) {
      [self setDefaultHeader:@"Accept" value:@"application/json"];
+     [self registerHTTPOperationClass:[AFJSONRequestOperation class]];
      if (success)
      {
        success (operation.response,data);
@@ -277,6 +280,7 @@ NSString *const HPCSSwiftAccountContainerCountHeaderKey = @"X-Account-Container-
    }
    failure: ^(AFHTTPRequestOperation * operation, NSError * error) {
      [self setDefaultHeader:@"Accept" value:@"application/json"];
+     [self registerHTTPOperationClass:[AFJSONRequestOperation class]];
      [[NSNotificationCenter defaultCenter] postNotificationName:HPCSSwiftObjectShowDidFailNotification object:self];
      if (failure)
      {

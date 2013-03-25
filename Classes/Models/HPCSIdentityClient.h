@@ -4,7 +4,7 @@
 //  HPCSMist
 //
 //  Created by Mike Hagedorn on 3/12/12.
-//  Copyright (C) 2012 HP Cloud Services, Mike Hagedorn All rights reserved.
+//  © Copyright 2013 Hewlett-Packard Development Company, L.P.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining
 //  a copy of this software and associated documentation files (the

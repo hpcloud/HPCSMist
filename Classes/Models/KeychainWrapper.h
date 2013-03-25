@@ -1,10 +1,11 @@
 //
 //  KeychainWrapper.h
-//  ChristmasKeeper
+//  HPCSMist
 //
-//  Created by Ray Wenderlich on 12/6/11.
-//  Copyright (C) 2012 HP Cloud Services, Mike Hagedorn All rights reserved.
-//
+//  Created by Mike Hagedorn on 12/6/12.
+//  Based on example by Ray Wenderlich
+//  © Copyright 2013 Hewlett-Packard Development Company, L.P.
+
 //  Permission is hereby granted, free of charge, to any person obtaining
 //  a copy of this software and associated documentation files (the
 //  "Software"), to deal in the Software without restriction, including

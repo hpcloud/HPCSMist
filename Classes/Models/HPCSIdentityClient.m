@@ -72,7 +72,8 @@ NSString *const HPCSKeystoneCredentialsDidChangeNotification = @"com.hp.cloud.ke
 
 - (id) initWithUsername:(NSString *)userName andPassword:(NSString *)password andTenantId:(NSString *)tenantId
 {
-  if (![self initWithIdentityURL])
+  self = [self initWithIdentityURL];
+  if (!self)
   {
     return nil; // COV_NF_LINE
   }
@@ -91,7 +92,8 @@ NSString *const HPCSKeystoneCredentialsDidChangeNotification = @"com.hp.cloud.ke
 
 - (id) initWithAccessKeyId:(NSString *)accessKey andSecretKey:(NSString *)aSecretKey andTenantId:(NSString *)tenantId
 {
-  if (![self initWithIdentityURL])
+  self = [self initWithIdentityURL];
+  if (!self)
   {
     return nil; // COV_NF_LINE
   }
@@ -111,7 +113,9 @@ NSString *const HPCSKeystoneCredentialsDidChangeNotification = @"com.hp.cloud.ke
 - (id) initWithIdentityURL
 {
   Environment *myEnv = [Environment sharedInstance];
-  if (![self initWithBaseURL:[NSURL URLWithString:myEnv.HPCSIdentityURL]])
+  self = [self initWithBaseURL:[NSURL URLWithString:myEnv.HPCSIdentityURL]];
+
+  if (!self)
   {
     return nil; // COV_NF_LINE
   }

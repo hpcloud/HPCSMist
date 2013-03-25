@@ -72,7 +72,7 @@ SPEC_BEGIN(SwiftClientSpec)
 
             [identityClient authenticate:^(NSArray *serviceCatalog) {
               authResult = serviceCatalog;
-            }                    failure:^(NSHTTPURLResponse *responseObject, NSError *error) {
+            }  failure:^(NSHTTPURLResponse *responseObject, NSError *error) {
 
             }];
 

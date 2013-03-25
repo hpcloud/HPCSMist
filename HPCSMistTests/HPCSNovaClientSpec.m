@@ -37,7 +37,6 @@ SPEC_BEGIN(ComputeClientSpec)
         NSString *password = @"password";
         NSString *tenantId = @"12345";
 
-
         identityClient = [[HPCSIdentityClient alloc] initWithUsername:userName andPassword:password andTenantId:tenantId];
 
         NSArray __block *authResult;

@@ -1,10 +1,7 @@
 //
-//  Enviroment.h
-//  HPCSMist
-//
-//  Created by Mike Hagedorn on 3/12/12.
+// Created by Mike Hagedorn on 3/13/13.
 //  © Copyright 2013 Hewlett-Packard Development Company, L.P.
-
+//
 //  Permission is hereby granted, free of charge, to any person obtaining
 //  a copy of this software and associated documentation files (the
 //  "Software"), to deal in the Software without restriction, including
@@ -25,26 +22,25 @@
 //  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
+//
+// To change the template use AppCode | Preferences | File Templates.
+//
+
 
 #import <Foundation/Foundation.h>
+#import "HPCSIdentityClient.h"
+#import "AFHTTPClient.h"
 
-extern NSString *const kHPCSIdentityBaseURLString;
+@class HPCSIdentityClient;
 
-/** Describes a operating environment in the HPCS system.
- *  @discussion HP has several environments, but this code
- *  knows about two
- *
- *  - RNDD
- *  - Production
- */
-@interface Environment : NSObject
 
-/** the URL endpoint for the Enviroment in question, HP has several */
-@property (retain) NSString *HPCSIdentityURL;
+@interface HPCSDbaasClient : AFHTTPClient
 
-/** The singleton loaded from Environments.plist.  Picks the environment to set from Info.plist **Configuration** key
-   @discussion if there is no Info.plist **Configuration** key, or there is no Environment defined for the **Configuration** key then it just returns the production identity URL value
- */
-+ (Environment *) sharedInstance;
+/** The HPCSIdentityClient object used to get access to the HPCSToken. */
+@property(retain) HPCSIdentityClient *identityClient;
+
+- (id)initWithIdentityClient:(HPCSIdentityClient *)client;
+
+
 
 @end
