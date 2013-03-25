@@ -33,6 +33,8 @@
 #import "HPCSToken.h"
 #import "HPCSTenant.h"
 
+@class HPCSCDNClient;
+
 extern NSString *const HPCSNetworkingErrorDomain;
 
 extern NSString *const HPCSAuthenticationDidFailNotification;
@@ -184,6 +186,17 @@ extern NSString *const kHPCSAuthSecretKey;
 
 /** the URL for the object storage endpoint as listed in the Service Catalog */
 - (NSString *) publicUrlForObjectStorage;
+
+/** Retrieve an instance of the Object Storage Client, designated way to get an instance of the object storage (Swift) client
+
+   @discussion if the service catalog does not contain a compute service for this user the HPCSKeystoneSwiftCatalogIsEmptyNotification is sent.
+
+ */
+- (HPCSCDNClient *) cdnClient;
+
+/** the URL for the object storage endpoint as listed in the Service Catalog */
+- (NSString *) publicUrlForCDN;
+
 
 ///-----------------------------------------------
 /// @name Secure Management of Your Credentials

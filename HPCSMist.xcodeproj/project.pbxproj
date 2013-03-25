@@ -22,7 +22,9 @@
 
 /* Begin PBXBuildFile section */
 		155B85E37FC5CE266ADF1D53 /* HPCSDbaasClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 155B8AE8258A11BAC956B176 /* HPCSDbaasClient.m */; };
+		155B87342C54164FA87D7711 /* HPCSCDNClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 155B8432AC6C07D92135B4CC /* HPCSCDNClient.m */; };
 		155B88D99C54B1DAC33CFF53 /* HPCSDbaasClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 155B8AE8258A11BAC956B176 /* HPCSDbaasClient.m */; };
+		155B8DCB7A267B433A6CA090 /* HPCSCDNClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 155B8432AC6C07D92135B4CC /* HPCSCDNClient.m */; };
 		56877366D9B04AEA836AB5D6 /* libPods-HPCSMistTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F8C673EB98845D7BCF23BA7 /* libPods-HPCSMistTests.a */; };
 		AF1D24F3167927C800454661 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1D24F2167927C800454661 /* UIKit.framework */; };
 		AF1D24F5167927C800454661 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1D24F4167927C800454661 /* Foundation.framework */; };
@@ -83,8 +85,10 @@
 
 /* Begin PBXFileReference section */
 		048D663BE13C4C10BCDB5371 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		155B8432AC6C07D92135B4CC /* HPCSCDNClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPCSCDNClient.m; sourceTree = "<group>"; };
 		155B8A4980F00D8930259121 /* HPCSDbaasClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPCSDbaasClient.h; sourceTree = "<group>"; };
 		155B8AE8258A11BAC956B176 /* HPCSDbaasClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPCSDbaasClient.m; sourceTree = "<group>"; };
+		155B8D298A2CD5D020ECC0BF /* HPCSCDNClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPCSCDNClient.h; sourceTree = "<group>"; };
 		5F8C673EB98845D7BCF23BA7 /* libPods-HPCSMistTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HPCSMistTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B6CE0E57B1E4D57AB466D9B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF1D24EE167927C700454661 /* HPCSMist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = HPCSMist.app; path = "../../../../Library/Caches/appCode10/DerivedData/HPCSMist-156636c1/Build/Products/Debug-iphonesimulator/HPCSMist.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -251,6 +255,8 @@
 				AF1D24EF167927C700454661 /* Products */,
 				155B8AE8258A11BAC956B176 /* HPCSDbaasClient.m */,
 				155B8A4980F00D8930259121 /* HPCSDbaasClient.h */,
+				155B8432AC6C07D92135B4CC /* HPCSCDNClient.m */,
+				155B8D298A2CD5D020ECC0BF /* HPCSCDNClient.h */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -538,6 +544,7 @@
 				AF1D257E16792B0300454661 /* KeychainWrapper.m in Sources */,
 				AF1D25EA16792B8F00454661 /* main.m in Sources */,
 				155B88D99C54B1DAC33CFF53 /* HPCSDbaasClient.m in Sources */,
+				155B8DCB7A267B433A6CA090 /* HPCSCDNClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -553,6 +560,7 @@
 				AF4BB8CC167A97C20019C57C /* OHHTTPStubs.m in Sources */,
 				AF4BB8CD167A97C20019C57C /* OHHTTPStubsResponse.m in Sources */,
 				155B85E37FC5CE266ADF1D53 /* HPCSDbaasClient.m in Sources */,
+				155B87342C54164FA87D7711 /* HPCSCDNClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

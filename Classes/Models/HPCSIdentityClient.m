@@ -13,6 +13,7 @@
 #import "HPCSCommonMacros.h"
 #import "HPCSSecurityConstants.h"
 #import "KeychainWrapper.h"
+#import "HPCSCDNClient.h"
 
 NSString *const HPCSNetworkingErrorDomain = @"com.hp.cloud.networking.error";
 
@@ -276,6 +277,7 @@ NSString *const HPCSKeystoneCredentialsDidChangeNotification = @"com.hp.cloud.ke
 
   for (id item in self.serviceCatalog)
   {
+    //TODO nn
     if ([[item valueForKey:@"type"] isEqualToString:@"compute"])
     {
       NSDictionary *ep = [[item valueForKey:@"endpoints"] objectAtIndex:0];
