@@ -66,7 +66,6 @@
 		AF1D25E216792B6600454661 /* tokensApiCreds.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25CB16792B6600454661 /* tokensApiCreds.json */; };
 		AF1D25E316792B6600454661 /* unauthorized.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25CC16792B6600454661 /* unauthorized.json */; };
 		AF3AD32A17048DD000E0BE3E /* HPCSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3AD32917048DD000E0BE3E /* HPCSViewController.m */; };
-		AF3AD32B17048DD000E0BE3E /* HPCSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3AD32917048DD000E0BE3E /* HPCSViewController.m */; };
 		AF4BB8AF167933D10019C57C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF4BB8AE167933D10019C57C /* Security.framework */; };
 		AF4BB8CC167A97C20019C57C /* OHHTTPStubs.m in Sources */ = {isa = PBXBuildFile; fileRef = AF4BB8C9167A97C20019C57C /* OHHTTPStubs.m */; };
 		AF4BB8CD167A97C20019C57C /* OHHTTPStubsResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = AF4BB8CB167A97C20019C57C /* OHHTTPStubsResponse.m */; };
@@ -579,7 +578,6 @@
 				AF4BB8CC167A97C20019C57C /* OHHTTPStubs.m in Sources */,
 				AF4BB8CD167A97C20019C57C /* OHHTTPStubsResponse.m in Sources */,
 				155B83F23BBCDA216E8E24C5 /* HPCSCDNClientSpec.m in Sources */,
-				AF3AD32B17048DD000E0BE3E /* HPCSViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -52,7 +52,15 @@
 ///-----------------------------------------------------
 
 - (void)cdnContainers:(void ( ^)(NSHTTPURLResponse *responseObject, NSArray *records))success
-           failure:(void ( ^)(NSHTTPURLResponse *responseObject, NSError *error))failure __unused;
+              failure:(void ( ^)(NSHTTPURLResponse *responseObject, NSError *error))failure;
+
+///-----------------------------------------------------
+/// @name Enable CDN for Container
+///-----------------------------------------------------
+
+- (void)enableCDNForContainer:(id)object
+          success :(void ( ^)(NSHTTPURLResponse *responseObject))success
+          failure :(void ( ^)(NSHTTPURLResponse *responseObject, NSError *error))failure;
 
 
 ///-----------------------------------------------------

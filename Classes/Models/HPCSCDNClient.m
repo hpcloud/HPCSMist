@@ -54,6 +54,23 @@
 
 }
 
+- (void)enableCDNForContainer:(id)container
+                      success :(void ( ^)(NSHTTPURLResponse *responseObject))success
+                      failure :(void ( ^)(NSHTTPURLResponse *responseObject, NSError *error))failure{
+    NSString *path = [NSString stringWithFormat:@"%@", [self URLEncodedString:[container valueForKeyPath:@"name"] ]];
+
+    [self putPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if (success) {
+            success(operation.response);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (failure) {
+            failure(operation.response, error);
+        }
+
+    }];
+}
+
 
 - (void)getCDNContainerMetadata:(id)container
         success:(void (^)(NSHTTPURLResponse *, NSDictionary *))success
