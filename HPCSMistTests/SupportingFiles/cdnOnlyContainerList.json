@@ -1,0 +1,16 @@
+{
+    "name":"beets",
+    "cdn_enabled":true,
+    "ttl":86400,
+    "x-cdn-uri":"http://h1dbbb5c59541c721905ae1a7a433b50c.cdn.hpcloudsvc.com",
+    "x-cdn-ssl-uri" : "https://a248.e.akamai.net/cdn.hpcloudsvc.com/h1dbbb5c59541c721905ae1a7a433b50c/prodaw2",
+    "log_retention":false
+},
+{
+"name":"firebird",
+"cdn_enabled":true,
+"ttl":86400,
+"x-cdn-uri":"http://abcbbb5c59541c721905ae1a7a433b50c.cdn.hpcloudsvc.com",
+"x-cdn-ssl-uri" : "https://a248.e.akamai.net/cdn.hpcloudsvc.com/abcbbb5c59541c721905ae1a7a433b50c/prodaw2",
+"log_retention":false
+}

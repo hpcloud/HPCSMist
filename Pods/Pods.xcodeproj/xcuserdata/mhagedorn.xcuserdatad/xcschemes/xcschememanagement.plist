@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-HPCSMistSpecs.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>11</integer>
+		</dict>
 		<key>Pods-HPCSMistTests.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -17,6 +22,21 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0F5AA99AE46B4A6B9664F7A2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6E2084465A4040AFB31A9375</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8D0AFFEBB824423E9C19DD59</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>8F5F754384014BB9B86C6659</key>
 		<dict>
 			<key>primary</key>

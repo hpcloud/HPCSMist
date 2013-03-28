@@ -52,6 +52,7 @@ extern NSString *const kHPCSAuthTenantIdKey;
 extern NSString *const kHPCSAuthAccessKeyCredentialsKey;
 extern NSString *const kHPCSAuthAccessKey;
 extern NSString *const kHPCSAuthSecretKey;
+extern NSString *const HPCSKeystoneCDNCatalogIsEmptyNotification;
 
 /**Allows Access to the HP Cloud Services authorization system (Control Services).
 

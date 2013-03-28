@@ -29,6 +29,7 @@ NSString *const kHPCSAuthSecretKey = @"secretKey";
 NSString *const HPCSAuthenticationDidFailNotification = @"com.hp.cloud.authentication.fail";
 NSString *const HPCSKeystoneNovaCatalogIsEmptyNotification = @"com.hp.cloud.keystone.nova.catalog.empty";
 NSString *const HPCSKeystoneSwiftCatalogIsEmptyNotification = @"com.hp.cloud.keystone.swift.catalog.empty";
+NSString *const HPCSKeystoneCDNCatalogIsEmptyNotification = @"com.hp.cloud.keystone.cdn.catalog.empty";
 NSString *const HPCSKeystoneCredentialsDidChangeNotification = @"com.hp.cloud.keystone.credentials.changed";
 
 @interface HPCSIdentityClient ()
@@ -299,6 +300,35 @@ NSString *const HPCSKeystoneCredentialsDidChangeNotification = @"com.hp.cloud.ke
   for (id item in self.serviceCatalog)
   {
     if ([[item valueForKey:@"type"] isEqualToString:@"object-store"])
+    {
+      NSDictionary *ep = [[item valueForKey:@"endpoints"] objectAtIndex:0];
+      return [ep valueForKey:@"publicURL"];
+    }
+  }
+
+  return nil;
+}
+
+- (HPCSCDNClient *)cdnClient {
+  NSString *cdnURL = [self publicUrlForCDN];
+  if ( IsEmpty(cdnURL) )
+  {
+    [[NSNotificationCenter defaultCenter] postNotificationName:HPCSKeystoneCDNCatalogIsEmptyNotification object:self];
+    return nil;
+  }
+
+  return [[HPCSCDNClient  alloc] initWithIdentityClient:self];
+}
+
+- (NSString *)publicUrlForCDN {
+  if ( IsEmpty(self.serviceCatalog) )
+  {
+    return nil;
+  }
+
+  for (id item in self.serviceCatalog)
+  {
+    if ([[item valueForKey:@"type"] isEqualToString:@"hpext:cdn"])
     {
       NSDictionary *ep = [[item valueForKey:@"endpoints"] objectAtIndex:0];
       return [ep valueForKey:@"publicURL"];

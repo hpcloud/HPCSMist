@@ -4,6 +4,36 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>All in ComputeClientSpec.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+		<key>All in EnvironmentSpec.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
+		<key>All in HPCSCDNClientSpec.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
+		<key>All in IdentityClientSpec.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
+		<key>All in SwiftClientSpec.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
+		<key>CommandLineUnitTests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>9</integer>
+		</dict>
 		<key>Documentation.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -13,6 +43,16 @@
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>HPCSMistSpecs.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>10</integer>
+		</dict>
+		<key>TestTarget.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>12</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -28,6 +68,21 @@
 			<true/>
 		</dict>
 		<key>AF4BB8B816793CBE0019C57C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AF62517517032A6800B5E20B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AF62518B17034D2800B5E20B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AF6251A11703549900B5E20B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
