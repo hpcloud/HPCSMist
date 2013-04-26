@@ -9,7 +9,7 @@ and other familiar Foundation technologies.
 
 
 ### Get The Source
-- [Download HPCSMist](https://git.hpcloud.net/hagedorm/HPCSMist)
+- [Download HPCSMist](https://github.com/hpcloud/HPCSMist)
 
 ### Add HPCSMist To Your Project
 
@@ -20,7 +20,7 @@ HPCSMist as a dependency in your Podfile with pod 'HPCSMist',
 '0.0.1'.
 
 
-- Check out the [complete documentation](http://15.184.93.121/) for a
+- Check out the [complete documentation](http://hpcloud.github.io/HPCSMist/) for a
 comprehensive look at the APIs available in HPCSMist
 
 ## Overview
