@@ -1,0 +1,1681 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>HPCSIdentityClient Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.1 (build 840)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">HPCSMist </a></h1>
+				<a id="developerHome" href="../index.html">HP Cloud Services</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">HPCSIdentityClient Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/accessKeyId">&nbsp;&nbsp;&nbsp;&nbsp;accessKeyId</option>
+	
+	<option value="//api/name/isTokenValid">&nbsp;&nbsp;&nbsp;&nbsp;isTokenValid</option>
+	
+	<option value="//api/name/secretKey">&nbsp;&nbsp;&nbsp;&nbsp;secretKey</option>
+	
+	<option value="//api/name/serviceCatalog">&nbsp;&nbsp;&nbsp;&nbsp;serviceCatalog</option>
+	
+	<option value="//api/name/tenant">&nbsp;&nbsp;&nbsp;&nbsp;tenant</option>
+	
+	<option value="//api/name/token">&nbsp;&nbsp;&nbsp;&nbsp;token</option>
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/sharedClient">&nbsp;&nbsp;&nbsp;&nbsp;+ sharedClient</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/authenticate:failure:">&nbsp;&nbsp;&nbsp;&nbsp;- authenticate:failure:</option>
+	
+	<option value="//api/name/authorizationInfo">&nbsp;&nbsp;&nbsp;&nbsp;- authorizationInfo</option>
+	
+	<option value="//api/name/computeClient">&nbsp;&nbsp;&nbsp;&nbsp;- computeClient</option>
+	
+	<option value="//api/name/initWithAccessKeyId:andSecretKey:andTenantId:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithAccessKeyId:andSecretKey:andTenantId:</option>
+	
+	<option value="//api/name/initWithUsername:andPassword:andTenantId:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithUsername:andPassword:andTenantId:</option>
+	
+	<option value="//api/name/isAuthenticated">&nbsp;&nbsp;&nbsp;&nbsp;- isAuthenticated</option>
+	
+	<option value="//api/name/isTokenExpired">&nbsp;&nbsp;&nbsp;&nbsp;- isTokenExpired</option>
+	
+	<option value="//api/name/password">&nbsp;&nbsp;&nbsp;&nbsp;- password</option>
+	
+	<option value="//api/name/publicUrlForCompute">&nbsp;&nbsp;&nbsp;&nbsp;- publicUrlForCompute</option>
+	
+	<option value="//api/name/publicUrlForObjectStorage">&nbsp;&nbsp;&nbsp;&nbsp;- publicUrlForObjectStorage</option>
+	
+	<option value="//api/name/setPassword:">&nbsp;&nbsp;&nbsp;&nbsp;- setPassword:</option>
+	
+	<option value="//api/name/setTenantId:">&nbsp;&nbsp;&nbsp;&nbsp;- setTenantId:</option>
+	
+	<option value="//api/name/setToken:">&nbsp;&nbsp;&nbsp;&nbsp;- setToken:</option>
+	
+	<option value="//api/name/setUsername:">&nbsp;&nbsp;&nbsp;&nbsp;- setUsername:</option>
+	
+	<option value="//api/name/swiftClient">&nbsp;&nbsp;&nbsp;&nbsp;- swiftClient</option>
+	
+	<option value="//api/name/tenantId">&nbsp;&nbsp;&nbsp;&nbsp;- tenantId</option>
+	
+	<option value="//api/name/token">&nbsp;&nbsp;&nbsp;&nbsp;- token</option>
+	
+	<option value="//api/name/tokenInvalidate:failure:">&nbsp;&nbsp;&nbsp;&nbsp;- tokenInvalidate:failure:</option>
+	
+	<option value="//api/name/username">&nbsp;&nbsp;&nbsp;&nbsp;- username</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Creating and Initializing HPCSIdentity Clients">Creating and Initializing HPCSIdentity Clients</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Authenticating with Control Services (Keystone)">Authenticating with Control Services (Keystone)</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Checking Your Authorization Status">Checking Your Authorization Status</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Ending Your Session">Ending Your Session</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Getting Access To Authenticated Services">Getting Access To Authenticated Services</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Secure Management of Your Credentials">Secure Management of Your Credentials</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/accessKeyId">accessKeyId</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isTokenValid">isTokenValid</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/secretKey">secretKey</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/serviceCatalog">serviceCatalog</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/tenant">tenant</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/token">token</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sharedClient">sharedClient</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/authenticate:failure:">authenticate:failure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/authorizationInfo">authorizationInfo</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/computeClient">computeClient</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithAccessKeyId:andSecretKey:andTenantId:">initWithAccessKeyId:andSecretKey:andTenantId:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithUsername:andPassword:andTenantId:">initWithUsername:andPassword:andTenantId:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isAuthenticated">isAuthenticated</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isTokenExpired">isTokenExpired</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/password">password</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/publicUrlForCompute">publicUrlForCompute</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/publicUrlForObjectStorage">publicUrlForObjectStorage</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setPassword:">setPassword:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setTenantId:">setTenantId:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setToken:">setToken:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setUsername:">setUsername:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/swiftClient">swiftClient</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/tenantId">tenantId</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/token">token</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/tokenInvalidate:failure:">tokenInvalidate:failure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/username">username</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="HPCSIdentityClient Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">HPCSIdentityClient Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">AFHTTPClient</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">HPCSIdentityClient.h</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Allows Access to the HP Cloud Services authorization system (Control Services).</p><p>this classes listens for the notification HPCSKeystoneCredentialsDidChangeNotification so that it can dump the current cached <a href="#//api/name/token">token</a>.  Use this to force the <a href="#//api/name/token">token</a> to be dumped
+*</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						<h3 class="subsubtitle task-title">Other Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/token">&nbsp;&nbsp;token</a></code>
+		<span class="tooltip"><p>The <a href="../Classes/HPCSToken.html">HPCSToken</a> object representing the user&rsquo;s credentials.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/tenant">&nbsp;&nbsp;tenant</a></code>
+		<span class="tooltip"><p>The <a href="../Classes/HPCSTenant.html">HPCSTenant</a> object representing the the current user&rsquo;s tenant.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/serviceCatalog">&nbsp;&nbsp;serviceCatalog</a></code>
+		<span class="tooltip"><p>The NSArray of NSDictionary objects which represent services the current user can see.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isTokenValid">&nbsp;&nbsp;isTokenValid</a></code>
+		<span class="tooltip"><p>Whether or not the current <a href="#//api/name/token">token</a> is valid</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/accessKeyId">&nbsp;&nbsp;accessKeyId</a></code>
+		<span class="tooltip"><p>The access key for this user</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/secretKey">&nbsp;&nbsp;secretKey</a></code>
+		<span class="tooltip"><p>The access key for this user</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="Creating and Initializing HPCSIdentity Clients" name="task_Creating and Initializing HPCSIdentity Clients"></a>
+						<h3 class="subsubtitle task-title">Creating and Initializing HPCSIdentity Clients</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sharedClient">+&nbsp;sharedClient</a></code>
+		<span class="tooltip"><p>Convenience method to get the HPCSIdentityClient</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithUsername:andPassword:andTenantId:">&ndash;&nbsp;initWithUsername:andPassword:andTenantId:</a></code>
+		<span class="tooltip"><p>Initialize using <a href="#//api/name/username">username</a> and <a href="#//api/name/password">password</a></p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithAccessKeyId:andSecretKey:andTenantId:">&ndash;&nbsp;initWithAccessKeyId:andSecretKey:andTenantId:</a></code>
+		<span class="tooltip"><p>Initialize using accessKey and secret key</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/authorizationInfo">&ndash;&nbsp;authorizationInfo</a></code>
+		<span class="tooltip"><p>NSDictionary which holds either username/<a href="#//api/name/password">password</a> type information or accessKey/<a href="#//api/name/secretKey">secretKey</a> type of information</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Authenticating with Control Services (Keystone)" name="task_Authenticating with Control Services (Keystone)"></a>
+						<h3 class="subsubtitle task-title">Authenticating with Control Services (Keystone)</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/authenticate:failure:">&ndash;&nbsp;authenticate:failure:</a></code>
+		<span class="tooltip"><p>Authenticate to HP Cloud Services Identity Services and return security <a href="#//api/name/token">token</a></p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Checking Your Authorization Status" name="task_Checking Your Authorization Status"></a>
+						<h3 class="subsubtitle task-title">Checking Your Authorization Status</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isTokenExpired">&ndash;&nbsp;isTokenExpired</a></code>
+		<span class="tooltip"><p>Whether or not your <a href="../Classes/HPCSToken.html">HPCSToken</a> is expired</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isAuthenticated">&ndash;&nbsp;isAuthenticated</a></code>
+		<span class="tooltip"><p>Whether or not you are logged in</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Ending Your Session" name="task_Ending Your Session"></a>
+						<h3 class="subsubtitle task-title">Ending Your Session</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/tokenInvalidate:failure:">&ndash;&nbsp;tokenInvalidate:failure:</a></code>
+		<span class="tooltip"><p>Invalidate your current <a href="#//api/name/token">token</a></p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Getting Access To Authenticated Services" name="task_Getting Access To Authenticated Services"></a>
+						<h3 class="subsubtitle task-title">Getting Access To Authenticated Services</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/computeClient">&ndash;&nbsp;computeClient</a></code>
+		<span class="tooltip"><p>Retrieve an instance of the Compute Client,designated way to get an instance of the Compute (Nova) client</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/publicUrlForCompute">&ndash;&nbsp;publicUrlForCompute</a></code>
+		<span class="tooltip"><p>the URL for the compute endpoint as listed in the Service Catalog</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/swiftClient">&ndash;&nbsp;swiftClient</a></code>
+		<span class="tooltip"><p>Retrieve an instance of the Object Storage Client, designated way to get an instance of the object storage (Swift) client</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/publicUrlForObjectStorage">&ndash;&nbsp;publicUrlForObjectStorage</a></code>
+		<span class="tooltip"><p>the URL for the object storage endpoint as listed in the Service Catalog</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Secure Management of Your Credentials" name="task_Secure Management of Your Credentials"></a>
+						<h3 class="subsubtitle task-title">Secure Management of Your Credentials</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setUsername:">&ndash;&nbsp;setUsername:</a></code>
+		<span class="tooltip"><p>Stores the user name in the secure Keychain</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/username">&ndash;&nbsp;username</a></code>
+		<span class="tooltip"><p>Get the stored username</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setPassword:">&ndash;&nbsp;setPassword:</a></code>
+		<span class="tooltip"><p>  Storage <a href="#//api/name/password">password</a> in the secure Keychain</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/password">&ndash;&nbsp;password</a></code>
+		<span class="tooltip"><p>Get the password from the secure Keychain</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setTenantId:">&ndash;&nbsp;setTenantId:</a></code>
+		<span class="tooltip"><p>Store the <a href="#//api/name/tenantId">tenantId</a> in the secure Keychain</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/tenantId">&ndash;&nbsp;tenantId</a></code>
+		<span class="tooltip"><p>Get the tenantId from storage</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/token">&ndash;&nbsp;token</a></code>
+		<span class="tooltip"><p>Get the token from the Keychain</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setToken:">&ndash;&nbsp;setToken:</a></code>
+		<span class="tooltip"><p>Store the <a href="#//api/name/token">token</a> in the secure Keychain</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/accessKeyId" title="accessKeyId"></a>
+	<h3 class="subsubtitle method-title">accessKeyId</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The access key for this user</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>@property (retain) NSString *accessKeyId</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>will be nil if <a href="#//api/name/sharedClient">sharedClient</a> is utilized for intitialization</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HPCSIdentityClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isTokenValid" title="isTokenValid"></a>
+	<h3 class="subsubtitle method-title">isTokenValid</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Whether or not the current <a href="#//api/name/token">token</a> is valid</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>@property (assign) BOOL isTokenValid</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HPCSIdentityClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/secretKey" title="secretKey"></a>
+	<h3 class="subsubtitle method-title">secretKey</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The access key for this user</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>@property (retain) NSString *secretKey</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>will be nil if <a href="#//api/name/sharedClient">sharedClient</a> is utilized for intitialization</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HPCSIdentityClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/serviceCatalog" title="serviceCatalog"></a>
+	<h3 class="subsubtitle method-title">serviceCatalog</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The NSArray of NSDictionary objects which represent services the current user can see.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>@property (retain) NSArray *serviceCatalog</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HPCSIdentityClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/tenant" title="tenant"></a>
+	<h3 class="subsubtitle method-title">tenant</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The <a href="../Classes/HPCSTenant.html">HPCSTenant</a> object representing the the current user&rsquo;s tenant.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>@property (retain) HPCSTenant *tenant</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HPCSIdentityClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/token" title="token"></a>
+	<h3 class="subsubtitle method-title">token</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The <a href="../Classes/HPCSToken.html">HPCSToken</a> object representing the user&rsquo;s credentials.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>@property (retain) HPCSToken *token</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HPCSIdentityClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/sharedClient" title="sharedClient"></a>
+	<h3 class="subsubtitle method-title">sharedClient</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Convenience method to get the HPCSIdentityClient</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>+ (HPCSIdentityClient *)sharedClient</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This is the designated initializer. Returns a singleton. If you use this method, then you are using the <a href="#//api/name/initWithUsername:andPassword:andTenantId:">initWithUsername:andPassword:andTenantId:</a> method to constuct the identity client instance, as opposed to the <a href="#//api/name/initWithAccessKeyId:andSecretKey:andTenantId:">initWithAccessKeyId:andSecretKey:andTenantId:</a> method.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HPCSIdentityClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/authenticate:failure:" title="authenticate:failure:"></a>
+	<h3 class="subsubtitle method-title">authenticate:failure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Authenticate to HP Cloud Services Identity Services and return security <a href="#//api/name/token">token</a></p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)authenticate:(void ( ^ ) ( NSArray *serviceCatalog ))<em>block</em> failure:(void ( ^ ) ( NSHTTPURLResponse *responseObject , NSError *error ))<em>failure</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>block</em></dt>
+			<dd><p>a block which returns an NSArray of NSDictionary objects representing services available to you such as Compute, or Object Storage</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failure</em></dt>
+			<dd><p>the block called if the authenticate method failed</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>if the service catalog is empty, then your credentials where not valid. You can subscribe to HPCSAuthenticationDidFailNotification to take appropriate action if the credentials are bad</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HPCSIdentityClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/authorizationInfo" title="authorizationInfo"></a>
+	<h3 class="subsubtitle method-title">authorizationInfo</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>NSDictionary which holds either username/<a href="#//api/name/password">password</a> type information or accessKey/<a href="#//api/name/secretKey">secretKey</a> type of information</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (NSDictionary *)authorizationInfo</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HPCSIdentityClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/computeClient" title="computeClient"></a>
+	<h3 class="subsubtitle method-title">computeClient</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Retrieve an instance of the Compute Client,designated way to get an instance of the Compute (Nova) client</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (HPCSComputeClient *)computeClient</code></div>
+	
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>nil if no compute resource is in the service catalog</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>if the service catalog does not contain a compute service for this user the HPCSKeystoneNovaCatalogIsEmptyNotification is sent</p>
+
+<p>   Normal Response Code(s): 204</p>
+
+<p>   Error Response Code(s): unauthorized (401), forbidden (403), badRequest (400))</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HPCSIdentityClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithAccessKeyId:andSecretKey:andTenantId:" title="initWithAccessKeyId:andSecretKey:andTenantId:"></a>
+	<h3 class="subsubtitle method-title">initWithAccessKeyId:andSecretKey:andTenantId:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initialize using accessKey and secret key</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (id)initWithAccessKeyId:(NSString *)<em>accessKey</em> andSecretKey:(NSString *)<em>secretKey</em> andTenantId:(NSString *)<em>tenantId</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>accessKey</em></dt>
+			<dd><p>Your access key</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>secretKey</em></dt>
+			<dd><p>Your secret key</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>tenantId</em></dt>
+			<dd><p>Your <a href="#//api/name/tenantId">tenantId</a> for your account</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>HP Cloud Services allows either AccessKey and SecretKey based login or <a href="#//api/name/username">username</a> and <a href="#//api/name/password">password</a> based login.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HPCSIdentityClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithUsername:andPassword:andTenantId:" title="initWithUsername:andPassword:andTenantId:"></a>
+	<h3 class="subsubtitle method-title">initWithUsername:andPassword:andTenantId:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initialize using <a href="#//api/name/username">username</a> and <a href="#//api/name/password">password</a></p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (id)initWithUsername:(NSString *)<em>userName</em> andPassword:(NSString *)<em>password</em> andTenantId:(NSString *)<em>tenantId</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>userName</em></dt>
+			<dd><p>The name that you use to login to the Management Console with</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>password</em></dt>
+			<dd><p>The <a href="#//api/name/password">password</a> that you use to login to the Management Console with</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>tenantId</em></dt>
+			<dd><p>Your <a href="#//api/name/tenantId">tenantId</a> for your account</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>HP Cloud Services allows either AccessKey and SecretKey based login or <a href="#//api/name/username">username</a> and <a href="#//api/name/password">password</a> based login.  <a href="#//api/name/sharedClient">sharedClient</a> calls this one.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HPCSIdentityClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isAuthenticated" title="isAuthenticated"></a>
+	<h3 class="subsubtitle method-title">isAuthenticated</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Whether or not you are logged in</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (BOOL)isAuthenticated</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HPCSIdentityClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isTokenExpired" title="isTokenExpired"></a>
+	<h3 class="subsubtitle method-title">isTokenExpired</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Whether or not your <a href="../Classes/HPCSToken.html">HPCSToken</a> is expired</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (BOOL)isTokenExpired</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HPCSIdentityClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/password" title="password"></a>
+	<h3 class="subsubtitle method-title">password</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get the password from the secure Keychain</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (NSString *)password</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HPCSIdentityClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/publicUrlForCompute" title="publicUrlForCompute"></a>
+	<h3 class="subsubtitle method-title">publicUrlForCompute</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>the URL for the compute endpoint as listed in the Service Catalog</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (NSString *)publicUrlForCompute</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HPCSIdentityClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/publicUrlForObjectStorage" title="publicUrlForObjectStorage"></a>
+	<h3 class="subsubtitle method-title">publicUrlForObjectStorage</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>the URL for the object storage endpoint as listed in the Service Catalog</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (NSString *)publicUrlForObjectStorage</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HPCSIdentityClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setPassword:" title="setPassword:"></a>
+	<h3 class="subsubtitle method-title">setPassword:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>  Storage <a href="#//api/name/password">password</a> in the secure Keychain</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)setPassword:(NSString *)<em>password</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>password</em></dt>
+			<dd><p>the <a href="#//api/name/password">password</a> to set</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>pass in nil to delete from Keychain</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HPCSIdentityClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setTenantId:" title="setTenantId:"></a>
+	<h3 class="subsubtitle method-title">setTenantId:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Store the <a href="#//api/name/tenantId">tenantId</a> in the secure Keychain</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)setTenantId:(NSString *)<em>tenantId</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>tenantId</em></dt>
+			<dd><p>the <a href="#//api/name/tenantId">tenantId</a> to store</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HPCSIdentityClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setToken:" title="setToken:"></a>
+	<h3 class="subsubtitle method-title">setToken:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Store the <a href="#//api/name/token">token</a> in the secure Keychain</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)setToken:(HPCSToken *)<em>token</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>token</em></dt>
+			<dd><p>the <a href="#//api/name/token">token</a> object to store in the Keychain</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>pass in nil to delete <a href="#//api/name/token">token</a> from Keychain, this will cause a relogin to occur the next time an authenticated service is called.  This essentially deletes the local cache of the <a href="#//api/name/token">token</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HPCSIdentityClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setUsername:" title="setUsername:"></a>
+	<h3 class="subsubtitle method-title">setUsername:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Stores the user name in the secure Keychain</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)setUsername:(NSString *)<em>userName</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>userName</em></dt>
+			<dd><p>your <a href="#//api/name/username">username</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HPCSIdentityClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/swiftClient" title="swiftClient"></a>
+	<h3 class="subsubtitle method-title">swiftClient</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Retrieve an instance of the Object Storage Client, designated way to get an instance of the object storage (Swift) client</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (HPCSSwiftClient *)swiftClient</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>if the service catalog does not contain a compute service for this user the HPCSKeystoneSwiftCatalogIsEmptyNotification is sent.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HPCSIdentityClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/tenantId" title="tenantId"></a>
+	<h3 class="subsubtitle method-title">tenantId</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get the tenantId from storage</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (NSString *)tenantId</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HPCSIdentityClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/token" title="token"></a>
+	<h3 class="subsubtitle method-title">token</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get the token from the Keychain</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (HPCSToken *)token</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HPCSIdentityClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/tokenInvalidate:failure:" title="tokenInvalidate:failure:"></a>
+	<h3 class="subsubtitle method-title">tokenInvalidate:failure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Invalidate your current <a href="#//api/name/token">token</a></p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)tokenInvalidate:(void ( ^ ) ( NSHTTPURLResponse *response ))<em>success</em> failure:(void ( ^ ) ( NSHTTPURLResponse *response , NSError *error ))<em>failure</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>success</em></dt>
+			<dd><p>block called if this operation succeeds</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failure</em></dt>
+			<dd><p>block called if this operation fails</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>allows you to manually invalidate your current token/session on the Control Services server, this does not delete the local cached <a href="#//api/name/token">token</a>, and that <a href="#//api/name/token">token</a> will be invalid after the success of this method.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HPCSIdentityClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/username" title="username"></a>
+	<h3 class="subsubtitle method-title">username</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get the stored username</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (NSString *)username</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HPCSIdentityClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2012 HP Cloud Services. All rights reserved. (Last updated: 2012-12-18)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+		</script>
+	</body>
+</html>
