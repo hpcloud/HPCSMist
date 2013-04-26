@@ -25,6 +25,9 @@
 #import <Foundation/Foundation.h>
 #import "HPCSIdentityClient.h"
 
+/**
+ The interface to the CDN system
+ */
 
 @interface HPCSCDNClient : HPCSSwiftClient
 
@@ -51,6 +54,13 @@
 /// @name List CDN Enabled Containers
 ///-----------------------------------------------------
 
+/**
+   Retrieves the list of CDN enabled Swift containers
+
+   @param success returns an NSArray of containers
+   @param failure block called for a failed call
+ */
+
 - (void)cdnContainers:(void ( ^)(NSHTTPURLResponse *responseObject, NSArray *records))success
               failure:(void ( ^)(NSHTTPURLResponse *responseObject, NSError *error))failure;
 
@@ -58,6 +68,13 @@
 /// @name Enable CDN for Container
 ///-----------------------------------------------------
 
+/**
+   Enable a Swift container as a CDN container
+
+   @param object an object which should respond to "name", the name of the container to CDN enable
+   @param success success block
+   @param failure block called for a failed call
+ */
 - (void)enableCDNForContainer:(id)object
           success :(void ( ^)(NSHTTPURLResponse *responseObject))success
           failure :(void ( ^)(NSHTTPURLResponse *responseObject, NSError *error))failure;
@@ -67,13 +84,30 @@
 /// @name Get CDN Enabled Container Metadata
 ///-----------------------------------------------------
 
+/**
+   Get CDN specific metadata for a container
+
+   @param container an object which should respond to "name", the name of the container to get metadata from
+   @param success success block
+   @param failure block called for a failed call
+ */
 - (void) getCDNContainerMetadata:(id)container
                success:(void ( ^)(NSHTTPURLResponse *responseObject, NSDictionary *metadata))success
                failure:( void ( ^)(NSHTTPURLResponse * response,NSError * error) )failure;
 
 ///-----------------------------------------------------
 /// @name Update CDN Enabled Container Metadata
-///-----------------------------------------------------
+///--
+---------------------------------------------------
+
+/**
+   Set CDN specific metadata for a container
+
+   @param container an object which should respond to "name", the name of the container to set metadata on
+   @param metadata the metadata to set
+   @param success success block
+   @param failure block called for a failed call
+ */
 
 - (void) setCDNContainer:(id)container
              metadata:(NSDictionary *)metadata
@@ -84,6 +118,13 @@
 /// @name Delete CDN Enabled Container
 ///-----------------------------------------------------
 
+/**
+   Delete CDN enabled container
+
+   @param container an object which should respond to "name", the name of the container to delete
+   @param success success block
+   @param failure block called for a failed call
+ */
 -(void) deleteCDNContainer:(id)container
                 success:(void ( ^)(NSHTTPURLResponse *responseObject))success
                 failure:(void ( ^)(NSHTTPURLResponse *responseObject, NSError *error))failure;

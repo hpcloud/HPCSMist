@@ -333,6 +333,12 @@ To set custom metadata on an object use a header name with a prefix of X-Object-
  */
 - (NSDictionary *)metaDataFromResponse:(NSHTTPURLResponse *)response;
 
+/**
+    URL encode a string
+ 
+    @param source the string to URLEncode
+ 
+ */
 - (NSString *) URLEncodedString:(NSString *)source;
 
 @end

@@ -17,7 +17,7 @@ Instead of adding the source files directly to your project, you may
 want to consider using [CocoaPods](http://cocoapods.org/) to manage your dependencies. Follow the
 instructions on the CocoaPods site to install the gem, and specify
 HPCSMist as a dependency in your Podfile with pod 'HPCSMist',
-'0.0.1'.
+'0.0.6'.
 
 
 - Check out the [complete documentation](http://hpcloud.github.io/HPCSMist/) for a
