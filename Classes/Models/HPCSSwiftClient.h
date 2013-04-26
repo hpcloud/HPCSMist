@@ -134,6 +134,22 @@ extern NSString *const HPCSSwiftAccountContainerCountHeaderKey;
               success:(void ( ^)(NSHTTPURLResponse *responseObject))success
               failure:(void ( ^)(NSHTTPURLResponse *responseObject, NSError *error))failure;
 
+
+/** Set ACL details about a container
+*  @param aclList acl string formatted like see http://docs.openstack.org/developer/swift/misc.html#id5
+*  @param container The container to get metadata about (must respond to Name)
+*  @param success Block returning an NSHTTPURLResponse with headers that contain the metadata
+*  @param failure Block called if this call fails
+*  @discussion an example ACL list for granting everybody access would be
+*
+*/
+
+-(void) setContainer:(id)container
+             aclList:(NSString *)aclList
+            success:(void ( ^)(NSHTTPURLResponse *responseObject))success
+            failure:(void ( ^)(NSHTTPURLResponse *responseObject, NSError *error))failure;
+
+
 ///------------------------
 /// @name Object Operations
 ///------------------------

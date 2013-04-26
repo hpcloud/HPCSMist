@@ -174,6 +174,37 @@ NSString *const HPCSSwiftAccountContainerCountHeaderKey = @"X-Account-Container-
   ];
 }
 
+- (void)setContainer:(id)container
+             aclList:(NSString *)aclList
+             success:(void (^)(NSHTTPURLResponse *))success
+             failure:(void (^)(NSHTTPURLResponse *, NSError *))failure {
+    NSString *path = [NSString stringWithFormat:@"%@", [self URLEncodedString:[container valueForKeyPath:@"name"]]];
+
+    [self setDefaultHeader:@"Accept" value:nil];
+    NSMutableURLRequest *request = [self requestWithMethod:@"POST" path:path parameters:nil];
+    [self setDefaultHeader:@"Accept" value:@"application/json"];
+
+    [request addValue:aclList forHTTPHeaderField:@"X-Container-Read"];
+    AFHTTPRequestOperation *operation =
+        [self HTTPRequestOperationWithRequest:request
+                                      success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                                          [self setDefaultHeader:@"Accept" value:@"application/json"];
+                                          if (success) {
+                                              success(operation.response);
+                                          }
+                                      }
+                                      failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                          [self setDefaultHeader:@"Accept" value:@"application/json"];
+                                          if (failure) {
+                                              failure(operation.response, error);
+                                          }
+                                      }];
+    [self enqueueHTTPRequestOperation:operation];
+
+
+}
+
+
 - (void) objectsForContainer:(id)container
                      success:( void ( ^)(NSHTTPURLResponse * responseObject,NSArray * records) )success
                      failure:( void ( ^)(NSHTTPURLResponse * responseObject, NSError * error) )failure
