@@ -49,6 +49,8 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
+	<option value="//api/name/URLEncodedString:">&nbsp;&nbsp;&nbsp;&nbsp;- URLEncodedString:</option>
+	
 	<option value="//api/name/containers:failure:">&nbsp;&nbsp;&nbsp;&nbsp;- containers:failure:</option>
 	
 	<option value="//api/name/deleteContainer:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;- deleteContainer:success:failure:</option>
@@ -74,6 +76,8 @@
 	<option value="//api/name/saveContainer:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;- saveContainer:success:failure:</option>
 	
 	<option value="//api/name/saveObject:success:progress:failure:">&nbsp;&nbsp;&nbsp;&nbsp;- saveObject:success:progress:failure:</option>
+	
+	<option value="//api/name/setContainer:aclList:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;- setContainer:aclList:success:failure:</option>
 	
 	<option value="//api/name/setObject:metadata:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;- setObject:metadata:success:failure:</option>
 	
@@ -119,6 +123,8 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/URLEncodedString:">URLEncodedString:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/containers:failure:">containers:failure:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deleteContainer:success:failure:">deleteContainer:success:failure:</a></span></li>
@@ -144,6 +150,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/saveContainer:success:failure:">saveContainer:success:failure:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/saveObject:success:progress:failure:">saveObject:success:progress:failure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setContainer:aclList:success:failure:">setContainer:aclList:success:failure:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setObject:metadata:success:failure:">setObject:metadata:success:failure:</a></span></li>
 	
@@ -260,6 +268,13 @@
 	</span>
 	
 	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setContainer:aclList:success:failure:">&ndash;&nbsp;setContainer:aclList:success:failure:</a></code>
+		<span class="tooltip"><p>Set ACL details about a container</p></span>
+	</span>
+	
+	
 </li>
 						</ul>
 						
@@ -338,6 +353,14 @@
 	</span>
 	
 	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/URLEncodedString:">&ndash;&nbsp;URLEncodedString:</a></code>
+		<span class="tooltip"><pre><code>URL encode a string
+</code></pre></span>
+	</span>
+	
+	
 </li>
 						</ul>
 						
@@ -394,6 +417,51 @@
 					<div class="section section-methods">
 						<a title="Instance Methods" name="instance_methods"></a>
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/URLEncodedString:" title="URLEncodedString:"></a>
+	<h3 class="subsubtitle method-title">URLEncodedString:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<pre><code>URL encode a string
+</code></pre>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (NSString *)URLEncodedString:(NSString *)<em>source</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>source</em></dt>
+			<dd><p>the string to URLEncode</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HPCSSwiftClient.h</code><br />
+	</div>				
+	
+	
+</div>
 						
 						<div class="section-method">
 	<a name="//api/name/containers:failure:" title="containers:failure:"></a>
@@ -1192,6 +1260,70 @@ HPCSSwiftClient *swiftClient = [client swiftClient];
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/setContainer:aclList:success:failure:" title="setContainer:aclList:success:failure:"></a>
+	<h3 class="subsubtitle method-title">setContainer:aclList:success:failure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set ACL details about a container</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)setContainer:(id)<em>container</em> aclList:(NSString *)<em>aclList</em> success:(void ( ^ ) ( NSHTTPURLResponse *responseObject ))<em>success</em> failure:(void ( ^ ) ( NSHTTPURLResponse *responseObject , NSError *error ))<em>failure</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>container</em></dt>
+			<dd><p>The container to get metadata about (must respond to Name)</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>aclList</em></dt>
+			<dd><p>acl string formatted like see <a href="http://docs.openstack.org/developer/swift/misc.html">http://docs.openstack.org/developer/swift/misc.html</a>#id5</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>success</em></dt>
+			<dd><p>Block returning an NSHTTPURLResponse with headers that contain the metadata</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failure</em></dt>
+			<dd><p>Block called if this call fails</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>an example ACL list for granting everybody access would be</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HPCSSwiftClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/setObject:metadata:success:failure:" title="setObject:metadata:success:failure:"></a>
 	<h3 class="subsubtitle method-title">setObject:metadata:success:failure:</h3>
 	
@@ -1343,7 +1475,7 @@ failure:^(NSHTTPURLResponse *responseObject, NSError *error){
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012 HP Cloud Services. All rights reserved. (Last updated: 2012-12-18)</span><br />
+						<p><span class="copyright">&copy; 2013 HP Cloud Services. All rights reserved. (Last updated: 2013-04-26)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
 						

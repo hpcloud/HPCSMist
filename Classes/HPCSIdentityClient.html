@@ -68,6 +68,8 @@
 	
 	<option value="//api/name/authorizationInfo">&nbsp;&nbsp;&nbsp;&nbsp;- authorizationInfo</option>
 	
+	<option value="//api/name/cdnClient">&nbsp;&nbsp;&nbsp;&nbsp;- cdnClient</option>
+	
 	<option value="//api/name/computeClient">&nbsp;&nbsp;&nbsp;&nbsp;- computeClient</option>
 	
 	<option value="//api/name/initWithAccessKeyId:andSecretKey:andTenantId:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithAccessKeyId:andSecretKey:andTenantId:</option>
@@ -79,6 +81,8 @@
 	<option value="//api/name/isTokenExpired">&nbsp;&nbsp;&nbsp;&nbsp;- isTokenExpired</option>
 	
 	<option value="//api/name/password">&nbsp;&nbsp;&nbsp;&nbsp;- password</option>
+	
+	<option value="//api/name/publicUrlForCDN">&nbsp;&nbsp;&nbsp;&nbsp;- publicUrlForCDN</option>
 	
 	<option value="//api/name/publicUrlForCompute">&nbsp;&nbsp;&nbsp;&nbsp;- publicUrlForCompute</option>
 	
@@ -168,6 +172,8 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/authorizationInfo">authorizationInfo</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cdnClient">cdnClient</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/computeClient">computeClient</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithAccessKeyId:andSecretKey:andTenantId:">initWithAccessKeyId:andSecretKey:andTenantId:</a></span></li>
@@ -179,6 +185,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isTokenExpired">isTokenExpired</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/password">password</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/publicUrlForCDN">publicUrlForCDN</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/publicUrlForCompute">publicUrlForCompute</a></span></li>
 	
@@ -418,6 +426,20 @@
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/publicUrlForObjectStorage">&ndash;&nbsp;publicUrlForObjectStorage</a></code>
+		<span class="tooltip"><p>the URL for the object storage endpoint as listed in the Service Catalog</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/cdnClient">&ndash;&nbsp;cdnClient</a></code>
+		<span class="tooltip"><p>Retrieve an instance of the Object Storage Client, designated way to get an instance of the object storage (Swift) client</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/publicUrlForCDN">&ndash;&nbsp;publicUrlForCDN</a></code>
 		<span class="tooltip"><p>the URL for the object storage endpoint as listed in the Service Catalog</p></span>
 	</span>
 	
@@ -857,6 +879,45 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/cdnClient" title="cdnClient"></a>
+	<h3 class="subsubtitle method-title">cdnClient</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Retrieve an instance of the Object Storage Client, designated way to get an instance of the object storage (Swift) client</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (HPCSCDNClient *)cdnClient</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>if the service catalog does not contain a compute service for this user the HPCSKeystoneSwiftCatalogIsEmptyNotification is sent.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HPCSIdentityClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/computeClient" title="computeClient"></a>
 	<h3 class="subsubtitle method-title">computeClient</h3>
 	
@@ -1102,6 +1163,40 @@
 	
 	
 	<div class="method-subsection method-declaration"><code>- (NSString *)password</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">HPCSIdentityClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/publicUrlForCDN" title="publicUrlForCDN"></a>
+	<h3 class="subsubtitle method-title">publicUrlForCDN</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>the URL for the object storage endpoint as listed in the Service Catalog</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (NSString *)publicUrlForCDN</code></div>
 	
 	
 	
@@ -1586,7 +1681,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012 HP Cloud Services. All rights reserved. (Last updated: 2012-12-18)</span><br />
+						<p><span class="copyright">&copy; 2013 HP Cloud Services. All rights reserved. (Last updated: 2013-04-26)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
 						
