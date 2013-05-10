@@ -37,6 +37,31 @@ NSString *const HPCSMaasOperationDidFailNotification = @"com.hp.cloud.maas.opera
 
 - (void)endpoints:(void (^)(NSArray *))block
           failure:(void (^)(NSHTTPURLResponse *, NSError *))failure {
+    [self getPath:@"endpoints" parameters:nil success: ^(AFHTTPRequestOperation * operation, id JSON) {
+        NSMutableArray *mutableRecords = [NSMutableArray array];
+        NSArray *serverArr = [JSON valueForKeyPath:@"endpoints"];
+        for (NSDictionary * sdata in serverArr)
+        {
+            [mutableRecords addObject:sdata];
+        }
+
+        if (block)
+        {
+            block ([NSArray arrayWithArray:mutableRecords]);
+        }
+    }
+          failure: ^(AFHTTPRequestOperation * operation, NSError * error) {
+              NSDictionary *userInfo = [NSDictionary dictionaryWithObjects:@[error, MaasObjectEndpoint, MaasObjectOperationList] forKeys:@[NSErrorKey, MaasObjectKey, MaasOperationKey]];
+
+              [[NSNotificationCenter defaultCenter] postNotificationName:HPCSMaasOperationDidFailNotification
+                                                                  object:self
+                                                                userInfo:userInfo];
+              if (failure)
+              {
+                  failure (operation.response,error);
+              }
+          }
+    ];
 
 }
 
@@ -47,8 +72,24 @@ NSString *const HPCSMaasOperationDidFailNotification = @"com.hp.cloud.maas.opera
 }
 
 - (void)endpointDetailsFor:(id)endpoint
-                   success:(void (^)(NSHTTPURLResponse *, NSData *))saved
+                   success:(void (^)(id endpointData))block
                    failure:(void (^)(NSHTTPURLResponse *, NSError *))failure {
+    NSString *detailsPath = [NSString stringWithFormat:@"endpoints/%@", [endpoint valueForKeyPath:@"endpointId"]];
+    [self getPath:detailsPath parameters:nil success: ^(AFHTTPRequestOperation * operation, id JSON) {
+        NSDictionary *endpointData = [JSON valueForKeyPath:@"endpoint"];
+        if (block)
+        {
+            block (endpointData);
+        }
+    }
+          failure: ^(AFHTTPRequestOperation * operation, NSError * error) {
+              NSDictionary *userInfo = [NSDictionary dictionaryWithObject:error forKey:@"NSError"];
+              [[NSNotificationCenter defaultCenter] postNotificationName:HPCSNovaServersShowDidFailNotification
+                                                                  object:self
+                                                                userInfo:userInfo];
+              failure (operation.response,error);
+          }
+    ];
 
 }
 

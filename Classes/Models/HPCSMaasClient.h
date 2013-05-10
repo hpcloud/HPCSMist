@@ -35,6 +35,16 @@
 
 extern NSString *const HPCSMaasOperationDidFailNotification;
 
+static NSString *const MaasObjectKey = @"object";
+
+static NSString *const MaasOperationKey = @"operation";
+
+static NSString *const NSErrorKey = @"NSError";
+
+static NSString *const MaasObjectEndpoint = @"endpoint";
+
+static NSString *const MaasObjectOperationList = @"list";
+
 @interface HPCSMaasClient : AFHTTPClient
 /** the interface to the identity system */
 @property (retain) HPCSIdentityClient *identityClient;
@@ -68,7 +78,7 @@ extern NSString *const HPCSMaasOperationDidFailNotification;
               failure:(void ( ^)(NSHTTPURLResponse *, NSError *))failure;
 
 - (void) endpointDetailsFor:(id)endpoint
-                    success:(void ( ^)(NSHTTPURLResponse *, NSData *))saved
+                    success:(void ( ^)(id endpointDetails))saved
                     failure:(void ( ^)(NSHTTPURLResponse *, NSError *))failure;
 
 - (void) deleteEndpoint:(id)endpoint
@@ -92,7 +102,7 @@ extern NSString *const HPCSMaasOperationDidFailNotification;
               failure:(void ( ^)(NSHTTPURLResponse *, NSError *))failure;
 
 - (void) subscriptionDetailsFor:(id)endpoint
-                    success:(void ( ^)(NSHTTPURLResponse *, NSData *))saved
+                    success:(void ( ^)(id subscriptionDetails))saved
                     failure:(void ( ^)(NSHTTPURLResponse *, NSError *))failure;
 
 - (void) deleteSubscription:(id)subscription
@@ -110,7 +120,7 @@ extern NSString *const HPCSMaasOperationDidFailNotification;
                   failure:(void ( ^)(NSHTTPURLResponse *, NSError *))failure;
 
 - (void) alarmDetailsFor:(id)alarm
-                        success:(void ( ^)(NSHTTPURLResponse *, NSData *))saved
+                        success:(void ( ^)(id alarmDetails))saved
                         failure:(void ( ^)(NSHTTPURLResponse *, NSError *))failure;
 
 - (void) deleteAlarm:(id)alarm
@@ -128,7 +138,7 @@ extern NSString *const HPCSMaasOperationDidFailNotification;
                         failure:(void ( ^)(NSHTTPURLResponse *, NSError *))failure;
 
 - (void) notificationMethodDetailsFor:(id)notificationMethod
-                              success:(void ( ^)(NSHTTPURLResponse *, NSData *))saved
+                              success:(void ( ^)(id notificationDetails))saved
                               failure:(void ( ^)(NSHTTPURLResponse *, NSError *))failure;
 
 - (void) deleteNotificationMethod:(id)alarm

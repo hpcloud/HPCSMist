@@ -1,0 +1,10 @@
+{
+    "endpoints": [{
+        "id": "67704b0a-9a22-4dac-b3f9-6da17aef50c8",
+        "links": [{
+            "rel": "self",
+            "href": "https://region-a.geo-1.monitoring.hpcloudsvc.com/v1.0/endpoints/67704b0a-9a22-4dac-b3f9-6da17aef50c8"
+        }],
+        "uri": "amqp://region-a.geo-1.amqp-monitoring.hpcloudsvc.com:5672/57457043554366"
+    }]
+}

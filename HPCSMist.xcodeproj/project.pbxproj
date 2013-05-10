@@ -26,11 +26,13 @@
 		155B83B9403C9E3B4B15B4E2 /* tokens2.json in Resources */ = {isa = PBXBuildFile; fileRef = 155B8D09FF5F32C312F3D6DD /* tokens2.json */; };
 		155B83F23BBCDA216E8E24C5 /* HPCSCDNClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 155B8F8FB5FBF7CCD632B768 /* HPCSCDNClientSpec.m */; };
 		155B88274C9612B33684C8FF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 155B8D78636BEC6113EA083C /* Default.png */; };
+		155B882F2E3DF2F1B1FC2A1E /* endpoint_details.json in Resources */ = {isa = PBXBuildFile; fileRef = 155B8CEBE2FB435523C063B3 /* endpoint_details.json */; };
 		155B88BFA2404D58589E1211 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 155B89DCA45C2ABA9CF15D40 /* InfoPlist.strings */; };
 		155B89A07A2C5F07410B1881 /* cdnContainerList.json in Resources */ = {isa = PBXBuildFile; fileRef = 155B8DA2A4CCA2D70E3AC818 /* cdnContainerList.json */; };
 		155B8DCB7A267B433A6CA090 /* HPCSCDNClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 155B8432AC6C07D92135B4CC /* HPCSCDNClient.m */; };
 		155B8EF8DB2F69E1C353079A /* HPCSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 155B88DF12F9496C973C5733 /* HPCSAppDelegate.m */; };
 		155B8F97674FF75CF46D5CB5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 155B8B58EB018050747C2AE7 /* Default-568h@2x.png */; };
+		155B8FB68E7106460244313F /* endpoints.json in Resources */ = {isa = PBXBuildFile; fileRef = 155B889588D1132A7AA8D645 /* endpoints.json */; };
 		56877366D9B04AEA836AB5D6 /* libPods-HPCSMistTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F8C673EB98845D7BCF23BA7 /* libPods-HPCSMistTests.a */; };
 		AF0F453D173C31F700C8A47B /* HPCSMaasClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AF0F453C173C31F700C8A47B /* HPCSMaasClient.m */; };
 		AF0F453E173C512000C8A47B /* HPCSMaasClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 155B8B1DCECE49EE27FC9A86 /* HPCSMaasClientSpec.m */; };
@@ -91,11 +93,13 @@
 		155B8191CFCFF9049CA558CB /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		155B83F65C81AABAE5B70E34 /* HPCSAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPCSAppDelegate.h; sourceTree = "<group>"; };
 		155B8432AC6C07D92135B4CC /* HPCSCDNClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPCSCDNClient.m; sourceTree = "<group>"; };
+		155B889588D1132A7AA8D645 /* endpoints.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = endpoints.json; sourceTree = "<group>"; };
 		155B88DF12F9496C973C5733 /* HPCSAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPCSAppDelegate.m; sourceTree = "<group>"; };
 		155B895B6E5BE5C9073660E4 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		155B8B1DCECE49EE27FC9A86 /* HPCSMaasClientSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPCSMaasClientSpec.m; sourceTree = "<group>"; };
 		155B8B58EB018050747C2AE7 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		155B8B7B24F455AB32409768 /* cdnOnlyContainerList.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = cdnOnlyContainerList.json; sourceTree = "<group>"; };
+		155B8CEBE2FB435523C063B3 /* endpoint_details.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = endpoint_details.json; sourceTree = "<group>"; };
 		155B8D09FF5F32C312F3D6DD /* tokens2.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = tokens2.json; sourceTree = "<group>"; };
 		155B8D298A2CD5D020ECC0BF /* HPCSCDNClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPCSCDNClient.h; sourceTree = "<group>"; };
 		155B8D78636BEC6113EA083C /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -349,6 +353,8 @@
 				155B8DA2A4CCA2D70E3AC818 /* cdnContainerList.json */,
 				155B8B7B24F455AB32409768 /* cdnOnlyContainerList.json */,
 				155B8D09FF5F32C312F3D6DD /* tokens2.json */,
+				155B889588D1132A7AA8D645 /* endpoints.json */,
+				155B8CEBE2FB435523C063B3 /* endpoint_details.json */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -481,6 +487,8 @@
 				155B89A07A2C5F07410B1881 /* cdnContainerList.json in Resources */,
 				155B82AA7EBFA1BFAE0B4B47 /* cdnOnlyContainerList.json in Resources */,
 				155B83B9403C9E3B4B15B4E2 /* tokens2.json in Resources */,
+				155B8FB68E7106460244313F /* endpoints.json in Resources */,
+				155B882F2E3DF2F1B1FC2A1E /* endpoint_details.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

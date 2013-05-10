@@ -75,6 +75,150 @@ SPEC_BEGIN(MaasClientSpec)
             });
 
         });
+        context(@"when you want to see the endpoints available", ^{
+            beforeEach(^{
+                [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
+                    if ([request.URL.absoluteString hasSuffix:@"/endpoints"]) {
+                        NSString *basename = [request.URL.absoluteString lastPathComponent];
+                        NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
+                        id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName contentType:@"text/json" responseTime:0.01];
+                        return stubResponse;
+                    } else {
+                        return nil; // Don't stub
+                    }
+                }];
+            });
+
+            afterEach(^{
+                [OHHTTPStubs removeLastRequestHandler];
+                requestCompleted = NO;
+            });
+
+            it(@"allows you to get the list", ^{
+                [client shouldNotBeNil];
+                NSArray __block *result;
+                [client endpoints:^(NSArray *records) {
+                    result = records;
+                    requestCompleted = YES;
+                }
+                          failure:nil];
+
+
+                [KWSpec waitWithTimeout:3.0 forCondition:^BOOL() {
+                    return requestCompleted;
+                }];
+
+                [[result shouldNot] beEmpty];
+
+            });
+
+            context(@"and there is an error",^{
+                beforeEach(^{
+                    [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
+                        if ([request.URL.absoluteString hasSuffix:@"/endpoints"]) {
+                            NSString *basename = @"nonexistant";
+                            NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
+                            NSDictionary* headers = [NSDictionary dictionaryWithObject:@"text/json" forKey:@"Content-Type"];
+                            id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName statusCode:500 responseTime:0.1 headers:headers];
+                            return stubResponse;
+                        } else {
+                            return nil; // Don't stub
+                        }
+                    }];
+                });
+                afterEach(^{
+                    [OHHTTPStubs removeLastRequestHandler];
+                });
+                it(@"returns an NSError", ^{
+                    NSError __block *err;
+                    [client endpoints:nil
+                           failure:^(NSHTTPURLResponse *response, NSError *error) {
+                               err = error;
+                               requestCompleted = YES;
+                           }];
+
+                    [KWSpec waitWithTimeout:3.0 forCondition:^BOOL() {
+                        return requestCompleted;
+                    }];
+
+                    [err shouldNotBeNil];
+
+                }) ;
+            });
+            context(@"and you want to see details about an endpoint", ^{
+                beforeEach(^{
+                    [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
+                        if ([request.URL.absoluteString hasSuffix:@"/endpoints/1"]) {
+                            NSString *basename = @"endpoint_details";
+                            NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
+                            id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName contentType:@"text/json" responseTime:0.01];
+                            return stubResponse;
+                        } else {
+                            return nil; // Don't stub
+                        }
+                    }];
+
+                });
+                afterEach(^{
+                    [OHHTTPStubs removeLastRequestHandler];
+                });
+
+                it(@"shows you the details", ^{
+                    NSArray __block *result;
+                    NSDictionary *attribs = [NSDictionary dictionaryWithObjectsAndKeys:@"1", @"endpointId", nil];
+                    [client endpointDetailsFor:attribs success:^(id endpointInfo) {
+                        result = endpointInfo;
+                        requestCompleted = YES;
+                    } failure:^(NSHTTPURLResponse *response, NSError *error) {
+
+                    }];
+
+                    [KWSpec waitWithTimeout:3.0 forCondition:^BOOL() {
+                        return requestCompleted;
+                    }];
+
+                    [[result shouldNot] beEmpty];
+
+                });
+
+                context(@"and there is an error",^{
+                    beforeEach(^{
+                        [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
+                            if ([request.URL.absoluteString hasSuffix:@"/endpoints/1"]) {
+                                NSString *basename = @"nonexistant";
+                                NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
+                                NSDictionary* headers = [NSDictionary dictionaryWithObject:@"text/json" forKey:@"Content-Type"];
+                                id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName statusCode:500 responseTime:0.1 headers:headers];
+                                return stubResponse;
+                            } else {
+                                return nil; // Don't stub
+                            }
+                        }];
+                    });
+                    afterEach(^{
+                        [OHHTTPStubs removeLastRequestHandler];
+                    });
+                    it(@"returns an NSError", ^{
+                        NSError __block *err;
+                        NSDictionary *attribs = [NSDictionary dictionaryWithObjectsAndKeys:@"1", @"endpointId", nil];
+                        [client endpointDetailsFor:attribs success:^(id imageInfo) {
+
+                        } failure:^(NSHTTPURLResponse *response, NSError *error) {
+                            requestCompleted = YES;
+                            err = error;
+                        }];
+
+                        [KWSpec waitWithTimeout:3.0 forCondition:^BOOL() {
+                            return requestCompleted;
+                        }];
+
+                        [err shouldNotBeNil];
+
+                    }) ;
+                });
+
+            });
+        });
     });
 
 

@@ -1,0 +1,14 @@
+{
+    "endpoint": {
+        "id": "853d9e8b-3544-43a9-b541-ad4e4dd410c7",
+        "links": [{
+            "rel": "self",
+            "href": "https://region-a.geo-1.monitoring.hpcloudsvc.com/v1.0/endpoints/853d9e8b-3544-43a9-b541-ad4e4dd410c7"
+        }],
+        "uri": "amqp://region-a.geo-1.amqp-monitoring.hpcloudsvc.com:5672/57457043554366",
+        "meta": {
+            "amqp_username": "mon-57457043554366",
+            "amqp_queue": "metrics-57457043554366"
+        }
+    }
+}
