@@ -1,0 +1,12 @@
+{
+    "notification_methods": [{
+        "id": "44913565-0957-490c-9934-ff5a1e6890db",
+        "links": [{
+            "rel": "self",
+            "href": "https://region-a.geo-1.monitoring.hpcloudsvc.com/v1.0/notification-methods/44913565-0957-490c-9934-ff5a1e6890db"
+        }],
+        "name": "my notification",
+        "type": "EMAIL",
+        "address": "mike@silverchairsolutions.com"
+    }]
+}

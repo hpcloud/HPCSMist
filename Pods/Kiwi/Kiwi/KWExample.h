@@ -68,7 +68,7 @@ void beforeEach(KWVoidBlock aBlock);
 void afterEach(KWVoidBlock aBlock);
 void it(NSString *aDescription, KWVoidBlock aBlock);
 void specify(KWVoidBlock aBlock);
-void pending_(NSString *aDescription, KWVoidBlock ignoredBlock);
+void pending_(id aDescription);
 
 void describeWithCallSite(KWCallSite *aCallSite, NSString *aDescription, KWVoidBlock aBlock);
 void contextWithCallSite(KWCallSite *aCallSite, NSString *aDescription, KWVoidBlock aBlock);

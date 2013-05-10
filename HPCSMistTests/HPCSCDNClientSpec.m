@@ -119,18 +119,11 @@ SPEC_BEGIN(CDNClientSpec)
       });
 //
 
-      xit(@"Get CDN Enabled Container Metadata", ^{
+      pending(@"Get CDN Enabled Container Metadata");
 
-      });
+      xit(@"Update CDN Enabled Container Metadata");
 
-      xit(@"Update CDN Enabled Container Metadata", ^{
-
-
-      });
-
-      xit(@"Delete CDN Enabled Container", ^{
-
-      });
+      xit(@"Delete CDN Enabled Container");
 //
     });
  });

@@ -108,6 +108,32 @@ NSString *const HPCSMaasOperationDidFailNotification = @"com.hp.cloud.maas.opera
 - (void)subscriptions:(void (^)(NSArray *))block
               failure:(void (^)(NSHTTPURLResponse *, NSError *))failure {
 
+    [self getPath:@"subscriptions" parameters:nil success: ^(AFHTTPRequestOperation * operation, id JSON) {
+        NSMutableArray *mutableRecords = [NSMutableArray array];
+        NSArray *serverArr = [JSON valueForKeyPath:@"subscriptions"];
+        for (NSDictionary * sdata in serverArr)
+        {
+            [mutableRecords addObject:sdata];
+        }
+
+        if (block)
+        {
+            block ([NSArray arrayWithArray:mutableRecords]);
+        }
+    }
+          failure: ^(AFHTTPRequestOperation * operation, NSError * error) {
+              NSDictionary *userInfo = [NSDictionary dictionaryWithObjects:@[error, MaasObjectSubscription, MaasObjectOperationList] forKeys:@[NSErrorKey, MaasObjectKey, MaasOperationKey]];
+
+              [[NSNotificationCenter defaultCenter] postNotificationName:HPCSMaasOperationDidFailNotification
+                                                                  object:self
+                                                                userInfo:userInfo];
+              if (failure)
+              {
+                  failure (operation.response,error);
+              }
+          }
+    ];
+
 }
 
 - (void)saveSubscription:(id)subscription
@@ -117,8 +143,26 @@ NSString *const HPCSMaasOperationDidFailNotification = @"com.hp.cloud.maas.opera
 }
 
 - (void)subscriptionDetailsFor:(id)endpoint
-                       success:(void (^)(NSHTTPURLResponse *, NSData *))saved
+                       success:(void (^)(id subscriptionDetails))saved
                        failure:(void (^)(NSHTTPURLResponse *, NSError *))failure {
+    NSString *detailsPath = [NSString stringWithFormat:@"subscriptions/%@", [endpoint valueForKeyPath:@"subscriptionId"]];
+    [self getPath:detailsPath parameters:nil success: ^(AFHTTPRequestOperation * operation, id JSON) {
+        NSDictionary *subscriptionData = [JSON valueForKeyPath:@"subscription"];
+        if (saved)
+        {
+            saved (subscriptionData);
+        }
+    }
+          failure: ^(AFHTTPRequestOperation * operation, NSError * error) {
+              NSDictionary *userInfo = [NSDictionary dictionaryWithObjects:@[error, MaasObjectSubscription, MaasObjectOperationGet] forKeys:@[NSErrorKey, MaasObjectKey, MaasOperationKey]];
+
+              [[NSNotificationCenter defaultCenter] postNotificationName:HPCSMaasOperationDidFailNotification
+                                                                  object:self
+                                                                userInfo:userInfo];
+              failure (operation.response,error);
+          }
+    ];
+
 
 }
 
@@ -130,18 +174,63 @@ NSString *const HPCSMaasOperationDidFailNotification = @"com.hp.cloud.maas.opera
 
 - (void)alarms:(void (^)(NSArray *))block
        failure:(void (^)(NSHTTPURLResponse *, NSError *))failure {
+    [self getPath:@"alarms" parameters:nil success: ^(AFHTTPRequestOperation * operation, id JSON) {
+        NSMutableArray *mutableRecords = [NSMutableArray array];
+        NSArray *serverArr = [JSON valueForKeyPath:@"alarms"];
+        for (NSDictionary * sdata in serverArr)
+        {
+            [mutableRecords addObject:sdata];
+        }
+
+        if (block)
+        {
+            block ([NSArray arrayWithArray:mutableRecords]);
+        }
+    }
+          failure: ^(AFHTTPRequestOperation * operation, NSError * error) {
+              NSDictionary *userInfo = [NSDictionary dictionaryWithObjects:@[error, MaasObjectAlarm, MaasObjectOperationList] forKeys:@[NSErrorKey, MaasObjectKey, MaasOperationKey]];
+
+              [[NSNotificationCenter defaultCenter] postNotificationName:HPCSMaasOperationDidFailNotification
+                                                                  object:self
+                                                                userInfo:userInfo];
+              if (failure)
+              {
+                  failure (operation.response,error);
+              }
+          }
+    ];
+
 
 }
 
 - (void)saveAlarm:(id)alarm1
           success:(void (^)(NSHTTPURLResponse *, NSData *))saved
           failure:(void (^)(NSHTTPURLResponse *, NSError *))failure {
+    [self postPath:<#(NSString *)path#> parameters:<#(NSDictionary *)parameters#> success:<#(void (^)(AFHTTPRequestOperation *, id))success#> failure:<#(void (^)(AFHTTPRequestOperation *, NSError *))failure#>];
+
 
 }
 
 - (void)alarmDetailsFor:(id)alarm1
-                success:(void (^)(NSHTTPURLResponse *, NSData *))saved
+                success:(void (^)(id alarmDetails))saved
                 failure:(void (^)(NSHTTPURLResponse *, NSError *))failure {
+    NSString *detailsPath = [NSString stringWithFormat:@"alarms/%@", [alarm1 valueForKeyPath:@"alarmId"]];
+    [self getPath:detailsPath parameters:nil success: ^(AFHTTPRequestOperation * operation, id JSON) {
+        NSDictionary *alarmData = [JSON valueForKeyPath:@"alarm"];
+        if (saved)
+        {
+            saved (alarmData);
+        }
+    }
+          failure: ^(AFHTTPRequestOperation * operation, NSError * error) {
+              NSDictionary *userInfo = [NSDictionary dictionaryWithObjects:@[error, MaasObjectAlarm, MaasObjectOperationGet] forKeys:@[NSErrorKey, MaasObjectKey, MaasOperationKey]];
+
+              [[NSNotificationCenter defaultCenter] postNotificationName:HPCSMaasOperationDidFailNotification
+                                                                  object:self
+                                                                userInfo:userInfo];
+              failure (operation.response,error);
+          }
+    ];
 
 }
 
@@ -153,6 +242,31 @@ NSString *const HPCSMaasOperationDidFailNotification = @"com.hp.cloud.maas.opera
 
 - (void)notificationMethods:(void (^)(NSArray *))block
                     failure:(void (^)(NSHTTPURLResponse *, NSError *))failure {
+    [self getPath:@"notification-methods" parameters:nil success: ^(AFHTTPRequestOperation * operation, id JSON) {
+        NSMutableArray *mutableRecords = [NSMutableArray array];
+        NSArray *serverArr = [JSON valueForKeyPath:@"notification_methods"];
+        for (NSDictionary * sdata in serverArr)
+        {
+            [mutableRecords addObject:sdata];
+        }
+
+        if (block)
+        {
+            block ([NSArray arrayWithArray:mutableRecords]);
+        }
+    }
+          failure: ^(AFHTTPRequestOperation * operation, NSError * error) {
+              NSDictionary *userInfo = [NSDictionary dictionaryWithObjects:@[error, MaasObjectNotificationMethod, MaasObjectOperationList] forKeys:@[NSErrorKey, MaasObjectKey, MaasOperationKey]];
+
+              [[NSNotificationCenter defaultCenter] postNotificationName:HPCSMaasOperationDidFailNotification
+                                                                  object:self
+                                                                userInfo:userInfo];
+              if (failure)
+              {
+                  failure (operation.response,error);
+              }
+          }
+    ];
 
 }
 
@@ -163,7 +277,7 @@ NSString *const HPCSMaasOperationDidFailNotification = @"com.hp.cloud.maas.opera
 }
 
 - (void)notificationMethodDetailsFor:(id)notificationMethod
-                             success:(void (^)(NSHTTPURLResponse *, NSData *))saved
+                             success:(void (^)(id notificationDetails))saved
                              failure:(void (^)(NSHTTPURLResponse *, NSError *))failure {
 
 }
@@ -172,6 +286,16 @@ NSString *const HPCSMaasOperationDidFailNotification = @"com.hp.cloud.maas.opera
                          success:(void (^)(NSHTTPURLResponse *))deleted
                          failure:(void (^)(NSHTTPURLResponse *, NSError *))failure {
 
+}
+
+- (NSDictionary *)dictionaryToCreateAlarm:(id) alarmInfo{
+   return @{
+           @"alarm": @{
+                @"name" : [alarmInfo valueForKey:@"name"],
+                @"expression" : [alarmInfo valueForKey:@"expression"],
+                @"alarm_actions" : [alarmInfo valueForKey:@"alarm_actions"],
+           }
+    };
 }
 
 

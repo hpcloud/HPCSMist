@@ -19,67 +19,17 @@
 
 SPEC_BEGIN(MaasClientSpec)
 
-    describe(@"HPCSMaasClient", ^{
-        __block HPCSMaasClient *client = nil;
-        __block HPCSIdentityClient *identityClient = nil;
-        __block BOOL requestCompleted = NO;
+        describe(@"HPCSMaasClient", ^{
+            __block HPCSMaasClient *client = nil;
+            __block HPCSIdentityClient *identityClient = nil;
+            __block BOOL requestCompleted = NO;
 
-        //Stub out the call to CS
-        beforeEach(^{
-            [OHHTTPStubs setEnabled:YES];
-            [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
-                if ([request.URL.absoluteString hasSuffix:@"/v2.0/tokens"]) {
-                    NSString *basename = @"tokens2";
-                    NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
-                    id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName contentType:@"text/json" responseTime:0.01];
-                    return stubResponse;
-                } else {
-                    return nil; // Don't stub
-                }
-            }];
-
-        });
-
-        afterEach(^{
-            [OHHTTPStubs removeLastRequestHandler];
-            requestCompleted = NO;
-        });
-
-        context(@"when resolving maas service",^{
-
-            it(@"should authenticate and provide a service client", ^{
-                NSString *userName = @"abc";
-                NSString *password = @"password";
-                NSString *tenantId = @"12345";
-
-                identityClient = [[HPCSIdentityClient alloc] initWithUsername:userName andPassword:password andTenantId:tenantId];
-
-                NSArray __block *authResult;
-                [identityClient authenticate:^(NSArray *serviceCatalog) {
-                    authResult = serviceCatalog;
-                    requestCompleted = YES;
-
-                } failure:^(NSHTTPURLResponse *responseObject, NSError *error) {
-                    requestCompleted = YES;
-                }];
-
-
-                [KWSpec waitWithTimeout:3.0 forCondition:^BOOL() {
-                    return requestCompleted;
-                }];
-
-                [[authResult shouldNot] beEmpty];
-                client = [identityClient monitoringClient];
-                [[client shouldNot] beNil];
-
-            });
-
-        });
-        context(@"when you want to see the endpoints available", ^{
+            //Stub out the call to CS
             beforeEach(^{
+                [OHHTTPStubs setEnabled:YES];
                 [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
-                    if ([request.URL.absoluteString hasSuffix:@"/endpoints"]) {
-                        NSString *basename = [request.URL.absoluteString lastPathComponent];
+                    if ([request.URL.absoluteString hasSuffix:@"/v2.0/tokens"]) {
+                        NSString *basename = @"tokens2";
                         NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
                         id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName contentType:@"text/json" responseTime:0.01];
                         return stubResponse;
@@ -87,6 +37,7 @@ SPEC_BEGIN(MaasClientSpec)
                         return nil; // Don't stub
                     }
                 }];
+
             });
 
             afterEach(^{
@@ -94,137 +45,406 @@ SPEC_BEGIN(MaasClientSpec)
                 requestCompleted = NO;
             });
 
-            it(@"allows you to get the list", ^{
-                [client shouldNotBeNil];
-                NSArray __block *result;
-                [client endpoints:^(NSArray *records) {
-                    result = records;
-                    requestCompleted = YES;
-                }
-                          failure:nil];
+            context(@"when resolving maas service", ^{
 
+                it(@"should authenticate and provide a service client", ^{
+                    NSString *userName = @"abc";
+                    NSString *password = @"password";
+                    NSString *tenantId = @"12345";
 
-                [KWSpec waitWithTimeout:3.0 forCondition:^BOOL() {
-                    return requestCompleted;
-                }];
+                    identityClient = [[HPCSIdentityClient alloc] initWithUsername:userName andPassword:password andTenantId:tenantId];
 
-                [[result shouldNot] beEmpty];
-
-            });
-
-            context(@"and there is an error",^{
-                beforeEach(^{
-                    [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
-                        if ([request.URL.absoluteString hasSuffix:@"/endpoints"]) {
-                            NSString *basename = @"nonexistant";
-                            NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
-                            NSDictionary* headers = [NSDictionary dictionaryWithObject:@"text/json" forKey:@"Content-Type"];
-                            id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName statusCode:500 responseTime:0.1 headers:headers];
-                            return stubResponse;
-                        } else {
-                            return nil; // Don't stub
-                        }
-                    }];
-                });
-                afterEach(^{
-                    [OHHTTPStubs removeLastRequestHandler];
-                });
-                it(@"returns an NSError", ^{
-                    NSError __block *err;
-                    [client endpoints:nil
-                           failure:^(NSHTTPURLResponse *response, NSError *error) {
-                               err = error;
-                               requestCompleted = YES;
-                           }];
-
-                    [KWSpec waitWithTimeout:3.0 forCondition:^BOOL() {
-                        return requestCompleted;
-                    }];
-
-                    [err shouldNotBeNil];
-
-                }) ;
-            });
-            context(@"and you want to see details about an endpoint", ^{
-                beforeEach(^{
-                    [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
-                        if ([request.URL.absoluteString hasSuffix:@"/endpoints/1"]) {
-                            NSString *basename = @"endpoint_details";
-                            NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
-                            id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName contentType:@"text/json" responseTime:0.01];
-                            return stubResponse;
-                        } else {
-                            return nil; // Don't stub
-                        }
-                    }];
-
-                });
-                afterEach(^{
-                    [OHHTTPStubs removeLastRequestHandler];
-                });
-
-                it(@"shows you the details", ^{
-                    NSArray __block *result;
-                    NSDictionary *attribs = [NSDictionary dictionaryWithObjectsAndKeys:@"1", @"endpointId", nil];
-                    [client endpointDetailsFor:attribs success:^(id endpointInfo) {
-                        result = endpointInfo;
+                    NSArray __block *authResult;
+                    [identityClient authenticate:^(NSArray *serviceCatalog) {
+                        authResult = serviceCatalog;
                         requestCompleted = YES;
-                    } failure:^(NSHTTPURLResponse *response, NSError *error) {
 
+                    }                    failure:^(NSHTTPURLResponse *responseObject, NSError *error) {
+                        requestCompleted = YES;
                     }];
+
 
                     [KWSpec waitWithTimeout:3.0 forCondition:^BOOL() {
                         return requestCompleted;
                     }];
 
-                    [[result shouldNot] beEmpty];
+                    [[authResult shouldNot] beEmpty];
+                    client = [identityClient monitoringClient];
+                    [[client shouldNot] beNil];
 
                 });
 
-                context(@"and there is an error",^{
+            });
+
+            context(@"Endpoints", ^{
+                context(@"when you want to see the endpoints available", ^{
                     beforeEach(^{
                         [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
-                            if ([request.URL.absoluteString hasSuffix:@"/endpoints/1"]) {
-                                NSString *basename = @"nonexistant";
+                            if ([request.URL.absoluteString hasSuffix:@"/endpoints"]) {
+                                NSString *basename = [request.URL.absoluteString lastPathComponent];
                                 NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
-                                NSDictionary* headers = [NSDictionary dictionaryWithObject:@"text/json" forKey:@"Content-Type"];
-                                id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName statusCode:500 responseTime:0.1 headers:headers];
+                                id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName contentType:@"text/json" responseTime:0.01];
                                 return stubResponse;
                             } else {
                                 return nil; // Don't stub
                             }
                         }];
                     });
+
+                    afterEach(^{
+                        [OHHTTPStubs removeLastRequestHandler];
+                        requestCompleted = NO;
+                    });
+
+                    it(@"allows you to get the list", ^{
+                        [client shouldNotBeNil];
+                        NSArray __block *result;
+                        [client endpoints:^(NSArray *records) {
+                            result = records;
+                            requestCompleted = YES;
+                        }
+                                  failure:nil];
+
+
+                        [KWSpec waitWithTimeout:3.0 forCondition:^BOOL() {
+                            return requestCompleted;
+                        }];
+
+                        [[result shouldNot] beEmpty];
+
+                    });
+
+                    context(@"and there is an error", ^{
+                        beforeEach(^{
+                            [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
+                                if ([request.URL.absoluteString hasSuffix:@"/endpoints"]) {
+                                    NSString *basename = @"nonexistant";
+                                    NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
+                                    NSDictionary *headers = [NSDictionary dictionaryWithObject:@"text/json" forKey:@"Content-Type"];
+                                    id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName statusCode:500 responseTime:0.1 headers:headers];
+                                    return stubResponse;
+                                } else {
+                                    return nil; // Don't stub
+                                }
+                            }];
+                        });
+                        afterEach(^{
+                            [OHHTTPStubs removeLastRequestHandler];
+                        });
+                        it(@"returns an NSError", ^{
+                            NSError __block *err;
+                            [client endpoints:nil
+                                      failure:^(NSHTTPURLResponse *response, NSError *error) {
+                                          err = error;
+                                          requestCompleted = YES;
+                                      }];
+
+                            [KWSpec waitWithTimeout:3.0 forCondition:^BOOL() {
+                                return requestCompleted;
+                            }];
+
+                            [err shouldNotBeNil];
+
+                        });
+                    });
+                    context(@"and you want to see details about an endpoint", ^{
+                        beforeEach(^{
+                            [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
+                                if ([request.URL.absoluteString hasSuffix:@"/endpoints/1"]) {
+                                    NSString *basename = @"endpoint_details";
+                                    NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
+                                    id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName contentType:@"text/json" responseTime:0.01];
+                                    return stubResponse;
+                                } else {
+                                    return nil; // Don't stub
+                                }
+                            }];
+
+                        });
+                        afterEach(^{
+                            [OHHTTPStubs removeLastRequestHandler];
+                        });
+
+                        it(@"shows you the details", ^{
+                            NSArray __block *result;
+                            NSDictionary *attribs = [NSDictionary dictionaryWithObjectsAndKeys:@"1", @"endpointId", nil];
+                            [client endpointDetailsFor:attribs success:^(id endpointInfo) {
+                                result = endpointInfo;
+                                requestCompleted = YES;
+                            }                  failure:^(NSHTTPURLResponse *response, NSError *error) {
+
+                            }];
+
+                            [KWSpec waitWithTimeout:3.0 forCondition:^BOOL() {
+                                return requestCompleted;
+                            }];
+
+                            [[result shouldNot] beEmpty];
+
+                        });
+
+                        pending(@"shows the amqp details");
+
+                        pending(@"allows password reset on amqp listener");
+
+
+
+
+                        context(@"and there is an error", ^{
+                            beforeEach(^{
+                                [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
+                                    if ([request.URL.absoluteString hasSuffix:@"/endpoints/1"]) {
+                                        NSString *basename = @"nonexistant";
+                                        NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
+                                        NSDictionary *headers = [NSDictionary dictionaryWithObject:@"text/json" forKey:@"Content-Type"];
+                                        id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName statusCode:500 responseTime:0.1 headers:headers];
+                                        return stubResponse;
+                                    } else {
+                                        return nil; // Don't stub
+                                    }
+                                }];
+                            });
+                            afterEach(^{
+                                [OHHTTPStubs removeLastRequestHandler];
+                            });
+                            it(@"returns an NSError", ^{
+                                NSError __block *err;
+                                NSDictionary *attribs = [NSDictionary dictionaryWithObjectsAndKeys:@"1", @"endpointId", nil];
+                                [client endpointDetailsFor:attribs success:^(id imageInfo) {
+
+                                }                  failure:^(NSHTTPURLResponse *response, NSError *error) {
+                                    requestCompleted = YES;
+                                    err = error;
+                                }];
+
+                                [KWSpec waitWithTimeout:3.0 forCondition:^BOOL() {
+                                    return requestCompleted;
+                                }];
+
+                                [err shouldNotBeNil];
+
+                            });
+                        });
+
+                    });
+                });
+                context(@"creating",^{
+                    pending(@'create');
+                });
+            });
+            context(@"Subscriptions",^{
+                context(@"when you want to see the subscriptions available", ^{
+                    beforeEach(^{
+                        [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
+                            if ([request.URL.absoluteString hasSuffix:@"/subscriptions"]) {
+                                NSString *basename = [request.URL.absoluteString lastPathComponent];
+                                NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
+                                id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName contentType:@"text/json" responseTime:0.01];
+                                return stubResponse;
+                            } else {
+                                return nil; // Don't stub
+                            }
+                        }];
+                    });
+
+                    afterEach(^{
+                        [OHHTTPStubs removeLastRequestHandler];
+                        requestCompleted = NO;
+                    });
+
+                    it(@"allows you to get the list", ^{
+                        [client shouldNotBeNil];
+                        NSArray __block *result;
+                        [client subscriptions:^(NSArray *records) {
+                            result = records;
+                            requestCompleted = YES;
+                        }
+                                  failure:nil];
+
+
+                        [KWSpec waitWithTimeout:3.0 forCondition:^BOOL() {
+                            return requestCompleted;
+                        }];
+
+                        [[result shouldNot] beEmpty];
+
+                    });
+                });
+                context(@"and you want to see subscription details",^{
+                    beforeEach(^{
+                        [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
+                            if ([request.URL.absoluteString hasSuffix:@"/subscriptions/1"]) {
+                                NSString *basename = @"subscription";
+                                NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
+                                id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName contentType:@"text/json" responseTime:0.01];
+                                return stubResponse;
+                            } else {
+                                return nil; // Don't stub
+                            }
+                        }];
+
+                    });
                     afterEach(^{
                         [OHHTTPStubs removeLastRequestHandler];
                     });
-                    it(@"returns an NSError", ^{
-                        NSError __block *err;
-                        NSDictionary *attribs = [NSDictionary dictionaryWithObjectsAndKeys:@"1", @"endpointId", nil];
-                        [client endpointDetailsFor:attribs success:^(id imageInfo) {
 
-                        } failure:^(NSHTTPURLResponse *response, NSError *error) {
+                    it(@"shows you the details", ^{
+                        NSArray __block *result;
+                        NSDictionary *attribs = [NSDictionary dictionaryWithObjectsAndKeys:@"1", @"subscriptionId", nil];
+                        [client subscriptionDetailsFor:attribs success:^(id subscriptionInfo) {
+                            result = subscriptionInfo;
                             requestCompleted = YES;
-                            err = error;
+                        }                  failure:^(NSHTTPURLResponse *response, NSError *error) {
+
                         }];
 
                         [KWSpec waitWithTimeout:3.0 forCondition:^BOOL() {
                             return requestCompleted;
                         }];
 
-                        [err shouldNotBeNil];
+                        [[result shouldNot] beEmpty];
 
-                    }) ;
+                    });
+
+                });
+                context(@"creating",^{
+                    it(@"success",^{
+
+                    });
                 });
 
             });
+            context(@"Alarms",^{
+                context(@"when you want to see the alarms available", ^{
+                    beforeEach(^{
+                        [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
+                            if ([request.URL.absoluteString hasSuffix:@"/alarms"]) {
+                                NSString *basename = [request.URL.absoluteString lastPathComponent];
+                                NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
+                                id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName contentType:@"text/json" responseTime:0.01];
+                                return stubResponse;
+                            } else {
+                                return nil; // Don't stub
+                            }
+                        }];
+                    });
+
+                    afterEach(^{
+                        [OHHTTPStubs removeLastRequestHandler];
+                        requestCompleted = NO;
+                    });
+
+                    it(@"allows you to get the list", ^{
+                        [client shouldNotBeNil];
+                        NSArray __block *result;
+                        [client alarms:^(NSArray *records) {
+                            result = records;
+                            requestCompleted = YES;
+                        }
+                                      failure:nil];
+
+
+                        [KWSpec waitWithTimeout:3.0 forCondition:^BOOL() {
+                            return requestCompleted;
+                        }];
+
+                        [[result shouldNot] beEmpty];
+
+                    });
+
+                });
+                context(@"and you want to see alarm details",^{
+                    beforeEach(^{
+                        [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
+                            if ([request.URL.absoluteString hasSuffix:@"/alarms/1"]) {
+                                NSString *basename = @"alarm";
+                                NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
+                                id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName contentType:@"text/json" responseTime:0.01];
+                                return stubResponse;
+                            } else {
+                                return nil; // Don't stub
+                            }
+                        }];
+
+                    });
+                    afterEach(^{
+                        [OHHTTPStubs removeLastRequestHandler];
+                    });
+
+                    it(@"shows you the details", ^{
+                        NSArray __block *result;
+                        NSDictionary *attribs = [NSDictionary dictionaryWithObjectsAndKeys:@"1", @"alarmId", nil];
+                        [client alarmDetailsFor:attribs success:^(id alarmInfo) {
+                            result = alarmInfo;
+                            requestCompleted = YES;
+                        }               failure:^(NSHTTPURLResponse *response, NSError *error) {
+
+                        }];
+
+                        [KWSpec waitWithTimeout:3.0 forCondition:^BOOL() {
+                            return requestCompleted;
+                        }];
+
+                        [[result shouldNot] beEmpty];
+
+                    });
+                });
+                context(@"creating",^{
+                    pending(@'create');
+                });
+            });
+            context(@"NotificationMethods",^{
+
+                context(@"when you want to see the notification_methods available", ^{
+                    beforeEach(^{
+                        [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
+                            if ([request.URL.absoluteString hasSuffix:@"/notification-methods"]) {
+                                NSString *basename = [request.URL.absoluteString lastPathComponent];
+                                NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
+                                id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName contentType:@"text/json" responseTime:0.01];
+                                return stubResponse;
+                            } else {
+                                return nil; // Don't stub
+                            }
+                        }];
+                    });
+
+                    afterEach(^{
+                        [OHHTTPStubs removeLastRequestHandler];
+                        requestCompleted = NO;
+                    });
+
+                    it(@"allows you to get the list", ^{
+                        [client shouldNotBeNil];
+                        NSArray __block *result;
+                        [client notificationMethods:^(NSArray *records) {
+                            result = records;
+                            requestCompleted = YES;
+                        }
+                               failure:nil];
+
+
+                        [KWSpec waitWithTimeout:3.0 forCondition:^BOOL() {
+                            return requestCompleted;
+                        }];
+
+                        [[result shouldNot] beEmpty];
+
+                    });
+
+
+
+                });
+                context(@"creating",^{
+                    pending(@'create');
+                });
+
+            });
+
         });
-    });
 
 
 
-
-
-SPEC_END
+        SPEC_END
 
 

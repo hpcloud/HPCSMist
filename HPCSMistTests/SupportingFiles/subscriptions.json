@@ -1,0 +1,16 @@
+{
+    "subscriptions": [{
+        "id": "10e72f57-41d2-45d6-843c-511316cd751c",
+        "links": [{
+            "rel": "self",
+            "href": "https://region-a.geo-1.monitoring.hpcloudsvc.com/v1.0/subscriptions/10e72f57-41d2-45d6-843c-511316cd751c"
+        }],
+        "endpoint_id": "3f97a567-f85b-4e88-b528-e10c56c59369",
+        "namespace": "compute",
+        "dimensions": {
+            "az": "1",
+            "instance_uuid": "a2a3da7b-faf1-49d6-b0cf-7145183527ce",
+            "instance_id": "274247"
+        }
+    }]
+}

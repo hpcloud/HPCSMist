@@ -42,8 +42,12 @@ static NSString *const MaasOperationKey = @"operation";
 static NSString *const NSErrorKey = @"NSError";
 
 static NSString *const MaasObjectEndpoint = @"endpoint";
+static NSString *const MaasObjectSubscription = @"subscription";
+static NSString *const MaasObjectAlarm = @"alarm";
+static NSString *const MaasObjectNotificationMethod = @"notification_method";
 
 static NSString *const MaasObjectOperationList = @"list";
+static NSString *const MaasObjectOperationGet = @"get";
 
 @interface HPCSMaasClient : AFHTTPClient
 /** the interface to the identity system */
@@ -96,6 +100,11 @@ static NSString *const MaasObjectOperationList = @"list";
 
 - (void) subscriptions:( void ( ^)(NSArray * records) )block
                failure:( void ( ^)(NSHTTPURLResponse * response,NSError * error) )failure;
+
+// @param subscription object which must respond to
+//                     endpoint_id
+//                     namespace  (compute|volume)
+//                     dimensions (instance_id, az,instance_uuid)
 
 - (void) saveSubscription:(id)subscription
               success:(void ( ^)(NSHTTPURLResponse *, NSData *))saved

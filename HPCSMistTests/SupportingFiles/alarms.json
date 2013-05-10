@@ -1,0 +1,12 @@
+{
+    "alarms": [{
+        "id": "3e4a70e0-a49a-4c24-a1be-f8b1bbd7004a",
+        "links": [{
+            "rel": "self",
+            "href": "https://region-a.geo-1.monitoring.hpcloudsvc.com/v1.0/alarms/3e4a70e0-a49a-4c24-a1be-f8b1bbd7004a"
+        }],
+        "name": "my alarm",
+        "expression": "avg(compute: disk_read_ops: VDA :{instance_id=274247, instance_uuid=a2a3da7b-faf1-49d6-b0cf-7145183527ce, az=1}) >= 1000",
+        "state": "UNDETERMINED"
+    }]
+}
