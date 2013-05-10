@@ -34,6 +34,7 @@
 #import "HPCSTenant.h"
 
 @class HPCSCDNClient;
+@class HPCSMaasClient;
 
 extern NSString *const HPCSNetworkingErrorDomain;
 
@@ -53,6 +54,7 @@ extern NSString *const kHPCSAuthAccessKeyCredentialsKey;
 extern NSString *const kHPCSAuthAccessKey;
 extern NSString *const kHPCSAuthSecretKey;
 extern NSString *const HPCSKeystoneCDNCatalogIsEmptyNotification;
+extern NSString *const HPCSKeystoneMAASCatalogIsEmptyNotification;
 
 /**Allows Access to the HP Cloud Services authorization system (Control Services).
 
@@ -162,6 +164,8 @@ extern NSString *const HPCSKeystoneCDNCatalogIsEmptyNotification;
 /// @name Getting Access To Authenticated Services
 ///-----------------------------------------------
 
+#pragma mark - Compute
+
 /** Retrieve an instance of the Compute Client,designated way to get an instance of the Compute (Nova) client
 
    @returns nil if no compute resource is in the service catalog
@@ -178,6 +182,8 @@ extern NSString *const HPCSKeystoneCDNCatalogIsEmptyNotification;
 /** the URL for the compute endpoint as listed in the Service Catalog */
 - (NSString *) publicUrlForCompute;
 
+#pragma mark - Swift
+
 /** Retrieve an instance of the Object Storage Client, designated way to get an instance of the object storage (Swift) client
 
    @discussion if the service catalog does not contain a compute service for this user the HPCSKeystoneSwiftCatalogIsEmptyNotification is sent.
@@ -188,9 +194,11 @@ extern NSString *const HPCSKeystoneCDNCatalogIsEmptyNotification;
 /** the URL for the object storage endpoint as listed in the Service Catalog */
 - (NSString *) publicUrlForObjectStorage;
 
-/** Retrieve an instance of the Object Storage Client, designated way to get an instance of the object storage (Swift) client
+#pragma mark - CDN
 
-   @discussion if the service catalog does not contain a compute service for this user the HPCSKeystoneSwiftCatalogIsEmptyNotification is sent.
+/** Retrieve an instance of the CDN Client, designated way to get an instance of the CDN client
+
+   @discussion if the service catalog does not contain a CDN service for this user the HPCSKeystoneCDNCatalogIsEmptyNotification is sent.
 
  */
 - (HPCSCDNClient *) cdnClient;
@@ -198,6 +206,17 @@ extern NSString *const HPCSKeystoneCDNCatalogIsEmptyNotification;
 /** the URL for the object storage endpoint as listed in the Service Catalog */
 - (NSString *) publicUrlForCDN;
 
+#pragma mark - Monitoring
+
+/** Retrieve an instance of the Maas Client, designated way to get an instance of the MAAS client
+
+   @discussion if the service catalog does not contain a MAAS service for this user the HPCSKeystoneMAASCatalogIsEmptyNotification is sent.
+
+ */
+- (HPCSMaasClient *) monitoringClient;
+
+/** the URL for the Maas endpoint as listed in the Service Catalog */
+- (NSString *) publicUrlForMonitoring;
 
 ///-----------------------------------------------
 /// @name Secure Management of Your Credentials

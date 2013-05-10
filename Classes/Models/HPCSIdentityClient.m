@@ -14,6 +14,7 @@
 #import "HPCSSecurityConstants.h"
 #import "KeychainWrapper.h"
 #import "HPCSCDNClient.h"
+#import "HPCSMaasClient.h"
 
 NSString *const HPCSNetworkingErrorDomain = @"com.hp.cloud.networking.error";
 
@@ -31,6 +32,7 @@ NSString *const HPCSKeystoneNovaCatalogIsEmptyNotification = @"com.hp.cloud.keys
 NSString *const HPCSKeystoneSwiftCatalogIsEmptyNotification = @"com.hp.cloud.keystone.swift.catalog.empty";
 NSString *const HPCSKeystoneCDNCatalogIsEmptyNotification = @"com.hp.cloud.keystone.cdn.catalog.empty";
 NSString *const HPCSKeystoneCredentialsDidChangeNotification = @"com.hp.cloud.keystone.credentials.changed";
+NSString *const HPCSKeystoneMAASCatalogIsEmptyNotification  = @"com.hp.cloud.keystone.maas.catalog.empty";
 
 @interface HPCSIdentityClient ()
 @property (nonatomic, retain) NSMutableDictionary *authInfo;
@@ -271,42 +273,13 @@ NSString *const HPCSKeystoneCredentialsDidChangeNotification = @"com.hp.cloud.ke
 
 - (NSString *) publicUrlForCompute
 {
-  if ( IsEmpty(self.serviceCatalog) )
-  {
-    return nil;
-  }
-
-  for (id item in self.serviceCatalog)
-  {
-    //TODO nn
-    if ([[item valueForKey:@"type"] isEqualToString:@"compute"])
-    {
-      NSDictionary *ep = [[item valueForKey:@"endpoints"] objectAtIndex:0];
-      return [ep valueForKey:@"publicURL"];
-    }
-  }
-
-  return nil;
+  return [self resolveServiceCatalogForTypeCode:@"compute" ];
 }
 
 
 - (NSString *) publicUrlForObjectStorage
 {
-  if ( IsEmpty(self.serviceCatalog) )
-  {
-    return nil;
-  }
-
-  for (id item in self.serviceCatalog)
-  {
-    if ([[item valueForKey:@"type"] isEqualToString:@"object-store"])
-    {
-      NSDictionary *ep = [[item valueForKey:@"endpoints"] objectAtIndex:0];
-      return [ep valueForKey:@"publicURL"];
-    }
-  }
-
-  return nil;
+  return [self resolveServiceCatalogForTypeCode:@"object-store" ];
 }
 
 - (HPCSCDNClient *)cdnClient {
@@ -321,21 +294,41 @@ NSString *const HPCSKeystoneCredentialsDidChangeNotification = @"com.hp.cloud.ke
 }
 
 - (NSString *)publicUrlForCDN {
-  if ( IsEmpty(self.serviceCatalog) )
-  {
-    return nil;
-  }
+    return [self resolveServiceCatalogForTypeCode:@"hpext:cdn" ];
+}
 
-  for (id item in self.serviceCatalog)
-  {
-    if ([[item valueForKey:@"type"] isEqualToString:@"hpext:cdn"])
+- (HPCSMaasClient *)monitoringClient {
+    NSString *monitoringURL = [self publicUrlForMonitoring];
+    if ( IsEmpty(monitoringURL) )
     {
-      NSDictionary *ep = [[item valueForKey:@"endpoints"] objectAtIndex:0];
-      return [ep valueForKey:@"publicURL"];
+        [[NSNotificationCenter defaultCenter] postNotificationName:HPCSKeystoneMAASCatalogIsEmptyNotification object:self];
+        return nil;
     }
-  }
 
-  return nil;
+    return [[HPCSMaasClient alloc] initWithIdentityClient:self];
+}
+
+//TODO this needs to be able resolve better, az ,etc
+- (NSString *)publicUrlForMonitoring {
+    return [self resolveServiceCatalogForTypeCode:@"hpext:monitoring" ];
+}
+//TODO pass in az here?
+- (NSString *)resolveServiceCatalogForTypeCode:(NSString *)typeCode {
+    if ( IsEmpty(self.serviceCatalog) )
+    {
+        return nil;
+    }
+
+    for (id item in self.serviceCatalog)
+    {
+        if ([[item valueForKey:@"type"] isEqualToString:typeCode])
+        {
+            NSDictionary *ep = [[item valueForKey:@"endpoints"] objectAtIndex:0];
+            return [ep valueForKey:@"publicURL"];
+        }
+    }
+
+    return nil;
 }
 
 
