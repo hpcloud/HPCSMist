@@ -206,7 +206,10 @@ NSString *const HPCSMaasOperationDidFailNotification = @"com.hp.cloud.maas.opera
 - (void)saveAlarm:(id)alarm1
           success:(void (^)(NSHTTPURLResponse *, NSData *))saved
           failure:(void (^)(NSHTTPURLResponse *, NSError *))failure {
-    [self postPath:<#(NSString *)path#> parameters:<#(NSDictionary *)parameters#> success:<#(void (^)(AFHTTPRequestOperation *, id))success#> failure:<#(void (^)(AFHTTPRequestOperation *, NSError *))failure#>];
+    [self postPath:<#(NSString *)path#>
+        parameters:[self dictionaryToCreateAlarm:alarm1]
+           success:<#(void (^)(AFHTTPRequestOperation *, id))success#>
+           failure:<#(void (^)(AFHTTPRequestOperation *, NSError *))failure#>];
 
 
 }

@@ -8,7 +8,4 @@ target :HPCSMistTests, :exclusive => true do
   pod 'Kiwi'
 end
 
-target :HPCSMistSpecs, :exclusive => true do
-  pod 'Kiwi'
-end
 
