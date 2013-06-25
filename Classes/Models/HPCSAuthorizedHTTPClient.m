@@ -1,8 +1,4 @@
-//
-// Created by mhagedorn on 11/20/12.
-//
-// To change the template use AppCode | Preferences | File Templates.
-//
+
 
 #import "HPCSAuthorizedHTTPClient.h"
 

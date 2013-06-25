@@ -2,7 +2,6 @@
 //  HPCSSwiftClient.m
 //  HPCSMist
 //
-//  Created by Mike Hagedorn on 8/20/12.
 //
 //
 

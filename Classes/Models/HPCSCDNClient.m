@@ -1,8 +1,4 @@
-//
-// Created by mhagedorn on 3/25/13.
-//
-// To change the template use AppCode | Preferences | File Templates.
-//
+
 
 
 #import "HPCSCDNClient.h"
