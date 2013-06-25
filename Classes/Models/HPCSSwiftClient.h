@@ -207,6 +207,18 @@ extern NSString *const HPCSSwiftAccountContainerCountHeaderKey;
           progress:(void ( ^)(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite))progress
            failure:(void ( ^)(NSHTTPURLResponse *responseObject, NSError *error))failure;
 
+-(void) saveObject:(id) object
+          fromStream: (NSInputStream *)stream
+             success:(void ( ^)(NSHTTPURLResponse *responseObject))success
+             failure:(void ( ^)(NSHTTPURLResponse *responseObject, NSError *error))failure;
+
+
+- (void)putPath:(NSString *)path
+     parameters:(NSDictionary *)parameters
+    inputStream:(NSInputStream *) stream
+        success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
+        failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
+
 /** Sets custom metadata on an object
     @param object the object which you want the metadata on, must respond to **name** and **parent.name**
     @param  metadata NSDictionary of key value pairs with keys of the form "X-Object-Meta-<ATTRIBUTE>"

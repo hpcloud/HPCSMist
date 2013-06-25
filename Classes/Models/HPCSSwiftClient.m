@@ -229,15 +229,21 @@ NSString *const HPCSSwiftAccountContainerCountHeaderKey = @"X-Account-Container-
   NSString *path = [NSString stringWithFormat:@"%@", [self URLEncodedString:[container valueForKeyPath:@"name"] ]];
   [self getPath:path parameters:nil success: ^(AFHTTPRequestOperation * operation, id JSON) {
      NSMutableArray *mutableRecords = [NSMutableArray array];
-     for (id entry in JSON)
-     {
-       NSMutableDictionary *attributes = [NSMutableDictionary dictionaryWithDictionary:entry];
-       [attributes setValue:container forKey:@"parent"];
-       NSString *objectPath = [path stringByAppendingFormat:@"/%@", [attributes valueForKey:@"name"]];
-       NSURL *url = [NSURL URLWithString:objectPath relativeToURL:self.baseURL];
-       [attributes setValue:url forKey:@"url"];
-       [mutableRecords addObject:attributes];
+     if([JSON isKindOfClass:[NSArray class]]){
+         for (id entry in JSON)
+         {
+             NSMutableDictionary *attributes = [NSMutableDictionary dictionaryWithDictionary:entry];
+             [attributes setValue:container forKey:@"parent"];
+             NSString *objectPath = [path stringByAppendingFormat:@"/%@", [attributes valueForKey:@"name"]];
+             NSURL *url = [NSURL URLWithString:objectPath relativeToURL:self.baseURL];
+             [attributes setValue:url forKey:@"url"];
+             [mutableRecords addObject:attributes];
+         }
+
+     }else{
+         NSLog(@"warning, JSON return is not an NSArray");
      }
+
 
      if (success)
      {
@@ -278,6 +284,38 @@ NSString *const HPCSSwiftAccountContainerCountHeaderKey = @"X-Account-Container-
      }
    }
   ];
+}
+
+
+-(void) saveObject:(id) object
+        fromStream: (NSInputStream *)stream
+           success:(void ( ^)(NSHTTPURLResponse *responseObject))success
+           failure:(void ( ^)(NSHTTPURLResponse *responseObject, NSError *error))failure
+{
+    [self setDefaultHeader:@"Accept" value:nil];
+    NSString *path = [NSString stringWithFormat:@"%@/%@",[self URLEncodedString:[object valueForKeyPath:@"parent.name"] ], [self URLEncodedString:[object valueForKeyPath:@"name"] ]];
+
+    [self putPath:path
+       parameters:nil
+      inputStream:stream
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self setDefaultHeader:@"Accept" value:@"application/json"];
+        if (success)
+        {
+            success (responseObject);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self setDefaultHeader:@"Accept" value:@"application/json"];
+        if (failure)
+        {
+            failure (operation, error);
+        }
+
+
+    }];
+
+
+
 }
 
 - (void) saveObject:(id)object
@@ -492,6 +530,18 @@ NSString *const HPCSSwiftAccountContainerCountHeaderKey = @"X-Account-Container-
   [request setHTTPBody:data];
 
   return request;
+}
+
+- (void)putPath:(NSString *)path
+     parameters:(NSDictionary *)parameters
+    inputStream:(NSInputStream *) stream
+        success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
+        failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
+{
+    NSMutableURLRequest *request = [super requestWithMethod:@"PUT" path:path parameters:parameters];
+    request.HTTPBodyStream = stream;
+    AFHTTPRequestOperation *operation = [super HTTPRequestOperationWithRequest:request success:success failure:failure];
+    [super enqueueHTTPRequestOperation:operation];
 }
 
 
