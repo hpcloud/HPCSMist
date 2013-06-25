@@ -419,7 +419,8 @@ SPEC_BEGIN(SwiftClientSpec)
                     if ([request.URL.absoluteString hasSuffix:@"created"] &&
                         [request.HTTPMethod isEqualToString:@"POST"] &&
                         [request.allHTTPHeaderFields objectForKey:@"Accept"] == nil &&
-                        [request.allHTTPHeaderFields objectForKey:@"X-Object-Meta-Reviewed"] == @"true" ) {
+                        [[request.allHTTPHeaderFields objectForKey:@"X-Object-Meta-Reviewed"] isEqualToString: @"true"]
+                        ) {
                       NSString *basename = @"nonexistant";
                       NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
                       id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName statusCode:202 responseTime:0.001 headers:nil];

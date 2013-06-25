@@ -55,6 +55,8 @@ extern NSString *const HPCSSwiftAccountContainerCountHeaderKey;
 /// @name Creating and Initializing HPCSSwift Clients
 ///-----------------------------------------------------
 
++ (id) sharedClient: (HPCSIdentityClient *)identityClient;
+
 /**
    Creates a Swift client
 

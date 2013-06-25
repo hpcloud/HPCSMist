@@ -28,6 +28,24 @@ NSString *const HPCSSwiftAccountContainerCountHeaderKey = @"X-Account-Container-
 @synthesize identityClient;
 
 
+// COV_NF_START
++ (id) sharedClient: (HPCSIdentityClient *)identityClient
+{
+    static HPCSSwiftClient * _sharedClient = nil;
+
+    static dispatch_once_t oncePredicate;
+
+    dispatch_once(&oncePredicate, ^{
+        //or use the access key id stuff and secret key
+        _sharedClient = [[self alloc] initWithIdentityClient:identityClient];
+    }
+    );
+
+    return _sharedClient;
+}
+// COV_NF_END
+
+
 
 - (id) initWithIdentityClient:(HPCSIdentityClient *)identity
 {

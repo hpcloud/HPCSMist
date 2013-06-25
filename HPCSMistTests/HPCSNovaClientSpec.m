@@ -3,6 +3,7 @@
 #import "OHHTTPStubs.h"
 #import "AFNetworking.h"
 #import "KWSpec+WaitFor.h"
+#import "HPCSCDNClient.h"
 
 //TODO failures should have userInfo["NSError"] == the error
 
@@ -57,6 +58,8 @@ SPEC_BEGIN(ComputeClientSpec)
         client = [identityClient computeClient];
       });
 
+
+
       context(@"after authenticating", ^{
 
         it(@"sets the identityClient", ^{
@@ -68,6 +71,12 @@ SPEC_BEGIN(ComputeClientSpec)
         it(@"sets the Accept header to json", ^{
           [[[client defaultValueForHeader:@"Accept"]should] equal:@"application/json"];
         });
+        it(@"returns a singleton", ^{
+         HPCSComputeClient *a = [identityClient computeClient];
+         HPCSComputeClient *b = [identityClient computeClient];
+         [[a should] beIdenticalTo:b];
+        });
+
       });
 
       context(@"when you want to see the images available", ^{

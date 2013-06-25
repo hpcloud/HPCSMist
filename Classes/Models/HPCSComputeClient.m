@@ -22,6 +22,24 @@ NSString *const HPCSNovaImageDetailsDidFailNotification = @"com.hp.cloud.nova.im
 @implementation HPCSComputeClient
 @synthesize identityClient;
 
+
+// COV_NF_START
++ (id) sharedClient: (HPCSIdentityClient *)identityClient
+{
+    static HPCSComputeClient * _sharedClient = nil;
+
+    static dispatch_once_t oncePredicate;
+
+    dispatch_once(&oncePredicate, ^{
+            //or use the access key id stuff and secret key
+        _sharedClient = [[self alloc] initWithIdentityClient:identityClient];
+    }
+    );
+
+    return _sharedClient;
+}
+// COV_NF_END
+
 - (id) initWithIdentityClient:(HPCSIdentityClient *)identity
 {
   self = [super initWithBaseURL:[NSURL URLWithString:[identity publicUrlForCompute]]];

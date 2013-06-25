@@ -46,7 +46,8 @@ NSString *const HPCSKeystoneCredentialsDidChangeNotification = @"com.hp.cloud.ke
 // COV_NF_START
 + (HPCSIdentityClient *) sharedClient
 {
-  static HPCSIdentityClient *_sharedClient = nil;
+  static HPCSIdentityClient * _sharedClient = nil;
+
   static dispatch_once_t oncePredicate;
 
   dispatch_once(&oncePredicate, ^{
@@ -252,7 +253,9 @@ NSString *const HPCSKeystoneCredentialsDidChangeNotification = @"com.hp.cloud.ke
     return nil;
   }
 
-  return [[HPCSComputeClient alloc] initWithIdentityClient:self];
+
+
+  return [HPCSComputeClient sharedClient:self];
 }
 
 
@@ -265,7 +268,7 @@ NSString *const HPCSKeystoneCredentialsDidChangeNotification = @"com.hp.cloud.ke
     return nil;
   }
 
-  return [[HPCSSwiftClient  alloc] initWithIdentityClient:self];
+  return [HPCSSwiftClient sharedClient:self];
 }
 
 
@@ -317,7 +320,7 @@ NSString *const HPCSKeystoneCredentialsDidChangeNotification = @"com.hp.cloud.ke
     return nil;
   }
 
-  return [[HPCSCDNClient  alloc] initWithIdentityClient:self];
+  return [HPCSCDNClient sharedClient:self];
 }
 
 - (NSString *)publicUrlForCDN {

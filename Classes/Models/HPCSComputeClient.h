@@ -48,6 +48,8 @@ extern NSString *const HPCSNovaImageDetailsDidFailNotification;
 /// @name Creating and Initializing HPCSCompute Clients
 ///-----------------------------------------------------
 
++(id) sharedClient:(HPCSIdentityClient *)identityClient;
+
 /**
    Creates a compute client
    @param client the HPCSIdentityClient to use as the Identity Service Client

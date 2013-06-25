@@ -38,6 +38,8 @@
 /// @name Creating and Initializing HPCSCDN Clients
 ///-----------------------------------------------------
 
+
++(id) sharedClient:(HPCSIdentityClient *)identityClient;
 /**
    Creates a cdn client
    @param client the HPCSIdentityClient to use as the Identity Service Client
@@ -93,12 +95,9 @@
  */
 - (void) getCDNContainerMetadata:(id)container
                success:(void ( ^)(NSHTTPURLResponse *responseObject, NSDictionary *metadata))success
-               failure:( void ( ^)(NSHTTPURLResponse * response,NSError * error) )failure;
+               failure:( void (^)(NSHTTPURLResponse * response,NSError * error) )failure;
 
-///-----------------------------------------------------
-/// @name Update CDN Enabled Container Metadata
-///--
----------------------------------------------------
+
 
 /**
    Set CDN specific metadata for a container
