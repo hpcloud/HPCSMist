@@ -308,7 +308,7 @@ NSString *const HPCSSwiftAccountContainerCountHeaderKey = @"X-Account-Container-
         [self setDefaultHeader:@"Accept" value:@"application/json"];
         if (failure)
         {
-            failure (operation, error);
+            failure (operation.response, error);
         }
 
 
