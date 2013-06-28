@@ -9,6 +9,23 @@
 
 }
 
+// COV_NF_START
++ (id) sharedClient: (HPCSIdentityClient *)identityClient
+{
+    static id _sharedClient = nil;
+
+    static dispatch_once_t oncePredicate;
+
+    dispatch_once(&oncePredicate, ^{
+        //or use the access key id stuff and secret key
+        _sharedClient = [[self alloc] initWithIdentityClient:identityClient];
+    }
+    );
+
+    return _sharedClient;
+}
+// COV_NF_END
+
 - (void)cdnContainers:(void ( ^)(NSHTTPURLResponse *responseObject, NSArray *records))success
               failure:(void ( ^)(NSHTTPURLResponse *responseObject, NSError *error))failure {
 

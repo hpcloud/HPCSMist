@@ -19,22 +19,24 @@
   [self setDefaultHeader:@"X-Auth-Token" value:nil];
 }
 
+
 // COV_NF_START
 + (id) sharedClient: (HPCSIdentityClient *)identityClient
 {
-    static id _sharedClient = nil;
+    NSAssert(NO, @" You should always override this to provide the singleton constructor for your service class");
+    return nil;
+//    static id _sharedClient = nil;
 
-    static dispatch_once_t oncePredicate;
-
-    dispatch_once(&oncePredicate, ^{
-        //or use the access key id stuff and secret key
-        _sharedClient = [[self alloc] initWithIdentityClient:identityClient];
-    }
-    );
-
-    return _sharedClient;
+//    static dispatch_once_t oncePredicate;
+//
+//    dispatch_once(&oncePredicate, ^{
+//        //or use the access key id stuff and secret key
+//        _sharedClient = [[self alloc] initWithIdentityClient:identityClient];
+//    }
+//    );
+//
+//    return _sharedClient;
 }
-
 // COV_NF_END
 
 - (NSString *)serviceURL:(HPCSIdentityClient *)identity {

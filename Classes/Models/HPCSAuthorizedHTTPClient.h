@@ -47,8 +47,6 @@
 - (id) initWithIdentityClient:(HPCSIdentityClient *)client;
 
 
-+ (id) sharedClient: (HPCSIdentityClient *)identityClient;
-
 //Abstract method
 - (NSString *)serviceURL:(HPCSIdentityClient *)identity;
 

@@ -27,6 +27,9 @@
 
 #import <Foundation/Foundation.h>
 #import "HPCSAuthorizedHTTPClient.h"
+#import "AFHTTPClient.h"
+
+@class HPCSIdentityClient;
 
 
 extern NSString *const HPCSNovaServersListDidFailNotification;
@@ -48,6 +51,8 @@ extern NSString *const HPCSNovaImageDetailsDidFailNotification;
 ///-----------------------------------------------------
 /// @name List Running Nova Instances
 ///-----------------------------------------------------
+
++ (id) sharedClient: (HPCSIdentityClient *)identityClient;
 
 /**
    Retrieves the list of servers running

@@ -92,6 +92,12 @@ SPEC_BEGIN(SwiftClientSpec)
             [OHHTTPStubs removeLastRequestHandler];
           });
 
+          context(@"after creation",^{
+            it(@"should be a HPCSSwiftClient",^{
+                [[client should] beKindOfClass:[HPCSSwiftClient class]];
+            });
+          });
+
           context(@"after authenticating", ^{
             it(@"sets the identityClient", ^{
               [client.identityClient shouldNotBeNil];

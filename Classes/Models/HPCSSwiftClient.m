@@ -5,6 +5,8 @@
 //
 //
 
+#import "HPCSIdentityClient.h"
+#import "HPCSAuthorizedHTTPClient.h"
 #import "HPCSSwiftClient.h"
 #import "AFJSONRequestOperation.h"
 
@@ -25,7 +27,22 @@ NSString *const HPCSSwiftAccountContainerCountHeaderKey = @"X-Account-Container-
 @implementation HPCSSwiftClient
 
 
+// COV_NF_START
++ (id) sharedClient: (HPCSIdentityClient *)identityClient
+{
+    static id _sharedClient = nil;
 
+    static dispatch_once_t oncePredicate;
+
+    dispatch_once(&oncePredicate, ^{
+        //or use the access key id stuff and secret key
+        _sharedClient = [[self alloc] initWithIdentityClient:identityClient];
+    }
+    );
+
+    return _sharedClient;
+}
+// COV_NF_END
 
 - (NSString *)serviceURL:(id) identity {
     return [identity performSelector:@selector(publicUrlForObjectStorage)];

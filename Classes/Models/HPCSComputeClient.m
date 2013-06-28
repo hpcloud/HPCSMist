@@ -4,6 +4,8 @@
 
 
 
+#import "HPCSIdentityClient.h"
+#import "HPCSAuthorizedHTTPClient.h"
 #import "HPCSComputeClient.h"
 #import "AFJSONRequestOperation.h"
 
@@ -18,6 +20,22 @@ NSString *const HPCSNovaImageDetailsDidFailNotification = @"com.hp.cloud.nova.im
 @implementation HPCSComputeClient
 
 
+// COV_NF_START
++ (id) sharedClient: (HPCSIdentityClient *)identityClient
+{
+    static id _sharedClient = nil;
+
+    static dispatch_once_t oncePredicate;
+
+    dispatch_once(&oncePredicate, ^{
+        //or use the access key id stuff and secret key
+        _sharedClient = [[self alloc] initWithIdentityClient:identityClient];
+    }
+    );
+
+    return _sharedClient;
+}
+// COV_NF_END
 
 - (NSString *)serviceURL:(id)identity {
     return [identity performSelector:@selector(publicUrlForCompute)];

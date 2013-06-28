@@ -59,6 +59,11 @@ SPEC_BEGIN(ComputeClientSpec)
       });
 
 
+      context(@"after creation",^{
+          it(@"should be a HPCSNovaClient",^{
+              [[client should] beKindOfClass:[HPCSComputeClient class]];
+          });
+      });
 
       context(@"after authenticating", ^{
 

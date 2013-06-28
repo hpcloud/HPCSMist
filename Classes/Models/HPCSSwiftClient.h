@@ -27,6 +27,8 @@
 #import <Foundation/Foundation.h>
 #import "HPCSAuthorizedHTTPClient.h"
 
+@class HPCSIdentityClient;
+
 extern NSString *const HPCSSwiftContainersListDidFailNotification;
 extern NSString *const HPCSSwiftContainerSaveDidFailNotification;
 extern NSString *const HPCSSwiftContainerDeleteDidFailNotification;
@@ -51,6 +53,8 @@ extern NSString *const HPCSSwiftAccountContainerCountHeaderKey;
 ///------------------------
 /// @name Container Operations
 ///------------------------
+
++ (id) sharedClient: (HPCSIdentityClient *)identityClient;
 
 /**
    Returns a list of all containers owned by the authenticated request sender
