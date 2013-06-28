@@ -26,9 +26,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AFHTTPClient.h"
+#import "HPCSAuthorizedHTTPClient.h"
 
-@class HPCSIdentityClient;
 
 extern NSString *const HPCSNovaServersListDidFailNotification;
 extern NSString *const HPCSNovaServersDeleteDidFailNotification;
@@ -38,29 +37,13 @@ extern NSString *const HPCSNovaFlavorDetailsDidFailNotification;
 extern NSString *const HPCSNovaImagesDidFailNotification;
 extern NSString *const HPCSNovaImageDetailsDidFailNotification;
 
+
+
 /** The interface to HP's Nova System (Compute) */
-@interface HPCSComputeClient : AFHTTPClient
+@interface HPCSComputeClient : HPCSAuthorizedHTTPClient
 
-/** the interface to the identity system */
-@property (retain) HPCSIdentityClient *identityClient;
 
-///-----------------------------------------------------
-/// @name Creating and Initializing HPCSCompute Clients
-///-----------------------------------------------------
 
-+(id) sharedClient:(HPCSIdentityClient *)identityClient;
-
-/**
-   Creates a compute client
-   @param client the HPCSIdentityClient to use as the Identity Service Client
-   @discussion This is designated initializer. Typically its called in the following fashion (implicitly) from a singleton instance of HPCSIdentityClient:
-
-    HPCSIdentityClient *client = [HPCSIdentityClient sharedClient];
-    //this calls initWithIdentityClient
-    HPCSComputeClient *computeClient = [client computeClient];
-
- */
-- (id) initWithIdentityClient:(HPCSIdentityClient *)client;
 
 ///-----------------------------------------------------
 /// @name List Running Nova Instances
@@ -152,5 +135,8 @@ extern NSString *const HPCSNovaImageDetailsDidFailNotification;
 - (void) terminateServer:(id)serverInfo
  success                :( void ( ^)(NSHTTPURLResponse * response) )success
  failure                :( void ( ^)(NSHTTPURLResponse * response, NSError * error) )failure;
+
+
+- (NSString *)serviceURL:(HPCSIdentityClient *)identity;
 
 @end

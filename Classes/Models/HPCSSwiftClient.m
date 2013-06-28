@@ -7,7 +7,6 @@
 
 #import "HPCSSwiftClient.h"
 #import "AFJSONRequestOperation.h"
-#import "HPCSIdentityClient.h"
 
 NSString *const HPCSSwiftContainersListDidFailNotification = @"com.hp.cloud.swift.containers.fail";
 NSString *const HPCSSwiftContainerSaveDidFailNotification = @"com.hp.cloud.swift.container.save.fail";
@@ -24,48 +23,12 @@ NSString *const HPCSSwiftAccountBytesUsedHeaderKey = @"X-Account-Bytes-Used";
 NSString *const HPCSSwiftAccountContainerCountHeaderKey = @"X-Account-Container-Count";
 
 @implementation HPCSSwiftClient
-@synthesize identityClient;
-
-
-// COV_NF_START
-+ (id) sharedClient: (HPCSIdentityClient *)identityClient
-{
-    static HPCSSwiftClient * _sharedClient = nil;
-
-    static dispatch_once_t oncePredicate;
-
-    dispatch_once(&oncePredicate, ^{
-        //or use the access key id stuff and secret key
-        _sharedClient = [[self alloc] initWithIdentityClient:identityClient];
-    }
-    );
-
-    return _sharedClient;
-}
-// COV_NF_END
 
 
 
-- (id) initWithIdentityClient:(HPCSIdentityClient *)identity
-{
-  self = [super initWithBaseURL:[NSURL URLWithString:[identity publicUrlForObjectStorage]]];
-  self.identityClient = identity;
-  if (!self)
-  {
-    return nil;
-  }
 
-  [self registerHTTPOperationClass:[AFJSONRequestOperation class]];
-
-  // Accept HTTP Header; see http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.1
-  [self setDefaultHeader:@"Accept" value:@"application/json"];
-  [self setParameterEncoding:AFJSONParameterEncoding];
-  if (self.identityClient)
-  {
-    [self setDefaultHeader:@"X-Auth-Token" value:self.identityClient.token.tokenId];
-  }
-
-  return self;
+- (NSString *)serviceURL:(id) identity {
+    return [identity performSelector:@selector(publicUrlForObjectStorage)];
 }
 
 

@@ -26,9 +26,30 @@
 #import <Foundation/Foundation.h>
 #import "AFHTTPClient.h"
 
+@class HPCSIdentityClient;
+
 /** HTTPClient which adds the appropriate token to the request */
 @interface HPCSAuthorizedHTTPClient : AFHTTPClient
-//TODO make this the parent of compute, nova
 
+/** The HPCSIdentityClient object used to get access to the HPCSToken. */
+@property(retain) HPCSIdentityClient *identityClient;
+
+///-----------------------------------------------------
+/// @name Creating and Initializing HPCSAuthorizedHTTPClient Clients
+///-----------------------------------------------------
+
+/**
+ Creates a  client
+ @param client the HPCSIdentityClient to use as the Identity Service Client
+ @discussion This is designated initializer. Typically its called in the following fashion (implicitly) from a singleton instance of HPCSIdentityClient
+ 
+ */
+- (id) initWithIdentityClient:(HPCSIdentityClient *)client;
+
+
++ (id) sharedClient: (HPCSIdentityClient *)identityClient;
+
+//Abstract method
+- (NSString *)serviceURL:(HPCSIdentityClient *)identity;
 
 @end

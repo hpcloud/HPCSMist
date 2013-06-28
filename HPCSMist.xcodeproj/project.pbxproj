@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
+		AF3AEDB6177CDE8D00B856B5 /* OCLint */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = AF3AEDB7177CDE8D00B856B5 /* Build configuration list for PBXAggregateTarget "OCLint" */;
+			buildPhases = (
+				AF3AEDBA177CDE9B00B856B5 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = OCLint;
+			productName = OCLint;
+		};
 		AF4BB8B816793CBE0019C57C /* Documentation */ = {
 			isa = PBXAggregateTarget;
 			buildConfigurationList = AF4BB8B916793CBE0019C57C /* Build configuration list for PBXAggregateTarget "Documentation" */;
@@ -434,6 +445,7 @@
 				AF1D24ED167927C700454661 /* HPCSMist */,
 				AF1D2517167927C800454661 /* HPCSMistTests */,
 				AF4BB8B816793CBE0019C57C /* Documentation */,
+				AF3AEDB6177CDE8D00B856B5 /* OCLint */,
 			);
 		};
 /* End PBXProject section */
@@ -516,6 +528,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "#!/bin/sh\n\n# Launch application using ios-sim and set up environment to inject test bundle into application\n# Source: http://stackoverflow.com/a/12682617/504494\n\nif [ \"$RUN_APPLICATION_TESTS_WITH_IOS_SIM\" = \"YES\" ]; then\ntest_bundle_path=\"$BUILT_PRODUCTS_DIR/$PRODUCT_NAME.$WRAPPER_EXTENSION\"\nenvironment_args=\"--setenv DYLD_INSERT_LIBRARIES=/../../Library/PrivateFrameworks/IDEBundleInjection.framework/IDEBundleInjection --setenv XCInjectBundle=$test_bundle_path --setenv XCInjectBundleInto=$TEST_HOST\"\necho  $test_bundle_path \nios-sim launch $(dirname $TEST_HOST) $environment_args --args -SenTest All $test_bundle_path\necho \"Finished running tests with ios-sim\"\nelse\necho \"Running tests the normal way\"\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\nfi\n";
+		};
+		AF3AEDBA177CDE9B00B856B5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "source ~/.bash_profile\n\nhash oclint &> /dev/null\nif [ $? -eq 1 ]; then\necho >&2 \"oclint not found, analyzing stopped\"\nexit 1\nfi\n\ncd ${TARGET_TEMP_DIR}\n\nif [ ! -f compile_commands.json ]; then\necho \"[*] compile_commands.json not found, possibly clean was performed\"\necho \"[*] starting xcodebuild to rebuild the project..\"\n# clean previous output\nif [ -f xcodebuild.log ]; then\nrm xcodebuild.log\nfi\n\ncd ${SRCROOT}\n\nxcodebuild clean\n\n#build xcodebuild.log\nxcodebuild | tee ${TARGET_TEMP_DIR}/xcodebuild.log\n#xcodebuild <options>| tee ${TARGET_TEMP_DIR}/xcodebuild.log\n\necho \"[*] transforming xcodebuild.log into compile_commands.json...\"\ncd ${TARGET_TEMP_DIR}\n#transform it into compile_commands.json\noclint-xcodebuild\n\necho \"[*] copy compile_commands.json to the project root...\"\ncp ${TARGET_TEMP_DIR}/compile_commands.json ${SRCROOT}/compile_commands.json\n\nfi\n\necho \"[*] starting analyzing\"\ncd ${TARGET_TEMP_DIR}\noclint-json-compilation-database | sed 's/\\(.*\\.\\m\\{1,2\\}:[0-9]*:[0-9]*:\\)/\\1 warning:/'";
 		};
 		AF4BB8BC16793CC50019C57C /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -676,6 +701,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Other Sources/HPCSMist-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Other Sources/HPCSMist-Info.plist";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -694,6 +720,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Other Sources/HPCSMist-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Other Sources/HPCSMist-Info.plist";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -714,6 +741,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_AFTER_BUILD = NO;
 				TEST_HOST = "$(BUNDLE_LOADER)";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -732,7 +760,22 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_AFTER_BUILD = NO;
 				TEST_HOST = "$(BUNDLE_LOADER)";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		AF3AEDB8177CDE8D00B856B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		AF3AEDB9177CDE8D00B856B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -779,6 +822,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		AF3AEDB7177CDE8D00B856B5 /* Build configuration list for PBXAggregateTarget "OCLint" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF3AEDB8177CDE8D00B856B5 /* Debug */,
+				AF3AEDB9177CDE8D00B856B5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		AF4BB8B916793CBE0019C57C /* Build configuration list for PBXAggregateTarget "Documentation" */ = {
 			isa = XCConfigurationList;

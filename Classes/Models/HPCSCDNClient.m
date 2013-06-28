@@ -9,43 +9,6 @@
 
 }
 
-// COV_NF_START
-+ (id) sharedClient: (HPCSIdentityClient *)identityClient
-{
-    static HPCSComputeClient * _sharedClient = nil;
-
-    static dispatch_once_t oncePredicate;
-
-    dispatch_once(&oncePredicate, ^{
-        //or use the access key id stuff and secret key
-        _sharedClient = [[self alloc] initWithIdentityClient:identityClient];
-    }
-    );
-
-    return _sharedClient;
-}
-
-// COV_NF_END
-
-- (id)initWithIdentityClient:(HPCSIdentityClient *)client {
-  self = [super initWithBaseURL:[NSURL URLWithString:[client publicUrlForCDN]]];
-  self.identityClient = client;
-  if (!self) {
-    return nil;
-  }
-
-  [self registerHTTPOperationClass:[AFJSONRequestOperation class]];
-
-  // Accept HTTP Header; see http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.1
-  [self setDefaultHeader:@"Accept" value:@"application/json"];
-  [self setParameterEncoding:AFJSONParameterEncoding];
-  if (self.identityClient) {
-    [self setDefaultHeader:@"X-Auth-Token" value:self.identityClient.token.tokenId];
-  }
-
-  return self;
-}
-
 - (void)cdnContainers:(void ( ^)(NSHTTPURLResponse *responseObject, NSArray *records))success
               failure:(void ( ^)(NSHTTPURLResponse *responseObject, NSError *error))failure {
 

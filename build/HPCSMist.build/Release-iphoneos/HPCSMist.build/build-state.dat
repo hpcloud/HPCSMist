@@ -1,0 +1,700 @@
+THPCSMist
+v5
+r1
+cCheck dependencies
+cCpResource /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/ResourceRules.plist build/Release-iphoneos/HPCSMist.app/ResourceRules.plist
+cProcessInfoPlistFile /Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos/HPCSMist.app/Info.plist "/Users/mhagedorn/develop/HPCSMist/Other Sources/HPCSMist-Info.plist"
+cProcessPCH /var/folders/d3/3cl8dngd1fs_1nhkj9gtjhfw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/HPCSMist-Prefix-bztwmxjrnmxhpffplpyqtbpcshlr/HPCSMist-Prefix.pch.pth "Other Sources/HPCSMist-Prefix.pch" normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cProcessPCH /var/folders/d3/3cl8dngd1fs_1nhkj9gtjhfw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/HPCSMist-Prefix-gqcsuwzxtkdtkqenowlpsieyijfe/HPCSMist-Prefix.pch.pth "Other Sources/HPCSMist-Prefix.pch" normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7s/Environment.o /Users/mhagedorn/develop/HPCSMist/Classes/Models/Environment.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7s/HPCSAuthorizedHTTPClient.o /Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSAuthorizedHTTPClient.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSAuthorizedHTTPClient.o /Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSAuthorizedHTTPClient.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/Environment.o /Users/mhagedorn/develop/HPCSMist/Classes/Models/Environment.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSComputeClient.o /Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSComputeClient.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSIdentityClient.o /Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSIdentityClient.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSSwiftClient.o /Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSSwiftClient.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSTenant.o /Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSTenant.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSToken.o /Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSToken.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/KeychainWrapper.o /Users/mhagedorn/develop/HPCSMist/Classes/Models/KeychainWrapper.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSCDNClient.o /Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSCDNClient.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/main.o "/Users/mhagedorn/develop/HPCSMist/Other Sources/main.m" normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSAppDelegate.o /Users/mhagedorn/develop/HPCSMist/Classes/AppDelegate/HPCSAppDelegate.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSViewController.o "/Users/mhagedorn/develop/HPCSMist/Other Sources/HPCSViewController.m" normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7s/HPCSComputeClient.o /Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSComputeClient.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cLd /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSMist normal armv7
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk
+c0000000050ED385D0000000000000110
+t1357723741
+s272
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk/System/Library/Frameworks/Security.framework/Security
+c00000000000000000000000000000000
+t2
+s0
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/Entitlements.plist
+c0000000050F4C99E00000000000001A7
+t1358219678
+s423
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/ResourceRules.plist
+c0000000050F4C99E00000000000001E5
+t1358219678
+s485
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c0000000050F4C9A90000000000322700
+t1358219689
+s3286784
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c0000000050F4C9AB000000000062AD10
+t1358219691
+s6466832
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c0000000050F4C9AB00000000000015F7
+t1358219691
+s5623
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/MobileCoreServices.framework/Headers/MobileCoreServices.h
+c0000000050F4C9AF00000000000000EB
+t1358219695
+s235
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/SystemConfiguration.framework/Headers/SystemConfiguration.h
+c0000000050F4C9B20000000000001B13
+t1358219698
+s6931
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c0000000050F4C9B30000000000000E8D
+t1358219699
+s3725
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c0000000050F4C9B400000000011BCDF0
+t1358219700
+s18599408
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/usr/include/Availability.h
+c0000000050F4C9C30000000000001B73
+t1358219715
+s7027
+
+N/Users/mhagedorn/Library/MobileDevice/Provisioning Profiles/D351E540-9B80-42FC-98ED-5564D40633D1.mobileprovision
+c0000000050E205D20000000000001DFA
+t1356989906
+s7674
+
+N/Users/mhagedorn/develop/HPCSMist/Classes/AppDelegate/HPCSAppDelegate.m
+c00000000517AE77000000000000007F9
+t1367009136
+s2041
+
+N/Users/mhagedorn/develop/HPCSMist/Classes/Models/Environment.m
+c0000000051C9C3100000000000000516
+t1372177168
+s1302
+
+N/Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSAuthorizedHTTPClient.m
+c0000000051CC9C5D000000000000066B
+t1372363869
+s1643
+
+N/Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSCDNClient.m
+c0000000051CB26F8000000000000133A
+t1372268280
+s4922
+
+N/Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSComputeClient.m
+c0000000051CC9AAB0000000000001F52
+t1372363435
+s8018
+
+N/Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSIdentityClient.m
+c0000000051C9C31000000000000034AE
+t1372177168
+s13486
+
+N/Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSSwiftClient.m
+c0000000051CC9B4A000000000000526D
+t1372363594
+s21101
+
+N/Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSTenant.m
+c0000000051C9C3100000000000000177
+t1372177168
+s375
+
+N/Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSToken.m
+c0000000051C9C3100000000000000487
+t1372177168
+s1159
+
+N/Users/mhagedorn/develop/HPCSMist/Classes/Models/KeychainWrapper.m
+c00000000517AE7700000000000001302
+t1367009136
+s4866
+
+N/Users/mhagedorn/develop/HPCSMist/HPCSMistTests/Resources/Images/Default-568h@2x.png
+c00000000517AE77000000000000048A2
+t1367009136
+s18594
+
+N/Users/mhagedorn/develop/HPCSMist/HPCSMistTests/Resources/Images/Default.png
+c00000000517AE770000000000000198C
+t1367009136
+s6540
+
+N/Users/mhagedorn/develop/HPCSMist/HPCSMistTests/Resources/Images/Default@2x.png
+c00000000517AE7700000000000003EEB
+t1367009136
+s16107
+
+N/Users/mhagedorn/develop/HPCSMist/HPCSMistTests/Resources/Nibs/en.lproj/InfoPlist.strings
+c00000000517AE770000000000000002D
+t1367009136
+s45
+
+N/Users/mhagedorn/develop/HPCSMist/Other Sources/HPCSMist-Info.plist
+c00000000517AE7700000000000000647
+t1367009136
+s1607
+
+N/Users/mhagedorn/develop/HPCSMist/Other Sources/HPCSMist-Prefix.pch
+c00000000517AE7700000000000000232
+t1367009136
+s562
+i<Availability.h>
+i<UIKit/UIKit.h>
+i<Foundation/Foundation.h>
+i<SystemConfiguration/SystemConfiguration.h>
+i<MobileCoreServices/MobileCoreServices.h>
+i<SystemConfiguration/SystemConfiguration.h>
+i<CoreServices/CoreServices.h>
+
+N/Users/mhagedorn/develop/HPCSMist/Other Sources/HPCSViewController.m
+c00000000517AE77000000000000002D1
+t1367009136
+s721
+
+N/Users/mhagedorn/develop/HPCSMist/Other Sources/main.m
+c00000000517AE770000000000000017C
+t1367009136
+s380
+
+N/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/HPCSMist.xcent
+t2
+s0
+
+N/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/Environment.o
+t2
+s0
+
+N/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSAppDelegate.o
+t2
+s0
+
+N/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSAuthorizedHTTPClient.o
+t2
+s0
+
+N/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSCDNClient.o
+t2
+s0
+
+N/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSComputeClient.o
+t2
+s0
+
+N/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSIdentityClient.o
+t2
+s0
+
+N/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSMist
+t2
+s0
+
+N/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSMist.LinkFileList
+c0000000051CCA78C00000000000005DD
+t1372366732
+s1501
+
+N/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSSwiftClient.o
+t2
+s0
+
+N/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSTenant.o
+t2
+s0
+
+N/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSToken.o
+t2
+s0
+
+N/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSViewController.o
+t2
+s0
+
+N/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/KeychainWrapper.o
+t2
+s0
+
+N/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/main.o
+t2
+s0
+
+N/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7s/Environment.o
+t2
+s0
+
+N/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7s/HPCSAppDelegate.o
+t2
+s0
+
+N/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7s/HPCSAuthorizedHTTPClient.o
+t2
+s0
+
+N/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7s/HPCSCDNClient.o
+t2
+s0
+
+N/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7s/HPCSComputeClient.o
+t2
+s0
+
+N/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7s/HPCSIdentityClient.o
+t2
+s0
+
+N/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7s/HPCSMist
+t2
+s0
+
+N/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7s/HPCSMist.LinkFileList
+c0000000051CCA78C00000000000005E9
+t1372366732
+s1513
+
+N/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7s/HPCSSwiftClient.o
+t2
+s0
+
+N/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7s/HPCSTenant.o
+t2
+s0
+
+N/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7s/HPCSToken.o
+t2
+s0
+
+N/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7s/HPCSViewController.o
+t2
+s0
+
+N/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7s/KeychainWrapper.o
+t2
+s0
+
+N/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7s/main.o
+t2
+s0
+
+N/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Script-AF03237E167F8EF200D46904.sh
+c0000000051CCA78C000000000000000B
+t1372366732
+s11
+
+N/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Script-E8D7928AF50F4A85BDAA4B9F.sh
+c0000000051CCA78C000000000000002F
+t1372366732
+s47
+
+N/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/com.apple.build-tools.platform.validate
+t2
+s0
+
+N/Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos/HPCSMist.app
+t2
+s0
+
+N/Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos/HPCSMist.app.dSYM
+t2
+s0
+
+N/Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos/HPCSMist.app/Default-568h@2x.png
+t2
+s0
+
+N/Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos/HPCSMist.app/Default.png
+t2
+s0
+
+N/Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos/HPCSMist.app/Default@2x.png
+t2
+s0
+
+N/Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos/HPCSMist.app/HPCSMist
+t2
+s0
+
+N/Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos/HPCSMist.app/Info.plist
+t2
+s0
+
+N/Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos/HPCSMist.app/PkgInfo
+t2
+s0
+
+N/Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos/HPCSMist.app/ResourceRules.plist
+t2
+s0
+
+N/Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos/HPCSMist.app/embedded.mobileprovision
+t2
+s0
+
+N/Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos/HPCSMist.app/en.lproj/InfoPlist.strings
+t2
+s0
+
+N/Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos/libPods.a
+c00000000000000000000000000000000
+t2
+s0
+
+N/var/folders/d3/3cl8dngd1fs_1nhkj9gtjhfw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/HPCSMist-Prefix-bztwmxjrnmxhpffplpyqtbpcshlr/HPCSMist-Prefix.pch.pth
+t2
+s0
+
+N/var/folders/d3/3cl8dngd1fs_1nhkj9gtjhfw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/HPCSMist-Prefix-gqcsuwzxtkdtkqenowlpsieyijfe/HPCSMist-Prefix.pch.pth
+t2
+s0
+
+CCheck dependencies
+r0
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies952a790cdf7cb741^236bc90cdf7cb741^---0#1#0#--18"Check dependencies36"1A7A7E13-2EDD-438F-BEBE-A5A9778CFFEC-
+
+CCodeSign /Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos/HPCSMist.app
+r0
+
+CCompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/Environment.o /Users/mhagedorn/develop/HPCSMist/Classes/Models/Environment.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s394059534.394740
+e394059534.467197
+r1
+xCompileC
+xbuild/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/Environment.o
+x/Users/mhagedorn/develop/HPCSMist/Classes/Models/Environment.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection70"Compile /Users/mhagedorn/develop/HPCSMist/Classes/Models/Environment.maebb650edf7cb741^4c6e780edf7cb741^---0#0#0#-19%DVTDocumentLocation2@78"file://localhost/Users/mhagedorn/develop/HPCSMist/Classes/Models/Environment.m0000000000000000^3892"CompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/Environment.o Classes/Models/Environment.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/mhagedorn/develop/HPCSMist    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/mhagedorn/.rvm/gems/ruby-1.9.2-p290/bin:/Users/mhagedorn/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/mhagedorn/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/mhagedorn/.rvm/bin:/usr/local/bin:/usr/local/Cellar/postgresql/9.1.2/bin:/usr/local/share/python:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/libexec:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/local/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Tools:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DCOCOAPODS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk -fstrict-aliasing -fprofile-arcs -ftest-coverage -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -miphoneos-version-min=6.1 -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/HPCSMist.hmap -I/Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos/include -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers/AFNetworking -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers/Kiwi -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/DerivedSources/armv7 -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/DerivedSources -F/Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos -F/Applications/Xcode.app/Contents/Developer/Library/Frameworks -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/d3/3cl8dngd1fs_1nhkj9gtjhfw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/HPCSMist-Prefix-bztwmxjrnmxhpffplpyqtbpcshlr/HPCSMist-Prefix.pch -MMD -MT dependencies -MF /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/Environment.d --serialize-diagnostics /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/Environment.dia -c /Users/mhagedorn/develop/HPCSMist/Classes/Models/Environment.m -o /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/Environment.o36"0A49DB14-AFE2-4289-A387-C984ACEC3120-
+
+CCompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSAppDelegate.o /Users/mhagedorn/develop/HPCSMist/Classes/AppDelegate/HPCSAppDelegate.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s394059535.547946
+e394059535.650840
+r1
+xCompileC
+xbuild/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSAppDelegate.o
+x/Users/mhagedorn/develop/HPCSMist/Classes/AppDelegate/HPCSAppDelegate.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection79"Compile /Users/mhagedorn/develop/HPCSMist/Classes/AppDelegate/HPCSAppDelegate.m51f68e0fdf7cb741^909ea60fdf7cb741^---0#0#0#-19%DVTDocumentLocation2@87"file://localhost/Users/mhagedorn/develop/HPCSMist/Classes/AppDelegate/HPCSAppDelegate.m0000000000000000^3926"CompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSAppDelegate.o Classes/AppDelegate/HPCSAppDelegate.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/mhagedorn/develop/HPCSMist    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/mhagedorn/.rvm/gems/ruby-1.9.2-p290/bin:/Users/mhagedorn/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/mhagedorn/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/mhagedorn/.rvm/bin:/usr/local/bin:/usr/local/Cellar/postgresql/9.1.2/bin:/usr/local/share/python:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/libexec:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/local/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Tools:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DCOCOAPODS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk -fstrict-aliasing -fprofile-arcs -ftest-coverage -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -miphoneos-version-min=6.1 -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/HPCSMist.hmap -I/Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos/include -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers/AFNetworking -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers/Kiwi -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/DerivedSources/armv7 -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/DerivedSources -F/Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos -F/Applications/Xcode.app/Contents/Developer/Library/Frameworks -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/d3/3cl8dngd1fs_1nhkj9gtjhfw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/HPCSMist-Prefix-bztwmxjrnmxhpffplpyqtbpcshlr/HPCSMist-Prefix.pch -MMD -MT dependencies -MF /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSAppDelegate.d --serialize-diagnostics /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSAppDelegate.dia -c /Users/mhagedorn/develop/HPCSMist/Classes/AppDelegate/HPCSAppDelegate.m -o /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSAppDelegate.o36"BA88564D-2A0B-47B6-897F-492182E231FC-
+
+CCompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSAuthorizedHTTPClient.o /Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSAuthorizedHTTPClient.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s394059534.394725
+e394059534.477578
+r1
+xCompileC
+xbuild/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSAuthorizedHTTPClient.o
+x/Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSAuthorizedHTTPClient.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection83"Compile /Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSAuthorizedHTTPClient.m76c0650edf7cb741^c3d87a0edf7cb741^---0#0#0#-19%DVTDocumentLocation2@91"file://localhost/Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSAuthorizedHTTPClient.m0000000000000000^3970"CompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSAuthorizedHTTPClient.o Classes/Models/HPCSAuthorizedHTTPClient.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/mhagedorn/develop/HPCSMist    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/mhagedorn/.rvm/gems/ruby-1.9.2-p290/bin:/Users/mhagedorn/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/mhagedorn/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/mhagedorn/.rvm/bin:/usr/local/bin:/usr/local/Cellar/postgresql/9.1.2/bin:/usr/local/share/python:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/libexec:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/local/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Tools:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DCOCOAPODS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk -fstrict-aliasing -fprofile-arcs -ftest-coverage -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -miphoneos-version-min=6.1 -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/HPCSMist.hmap -I/Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos/include -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers/AFNetworking -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers/Kiwi -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/DerivedSources/armv7 -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/DerivedSources -F/Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos -F/Applications/Xcode.app/Contents/Developer/Library/Frameworks -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/d3/3cl8dngd1fs_1nhkj9gtjhfw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/HPCSMist-Prefix-bztwmxjrnmxhpffplpyqtbpcshlr/HPCSMist-Prefix.pch -MMD -MT dependencies -MF /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSAuthorizedHTTPClient.d --serialize-diagnostics /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSAuthorizedHTTPClient.dia -c /Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSAuthorizedHTTPClient.m -o /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSAuthorizedHTTPClient.o36"8515D989-9EC4-4965-B77B-F1D09C590AFD-
+
+CCompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSCDNClient.o /Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSCDNClient.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s394059535.361578
+e394059535.505836
+r1
+xCompileC
+xbuild/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSCDNClient.o
+x/Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSCDNClient.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection72"Compile /Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSCDNClient.mb41f5d0fdf7cb741^d07d810fdf7cb741^---0#0#0#-19%DVTDocumentLocation2@80"file://localhost/Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSCDNClient.m0000000000000000^3904"CompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSCDNClient.o Classes/Models/HPCSCDNClient.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/mhagedorn/develop/HPCSMist    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/mhagedorn/.rvm/gems/ruby-1.9.2-p290/bin:/Users/mhagedorn/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/mhagedorn/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/mhagedorn/.rvm/bin:/usr/local/bin:/usr/local/Cellar/postgresql/9.1.2/bin:/usr/local/share/python:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/libexec:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/local/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Tools:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DCOCOAPODS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk -fstrict-aliasing -fprofile-arcs -ftest-coverage -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -miphoneos-version-min=6.1 -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/HPCSMist.hmap -I/Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos/include -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers/AFNetworking -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers/Kiwi -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/DerivedSources/armv7 -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/DerivedSources -F/Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos -F/Applications/Xcode.app/Contents/Developer/Library/Frameworks -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/d3/3cl8dngd1fs_1nhkj9gtjhfw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/HPCSMist-Prefix-bztwmxjrnmxhpffplpyqtbpcshlr/HPCSMist-Prefix.pch -MMD -MT dependencies -MF /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSCDNClient.d --serialize-diagnostics /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSCDNClient.dia -c /Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSCDNClient.m -o /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSCDNClient.o36"7EF3F884-778E-4AA6-8E2D-8F77696D72D1-
+
+CCompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSComputeClient.o /Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSComputeClient.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s394059534.472608
+e394059534.775708
+r1
+xCompileC
+xbuild/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSComputeClient.o
+x/Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSComputeClient.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection76"Compile /Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSComputeClient.m3f917b0edf7cb741^1095c60edf7cb741^---0#0#0#-19%DVTDocumentLocation2@84"file://localhost/Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSComputeClient.m0000000000000000^3928"CompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSComputeClient.o Classes/Models/HPCSComputeClient.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/mhagedorn/develop/HPCSMist    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/mhagedorn/.rvm/gems/ruby-1.9.2-p290/bin:/Users/mhagedorn/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/mhagedorn/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/mhagedorn/.rvm/bin:/usr/local/bin:/usr/local/Cellar/postgresql/9.1.2/bin:/usr/local/share/python:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/libexec:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/local/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Tools:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DCOCOAPODS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk -fstrict-aliasing -fprofile-arcs -ftest-coverage -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -miphoneos-version-min=6.1 -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/HPCSMist.hmap -I/Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos/include -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers/AFNetworking -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers/Kiwi -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/DerivedSources/armv7 -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/DerivedSources -F/Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos -F/Applications/Xcode.app/Contents/Developer/Library/Frameworks -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/d3/3cl8dngd1fs_1nhkj9gtjhfw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/HPCSMist-Prefix-bztwmxjrnmxhpffplpyqtbpcshlr/HPCSMist-Prefix.pch -MMD -MT dependencies -MF /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSComputeClient.d --serialize-diagnostics /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSComputeClient.dia -c /Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSComputeClient.m -o /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSComputeClient.o36"DF18A35B-0E0D-4CE1-B552-A6EF57745C4A-
+
+CCompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSIdentityClient.o /Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSIdentityClient.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s394059534.483332
+e394059534.843686
+r1
+xCompileC
+xbuild/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSIdentityClient.o
+x/Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSIdentityClient.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection77"Compile /Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSIdentityClient.m554c7d0edf7cb741^3ffdd70edf7cb741^---0#0#0#-19%DVTDocumentLocation2@85"file://localhost/Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSIdentityClient.m0000000000000000^3934"CompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSIdentityClient.o Classes/Models/HPCSIdentityClient.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/mhagedorn/develop/HPCSMist    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/mhagedorn/.rvm/gems/ruby-1.9.2-p290/bin:/Users/mhagedorn/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/mhagedorn/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/mhagedorn/.rvm/bin:/usr/local/bin:/usr/local/Cellar/postgresql/9.1.2/bin:/usr/local/share/python:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/libexec:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/local/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Tools:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DCOCOAPODS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk -fstrict-aliasing -fprofile-arcs -ftest-coverage -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -miphoneos-version-min=6.1 -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/HPCSMist.hmap -I/Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos/include -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers/AFNetworking -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers/Kiwi -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/DerivedSources/armv7 -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/DerivedSources -F/Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos -F/Applications/Xcode.app/Contents/Developer/Library/Frameworks -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/d3/3cl8dngd1fs_1nhkj9gtjhfw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/HPCSMist-Prefix-bztwmxjrnmxhpffplpyqtbpcshlr/HPCSMist-Prefix.pch -MMD -MT dependencies -MF /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSIdentityClient.d --serialize-diagnostics /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSIdentityClient.dia -c /Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSIdentityClient.m -o /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSIdentityClient.o36"CD0FBBDD-D814-400C-AA1F-B094D4DF8E90-
+
+CCompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSSwiftClient.o /Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSSwiftClient.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s394059534.777031
+e394059535.200599
+r1
+xCompileC
+xbuild/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSSwiftClient.o
+x/Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSSwiftClient.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection74"Compile /Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSSwiftClient.m8176c70edf7cb741^325a330fdf7cb741^---0#0#0#-19%DVTDocumentLocation2@82"file://localhost/Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSSwiftClient.m0000000000000000^3916"CompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSSwiftClient.o Classes/Models/HPCSSwiftClient.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/mhagedorn/develop/HPCSMist    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/mhagedorn/.rvm/gems/ruby-1.9.2-p290/bin:/Users/mhagedorn/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/mhagedorn/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/mhagedorn/.rvm/bin:/usr/local/bin:/usr/local/Cellar/postgresql/9.1.2/bin:/usr/local/share/python:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/libexec:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/local/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Tools:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DCOCOAPODS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk -fstrict-aliasing -fprofile-arcs -ftest-coverage -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -miphoneos-version-min=6.1 -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/HPCSMist.hmap -I/Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos/include -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers/AFNetworking -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers/Kiwi -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/DerivedSources/armv7 -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/DerivedSources -F/Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos -F/Applications/Xcode.app/Contents/Developer/Library/Frameworks -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/d3/3cl8dngd1fs_1nhkj9gtjhfw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/HPCSMist-Prefix-bztwmxjrnmxhpffplpyqtbpcshlr/HPCSMist-Prefix.pch -MMD -MT dependencies -MF /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSSwiftClient.d --serialize-diagnostics /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSSwiftClient.dia -c /Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSSwiftClient.m -o /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSSwiftClient.o36"100ACCE9-FA34-44D7-BDE7-AAE5029C244B-
+
+CCompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSTenant.o /Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSTenant.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s394059534.845011
+e394059534.913479
+r1
+xCompileC
+xbuild/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSTenant.o
+x/Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSTenant.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection69"Compile /Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSTenant.m7a38d90edf7cb741^55dbe90edf7cb741^---0#0#0#-19%DVTDocumentLocation2@77"file://localhost/Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSTenant.m0000000000000000^3886"CompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSTenant.o Classes/Models/HPCSTenant.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/mhagedorn/develop/HPCSMist    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/mhagedorn/.rvm/gems/ruby-1.9.2-p290/bin:/Users/mhagedorn/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/mhagedorn/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/mhagedorn/.rvm/bin:/usr/local/bin:/usr/local/Cellar/postgresql/9.1.2/bin:/usr/local/share/python:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/libexec:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/local/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Tools:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DCOCOAPODS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk -fstrict-aliasing -fprofile-arcs -ftest-coverage -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -miphoneos-version-min=6.1 -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/HPCSMist.hmap -I/Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos/include -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers/AFNetworking -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers/Kiwi -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/DerivedSources/armv7 -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/DerivedSources -F/Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos -F/Applications/Xcode.app/Contents/Developer/Library/Frameworks -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/d3/3cl8dngd1fs_1nhkj9gtjhfw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/HPCSMist-Prefix-bztwmxjrnmxhpffplpyqtbpcshlr/HPCSMist-Prefix.pch -MMD -MT dependencies -MF /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSTenant.d --serialize-diagnostics /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSTenant.dia -c /Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSTenant.m -o /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSTenant.o36"63C37EE1-9240-462A-A5E2-E24D463A17BB-
+
+CCompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSToken.o /Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSToken.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s394059535.201915
+e394059535.285218
+r1
+xCompileC
+xbuild/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSToken.o
+x/Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSToken.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection68"Compile /Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSToken.mc618340fdf7cb741^4303490fdf7cb741^---0#0#0#-19%DVTDocumentLocation2@76"file://localhost/Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSToken.m0000000000000000^3880"CompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSToken.o Classes/Models/HPCSToken.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/mhagedorn/develop/HPCSMist    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/mhagedorn/.rvm/gems/ruby-1.9.2-p290/bin:/Users/mhagedorn/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/mhagedorn/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/mhagedorn/.rvm/bin:/usr/local/bin:/usr/local/Cellar/postgresql/9.1.2/bin:/usr/local/share/python:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/libexec:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/local/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Tools:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DCOCOAPODS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk -fstrict-aliasing -fprofile-arcs -ftest-coverage -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -miphoneos-version-min=6.1 -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/HPCSMist.hmap -I/Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos/include -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers/AFNetworking -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers/Kiwi -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/DerivedSources/armv7 -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/DerivedSources -F/Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos -F/Applications/Xcode.app/Contents/Developer/Library/Frameworks -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/d3/3cl8dngd1fs_1nhkj9gtjhfw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/HPCSMist-Prefix-bztwmxjrnmxhpffplpyqtbpcshlr/HPCSMist-Prefix.pch -MMD -MT dependencies -MF /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSToken.d --serialize-diagnostics /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSToken.dia -c /Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSToken.m -o /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSToken.o36"FF1D9AB9-5CFE-4A11-BA34-7F458D8168A4-
+
+CCompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSViewController.o "/Users/mhagedorn/develop/HPCSMist/Other Sources/HPCSViewController.m" normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s394059535.652442
+e394059535.728698
+r1
+xCompileC
+xbuild/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSViewController.o
+x/Users/mhagedorn/develop/HPCSMist/Other Sources/HPCSViewController.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection76"Compile /Users/mhagedorn/develop/HPCSMist/Other Sources/HPCSViewController.me196a70fdf7cb741^d78aba0fdf7cb741^---0#0#0#-19%DVTDocumentLocation2@86"file://localhost/Users/mhagedorn/develop/HPCSMist/Other%20Sources/HPCSViewController.m0000000000000000^3936"CompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSViewController.o "Other Sources/HPCSViewController.m" normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/mhagedorn/develop/HPCSMist    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/mhagedorn/.rvm/gems/ruby-1.9.2-p290/bin:/Users/mhagedorn/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/mhagedorn/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/mhagedorn/.rvm/bin:/usr/local/bin:/usr/local/Cellar/postgresql/9.1.2/bin:/usr/local/share/python:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/libexec:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/local/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Tools:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DCOCOAPODS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk -fstrict-aliasing -fprofile-arcs -ftest-coverage -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -miphoneos-version-min=6.1 -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/HPCSMist.hmap -I/Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos/include -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers/AFNetworking -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers/Kiwi -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/DerivedSources/armv7 -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/DerivedSources -F/Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos -F/Applications/Xcode.app/Contents/Developer/Library/Frameworks -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/d3/3cl8dngd1fs_1nhkj9gtjhfw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/HPCSMist-Prefix-bztwmxjrnmxhpffplpyqtbpcshlr/HPCSMist-Prefix.pch -MMD -MT dependencies -MF /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSViewController.d --serialize-diagnostics /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSViewController.dia -c "/Users/mhagedorn/develop/HPCSMist/Other Sources/HPCSViewController.m" -o /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSViewController.o36"034EAC2E-4624-4037-98ED-78346F3D2A0D-
+
+CCompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/KeychainWrapper.o /Users/mhagedorn/develop/HPCSMist/Classes/Models/KeychainWrapper.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s394059535.286568
+e394059535.360253
+r1
+xCompileC
+xbuild/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/KeychainWrapper.o
+x/Users/mhagedorn/develop/HPCSMist/Classes/Models/KeychainWrapper.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection74"Compile /Users/mhagedorn/develop/HPCSMist/Classes/Models/KeychainWrapper.m26e2490fdf7cb741^58395c0fdf7cb741^---0#0#0#-19%DVTDocumentLocation2@82"file://localhost/Users/mhagedorn/develop/HPCSMist/Classes/Models/KeychainWrapper.m0000000000000000^3916"CompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/KeychainWrapper.o Classes/Models/KeychainWrapper.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/mhagedorn/develop/HPCSMist    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/mhagedorn/.rvm/gems/ruby-1.9.2-p290/bin:/Users/mhagedorn/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/mhagedorn/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/mhagedorn/.rvm/bin:/usr/local/bin:/usr/local/Cellar/postgresql/9.1.2/bin:/usr/local/share/python:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/libexec:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/local/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Tools:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DCOCOAPODS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk -fstrict-aliasing -fprofile-arcs -ftest-coverage -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -miphoneos-version-min=6.1 -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/HPCSMist.hmap -I/Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos/include -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers/AFNetworking -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers/Kiwi -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/DerivedSources/armv7 -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/DerivedSources -F/Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos -F/Applications/Xcode.app/Contents/Developer/Library/Frameworks -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/d3/3cl8dngd1fs_1nhkj9gtjhfw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/HPCSMist-Prefix-bztwmxjrnmxhpffplpyqtbpcshlr/HPCSMist-Prefix.pch -MMD -MT dependencies -MF /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/KeychainWrapper.d --serialize-diagnostics /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/KeychainWrapper.dia -c /Users/mhagedorn/develop/HPCSMist/Classes/Models/KeychainWrapper.m -o /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/KeychainWrapper.o36"A50F0A88-53FD-46F2-98CC-8CA5E5BB123C-
+
+CCompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/main.o "/Users/mhagedorn/develop/HPCSMist/Other Sources/main.m" normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s394059535.507178
+e394059535.543234
+r1
+xCompileC
+xbuild/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/main.o
+x/Users/mhagedorn/develop/HPCSMist/Other Sources/main.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection62"Compile /Users/mhagedorn/develop/HPCSMist/Other Sources/main.m7041820fdf7cb741^e1d08b0fdf7cb741^---0#0#0#-19%DVTDocumentLocation2@72"file://localhost/Users/mhagedorn/develop/HPCSMist/Other%20Sources/main.m0000000000000000^3852"CompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/main.o "Other Sources/main.m" normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/mhagedorn/develop/HPCSMist    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/mhagedorn/.rvm/gems/ruby-1.9.2-p290/bin:/Users/mhagedorn/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/mhagedorn/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/mhagedorn/.rvm/bin:/usr/local/bin:/usr/local/Cellar/postgresql/9.1.2/bin:/usr/local/share/python:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/libexec:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/local/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Tools:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DCOCOAPODS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk -fstrict-aliasing -fprofile-arcs -ftest-coverage -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -miphoneos-version-min=6.1 -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/HPCSMist.hmap -I/Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos/include -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers/AFNetworking -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers/Kiwi -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/DerivedSources/armv7 -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/DerivedSources -F/Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos -F/Applications/Xcode.app/Contents/Developer/Library/Frameworks -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/d3/3cl8dngd1fs_1nhkj9gtjhfw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/HPCSMist-Prefix-bztwmxjrnmxhpffplpyqtbpcshlr/HPCSMist-Prefix.pch -MMD -MT dependencies -MF /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/main.d --serialize-diagnostics /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/main.dia -c "/Users/mhagedorn/develop/HPCSMist/Other Sources/main.m" -o /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/main.o36"A55643C2-9172-41F9-8E16-35A1304F1490-
+
+CCompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7s/Environment.o /Users/mhagedorn/develop/HPCSMist/Classes/Models/Environment.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s394059533.709324
+e394059534.393420
+r1
+xCompileC
+xbuild/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7s/Environment.o
+x/Users/mhagedorn/develop/HPCSMist/Classes/Models/Environment.m
+xnormal
+xarmv7s
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection70"Compile /Users/mhagedorn/develop/HPCSMist/Classes/Models/Environment.m2524b60ddf7cb741^1cb7640edf7cb741^---0#0#0#-19%DVTDocumentLocation2@78"file://localhost/Users/mhagedorn/develop/HPCSMist/Classes/Models/Environment.m0000000000000000^3899"CompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7s/Environment.o Classes/Models/Environment.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/mhagedorn/develop/HPCSMist    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/mhagedorn/.rvm/gems/ruby-1.9.2-p290/bin:/Users/mhagedorn/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/mhagedorn/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/mhagedorn/.rvm/bin:/usr/local/bin:/usr/local/Cellar/postgresql/9.1.2/bin:/usr/local/share/python:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/libexec:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/local/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Tools:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch armv7s -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DCOCOAPODS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk -fstrict-aliasing -fprofile-arcs -ftest-coverage -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -miphoneos-version-min=6.1 -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/HPCSMist.hmap -I/Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos/include -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers/AFNetworking -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers/Kiwi -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/DerivedSources/armv7s -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/DerivedSources -F/Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos -F/Applications/Xcode.app/Contents/Developer/Library/Frameworks -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/d3/3cl8dngd1fs_1nhkj9gtjhfw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/HPCSMist-Prefix-gqcsuwzxtkdtkqenowlpsieyijfe/HPCSMist-Prefix.pch -MMD -MT dependencies -MF /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7s/Environment.d --serialize-diagnostics /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7s/Environment.dia -c /Users/mhagedorn/develop/HPCSMist/Classes/Models/Environment.m -o /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7s/Environment.o36"8856F4E9-8BC7-4A03-9D75-A635666C95B7-
+
+CCompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7s/HPCSAppDelegate.o /Users/mhagedorn/develop/HPCSMist/Classes/AppDelegate/HPCSAppDelegate.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7s/HPCSAuthorizedHTTPClient.o /Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSAuthorizedHTTPClient.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s394059533.709336
+e394059534.393427
+r1
+xCompileC
+xbuild/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7s/HPCSAuthorizedHTTPClient.o
+x/Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSAuthorizedHTTPClient.m
+xnormal
+xarmv7s
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection83"Compile /Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSAuthorizedHTTPClient.md13eb60ddf7cb741^d1cb640edf7cb741^---0#0#0#-19%DVTDocumentLocation2@91"file://localhost/Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSAuthorizedHTTPClient.m0000000000000000^3977"CompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7s/HPCSAuthorizedHTTPClient.o Classes/Models/HPCSAuthorizedHTTPClient.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/mhagedorn/develop/HPCSMist    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/mhagedorn/.rvm/gems/ruby-1.9.2-p290/bin:/Users/mhagedorn/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/mhagedorn/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/mhagedorn/.rvm/bin:/usr/local/bin:/usr/local/Cellar/postgresql/9.1.2/bin:/usr/local/share/python:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/libexec:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/local/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Tools:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch armv7s -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DCOCOAPODS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk -fstrict-aliasing -fprofile-arcs -ftest-coverage -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -miphoneos-version-min=6.1 -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/HPCSMist.hmap -I/Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos/include -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers/AFNetworking -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers/Kiwi -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/DerivedSources/armv7s -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/DerivedSources -F/Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos -F/Applications/Xcode.app/Contents/Developer/Library/Frameworks -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/d3/3cl8dngd1fs_1nhkj9gtjhfw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/HPCSMist-Prefix-gqcsuwzxtkdtkqenowlpsieyijfe/HPCSMist-Prefix.pch -MMD -MT dependencies -MF /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7s/HPCSAuthorizedHTTPClient.d --serialize-diagnostics /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7s/HPCSAuthorizedHTTPClient.dia -c /Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSAuthorizedHTTPClient.m -o /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7s/HPCSAuthorizedHTTPClient.o36"2021AC25-2176-445B-8AF3-53F3A111DBF6-
+
+CCompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7s/HPCSCDNClient.o /Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSCDNClient.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7s/HPCSComputeClient.o /Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSComputeClient.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s394059535.730027
+e394059535.909973
+r1
+xCompileC
+xbuild/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7s/HPCSComputeClient.o
+x/Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSComputeClient.m
+xnormal
+xarmv7s
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection76"Compile /Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSComputeClient.mb64bbb0fdf7cb741^4df5e80fdf7cb741^---0#0#0#-19%DVTDocumentLocation2@84"file://localhost/Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSComputeClient.m0000000000000000^3935"CompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7s/HPCSComputeClient.o Classes/Models/HPCSComputeClient.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/mhagedorn/develop/HPCSMist    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/mhagedorn/.rvm/gems/ruby-1.9.2-p290/bin:/Users/mhagedorn/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/mhagedorn/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/mhagedorn/.rvm/bin:/usr/local/bin:/usr/local/Cellar/postgresql/9.1.2/bin:/usr/local/share/python:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/libexec:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/local/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Tools:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch armv7s -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DCOCOAPODS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk -fstrict-aliasing -fprofile-arcs -ftest-coverage -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -miphoneos-version-min=6.1 -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/HPCSMist.hmap -I/Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos/include -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers/AFNetworking -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers/Kiwi -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/DerivedSources/armv7s -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/DerivedSources -F/Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos -F/Applications/Xcode.app/Contents/Developer/Library/Frameworks -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/d3/3cl8dngd1fs_1nhkj9gtjhfw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/HPCSMist-Prefix-gqcsuwzxtkdtkqenowlpsieyijfe/HPCSMist-Prefix.pch -MMD -MT dependencies -MF /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7s/HPCSComputeClient.d --serialize-diagnostics /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7s/HPCSComputeClient.dia -c /Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSComputeClient.m -o /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7s/HPCSComputeClient.o36"78D9371E-6BC8-461D-B954-74DC68650D5E-
+
+CCompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7s/HPCSIdentityClient.o /Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSIdentityClient.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7s/HPCSSwiftClient.o /Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSSwiftClient.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7s/HPCSTenant.o /Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSTenant.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7s/HPCSToken.o /Users/mhagedorn/develop/HPCSMist/Classes/Models/HPCSToken.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7s/HPCSViewController.o "/Users/mhagedorn/develop/HPCSMist/Other Sources/HPCSViewController.m" normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7s/KeychainWrapper.o /Users/mhagedorn/develop/HPCSMist/Classes/Models/KeychainWrapper.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7s/main.o "/Users/mhagedorn/develop/HPCSMist/Other Sources/main.m" normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCopyPNGFile /Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos/HPCSMist.app/Default-568h@2x.png HPCSMistTests/Resources/Images/Default-568h@2x.png
+r0
+
+CCopyPNGFile /Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos/HPCSMist.app/Default.png HPCSMistTests/Resources/Images/Default.png
+r0
+
+CCopyPNGFile /Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos/HPCSMist.app/Default@2x.png HPCSMistTests/Resources/Images/Default@2x.png
+r0
+
+CCopyStringsFile /Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos/HPCSMist.app/en.lproj/InfoPlist.strings HPCSMistTests/Resources/Nibs/en.lproj/InfoPlist.strings
+r0
+
+CCpResource /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/ResourceRules.plist build/Release-iphoneos/HPCSMist.app/ResourceRules.plist
+s394059532.808067
+e394059532.823206
+r1
+xCpResource
+x/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/ResourceRules.plist
+xbuild/Release-iphoneos/HPCSMist.app/ResourceRules.plist
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection60"Copy build/Release-iphoneos/HPCSMist.app/ResourceRules.plist5187d10cdf7cb741^68cad20cdf7cb741^---0#0#0#-19%DVTDocumentLocation2@105"file://localhost/Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos/HPCSMist.app/ResourceRules.plist000000000080d041^1813"CpResource /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/ResourceRules.plist build/Release-iphoneos/HPCSMist.app/ResourceRules.plist    cd /Users/mhagedorn/develop/HPCSMist    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/mhagedorn/.rvm/gems/ruby-1.9.2-p290/bin:/Users/mhagedorn/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/mhagedorn/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/mhagedorn/.rvm/bin:/usr/local/bin:/usr/local/Cellar/postgresql/9.1.2/bin:/usr/local/share/python:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/libexec:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/local/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Tools:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-debug-symbols -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/ResourceRules.plist /Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos/HPCSMist.app36"9A2B008F-26E5-49DC-83A7-26BEFEFBE67F-
+
+CCreateUniversalBinary /Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos/HPCSMist.app/HPCSMist normal "armv7 armv7s"
+r0
+
+CGenerateDSYMFile /Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos/HPCSMist.app.dSYM /Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos/HPCSMist.app/HPCSMist
+r0
+
+CLd /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSMist normal armv7
+s394059535.911265
+e394059535.953018
+r0
+xLd
+x/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSMist
+xnormal
+xarmv7
+old: library not found for -lPods
+oclang: error: linker command failed with exit code 1 (use -v to see invocation)
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection121"Link /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSMistb6d8e90fdf7cb741^07eff30fdf7cb741^-113"ld: library not found for -lPodsclang: error: linker command failed with exit code 1 (use -v to see invocation)2(21%IDEActivityLogMessage2@28"Library not found for -lPods-394059535#0#33#-0#-23%DVTTextDocumentLocation3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#26"Apple Mach-O Linker Notice--2@65"Linker command failed with exit code 1 (use -v to see invocation)-394059535#33#80#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#25"Apple Mach-O Linker Error--0#0#0#--2338"Ld build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSMist normal armv7    cd /Users/mhagedorn/develop/HPCSMist    setenv IPHONEOS_DEPLOYMENT_TARGET 6.1    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/mhagedorn/.rvm/gems/ruby-1.9.2-p290/bin:/Users/mhagedorn/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/mhagedorn/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/mhagedorn/.rvm/bin:/usr/local/bin:/usr/local/Cellar/postgresql/9.1.2/bin:/usr/local/share/python:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/libexec:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/local/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Tools:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch armv7 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk -L/Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos -F/Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos -F/Applications/Xcode.app/Contents/Developer/Library/Frameworks -filelist /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSMist.LinkFileList -dead_strip -Xlinker -objc_abi_version -Xlinker 2 -ObjC -framework CoreGraphics -framework MobileCoreServices -framework Security -framework SystemConfiguration -fobjc-arc -fobjc-link-runtime -fprofile-arcs -ftest-coverage -miphoneos-version-min=6.1 -framework Security -framework UIKit -framework Foundation -framework CoreGraphics -lPods -o /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7/HPCSMist36"D7DC9DBC-7C0A-48A8-8083-CA3CFFD64867-
+
+CLd /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Objects-normal/armv7s/HPCSMist normal armv7s
+r0
+
+CPhaseScriptExecution "Copy Pods Resources" /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Script-E8D7928AF50F4A85BDAA4B9F.sh
+r0
+
+CPhaseScriptExecution "Run Script" /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/Script-AF03237E167F8EF200D46904.sh
+r0
+
+CProcessInfoPlistFile /Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos/HPCSMist.app/Info.plist "/Users/mhagedorn/develop/HPCSMist/Other Sources/HPCSMist-Info.plist"
+s394059532.808074
+e394059532.823788
+r1
+xProcessInfoPlistFile
+x/Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos/HPCSMist.app/Info.plist
+x/Users/mhagedorn/develop/HPCSMist/Other Sources/HPCSMist-Info.plist
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection75"Process /Users/mhagedorn/develop/HPCSMist/Other Sources/HPCSMist-Info.plist2657d10cdf7cb741^ebe2d20cdf7cb741^---0#0#0#-19%DVTDocumentLocation2@85"file://localhost/Users/mhagedorn/develop/HPCSMist/Other%20Sources/HPCSMist-Info.plist0000000000000000^1735"ProcessInfoPlistFile build/Release-iphoneos/HPCSMist.app/Info.plist "Other Sources/HPCSMist-Info.plist"    cd /Users/mhagedorn/develop/HPCSMist    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/mhagedorn/.rvm/gems/ruby-1.9.2-p290/bin:/Users/mhagedorn/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/mhagedorn/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/mhagedorn/.rvm/bin:/usr/local/bin:/usr/local/Cellar/postgresql/9.1.2/bin:/usr/local/share/python:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/libexec:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/local/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Tools:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility "/Users/mhagedorn/develop/HPCSMist/Other Sources/HPCSMist-Info.plist" -genpkginfo /Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos/HPCSMist.app/PkgInfo -expandbuildsettings -format binary -platform iphoneos -resourcerulesfile /Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos/HPCSMist.app/ResourceRules.plist -o /Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos/HPCSMist.app/Info.plist36"5337CCEB-76A1-4B6D-BE98-108CB55509A8-
+
+CProcessPCH /var/folders/d3/3cl8dngd1fs_1nhkj9gtjhfw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/HPCSMist-Prefix-bztwmxjrnmxhpffplpyqtbpcshlr/HPCSMist-Prefix.pch.pth "Other Sources/HPCSMist-Prefix.pch" normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s394059532.832355
+e394059533.707768
+r1
+xProcessPCH
+x/var/folders/d3/3cl8dngd1fs_1nhkj9gtjhfw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/HPCSMist-Prefix-bztwmxjrnmxhpffplpyqtbpcshlr/HPCSMist-Prefix.pch.pth
+xOther Sources/HPCSMist-Prefix.pch
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection44"Precompile Other Sources/HPCSMist-Prefix.pch2ec9d50cdf7cb741^2331b50ddf7cb741^---0#0#0#-19%DVTDocumentLocation2@85"file://localhost/Users/mhagedorn/develop/HPCSMist/Other%20Sources/HPCSMist-Prefix.pch0000000000000000^3941"ProcessPCH /var/folders/d3/3cl8dngd1fs_1nhkj9gtjhfw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/HPCSMist-Prefix-bztwmxjrnmxhpffplpyqtbpcshlr/HPCSMist-Prefix.pch.pth "Other Sources/HPCSMist-Prefix.pch" normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/mhagedorn/develop/HPCSMist    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/mhagedorn/.rvm/gems/ruby-1.9.2-p290/bin:/Users/mhagedorn/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/mhagedorn/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/mhagedorn/.rvm/bin:/usr/local/bin:/usr/local/Cellar/postgresql/9.1.2/bin:/usr/local/share/python:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/libexec:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/local/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Tools:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c-header -arch armv7 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DCOCOAPODS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk -fstrict-aliasing -fprofile-arcs -ftest-coverage -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -miphoneos-version-min=6.1 -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/HPCSMist.hmap -I/Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos/include -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers/AFNetworking -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers/Kiwi -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/DerivedSources/armv7 -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/DerivedSources -F/Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos -F/Applications/Xcode.app/Contents/Developer/Library/Frameworks -DNS_BLOCK_ASSERTIONS=1 --serialize-diagnostics /var/folders/d3/3cl8dngd1fs_1nhkj9gtjhfw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/HPCSMist-Prefix-bztwmxjrnmxhpffplpyqtbpcshlr/HPCSMist-Prefix.pch.dia -c "/Users/mhagedorn/develop/HPCSMist/Other Sources/HPCSMist-Prefix.pch" -o /var/folders/d3/3cl8dngd1fs_1nhkj9gtjhfw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/HPCSMist-Prefix-bztwmxjrnmxhpffplpyqtbpcshlr/HPCSMist-Prefix.pch.pth -MMD -MT dependencies -MF /var/folders/d3/3cl8dngd1fs_1nhkj9gtjhfw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/HPCSMist-Prefix-bztwmxjrnmxhpffplpyqtbpcshlr/HPCSMist-Prefix.pch.d36"92794AD6-A500-4FD4-AA45-892847DDA179-
+
+CProcessPCH /var/folders/d3/3cl8dngd1fs_1nhkj9gtjhfw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/HPCSMist-Prefix-gqcsuwzxtkdtkqenowlpsieyijfe/HPCSMist-Prefix.pch.pth "Other Sources/HPCSMist-Prefix.pch" normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s394059532.833092
+e394059533.703067
+r1
+xProcessPCH
+x/var/folders/d3/3cl8dngd1fs_1nhkj9gtjhfw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/HPCSMist-Prefix-gqcsuwzxtkdtkqenowlpsieyijfe/HPCSMist-Prefix.pch.pth
+xOther Sources/HPCSMist-Prefix.pch
+xnormal
+xarmv7s
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection44"Precompile Other Sources/HPCSMist-Prefix.pchabead50cdf7cb741^5dfab30ddf7cb741^---0#0#0#-19%DVTDocumentLocation2@85"file://localhost/Users/mhagedorn/develop/HPCSMist/Other%20Sources/HPCSMist-Prefix.pch0000000000000000^3944"ProcessPCH /var/folders/d3/3cl8dngd1fs_1nhkj9gtjhfw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/HPCSMist-Prefix-gqcsuwzxtkdtkqenowlpsieyijfe/HPCSMist-Prefix.pch.pth "Other Sources/HPCSMist-Prefix.pch" normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/mhagedorn/develop/HPCSMist    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Users/mhagedorn/.rvm/gems/ruby-1.9.2-p290/bin:/Users/mhagedorn/.rvm/gems/ruby-1.9.2-p290@global/bin:/Users/mhagedorn/.rvm/rubies/ruby-1.9.2-p290/bin:/Users/mhagedorn/.rvm/bin:/usr/local/bin:/usr/local/Cellar/postgresql/9.1.2/bin:/usr/local/share/python:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/libexec:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/local/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Tools:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c-header -arch armv7s -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DCOCOAPODS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk -fstrict-aliasing -fprofile-arcs -ftest-coverage -Wprotocol -Wdeprecated-declarations -g -fvisibility=hidden -Wno-sign-conversion -fobjc-abi-version=2 -miphoneos-version-min=6.1 -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/HPCSMist.hmap -I/Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos/include -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers/AFNetworking -I/Users/mhagedorn/develop/HPCSMist/Pods/Headers/Kiwi -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/DerivedSources/armv7s -I/Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/DerivedSources -F/Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos -F/Applications/Xcode.app/Contents/Developer/Library/Frameworks -DNS_BLOCK_ASSERTIONS=1 --serialize-diagnostics /var/folders/d3/3cl8dngd1fs_1nhkj9gtjhfw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/HPCSMist-Prefix-gqcsuwzxtkdtkqenowlpsieyijfe/HPCSMist-Prefix.pch.dia -c "/Users/mhagedorn/develop/HPCSMist/Other Sources/HPCSMist-Prefix.pch" -o /var/folders/d3/3cl8dngd1fs_1nhkj9gtjhfw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/HPCSMist-Prefix-gqcsuwzxtkdtkqenowlpsieyijfe/HPCSMist-Prefix.pch.pth -MMD -MT dependencies -MF /var/folders/d3/3cl8dngd1fs_1nhkj9gtjhfw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/HPCSMist-Prefix-gqcsuwzxtkdtkqenowlpsieyijfe/HPCSMist-Prefix.pch.d36"8DCEB2EB-7785-44E8-A633-F06058177346-
+
+CProcessProductPackaging "/Users/mhagedorn/Library/MobileDevice/Provisioning Profiles/D351E540-9B80-42FC-98ED-5564D40633D1.mobileprovision" /Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos/HPCSMist.app/embedded.mobileprovision
+r0
+
+CProcessProductPackaging /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/Entitlements.plist /Users/mhagedorn/develop/HPCSMist/build/HPCSMist.build/Release-iphoneos/HPCSMist.build/HPCSMist.xcent
+r0
+
+CTouch /Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos/HPCSMist.app
+r0
+
+CValidate /Users/mhagedorn/develop/HPCSMist/build/Release-iphoneos/HPCSMist.app
+r0
+

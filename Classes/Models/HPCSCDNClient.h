@@ -23,7 +23,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "HPCSIdentityClient.h"
+#import "HPCSSwiftClient.h"
 
 /**
  The interface to the CDN system
@@ -31,26 +31,12 @@
 
 @interface HPCSCDNClient : HPCSSwiftClient
 
-/** the interface to the identity system */
-@property (retain) HPCSIdentityClient *identityClient;
 
 ///-----------------------------------------------------
 /// @name Creating and Initializing HPCSCDN Clients
 ///-----------------------------------------------------
 
 
-+(id) sharedClient:(HPCSIdentityClient *)identityClient;
-/**
-   Creates a cdn client
-   @param client the HPCSIdentityClient to use as the Identity Service Client
-   @discussion This is designated initializer. Typically its called in the following fashion (implicitly) from a singleton instance of HPCSIdentityClient:
-
-    HPCSIdentityClient *client = [HPCSIdentityClient sharedClient];
-    //this calls initWithIdentityClient
-    HPCSCDNClient *cdnClient = [client cdnClient];
-
- */
-- (id) initWithIdentityClient:(HPCSIdentityClient *)client;
 
 ///-----------------------------------------------------
 /// @name List CDN Enabled Containers

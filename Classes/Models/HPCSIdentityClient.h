@@ -28,12 +28,14 @@
 
 #import <Foundation/Foundation.h>
 #import "AFHTTPClient.h"
-#import "HPCSComputeClient.h"
-#import "HPCSSwiftClient.h"
 #import "HPCSToken.h"
 #import "HPCSTenant.h"
+#import "HPCSComputeClient.h"
 
 @class HPCSCDNClient;
+@class HPCSComputeClient;
+@class HPCSSwiftClient;
+
 
 extern NSString *const HPCSNetworkingErrorDomain;
 
@@ -53,6 +55,7 @@ extern NSString *const kHPCSAuthAccessKeyCredentialsKey;
 extern NSString *const kHPCSAuthAccessKey;
 extern NSString *const kHPCSAuthSecretKey;
 extern NSString *const HPCSKeystoneCDNCatalogIsEmptyNotification;
+
 
 /**Allows Access to the HP Cloud Services authorization system (Control Services).
 

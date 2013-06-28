@@ -25,9 +25,7 @@
 //  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 #import <Foundation/Foundation.h>
-#import "AFHTTPClient.h"
-
-@class HPCSIdentityClient;
+#import "HPCSAuthorizedHTTPClient.h"
 
 extern NSString *const HPCSSwiftContainersListDidFailNotification;
 extern NSString *const HPCSSwiftContainerSaveDidFailNotification;
@@ -46,29 +44,9 @@ extern NSString *const HPCSSwiftAccountContainerCountHeaderKey;
    The interface to the object storage system
  */
 
-@interface HPCSSwiftClient : AFHTTPClient
+@interface HPCSSwiftClient :  HPCSAuthorizedHTTPClient
 
-/** The HPCSIdentityClient object used to get access to the HPCSToken. */
-@property(retain) HPCSIdentityClient *identityClient;
 
-///-----------------------------------------------------
-/// @name Creating and Initializing HPCSSwift Clients
-///-----------------------------------------------------
-
-+ (id) sharedClient: (HPCSIdentityClient *)identityClient;
-
-/**
-   Creates a Swift client
-
-   @param client the HPCSIdentityClient to use as the Identity Service Client
-   @discussion This is designated initializer. Typically its called in the following fashion (implicitly) from a singleton instance of HPCSIdentityClient:
-
-    HPCSIdentityClient *client = [HPCSIdentityClient sharedClient];
-    //this calls initWithIdentityClient
-    HPCSSwiftClient *swiftClient = [client swiftClient];
-
- */
-- (id)initWithIdentityClient:(HPCSIdentityClient *)client;
 
 ///------------------------
 /// @name Container Operations
