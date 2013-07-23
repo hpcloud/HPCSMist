@@ -49,6 +49,7 @@ extern NSString *const HPCSSwiftAccountContainerCountHeaderKey;
 @interface HPCSSwiftClient :  HPCSAuthorizedHTTPClient
 
 
+#pragma mark Containers
 
 ///------------------------
 /// @name Container Operations
@@ -134,6 +135,7 @@ extern NSString *const HPCSSwiftAccountContainerCountHeaderKey;
             failure:(void ( ^)(NSHTTPURLResponse *responseObject, NSError *error))failure;
 
 
+#pragma mark Objects
 ///------------------------
 /// @name Object Operations
 ///------------------------
@@ -285,6 +287,31 @@ To set custom metadata on an object use a header name with a prefix of X-Object-
 
 
 /**
+   Copies an object to another path.
+
+   @param object The object to copy.  Must respond to **parent**,**parent.name**, **name**
+   @param path the new path
+   @param success Block returning NSHTTPURLResponse from Swift. This will be populated with information about the object in the HTTP header.   For example:
+
+    NSHTTPURLResponse *hr = (NSHTTPURLResponse*)responseObject;
+    NSDictionary *dict = [hr allHeaderFields];
+    NSLog(@"HEADERS : %@",[dict description]);
+
+
+   @param failure Block returning NSHTTPURLResponse from Swift and NSError
+   @param success responseObject with metadata stored in httpresponse.
+
+   @return Calls either the success or failure block depending on HTTPStatus code returned
+
+
+ */
+- (void)copyObject:(id)object
+            toPath:(NSString *)path
+           success:(void ( ^)(NSHTTPURLResponse *responseObject))success
+           failure:(void ( ^)(NSHTTPURLResponse *responseObject, NSError *error))failure;
+
+
+/**
    Adds an object to a bucket for a user that has write access to the bucket. A success response indicates the object was successfully stored; if the object already exists, it will be overwritten.
    @param data The NSData to be stored
    @param mimeType The mimeType of the resource
@@ -311,6 +338,11 @@ To set custom metadata on an object use a header name with a prefix of X-Object-
  */
 - (NSString *)urlForObject:(id)object;
 
+
+
+
+#pragma mark Utility
+
 /**
    Returns an NSDictionary of HTTP headers, usually used with a HEAD request to get object metadata
 
@@ -329,11 +361,13 @@ To set custom metadata on an object use a header name with a prefix of X-Object-
  */
 - (NSDictionary *)metaDataFromResponse:(NSHTTPURLResponse *)response;
 
+
+
 /**
     URL encode a string
  
     @param source the string to URLEncode
- 
+
  */
 - (NSString *) URLEncodedString:(NSString *)source;
 

@@ -440,6 +440,33 @@ NSString *const HPCSSwiftAccountContainerCountHeaderKey = @"X-Account-Container-
   ];
 }
 
+- (void)copyObject:(id)object
+            toPath:(NSString *)path
+           success:(void ( ^)(NSHTTPURLResponse *responseObject))success
+           failure:(void ( ^)(NSHTTPURLResponse *responseObject, NSError *error))failure {
+
+    NSString *sourcePath = [NSString stringWithFormat:@"%@/%@", [self URLEncodedString:[object valueForKeyPath:@"parent.name"] ],[self URLEncodedString:[object valueForKeyPath:@"name"]]];
+    [self setDefaultHeader:@"X-Copy-From" value:sourcePath];
+    [self setDefaultHeader:@"Content-Length" value:0];
+    [self putPath:path
+       parameters:nil
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              [self setDefaultHeader:@"X-Copy-From" value:nil];
+              [self setDefaultHeader:@"Content-Length" value:nil];
+              if(success){
+                  success(responseObject);
+              }
+
+          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              [self setDefaultHeader:@"X-Copy-From" value:nil];
+              [self setDefaultHeader:@"Content-Length" value:nil];
+            if(failure){
+                failure(operation.response, error);
+            }
+          }];
+
+}
+
 - (void) putObjectWithData:(NSData *)data
                   mimeType:(NSString *)mimeType
            destinationPath:(NSString *)destinationPath
