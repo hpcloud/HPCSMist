@@ -273,6 +273,7 @@ NSString *const HPCSSwiftAccountContainerCountHeaderKey = @"X-Account-Container-
            failure:(void ( ^)(NSHTTPURLResponse *responseObject, NSError *error))failure
 {
     [self setDefaultHeader:@"Accept" value:nil];
+    //TODO something like NSAssert( ext, @"Extension cannot be nil" ); for checking existence of keys
     NSString *path = [NSString stringWithFormat:@"%@/%@",[self URLEncodedString:[object valueForKeyPath:@"parent.name"] ], [self URLEncodedString:[object valueForKeyPath:@"name"] ]];
 
     [self putPath:path

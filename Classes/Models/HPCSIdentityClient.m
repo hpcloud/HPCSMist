@@ -170,6 +170,7 @@ NSString *const HPCSKeystoneCredentialsDidChangeNotification = @"com.hp.cloud.ke
   [self postPath:@"/v2.0/tokens"
       parameters:[self authorizationInfo]
          success: ^(__unused AFHTTPRequestOperation * operation, id JSON) {
+
      NSMutableArray *mutableRecords = [NSMutableArray array];
      NSDictionary *tokenAtt = [JSON valueForKeyPath:@"access.token"];
      self.token = [[HPCSToken alloc] initWithAttributes:tokenAtt];
