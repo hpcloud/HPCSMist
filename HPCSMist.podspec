@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "HPCSMist"
-  s.version      = "0.2.0"
+  s.version      = "0.3.0"
   s.summary      = "A delightful networking interface to HP Cloud Services inspired by AFNetworking ."
   s.homepage     = "https://github.com/hpcloud/HPCSMist"
   s.license      = { :type => "MIT", :file => "LICENSE" }
