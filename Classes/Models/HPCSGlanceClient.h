@@ -26,9 +26,16 @@
           success:(void ( ^)(NSHTTPURLResponse *responseObject))success
           failure:(void ( ^)(NSHTTPURLResponse *responseObject, NSError *error))failure;
 
-- (void)getImageMetadata:(id)object
+- (void)getImageMetadata:(id)image
                  success:(void (^)(NSHTTPURLResponse *, NSDictionary *))success
                  failure:(void (^)(NSHTTPURLResponse *, NSError *))failure;
+
+
+- (void)setImage:(id)image
+         metadata:(NSDictionary *)metadata
+         success :(void ( ^)(NSHTTPURLResponse *responseObject))success
+         failure :(void ( ^)(NSHTTPURLResponse *responseObject, NSError *error))failure;
+
 
 - (void)getImage:(id)image
          success:(void ( ^)(NSHTTPURLResponse *responseObject, NSData *data))success

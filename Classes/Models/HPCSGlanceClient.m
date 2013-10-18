@@ -107,6 +107,36 @@
     }];
 }
 
+- (void)setImage:(id)image
+        metadata:(NSDictionary *)metadata
+        success :(void ( ^)(NSHTTPURLResponse *responseObject))success
+        failure :(void ( ^)(NSHTTPURLResponse *responseObject, NSError *error))failure{
+    
+    [self setDefaultHeader:@"Accept" value:nil];
+    NSString *path = [NSString stringWithFormat:@"images/%@", [self URLEncodedString:[image valueForKeyPath:@"imageId"]]];
+    NSMutableURLRequest *request = [self requestWithMethod:@"PUT" path:path parameters:nil];
+    [self setDefaultHeader:@"Accept" value:@"application/json"];
+    [metadata enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        [request addValue:obj forHTTPHeaderField:key];
+    }];
+    AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self setDefaultHeader:@"Accept" value:@"application/json"];
+        if (success) {
+            success(operation.response);
+        }
+    }
+                                                                      failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                                                          [self setDefaultHeader:@"Accept" value:@"application/json"];
+                                                                          if (failure) {
+                                                                              failure(operation.response, error);
+                                                                          }
+                                                                      }];
+    [self enqueueHTTPRequestOperation:operation];
+
+    
+}
+
+
 - (void)getImage:(id)image
          success:(void ( ^)(NSHTTPURLResponse *responseObject, NSData *data))success
          failure:(void ( ^)(NSHTTPURLResponse *responseObject, NSError *error))failure {

@@ -30,7 +30,7 @@ NSString *const HPCSKeystoneNovaCatalogIsEmptyNotification = @"com.hp.cloud.keys
 NSString *const HPCSKeystoneSwiftCatalogIsEmptyNotification = @"com.hp.cloud.keystone.swift.catalog.empty";
 NSString *const HPCSKeystoneCDNCatalogIsEmptyNotification = @"com.hp.cloud.keystone.cdn.catalog.empty";
 NSString *const HPCSKeystoneCredentialsDidChangeNotification = @"com.hp.cloud.keystone.credentials.changed";
-NSString *const HPCSKeystoneCDNCatalogIsEmptyNotification = @"com.hp.cloud.keystone.glance.catalog.empty";
+NSString *const HPCSKeystoneGlanceCatalogIsEmptyNotification = @"com.hp.cloud.keystone.glance.catalog.empty";
 
 @interface HPCSIdentityClient ()
 @property (nonatomic, retain) NSMutableDictionary *authInfo;
