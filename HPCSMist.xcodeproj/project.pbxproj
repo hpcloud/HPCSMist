@@ -76,6 +76,7 @@
 		AF1D25E116792B6600454661 /* tokens.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25CA16792B6600454661 /* tokens.json */; };
 		AF1D25E216792B6600454661 /* tokensApiCreds.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25CB16792B6600454661 /* tokensApiCreds.json */; };
 		AF1D25E316792B6600454661 /* unauthorized.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25CC16792B6600454661 /* unauthorized.json */; };
+		AF225A33181199A800B80057 /* HPCSGlanceClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AF225A32181199A800B80057 /* HPCSGlanceClient.m */; };
 		AF3AD32A17048DD000E0BE3E /* HPCSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3AD32917048DD000E0BE3E /* HPCSViewController.m */; };
 		AF4BB8AF167933D10019C57C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF4BB8AE167933D10019C57C /* Security.framework */; };
 		AF4BB8CC167A97C20019C57C /* OHHTTPStubs.m in Sources */ = {isa = PBXBuildFile; fileRef = AF4BB8C9167A97C20019C57C /* OHHTTPStubs.m */; };
@@ -159,6 +160,8 @@
 		AF1D25CC16792B6600454661 /* unauthorized.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = unauthorized.json; sourceTree = "<group>"; };
 		AF1D25E616792B8F00454661 /* HPCSMist-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "HPCSMist-Info.plist"; sourceTree = "<group>"; };
 		AF1D25E716792B8F00454661 /* HPCSMist-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HPCSMist-Prefix.pch"; sourceTree = "<group>"; };
+		AF225A31181199A800B80057 /* HPCSGlanceClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPCSGlanceClient.h; sourceTree = "<group>"; };
+		AF225A32181199A800B80057 /* HPCSGlanceClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPCSGlanceClient.m; sourceTree = "<group>"; };
 		AF3AD32817048DD000E0BE3E /* HPCSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPCSViewController.h; sourceTree = "<group>"; };
 		AF3AD32917048DD000E0BE3E /* HPCSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPCSViewController.m; sourceTree = "<group>"; };
 		AF4BB8AD167933660019C57C /* HPCSCommonMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPCSCommonMacros.h; sourceTree = "<group>"; };
@@ -309,6 +312,8 @@
 				AF1D24EF167927C700454661 /* Products */,
 				155B8432AC6C07D92135B4CC /* HPCSCDNClient.m */,
 				155B8D298A2CD5D020ECC0BF /* HPCSCDNClient.h */,
+				AF225A31181199A800B80057 /* HPCSGlanceClient.h */,
+				AF225A32181199A800B80057 /* HPCSGlanceClient.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -588,6 +593,7 @@
 				AFAA32A917021E990089F7FC /* main.m in Sources */,
 				155B8EF8DB2F69E1C353079A /* HPCSAppDelegate.m in Sources */,
 				AF3AD32A17048DD000E0BE3E /* HPCSViewController.m in Sources */,
+				AF225A33181199A800B80057 /* HPCSGlanceClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -741,7 +747,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_AFTER_BUILD = NO;
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/** \"${PROJECT_DIR}/Pods\"/**";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -760,7 +766,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_AFTER_BUILD = NO;
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/** \"${PROJECT_DIR}/Pods\"/**";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
@@ -830,6 +836,7 @@
 				AF3AEDB9177CDE8D00B856B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AF4BB8B916793CBE0019C57C /* Build configuration list for PBXAggregateTarget "Documentation" */ = {
 			isa = XCConfigurationList;

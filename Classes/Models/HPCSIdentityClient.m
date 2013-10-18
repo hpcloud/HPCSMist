@@ -12,6 +12,7 @@
 #import "HPCSSecurityConstants.h"
 #import "KeychainWrapper.h"
 #import "HPCSCDNClient.h"
+#import "HPCSGlanceClient.h"
 
 NSString *const HPCSNetworkingErrorDomain = @"com.hp.cloud.networking.error";
 
@@ -29,6 +30,7 @@ NSString *const HPCSKeystoneNovaCatalogIsEmptyNotification = @"com.hp.cloud.keys
 NSString *const HPCSKeystoneSwiftCatalogIsEmptyNotification = @"com.hp.cloud.keystone.swift.catalog.empty";
 NSString *const HPCSKeystoneCDNCatalogIsEmptyNotification = @"com.hp.cloud.keystone.cdn.catalog.empty";
 NSString *const HPCSKeystoneCredentialsDidChangeNotification = @"com.hp.cloud.keystone.credentials.changed";
+NSString *const HPCSKeystoneCDNCatalogIsEmptyNotification = @"com.hp.cloud.keystone.glance.catalog.empty";
 
 @interface HPCSIdentityClient ()
 @property (nonatomic, retain) NSMutableDictionary *authInfo;
@@ -309,6 +311,36 @@ NSString *const HPCSKeystoneCredentialsDidChangeNotification = @"com.hp.cloud.ke
   }
 
   return nil;
+}
+
+- (NSString *) publicUrlForImageStorage
+{
+    if ( IsEmpty(self.serviceCatalog) )
+    {
+        return nil;
+    }
+
+    for (id item in self.serviceCatalog)
+    {
+        if ([[item valueForKey:@"type"] isEqualToString:@"image"])
+        {
+            NSDictionary *ep = [[item valueForKey:@"endpoints"] objectAtIndex:0];
+            return [ep valueForKey:@"publicURL"];
+        }
+    }
+
+    return nil;
+}
+
+- (HPCSGlanceClient *)glanceClient {
+    NSString *glanceURL = [self publicUrlForImageStorage];
+    if ( IsEmpty(glanceURL) )
+    {
+        [[NSNotificationCenter defaultCenter] postNotificationName:HPCSKeystoneGlanceCatalogIsEmptyNotification object:self];
+        return nil;
+    }
+
+    return [HPCSGlanceClient sharedClient:self];
 }
 
 - (HPCSCDNClient *)cdnClient {
