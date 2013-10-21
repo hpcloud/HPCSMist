@@ -324,7 +324,7 @@ NSString *const HPCSKeystoneGlanceCatalogIsEmptyNotification = @"com.hp.cloud.ke
     {
         if ([[item valueForKey:@"type"] isEqualToString:@"image"])
         {
-            NSDictionary *ep = [[item valueForKey:@"endpoints"] objectAtIndex:0];
+            NSDictionary *ep = [[item valueForKey:@"endpoints"] lastObject];
             return [ep valueForKey:@"publicURL"];
         }
     }
