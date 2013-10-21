@@ -33,7 +33,8 @@
        failure:(void ( ^)(NSHTTPURLResponse *responseObject, NSError *error))failure {
     [self getPath:@"images" parameters:nil success: ^(AFHTTPRequestOperation * operation, id JSON) {
         NSMutableArray *mutableRecords = [NSMutableArray array];
-        for (id entry in JSON)
+       NSArray *imagesArr = [JSON valueForKeyPath:@"images"];
+        for (id entry in imagesArr)
         {
             [mutableRecords addObject:entry];
         }
