@@ -313,7 +313,7 @@ NSString *const HPCSKeystoneGlanceCatalogIsEmptyNotification = @"com.hp.cloud.ke
   return nil;
 }
 
-- (NSString *) publicUrlForImageStorage
+- (NSString *) publicUrlForGlance
 {
     if ( IsEmpty(self.serviceCatalog) )
     {
@@ -333,7 +333,7 @@ NSString *const HPCSKeystoneGlanceCatalogIsEmptyNotification = @"com.hp.cloud.ke
 }
 
 - (HPCSGlanceClient *)glanceClient {
-    NSString *glanceURL = [self publicUrlForImageStorage];
+    NSString *glanceURL = [self publicUrlForGlance];
     if ( IsEmpty(glanceURL) )
     {
         [[NSNotificationCenter defaultCenter] postNotificationName:HPCSKeystoneGlanceCatalogIsEmptyNotification object:self];

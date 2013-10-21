@@ -35,6 +35,7 @@
 @class HPCSCDNClient;
 @class HPCSComputeClient;
 @class HPCSSwiftClient;
+@class HPCSGlanceClient;
 
 
 extern NSString *const HPCSNetworkingErrorDomain;
@@ -200,6 +201,17 @@ extern NSString *const HPCSKeystoneCDNCatalogIsEmptyNotification;
 
 /** the URL for the object storage endpoint as listed in the Service Catalog */
 - (NSString *) publicUrlForCDN;
+
+
+/** Retrieve an instance of the Glance(Image) Client, designated way to get an instance of the object storage (Glance) client
+ 
+ @discussion if the service catalog does not contain a glance service for this user the HPCSKeystoneGlanceCatalogIsEmptyNotification is sent.
+ 
+ */
+- (HPCSGlanceClient *) glanceClient;
+
+/** the URL for the image endpoint as listed in the Service Catalog */
+- (NSString *) publicUrlForGlance;
 
 
 ///-----------------------------------------------
