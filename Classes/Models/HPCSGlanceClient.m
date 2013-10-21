@@ -26,7 +26,7 @@
 }
 
 - (NSString *)serviceURL:(id) identity {
-    return [identity performSelector:@selector(publicUrlForImageStorage)];
+    return [identity performSelector:@selector(publicUrlForGlance)];
 }
 
 - (void)images:(void ( ^)(NSHTTPURLResponse *responseObject, NSArray *records))success
