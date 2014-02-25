@@ -1,10 +1,10 @@
-platform :ios, '6.0'
+platform :ios, "7.0"
 
 xcodeproj 'HPCSMist.xcodeproj'
 
-pod 'AFNetworking'
+pod 'AFNetworking','=1.0'
 
 target :HPCSMistTests, :exclusive => true do
-  pod 'Kiwi'
+  pod 'Kiwi/XCTest'
 end
 

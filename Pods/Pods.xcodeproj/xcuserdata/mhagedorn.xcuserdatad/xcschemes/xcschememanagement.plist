@@ -4,55 +4,45 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-HPCSMistSpecs.xcscheme</key>
+		<key>Pods-AFNetworking.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>10</integer>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-HPCSMistTests-Kiwi.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-HPCSMistTests.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0F5AA99AE46B4A6B9664F7A2</key>
+		<key>0C886695B1B84CB0B8DFA410</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6E2084465A4040AFB31A9375</key>
+		<key>59EA4BA74A674FD7AAF58BD3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8D0AFFEBB824423E9C19DD59</key>
+		<key>7DB74600A9EA4DFB8699A411</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8F5F754384014BB9B86C6659</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A8F8664379DC44D8BFB66B1A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B79C451F9EE3423F93035F57</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C3ED21D18EF648CAB2A61DE5</key>
+		<key>D09847C27B254B71BAB11661</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -32,22 +32,15 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		155B82AA7EBFA1BFAE0B4B47 /* cdnOnlyContainerList.json in Resources */ = {isa = PBXBuildFile; fileRef = 155B8B7B24F455AB32409768 /* cdnOnlyContainerList.json */; };
 		155B832328812E6F13E5D4C9 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 155B895B6E5BE5C9073660E4 /* Default@2x.png */; };
-		155B83F23BBCDA216E8E24C5 /* HPCSCDNClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 155B8F8FB5FBF7CCD632B768 /* HPCSCDNClientSpec.m */; };
 		155B88274C9612B33684C8FF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 155B8D78636BEC6113EA083C /* Default.png */; };
 		155B88BFA2404D58589E1211 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 155B89DCA45C2ABA9CF15D40 /* InfoPlist.strings */; };
-		155B89A07A2C5F07410B1881 /* cdnContainerList.json in Resources */ = {isa = PBXBuildFile; fileRef = 155B8DA2A4CCA2D70E3AC818 /* cdnContainerList.json */; };
 		155B8DCB7A267B433A6CA090 /* HPCSCDNClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 155B8432AC6C07D92135B4CC /* HPCSCDNClient.m */; };
 		155B8EF8DB2F69E1C353079A /* HPCSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 155B88DF12F9496C973C5733 /* HPCSAppDelegate.m */; };
 		155B8F97674FF75CF46D5CB5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 155B8B58EB018050747C2AE7 /* Default-568h@2x.png */; };
-		56877366D9B04AEA836AB5D6 /* libPods-HPCSMistTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F8C673EB98845D7BCF23BA7 /* libPods-HPCSMistTests.a */; };
 		AF1D24F3167927C800454661 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1D24F2167927C800454661 /* UIKit.framework */; };
 		AF1D24F5167927C800454661 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1D24F4167927C800454661 /* Foundation.framework */; };
 		AF1D24F7167927C800454661 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1D24F6167927C800454661 /* CoreGraphics.framework */; };
-		AF1D251A167927C800454661 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1D2519167927C800454661 /* SenTestingKit.framework */; };
-		AF1D251B167927C800454661 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1D24F2167927C800454661 /* UIKit.framework */; };
-		AF1D251C167927C800454661 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1D24F4167927C800454661 /* Foundation.framework */; };
 		AF1D257716792B0300454661 /* Environment.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D256416792B0300454661 /* Environment.m */; };
 		AF1D257816792B0300454661 /* HPCSAuthorizedHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D256616792B0300454661 /* HPCSAuthorizedHTTPClient.m */; };
 		AF1D257916792B0300454661 /* HPCSComputeClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D256816792B0300454661 /* HPCSComputeClient.m */; };
@@ -56,37 +49,27 @@
 		AF1D257C16792B0300454661 /* HPCSTenant.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D257016792B0300454661 /* HPCSTenant.m */; };
 		AF1D257D16792B0300454661 /* HPCSToken.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D257216792B0300454661 /* HPCSToken.m */; };
 		AF1D257E16792B0300454661 /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D257416792B0300454661 /* KeychainWrapper.m */; };
-		AF1D25CE16792B6600454661 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25B316792B6600454661 /* InfoPlist.strings */; };
-		AF1D25CF16792B6600454661 /* EnvironmentSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D25B516792B6600454661 /* EnvironmentSpec.m */; };
-		AF1D25D016792B6600454661 /* HPCSIdentityClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D25B616792B6600454661 /* HPCSIdentityClientSpec.m */; };
-		AF1D25D216792B6600454661 /* HPCSNovaClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D25B816792B6600454661 /* HPCSNovaClientSpec.m */; };
-		AF1D25D316792B6600454661 /* HPCSSwiftClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D25B916792B6600454661 /* HPCSSwiftClientSpec.m */; };
-		AF1D25D416792B6600454661 /* KWSpec+WaitFor.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D25BB16792B6600454661 /* KWSpec+WaitFor.m */; };
-		AF1D25D516792B6600454661 /* authNoScopedToken.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25BD16792B6600454661 /* authNoScopedToken.json */; };
-		AF1D25D616792B6600454661 /* container_contents.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25BE16792B6600454661 /* container_contents.json */; };
-		AF1D25D716792B6600454661 /* containers.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25BF16792B6600454661 /* containers.json */; };
-		AF1D25D816792B6600454661 /* flavor_details.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25C016792B6600454661 /* flavor_details.json */; };
-		AF1D25D916792B6600454661 /* flavors.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25C116792B6600454661 /* flavors.json */; };
-		AF1D25DA16792B6600454661 /* image_details.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25C216792B6600454661 /* image_details.json */; };
-		AF1D25DB16792B6600454661 /* images.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25C316792B6600454661 /* images.json */; };
-		AF1D25DD16792B6600454661 /* objects.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25C616792B6600454661 /* objects.json */; };
-		AF1D25DE16792B6600454661 /* revokeResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25C716792B6600454661 /* revokeResponse.json */; };
-		AF1D25DF16792B6600454661 /* server_details.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25C816792B6600454661 /* server_details.json */; };
-		AF1D25E016792B6600454661 /* servers.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25C916792B6600454661 /* servers.json */; };
-		AF1D25E116792B6600454661 /* tokens.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25CA16792B6600454661 /* tokens.json */; };
-		AF1D25E216792B6600454661 /* tokensApiCreds.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25CB16792B6600454661 /* tokensApiCreds.json */; };
-		AF1D25E316792B6600454661 /* unauthorized.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25CC16792B6600454661 /* unauthorized.json */; };
 		AF225A33181199A800B80057 /* HPCSGlanceClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AF225A32181199A800B80057 /* HPCSGlanceClient.m */; };
 		AF3AD32A17048DD000E0BE3E /* HPCSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3AD32917048DD000E0BE3E /* HPCSViewController.m */; };
 		AF4BB8AF167933D10019C57C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF4BB8AE167933D10019C57C /* Security.framework */; };
-		AF4BB8CC167A97C20019C57C /* OHHTTPStubs.m in Sources */ = {isa = PBXBuildFile; fileRef = AF4BB8C9167A97C20019C57C /* OHHTTPStubs.m */; };
-		AF4BB8CD167A97C20019C57C /* OHHTTPStubsResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = AF4BB8CB167A97C20019C57C /* OHHTTPStubsResponse.m */; };
 		AFAA32A917021E990089F7FC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AFAA32A817021E990089F7FC /* main.m */; };
+		AFB3D58B18AE81C700B39BE5 /* HPCSNovaClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D25B816792B6600454661 /* HPCSNovaClientSpec.m */; };
+		AFB3D58C18AE81C800B39BE5 /* HPCSSwiftClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D25B916792B6600454661 /* HPCSSwiftClientSpec.m */; };
+		AFB3D58E18AE81C800B39BE5 /* KWSpec+WaitFor.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D25BB16792B6600454661 /* KWSpec+WaitFor.m */; };
+		AFB3D59018AE81DB00B39BE5 /* OHHTTPStubs.m in Sources */ = {isa = PBXBuildFile; fileRef = AF4BB8C9167A97C20019C57C /* OHHTTPStubs.m */; };
+		AFB3D59218AE81DB00B39BE5 /* OHHTTPStubsResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = AF4BB8CB167A97C20019C57C /* OHHTTPStubsResponse.m */; };
+		AFB3D59318AE81F400B39BE5 /* EnvironmentSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D25B516792B6600454661 /* EnvironmentSpec.m */; };
+		AFB3D59418AE81F400B39BE5 /* HPCSIdentityClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D25B616792B6600454661 /* HPCSIdentityClientSpec.m */; };
+		AFB3D59518AE81F400B39BE5 /* HPCSCDNClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 155B8F8FB5FBF7CCD632B768 /* HPCSCDNClientSpec.m */; };
+		AFB6B92618AD7E65005A41FB /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF235B22182AA0E20050FB20 /* XCTest.framework */; };
+		AFB6B92718AD7E65005A41FB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1D24F4167927C800454661 /* Foundation.framework */; };
+		AFB6B92818AD7E65005A41FB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1D24F2167927C800454661 /* UIKit.framework */; };
+		BE9F10398B2C4ECE860256B3 /* libPods-HPCSMistTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F8C673EB98845D7BCF23BA7 /* libPods-HPCSMistTests.a */; };
 		CCC949AEC10D4782B40CAB2E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B6CE0E57B1E4D57AB466D9B /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		AF1D251D167927C800454661 /* PBXContainerItemProxy */ = {
+		AFB6B93218AD7E65005A41FB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AF1D24E5167927C700454661 /* Project object */;
 			proxyType = 1;
@@ -116,7 +99,6 @@
 		AF1D24F2167927C800454661 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AF1D24F4167927C800454661 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AF1D24F6167927C800454661 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		AF1D2518167927C800454661 /* HPCSMistTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HPCSMistTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF1D2519167927C800454661 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		AF1D256316792B0300454661 /* Environment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Environment.h; sourceTree = "<group>"; };
 		AF1D256416792B0300454661 /* Environment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Environment.m; sourceTree = "<group>"; };
@@ -162,6 +144,23 @@
 		AF1D25E716792B8F00454661 /* HPCSMist-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HPCSMist-Prefix.pch"; sourceTree = "<group>"; };
 		AF225A31181199A800B80057 /* HPCSGlanceClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPCSGlanceClient.h; sourceTree = "<group>"; };
 		AF225A32181199A800B80057 /* HPCSGlanceClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPCSGlanceClient.m; sourceTree = "<group>"; };
+		AF235B0D182AA0E10050FB20 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		AF235B10182AA0E10050FB20 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AF235B11182AA0E10050FB20 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		AF235B12182AA0E10050FB20 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		AF235B22182AA0E20050FB20 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		AF235B36182AA10A0050FB20 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
+		AF235B4F182AA32B0050FB20 /* AFHTTPClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AFHTTPClient.h; path = Pods/AFNetworking/AFNetworking/AFHTTPClient.h; sourceTree = "<group>"; };
+		AF235B50182AA32B0050FB20 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperation.h; path = Pods/AFNetworking/AFNetworking/AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		AF235B51182AA32B0050FB20 /* AFImageRequestOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AFImageRequestOperation.h; path = Pods/AFNetworking/AFNetworking/AFImageRequestOperation.h; sourceTree = "<group>"; };
+		AF235B52182AA32B0050FB20 /* AFJSONRequestOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AFJSONRequestOperation.h; path = Pods/AFNetworking/AFNetworking/AFJSONRequestOperation.h; sourceTree = "<group>"; };
+		AF235B53182AA32B0050FB20 /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AFNetworkActivityIndicatorManager.h; path = Pods/AFNetworking/AFNetworking/AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
+		AF235B54182AA32B0050FB20 /* AFNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AFNetworking.h; path = Pods/AFNetworking/AFNetworking/AFNetworking.h; sourceTree = "<group>"; };
+		AF235B55182AA32B0050FB20 /* AFPropertyListRequestOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AFPropertyListRequestOperation.h; path = Pods/AFNetworking/AFNetworking/AFPropertyListRequestOperation.h; sourceTree = "<group>"; };
+		AF235B56182AA32B0050FB20 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AFURLConnectionOperation.h; path = Pods/AFNetworking/AFNetworking/AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		AF235B57182AA32B0050FB20 /* AFXMLRequestOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AFXMLRequestOperation.h; path = Pods/AFNetworking/AFNetworking/AFXMLRequestOperation.h; sourceTree = "<group>"; };
+		AF235B58182AA32B0050FB20 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UIImageView+AFNetworking.h"; path = "Pods/AFNetworking/AFNetworking/UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
+		AF235B94182AA7CE0050FB20 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
 		AF3AD32817048DD000E0BE3E /* HPCSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPCSViewController.h; sourceTree = "<group>"; };
 		AF3AD32917048DD000E0BE3E /* HPCSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPCSViewController.m; sourceTree = "<group>"; };
 		AF4BB8AD167933660019C57C /* HPCSCommonMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPCSCommonMacros.h; sourceTree = "<group>"; };
@@ -173,6 +172,7 @@
 		AF4BB8CA167A97C20019C57C /* OHHTTPStubsResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OHHTTPStubsResponse.h; sourceTree = "<group>"; };
 		AF4BB8CB167A97C20019C57C /* OHHTTPStubsResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OHHTTPStubsResponse.m; sourceTree = "<group>"; };
 		AFAA32A817021E990089F7FC /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AFB6B92518AD7E65005A41FB /* HPCSMistTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HPCSMistTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFEC43993DAE4ABBA4461FA0 /* Pods-HPCSMistTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HPCSMistTests.xcconfig"; path = "Pods/Pods-HPCSMistTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -189,14 +189,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AF1D2514167927C800454661 /* Frameworks */ = {
+		AFB6B92218AD7E65005A41FB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF1D251A167927C800454661 /* SenTestingKit.framework in Frameworks */,
-				AF1D251B167927C800454661 /* UIKit.framework in Frameworks */,
-				AF1D251C167927C800454661 /* Foundation.framework in Frameworks */,
-				56877366D9B04AEA836AB5D6 /* libPods-HPCSMistTests.a in Frameworks */,
+				AFB6B92618AD7E65005A41FB /* XCTest.framework in Frameworks */,
+				AFB6B92818AD7E65005A41FB /* UIKit.framework in Frameworks */,
+				AFB6B92718AD7E65005A41FB /* Foundation.framework in Frameworks */,
+				BE9F10398B2C4ECE860256B3 /* libPods-HPCSMistTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,10 +242,21 @@
 		AF1D24E3167927C700454661 = {
 			isa = PBXGroup;
 			children = (
+				AF235B4F182AA32B0050FB20 /* AFHTTPClient.h */,
+				AF235B50182AA32B0050FB20 /* AFHTTPRequestOperation.h */,
+				AF235B51182AA32B0050FB20 /* AFImageRequestOperation.h */,
+				AF235B52182AA32B0050FB20 /* AFJSONRequestOperation.h */,
+				AF235B53182AA32B0050FB20 /* AFNetworkActivityIndicatorManager.h */,
+				AF235B54182AA32B0050FB20 /* AFNetworking.h */,
+				AF235B55182AA32B0050FB20 /* AFPropertyListRequestOperation.h */,
+				AF235B56182AA32B0050FB20 /* AFURLConnectionOperation.h */,
+				AF235B57182AA32B0050FB20 /* AFXMLRequestOperation.h */,
+				AF235B58182AA32B0050FB20 /* UIImageView+AFNetworking.h */,
 				AF4BB8C6167A46820019C57C /* README.md */,
 				AF4BB8C5167A40E50019C57C /* scripts */,
 				AF1D255A16792B0300454661 /* Classes */,
 				AF1D25E516792B8F00454661 /* Other Sources */,
+				AF1D24EF167927C700454661 /* Products */,
 				AF1D24F1167927C800454661 /* Frameworks */,
 				048D663BE13C4C10BCDB5371 /* Pods.xcconfig */,
 				EFEC43993DAE4ABBA4461FA0 /* Pods-HPCSMistTests.xcconfig */,
@@ -258,14 +269,17 @@
 			isa = PBXGroup;
 			children = (
 				AF1D24EE167927C700454661 /* HPCSMist.app */,
-				AF1D2518167927C800454661 /* HPCSMistTests.octest */,
+				AFB6B92518AD7E65005A41FB /* HPCSMistTests.xctest */,
 			);
 			name = Products;
+			path = Classes/Models;
 			sourceTree = "<group>";
 		};
 		AF1D24F1167927C800454661 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AF235B94182AA7CE0050FB20 /* libPods.a */,
+				AF235B36182AA10A0050FB20 /* libPods.a */,
 				AF1D24F2167927C800454661 /* UIKit.framework */,
 				AF1D24F4167927C800454661 /* Foundation.framework */,
 				AF1D24F6167927C800454661 /* CoreGraphics.framework */,
@@ -274,6 +288,9 @@
 				5F8C673EB98845D7BCF23BA7 /* libPods-HPCSMistTests.a */,
 				AF4BB8AE167933D10019C57C /* Security.framework */,
 				3E595018CD1C4918B7BC6249 /* libPods-HPCSMistSpecs.a */,
+				AF235B0D182AA0E10050FB20 /* Cocoa.framework */,
+				AF235B22182AA0E20050FB20 /* XCTest.framework */,
+				AF235B0F182AA0E10050FB20 /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -292,27 +309,26 @@
 			children = (
 				AF4BB8AD167933660019C57C /* HPCSCommonMacros.h */,
 				AF1D256316792B0300454661 /* Environment.h */,
-				AF1D256416792B0300454661 /* Environment.m */,
 				AF1D256516792B0300454661 /* HPCSAuthorizedHTTPClient.h */,
-				AF1D256616792B0300454661 /* HPCSAuthorizedHTTPClient.m */,
 				AF1D256716792B0300454661 /* HPCSComputeClient.h */,
-				AF1D256816792B0300454661 /* HPCSComputeClient.m */,
 				AF1D256916792B0300454661 /* HPCSIdentityClient.h */,
-				AF1D256A16792B0300454661 /* HPCSIdentityClient.m */,
-				AF1D256B16792B0300454661 /* HPCSMist-Prefix.pch */,
 				AF1D256C16792B0300454661 /* HPCSSecurityConstants.h */,
 				AF1D256D16792B0300454661 /* HPCSSwiftClient.h */,
-				AF1D256E16792B0300454661 /* HPCSSwiftClient.m */,
-				AF1D256F16792B0300454661 /* HPCSTenant.h */,
-				AF1D257016792B0300454661 /* HPCSTenant.m */,
+				AF1D256B16792B0300454661 /* HPCSMist-Prefix.pch */,
 				AF1D257116792B0300454661 /* HPCSToken.h */,
+				AF1D256F16792B0300454661 /* HPCSTenant.h */,
+				155B8D298A2CD5D020ECC0BF /* HPCSCDNClient.h */,
+				AF225A31181199A800B80057 /* HPCSGlanceClient.h */,
+				AF1D256416792B0300454661 /* Environment.m */,
+				AF1D256616792B0300454661 /* HPCSAuthorizedHTTPClient.m */,
+				AF1D256816792B0300454661 /* HPCSComputeClient.m */,
+				AF1D256A16792B0300454661 /* HPCSIdentityClient.m */,
+				AF1D256E16792B0300454661 /* HPCSSwiftClient.m */,
+				AF1D257016792B0300454661 /* HPCSTenant.m */,
 				AF1D257216792B0300454661 /* HPCSToken.m */,
 				AF1D257316792B0300454661 /* KeychainWrapper.h */,
 				AF1D257416792B0300454661 /* KeychainWrapper.m */,
-				AF1D24EF167927C700454661 /* Products */,
 				155B8432AC6C07D92135B4CC /* HPCSCDNClient.m */,
-				155B8D298A2CD5D020ECC0BF /* HPCSCDNClient.h */,
-				AF225A31181199A800B80057 /* HPCSGlanceClient.h */,
 				AF225A32181199A800B80057 /* HPCSGlanceClient.m */,
 			);
 			path = Models;
@@ -372,6 +388,16 @@
 			path = "Other Sources";
 			sourceTree = "<group>";
 		};
+		AF235B0F182AA0E10050FB20 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AF235B10182AA0E10050FB20 /* Foundation.framework */,
+				AF235B11182AA0E10050FB20 /* CoreData.framework */,
+				AF235B12182AA0E10050FB20 /* AppKit.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
 		AF4BB8C7167A97C20019C57C /* OHHTTPStubs */ = {
 			isa = PBXGroup;
 			children = (
@@ -405,25 +431,25 @@
 			productReference = AF1D24EE167927C700454661 /* HPCSMist.app */;
 			productType = "com.apple.product-type.application";
 		};
-		AF1D2517167927C800454661 /* HPCSMistTests */ = {
+		AFB6B92418AD7E65005A41FB /* HPCSMistTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AF1D252D167927C800454661 /* Build configuration list for PBXNativeTarget "HPCSMistTests" */;
+			buildConfigurationList = AFB6B93418AD7E65005A41FB /* Build configuration list for PBXNativeTarget "HPCSMistTests" */;
 			buildPhases = (
-				AF1D2513167927C800454661 /* Sources */,
-				AF1D2514167927C800454661 /* Frameworks */,
-				AF1D2515167927C800454661 /* Resources */,
-				AF1D2516167927C800454661 /* ShellScript */,
-				A674A19DA0864DC586903FF8 /* Copy Pods Resources */,
+				3A2756C6F2EE4C9EA06D61DE /* Check Pods Manifest.lock */,
+				AFB6B92118AD7E65005A41FB /* Sources */,
+				AFB6B92218AD7E65005A41FB /* Frameworks */,
+				AFB6B92318AD7E65005A41FB /* Resources */,
+				02D07383FC204EBCA714021F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				AF1D251E167927C800454661 /* PBXTargetDependency */,
+				AFB6B93318AD7E65005A41FB /* PBXTargetDependency */,
 			);
 			name = HPCSMistTests;
 			productName = HPCSMistTests;
-			productReference = AF1D2518167927C800454661 /* HPCSMistTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productReference = AFB6B92518AD7E65005A41FB /* HPCSMistTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -434,6 +460,11 @@
 				CLASSPREFIX = HPCS;
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Mike Hagedorn";
+				TargetAttributes = {
+					AFB6B92418AD7E65005A41FB = {
+						TestTargetID = AF1D24ED167927C700454661;
+					};
+				};
 			};
 			buildConfigurationList = AF1D24E8167927C700454661 /* Build configuration list for PBXProject "HPCSMist" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -448,9 +479,9 @@
 			projectRoot = "";
 			targets = (
 				AF1D24ED167927C700454661 /* HPCSMist */,
-				AF1D2517167927C800454661 /* HPCSMistTests */,
 				AF4BB8B816793CBE0019C57C /* Documentation */,
 				AF3AEDB6177CDE8D00B856B5 /* OCLint */,
+				AFB6B92418AD7E65005A41FB /* HPCSMistTests */,
 			);
 		};
 /* End PBXProject section */
@@ -467,34 +498,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AF1D2515167927C800454661 /* Resources */ = {
+		AFB6B92318AD7E65005A41FB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF1D25CE16792B6600454661 /* InfoPlist.strings in Resources */,
-				AF1D25D516792B6600454661 /* authNoScopedToken.json in Resources */,
-				AF1D25D616792B6600454661 /* container_contents.json in Resources */,
-				AF1D25D716792B6600454661 /* containers.json in Resources */,
-				AF1D25D816792B6600454661 /* flavor_details.json in Resources */,
-				AF1D25D916792B6600454661 /* flavors.json in Resources */,
-				AF1D25DA16792B6600454661 /* image_details.json in Resources */,
-				AF1D25DB16792B6600454661 /* images.json in Resources */,
-				AF1D25DD16792B6600454661 /* objects.json in Resources */,
-				AF1D25DE16792B6600454661 /* revokeResponse.json in Resources */,
-				AF1D25DF16792B6600454661 /* server_details.json in Resources */,
-				AF1D25E016792B6600454661 /* servers.json in Resources */,
-				AF1D25E116792B6600454661 /* tokens.json in Resources */,
-				AF1D25E216792B6600454661 /* tokensApiCreds.json in Resources */,
-				AF1D25E316792B6600454661 /* unauthorized.json in Resources */,
-				155B89A07A2C5F07410B1881 /* cdnContainerList.json in Resources */,
-				155B82AA7EBFA1BFAE0B4B47 /* cdnOnlyContainerList.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		A674A19DA0864DC586903FF8 /* Copy Pods Resources */ = {
+		02D07383FC204EBCA714021F /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -507,6 +521,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Pods-HPCSMistTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3A2756C6F2EE4C9EA06D61DE /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
 		};
 		AF03237E167F8EF200D46904 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -520,19 +550,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "";
-		};
-		AF1D2516167927C800454661 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "#!/bin/sh\n\n# Launch application using ios-sim and set up environment to inject test bundle into application\n# Source: http://stackoverflow.com/a/12682617/504494\n\nif [ \"$RUN_APPLICATION_TESTS_WITH_IOS_SIM\" = \"YES\" ]; then\ntest_bundle_path=\"$BUILT_PRODUCTS_DIR/$PRODUCT_NAME.$WRAPPER_EXTENSION\"\nenvironment_args=\"--setenv DYLD_INSERT_LIBRARIES=/../../Library/PrivateFrameworks/IDEBundleInjection.framework/IDEBundleInjection --setenv XCInjectBundle=$test_bundle_path --setenv XCInjectBundleInto=$TEST_HOST\"\necho  $test_bundle_path \nios-sim launch $(dirname $TEST_HOST) $environment_args --args -SenTest All $test_bundle_path\necho \"Finished running tests with ios-sim\"\nelse\necho \"Running tests the normal way\"\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\nfi\n";
 		};
 		AF3AEDBA177CDE9B00B856B5 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -597,28 +614,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AF1D2513167927C800454661 /* Sources */ = {
+		AFB6B92118AD7E65005A41FB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF1D25CF16792B6600454661 /* EnvironmentSpec.m in Sources */,
-				AF1D25D016792B6600454661 /* HPCSIdentityClientSpec.m in Sources */,
-				AF1D25D216792B6600454661 /* HPCSNovaClientSpec.m in Sources */,
-				AF1D25D316792B6600454661 /* HPCSSwiftClientSpec.m in Sources */,
-				AF1D25D416792B6600454661 /* KWSpec+WaitFor.m in Sources */,
-				AF4BB8CC167A97C20019C57C /* OHHTTPStubs.m in Sources */,
-				AF4BB8CD167A97C20019C57C /* OHHTTPStubsResponse.m in Sources */,
-				155B83F23BBCDA216E8E24C5 /* HPCSCDNClientSpec.m in Sources */,
+				AFB3D59318AE81F400B39BE5 /* EnvironmentSpec.m in Sources */,
+				AFB3D59418AE81F400B39BE5 /* HPCSIdentityClientSpec.m in Sources */,
+				AFB3D59518AE81F400B39BE5 /* HPCSCDNClientSpec.m in Sources */,
+				AFB3D59018AE81DB00B39BE5 /* OHHTTPStubs.m in Sources */,
+				AFB3D59218AE81DB00B39BE5 /* OHHTTPStubsResponse.m in Sources */,
+				AFB3D58B18AE81C700B39BE5 /* HPCSNovaClientSpec.m in Sources */,
+				AFB3D58C18AE81C800B39BE5 /* HPCSSwiftClientSpec.m in Sources */,
+				AFB3D58E18AE81C800B39BE5 /* KWSpec+WaitFor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		AF1D251E167927C800454661 /* PBXTargetDependency */ = {
+		AFB6B93318AD7E65005A41FB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = AF1D24ED167927C700454661 /* HPCSMist */;
-			targetProxy = AF1D251D167927C800454661 /* PBXContainerItemProxy */;
+			targetProxy = AFB6B93218AD7E65005A41FB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -651,6 +668,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -664,7 +682,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -680,13 +698,15 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -698,6 +718,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 048D663BE13C4C10BCDB5371 /* Pods.xcconfig */;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
@@ -709,6 +730,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Other Sources/HPCSMist-Info.plist";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -717,6 +739,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 048D663BE13C4C10BCDB5371 /* Pods.xcconfig */;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
@@ -728,46 +751,8 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Other Sources/HPCSMist-Info.plist";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		AF1D252E167927C800454661 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = EFEC43993DAE4ABBA4461FA0 /* Pods-HPCSMistTests.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HPCSMist.app/HPCSMist";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Other Sources/HPCSMist-Prefix.pch";
-				INFOPLIST_FILE = "HPCSMistTests/HPCSMistTests-Info.plist";
-				OTHER_CFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_AFTER_BUILD = NO;
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/** \"${PROJECT_DIR}/Pods\"/**";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Debug;
-		};
-		AF1D252F167927C800454661 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = EFEC43993DAE4ABBA4461FA0 /* Pods-HPCSMistTests.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HPCSMist.app/HPCSMist";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Other Sources/HPCSMist-Prefix.pch";
-				INFOPLIST_FILE = "HPCSMistTests/HPCSMistTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_AFTER_BUILD = NO;
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/** \"${PROJECT_DIR}/Pods\"/**";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
@@ -799,6 +784,75 @@
 			};
 			name = Release;
 		};
+		AFB6B93518AD7E65005A41FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EFEC43993DAE4ABBA4461FA0 /* Pods-HPCSMistTests.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HPCSMist.app/HPCSMist";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HPCSMistTests/HPCSMistTests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "HPCSMistTests/HPCSMistTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		AFB6B93618AD7E65005A41FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EFEC43993DAE4ABBA4461FA0 /* Pods-HPCSMistTests.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HPCSMist.app/HPCSMist";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HPCSMistTests/HPCSMistTests-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "HPCSMistTests/HPCSMistTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -820,15 +874,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AF1D252D167927C800454661 /* Build configuration list for PBXNativeTarget "HPCSMistTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AF1D252E167927C800454661 /* Debug */,
-				AF1D252F167927C800454661 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		AF3AEDB7177CDE8D00B856B5 /* Build configuration list for PBXAggregateTarget "OCLint" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -843,6 +888,15 @@
 			buildConfigurations = (
 				AF4BB8BA16793CBE0019C57C /* Debug */,
 				AF4BB8BB16793CBE0019C57C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AFB6B93418AD7E65005A41FB /* Build configuration list for PBXNativeTarget "HPCSMistTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AFB6B93518AD7E65005A41FB /* Debug */,
+				AFB6B93618AD7E65005A41FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

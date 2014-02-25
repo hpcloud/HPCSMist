@@ -4,65 +4,30 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>All in CDNClientSpec.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>12</integer>
-		</dict>
-		<key>All in ComputeClientSpec.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>4</integer>
-		</dict>
-		<key>All in EnvironmentSpec.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>5</integer>
-		</dict>
 		<key>All in HPCSCDNClientSpec.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>6</integer>
 		</dict>
-		<key>All in IdentityClientSpec.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>6</integer>
-		</dict>
-		<key>All in SwiftClientSpec.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>7</integer>
-		</dict>
-		<key>CommandLineUnitTests.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>8</integer>
-		</dict>
 		<key>Documentation.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>1</integer>
 		</dict>
 		<key>HPCSMist.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>HPCSMistSpecs.xcscheme</key>
+		<key>HPCSMistTests.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>9</integer>
+			<integer>7</integer>
 		</dict>
 		<key>OCLint.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>13</integer>
-		</dict>
-		<key>TestTarget.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>11</integer>
+			<integer>2</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -73,6 +38,26 @@
 			<true/>
 		</dict>
 		<key>AF1D2517167927C800454661</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AF235B0B182AA0E10050FB20</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AF235B20182AA0E10050FB20</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AF235B68182AA79F0050FB20</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AF235B74182AA79F0050FB20</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -98,6 +83,11 @@
 			<true/>
 		</dict>
 		<key>AF6251A11703549900B5E20B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AFB6B92418AD7E65005A41FB</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -78,6 +78,9 @@
 
 + (BOOL) createKeychainValue:(NSString *)value forIdentifier:(NSString *)identifier withDescription:(NSString *)description
 {
+  if(!value){
+      return NO;
+  }
   NSMutableDictionary *dictionary = [self setupSearchDirectoryForIdentifier:identifier];
   NSData *valueData = [value dataUsingEncoding:NSUTF8StringEncoding];
   [dictionary setObject:valueData forKey:(__bridge id)kSecValueData];
