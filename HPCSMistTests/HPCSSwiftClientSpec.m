@@ -15,17 +15,63 @@
 
 SPEC_BEGIN(SwiftClientSpec)
 
+      void  (^stubPath) (NSString *pathName, NSString *method,NSString *filename, NSNumber *code ) = ^void (NSString *pathName,NSString *method, NSString *filename, NSNumber *statusCode) {
+        [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+          if ([request.URL.absoluteString hasSuffix:pathName] && [request.HTTPMethod isEqualToString:method]) {
+            return YES;
+          } else {
+            return NO;
+          }
+        }                   withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
+          NSString *basename = filename;
+          if (!basename) {
+            basename = [request.URL.absoluteString lastPathComponent];
+          }
+          NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
+          NSNumber *_statusCode = statusCode;
+          if (!_statusCode) {
+            _statusCode = [NSNumber numberWithInteger:200];
+          }
+          id stubResponse = [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(fullName, nil)
+                                                             statusCode:[_statusCode integerValue]
+                                                                headers:@{@"Content-Type" : @"text/json"}];
+          return stubResponse;
+        }];
+      };
+
+
+    void  (^stubHeadRequest) (NSString *pathName, NSString *filename, NSNumber *code ) = ^void (NSString *pathName, NSString *filename, NSNumber *statusCode) {
+      [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+        if ([request.URL.absoluteString hasSuffix:pathName] && [request.HTTPMethod isEqualToString:@"HEAD"]) {
+          return YES;
+        } else {
+          return NO;
+        }
+      } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
+        NSString *basename = filename;
+        if (!basename) {
+          basename = [request.URL.absoluteString lastPathComponent];
+        }
+        NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
+        NSNumber *_statusCode = statusCode;
+        if (!_statusCode) {
+          _statusCode = [NSNumber numberWithInteger:200];
+        }
+        id stubResponse = [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(fullName, nil)
+                                                           statusCode:[_statusCode integerValue]
+                                                              headers:@{@"Content-Type" : @"text/json", @"X-Container-Object-Count" : @"7", @"X-Container-Bytes-Used" : @"12345"}];
+        return stubResponse;
+      }];
+    };
+
+
+
+      void (^stubAuthenticate)(void) = ^() {
+        stubPath(@"/v2.0/tokens",@"POST", NULL,NULL);
+      };
+
         void (^stubEmptyResponseWithStatusCode)(NSString *suffix, NSString *method, NSInteger code) = ^(NSString *suffix, NSString *method, NSInteger code) {
-          [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
-            if ([request.URL.absoluteString hasSuffix:suffix] && [request.HTTPMethod isEqualToString:method]) {
-              NSString *basename = @"nonexistant";
-              NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
-              id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName statusCode:code responseTime:0.001 headers:nil];
-              return stubResponse;
-            } else {
-              return nil; // Don't stub
-            }
-          }];
+          stubPath(suffix,method, @"nonexistant",[NSNumber numberWithInteger:code]);
         };
 
         NSDictionary *(^stubObjectWithName)(NSString *name) = ^NSDictionary *(NSString *name) {
@@ -51,16 +97,7 @@ SPEC_BEGIN(SwiftClientSpec)
           __block HPCSIdentityClient *identityClient = nil;
           beforeEach(^{
             [OHHTTPStubs setEnabled:YES];
-            [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
-              if ([request.URL.absoluteString hasSuffix:@"/v2.0/tokens"]) {
-                NSString *basename = @"tokens";
-                NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
-                id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName contentType:@"text/json" responseTime:0.01];
-                return stubResponse;
-              } else {
-                return nil; // Don't stub
-              }
-            }];
+            stubAuthenticate();
 
             NSString *userName = @"abc";
             NSString *password = @"password";
@@ -88,9 +125,6 @@ SPEC_BEGIN(SwiftClientSpec)
 
           });
 
-          afterEach(^{
-            [OHHTTPStubs removeLastRequestHandler];
-          });
 
           context(@"after creation",^{
             it(@"should be a HPCSSwiftClient",^{
@@ -116,21 +150,8 @@ SPEC_BEGIN(SwiftClientSpec)
               context(@"and you want to get the top level containers", ^{
                 beforeEach(^{
                   [OHHTTPStubs setEnabled:YES];
-                  [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
-                    if ([request.URL.absoluteString hasSuffix:@"72020596871800/"]) {
-                      NSString *basename = @"containers";
-                      NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
-                      id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName contentType:@"text/json" responseTime:0.01];
-                      return stubResponse;
-                    } else {
-                      return nil; // Don't stub
-                    }
-                  }];
+                  stubPath(@"72020596871800/",@"GET",@"containers",NULL);
                 });
-                afterEach(^{
-                  [OHHTTPStubs removeLastRequestHandler];
-                });
-
                 it(@"retrieves the containers", ^{
                   NSArray __block *result;
                   [client containers:^(NSURLResponse *response, NSArray *containersInfo) {
@@ -146,19 +167,8 @@ SPEC_BEGIN(SwiftClientSpec)
                 });
                 context(@"and there is an error", ^{
                   beforeEach(^{
-                    [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
-                      if ([request.URL.absoluteString hasSuffix:@"72020596871800/"] && [request.HTTPMethod isEqualToString:@"GET"]) {
-                        NSString *basename = @"nonexistant";
-                        NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
-                        id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName statusCode:500 responseTime:0.001 headers:nil];
-                        return stubResponse;
-                      } else {
-                        return nil; // Don't stub
-                      }
-                    }];
-                  });
-                  afterEach(^{
-                    [OHHTTPStubs removeLastRequestHandler];
+                    stubPath(@"72020596871800/",@"GET",@"nonexistant",[NSNumber numberWithInteger:500]);
+
                   });
 
                   it(@"returns an error", ^{
@@ -184,9 +194,6 @@ SPEC_BEGIN(SwiftClientSpec)
               context(@"and you want to save a container", ^{
                 beforeEach(^{
                   stubEmptyResponseWithStatusCode(@"test", @"PUT", 201);
-                });
-                afterEach(^{
-                  [OHHTTPStubs removeLastRequestHandler];
                 });
                 it(@"returns a 201", ^{
                   NSMutableDictionary *attribs = [NSMutableDictionary dictionaryWithDictionary:stubObjectWithName(@"test")];
@@ -253,7 +260,6 @@ SPEC_BEGIN(SwiftClientSpec)
 
                 });
                 afterEach(^{
-                  [OHHTTPStubs removeLastRequestHandler];
                   op = nil;
                 });
                 context(@"and the container is not empty", ^{
@@ -317,17 +323,7 @@ SPEC_BEGIN(SwiftClientSpec)
 
               context(@"and you want to get only the metadata of a container", ^{
                 beforeEach(^{
-                  [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
-                    if ([request.URL.absoluteString hasSuffix:@"parent"] && [request.HTTPMethod isEqualToString:@"HEAD"]) {
-                      NSString *basename = @"nonexistant";
-                      NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
-                      NSDictionary *headers = @{@"Content-Type" : @"text/json", @"X-Container-Object-Count" : @"7", @"X-Container-Bytes-Used" : @"12345"};
-                      id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName statusCode:200 responseTime:0.1 headers:headers];
-                      return stubResponse;
-                    } else {
-                      return nil; // Don't stub
-                    }
-                  }];
+                  stubHeadRequest(@"parent",@"nonexistant",[NSNumber numberWithInteger:200]);
                 });
 
                 it(@"allows you to get metadata via HEAD", ^{
@@ -352,17 +348,7 @@ SPEC_BEGIN(SwiftClientSpec)
 
                 context(@"and there is an error",^{
                   beforeEach(^{
-                    [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
-                      if ([request.URL.absoluteString hasSuffix:@"parent"] && [request.HTTPMethod isEqualToString:@"HEAD"]) {
-                        NSString *basename = @"nonexistant";
-                        NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
-                        NSDictionary *headers = @{@"Content-Type" : @"text/json", @"X-Container-Object-Count" : @"7", @"X-Container-Bytes-Used" : @"12345"};
-                        id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName statusCode:500 responseTime:0.1 headers:headers];
-                        return stubResponse;
-                      } else {
-                        return nil; // Don't stub
-                      }
-                    }];
+                    stubHeadRequest(@"parent",@"nonexistant",[NSNumber numberWithInteger:500]);
                   });
                   it(@"returns an NSError", ^{
                     NSError __block * err;
@@ -421,24 +407,25 @@ SPEC_BEGIN(SwiftClientSpec)
               });
               context(@"and you want to set metadata on an object", ^{
                 beforeEach(^{
-                  [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
+
+                  [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
                     if ([request.URL.absoluteString hasSuffix:@"created"] &&
                         [request.HTTPMethod isEqualToString:@"POST"] &&
-                        [request.allHTTPHeaderFields objectForKey:@"Accept"] == nil &&
-                        [[request.allHTTPHeaderFields objectForKey:@"X-Object-Meta-Reviewed"] isEqualToString: @"true"]
-                        ) {
-                      NSString *basename = @"nonexistant";
-                      NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
-                      id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName statusCode:202 responseTime:0.001 headers:nil];
-                      return stubResponse;
+                        [[request.allHTTPHeaderFields objectForKey:@"X-Object-Meta-Reviewed"] isEqualToString: @"true"]) {
+                      return YES;
                     } else {
-                      return nil; // Don't stub
+                      return NO;
                     }
+                  }  withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
+                    NSString *basename = @'nonexistant';
+                    NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
+                    id stubResponse = [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(fullName, nil)
+                                                                       statusCode:202
+                                                                          headers:NULL];
+                    return stubResponse;
                   }];
                 });
-                afterEach(^{
-                  [OHHTTPStubs removeLastRequestHandler];
-                });
+
                 it(@"sends a post request to set it", ^{
                   NSHTTPURLResponse __block  *response;
                   NSDictionary *meta = @{ @"X-Object-Meta-Reviewed": @"true"};
@@ -458,23 +445,25 @@ SPEC_BEGIN(SwiftClientSpec)
                 });
                 context(@"failure", ^{
                   beforeEach(^{
-                    [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
+
+                    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
                       if ([request.URL.absoluteString hasSuffix:@"created"] &&
-                              [request.HTTPMethod isEqualToString:@"POST"] &&
-                              [request.allHTTPHeaderFields objectForKey:@"Accept"] == nil &&
-                              [[request.allHTTPHeaderFields objectForKey:@"X-Object-Meta-Reviewed"] isEqualToString: @"true"]) {
-                        NSString *basename = @"nonexistant";
-                        NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
-                        id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName statusCode:404 responseTime:0.001 headers:nil];
-                        return stubResponse;
+                          [request.HTTPMethod isEqualToString:@"POST"] &&
+                          [[request.allHTTPHeaderFields objectForKey:@"X-Object-Meta-Reviewed"] isEqualToString: @"true"]) {
+                        return YES;
                       } else {
-                        return nil; // Don't stub
+                        return NO;
                       }
+                    }  withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
+                      NSString *basename = @'nonexistant';
+                      NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
+                      id stubResponse = [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(fullName, nil)
+                                                                         statusCode:404
+                                                                            headers:NULL];
+                      return stubResponse;
                     }];
                   });
-                  afterEach(^{
-                    [OHHTTPStubs removeLastRequestHandler];
-                  });
+
 
                   it(@"returns an error", ^{
                     NSError __block *localErr;
@@ -497,16 +486,20 @@ SPEC_BEGIN(SwiftClientSpec)
               });
               context(@"and you want to get only the metadata", ^{
                 beforeEach(^{
-                  [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
+
+                  [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
                     if ([request.URL.absoluteString hasSuffix:@"parent/created"] && [request.HTTPMethod isEqualToString:@"HEAD"]) {
-                      NSString *basename = @"nonexistant";
-                      NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
-                      NSDictionary *headers = @{@"Content-Type" : @"text/json", @"Content-Length" : @"12345", @"X-Object-Meta-Test" : @"Test"};
-                      id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName statusCode:200 responseTime:0.1 headers:headers];
-                      return stubResponse;
+                      return YES;
                     } else {
-                      return nil; // Don't stub
+                      return NO;
                     }
+                  }                   withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
+                    NSString *basename = @'nonexistant';
+                    NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
+                    id stubResponse = [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(fullName, nil)
+                                                                       statusCode:200
+                                                                          headers: @{@"Content-Type" : @"text/json", @"Content-Length" : @"12345", @"X-Object-Meta-Test" : @"Test"}];
+                    return stubResponse;
                   }];
                 });
                 it(@"allows you to get metadata via HEAD", ^{
@@ -549,9 +542,7 @@ SPEC_BEGIN(SwiftClientSpec)
                   beforeEach(^{
                     stubEmptyResponseWithStatusCode(@"child", @"HEAD", 500);
                   });
-                  afterEach(^{
-                    [OHHTTPStubs removeLastRequestHandler];
-                  });
+
 
                   it(@"returns an error", ^{
                     NSError __block *saveErr;
@@ -581,20 +572,9 @@ SPEC_BEGIN(SwiftClientSpec)
               context(@"for a given container", ^{
                 beforeEach(^{
                   [OHHTTPStubs setEnabled:YES];
-                  [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
-                    if ([request.URL.absoluteString hasSuffix:@"created"]) {
-                      NSString *basename = @"objects";
-                      NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
-                      id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName contentType:@"text/json" responseTime:0.01];
-                      return stubResponse;
-                    } else {
-                      return nil; // Don't stub
-                    }
-                  }];
+                  stubPath(@"created",@"GET",@"objects",NULL);
                 });
-                afterEach(^{
-                  [OHHTTPStubs removeLastRequestHandler];
-                });
+
                 it(@"list should work", ^{
                   NSArray __block *contents;
                   [client objectsForContainer:subject success:^(NSHTTPURLResponse *response, NSArray *objects) {
@@ -615,9 +595,7 @@ SPEC_BEGIN(SwiftClientSpec)
                 beforeEach(^{
                   stubEmptyResponseWithStatusCode(@"nothere", @"GET", 204);
                 });
-                afterEach(^{
-                  [OHHTTPStubs removeLastRequestHandler];
-                });
+
                 it(@"list should return nothing", ^{
                   NSArray __block *objectList;
                   badSubject = stubObjectWithName(@"nothere");
@@ -642,9 +620,7 @@ SPEC_BEGIN(SwiftClientSpec)
                 beforeEach(^{
                   stubEmptyResponseWithStatusCode(@"nothere", @"GET", 500);
                 });
-                afterEach(^{
-                  [OHHTTPStubs removeLastRequestHandler];
-                });
+
                 it(@"should return an NSError", ^{
                   NSError __block *err;
                   badSubject = stubObjectWithName(@"nothere");
@@ -673,9 +649,7 @@ SPEC_BEGIN(SwiftClientSpec)
                   beforeEach(^{
                     stubEmptyResponseWithStatusCode(@"created", @"DELETE", 204);
                   });
-                  afterEach(^{
-                    [OHHTTPStubs removeLastRequestHandler];
-                  });
+
                   it(@"returns a 204", ^{
                     NSHTTPURLResponse __block *deleteOp;
                     [client deleteObject:subject success:^(NSHTTPURLResponse *response) {
@@ -692,9 +666,7 @@ SPEC_BEGIN(SwiftClientSpec)
                   beforeEach(^{
                     stubEmptyResponseWithStatusCode(@"created", @"DELETE", 404);
                   });
-                  afterEach(^{
-                    [OHHTTPStubs removeLastRequestHandler];
-                  });
+
                   it(@"returns a 404", ^{
                     NSHTTPURLResponse __block *deleteOp;
                     [client deleteObject:subject success:nil failure:^(NSHTTPURLResponse *response, NSError *error) {
@@ -714,9 +686,7 @@ SPEC_BEGIN(SwiftClientSpec)
                   beforeEach(^{
                     stubEmptyResponseWithStatusCode(@"child", @"PUT", 201);
                   });
-                  afterEach(^{
-                    [OHHTTPStubs removeLastRequestHandler];
-                  });
+
                   it(@"returns a 201", ^{
                     NSHTTPURLResponse __block *saveOp;
                     NSMutableDictionary *parentObject = [NSMutableDictionary dictionary];
@@ -747,9 +717,7 @@ SPEC_BEGIN(SwiftClientSpec)
                     beforeEach(^{
                       stubEmptyResponseWithStatusCode(@"child", @"PUT", 500);
                     });
-                    afterEach(^{
-                      [OHHTTPStubs removeLastRequestHandler];
-                    });
+
                     it(@"returns an error", ^{
                       NSError __block *saveErr;
                       NSMutableDictionary *parentObject = [NSMutableDictionary dictionary];
@@ -781,9 +749,7 @@ SPEC_BEGIN(SwiftClientSpec)
                     beforeEach(^{
                       stubEmptyResponseWithStatusCode(@"created%20object", @"PUT", 201);
                     });
-                    afterEach(^{
-                      [OHHTTPStubs removeLastRequestHandler];
-                    });
+
                     it(@"url encodes the name for you", ^{
                       NSHTTPURLResponse __block *saveOp;
                       NSMutableDictionary *parentObject = [NSMutableDictionary dictionary];
@@ -819,22 +785,21 @@ SPEC_BEGIN(SwiftClientSpec)
 
                   NSData __block *remoteData;
                   beforeEach(^{
-                    [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
-                      if ([request.URL.absoluteString hasSuffix:@"parent/created"] && [request.HTTPMethod isEqualToString:@"GET"]) {
-                        NSData *remoteData = createDummyNSDataObject(430);
-                        NSDictionary *headers = @{@"Content-Type" : @"image/jpeg", @"Content-Length" : @"12345"};
-                        id stubResponse = [OHHTTPStubsResponse responseWithData:remoteData statusCode:200 responseTime:0.001 headers:headers];
-                        return stubResponse;
-                      } else {
-                        return nil; // Don't stub
-                      }
 
+                    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+                      if ([request.URL.absoluteString hasSuffix:@"parent/created"] && [request.HTTPMethod isEqualToString:@"GET"]) {
+                        return YES;
+                      } else {
+                        return NO;
+                      }
+                    } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
+
+                      id stubResponse = [OHHTTPStubsResponse responseWithData:createDummyNSDataObject(430)
+                                                                         statusCode:200
+                                                                            headers:@{@"Content-Type" : @"image/jpeg", @"Content-Length" : @"12345"}];
+                      return stubResponse;
                     }];
 
-                  });
-
-                  afterEach(^{
-                    [OHHTTPStubs removeLastRequestHandler];
                   });
 
                   it(@"returns the bytes", ^{
@@ -857,20 +822,10 @@ SPEC_BEGIN(SwiftClientSpec)
                 });
                 context(@"failure", ^{
                   beforeEach(^{
-                    [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
-                      if ([request.URL.absoluteString hasSuffix:@"parent/created"] && [request.HTTPMethod isEqualToString:@"GET"]) {
-                        NSDictionary *headers = @{@"Content-Type" : @"image/jpeg", @"Content-Length" : @"12345"};
-                        id stubResponse = [OHHTTPStubsResponse responseWithData:nil statusCode:500 responseTime:0.001 headers:headers];
-                        return stubResponse;
-                      } else {
-                        return nil; // Don't stub
-                      }
-                    }];
+                    stubPath(@"parent/created",@"GET",@"nonexistant",[NSNumber numberWithInteger:500]);
                   });
 
-                  afterEach(^{
-                    [OHHTTPStubs removeLastRequestHandler];
-                  });
+
                   it(@"returns the error", ^{
                     NSError __block *err;
                     [client getObject:subject success:^(NSHTTPURLResponse *responseObject, NSData *data) {

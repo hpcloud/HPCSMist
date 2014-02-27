@@ -9,6 +9,79 @@
 
 SPEC_BEGIN(ComputeClientSpec)
 
+
+     void  (^stubPath) (NSString *, NSString *, NSNumber * ) = ^void (NSString *pathName, NSString *filename, NSNumber *statusCode) {
+       [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+         if ([request.URL.absoluteString hasSuffix:pathName]) {
+           return YES;
+         } else  {
+           return NO;
+         }
+       } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
+         NSString *basename = filename;
+         if(!basename){
+           basename = [request.URL.absoluteString lastPathComponent];
+         }
+         NSString* fullName = [NSString stringWithFormat:@"%@.json",basename];
+         NSNumber *_statusCode = statusCode;
+         if(!_statusCode){
+           _statusCode = [NSNumber numberWithInteger:200];
+         }
+         id stubResponse;
+
+         if(!OHPathForFileInBundle(fullName, nil)){
+
+           stubResponse = [OHHTTPStubsResponse responseWithData:nil
+                                                      statusCode:[_statusCode integerValue]
+                                                         headers:@{@"Content-Type" : @"text/json"}];
+
+         }else{
+           stubResponse = [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(fullName,nil)
+                                                           statusCode:[_statusCode integerValue]
+                                                              headers:@{@"Content-Type":@"text/json"}];
+
+         }
+         [stubResponse setResponseTime:0.2];
+         return stubResponse;
+       }];
+    };
+
+
+
+
+    void  (^stubDeletePath) (NSString *, NSString *, NSNumber * ) = ^void (NSString *pathName, NSString *filename, NSNumber *statusCode) {
+      [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+        if ([request.URL.absoluteString hasSuffix:pathName] && [request.HTTPMethod isEqualToString:@"DELETE"]) {
+          return YES;
+        } else  {
+          return NO;
+        }
+      } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request)  {
+        NSString *basename = filename;
+        if(!basename){
+          basename = [request.URL.absoluteString lastPathComponent];
+        }
+        NSString* fullName = [NSString stringWithFormat:@"%@.json",basename];
+        NSNumber *_statusCode = statusCode;
+        if(!_statusCode){
+          _statusCode = [NSNumber numberWithInteger:200];
+        }
+        id stubResponse;
+        if(!OHPathForFileInBundle(fullName, nil)){
+          stubResponse = [OHHTTPStubsResponse responseWithData:nil
+                                                    statusCode:[_statusCode integerValue]
+                                                       headers:@{@"Content-Type" : @"text/json"}];
+        }else{
+          stubResponse = [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(fullName,nil)
+                                                             statusCode:[_statusCode integerValue]
+                                                                headers:@{@"Content-Type":@"text/json"}];
+
+        }
+
+        return stubResponse;
+      }];
+    };
+
     describe(@"HPCSNovaClient", ^{
       __block HPCSComputeClient *client = nil;
       __block HPCSIdentityClient *identityClient = nil;
@@ -16,21 +89,11 @@ SPEC_BEGIN(ComputeClientSpec)
 
       beforeEach(^{
         [OHHTTPStubs setEnabled:YES];
-        [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
-          if ([request.URL.absoluteString hasSuffix:@"/v2.0/tokens"]) {
-            NSString *basename = [request.URL.absoluteString lastPathComponent];
-            NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
-            id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName contentType:@"text/json" responseTime:0.01];
-            return stubResponse;
-          } else {
-            return nil; // Don't stub
-          }
-        }];
-
+        stubPath(@"/v2.0/tokens",NULL,NULL);
       });
+
       afterEach(^{
-        [OHHTTPStubs removeLastRequestHandler];
-         requestCompleted = NO;
+        [OHHTTPStubs removeLastStub];
       });
 
       it(@"should authenticate", ^{
@@ -86,21 +149,12 @@ SPEC_BEGIN(ComputeClientSpec)
 
       context(@"when you want to see the images available", ^{
         beforeEach(^{
-          [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
-            if ([request.URL.absoluteString hasSuffix:@"/images"]) {
-              NSString *basename = [request.URL.absoluteString lastPathComponent];
-              NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
-              id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName contentType:@"text/json" responseTime:0.01];
-              return stubResponse;
-            } else {
-              return nil; // Don't stub
-            }
-          }];
+          stubPath(@"/images",NULL,NULL);
+          requestCompleted = NO;
         });
 
         afterEach(^{
-          [OHHTTPStubs removeLastRequestHandler];
-          requestCompleted = NO;
+          [OHHTTPStubs removeLastStub];
         });
 
         it(@"allows you to get the list", ^{
@@ -110,7 +164,7 @@ SPEC_BEGIN(ComputeClientSpec)
             result = records;
             requestCompleted = YES;
           } failure:^(NSHTTPURLResponse *response, NSError *error) {
-
+            requestCompleted = YES;
           }];
 
           [KWSpec waitWithTimeout:3.0 forCondition:^BOOL() {
@@ -123,21 +177,13 @@ SPEC_BEGIN(ComputeClientSpec)
 
         context(@"and there is an error",^{
           beforeEach(^{
-            [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
-              if ([request.URL.absoluteString hasSuffix:@"/images"]) {
-                NSString *basename = @"nonexistant";
-                NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
-                NSDictionary* headers = [NSDictionary dictionaryWithObject:@"text/json" forKey:@"Content-Type"];
-                id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName statusCode:500 responseTime:0.1 headers:headers];
-                return stubResponse;
-              } else {
-                return nil; // Don't stub
-              }
-            }];
+            stubPath(@"/images",@"nonexistant", [NSNumber numberWithInteger:500]);
           });
+
           afterEach(^{
-            [OHHTTPStubs removeLastRequestHandler];
+            [OHHTTPStubs removeLastStub];
           });
+
           it(@"returns an NSError", ^{
             NSError __block *err;
             [client images:nil
@@ -156,22 +202,12 @@ SPEC_BEGIN(ComputeClientSpec)
         });
         context(@"and you want to see details about an image", ^{
           beforeEach(^{
-            [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
-              if ([request.URL.absoluteString hasSuffix:@"/images/1"]) {
-                NSString *basename = @"image_details";
-                NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
-                id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName contentType:@"text/json" responseTime:0.01];
-                return stubResponse;
-              } else {
-                return nil; // Don't stub
-              }
-            }];
-
+            stubPath(@"/images/1",@"image_details",NULL);
           });
+
           afterEach(^{
-            [OHHTTPStubs removeLastRequestHandler];
+            [OHHTTPStubs removeLastStub];
           });
-
           it(@"shows you the details", ^{
             NSArray __block *result;
             NSDictionary *attribs = [NSDictionary dictionaryWithObjectsAndKeys:@"1", @"imageId", nil];
@@ -192,26 +228,19 @@ SPEC_BEGIN(ComputeClientSpec)
 
           context(@"and there is an error",^{
             beforeEach(^{
-              [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
-                if ([request.URL.absoluteString hasSuffix:@"/images/1"]) {
-                  NSString *basename = @"nonexistant";
-                  NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
-                  NSDictionary* headers = [NSDictionary dictionaryWithObject:@"text/json" forKey:@"Content-Type"];
-                  id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName statusCode:500 responseTime:0.1 headers:headers];
-                  return stubResponse;
-                } else {
-                  return nil; // Don't stub
-                }
-              }];
+              stubPath(@"/images/1",@"nonexistant", [NSNumber numberWithInteger:500]);
+              requestCompleted = NO;
             });
+
             afterEach(^{
-              [OHHTTPStubs removeLastRequestHandler];
+              [OHHTTPStubs removeLastStub];
             });
+
             it(@"returns an NSError", ^{
               NSError __block *err;
               NSDictionary *attribs = [NSDictionary dictionaryWithObjectsAndKeys:@"1", @"imageId", nil];
               [client imageDetailsFor:attribs success:^(id imageInfo) {
-
+                NSLog(@"should not be here");
               } failure:^(NSHTTPURLResponse *response, NSError *error) {
                 requestCompleted = YES;
                 err = error;
@@ -231,25 +260,42 @@ SPEC_BEGIN(ComputeClientSpec)
 
       context(@"and you want to see flavors available", ^{
         beforeEach(^{
-          [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
-            if ([request.URL.absoluteString hasSuffix:@"/flavors"]) {
-              NSString *basename = [request.URL.absoluteString lastPathComponent];
-              NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
-              id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName contentType:@"text/json" responseTime:0.01];
-              return stubResponse;
-            } else {
-              return nil; // Don't stub
-            }
+          stubPath(@"/flavors",NULL,NULL);
+          requestCompleted = NO;
+        });
+
+        afterEach(^{
+          [OHHTTPStubs removeLastStub];
+
+        });
+
+        it(@"has a valid client",^{
+            [client shouldNotBeNil];
+        });
+
+        it(@"should return a result", ^{
+
+          NSArray __block *result = nil;
+
+          [client flavors:^(NSArray *records) {
+            result = records;
+            requestCompleted = YES;
+          } failure:^(NSHTTPURLResponse *response, NSError *error) {
+              NSLog(@'got there.. oopps');
           }];
 
-        });
-        afterEach(^{
-          [OHHTTPStubs removeLastRequestHandler];
+          [KWSpec waitWithTimeout:3.0 forCondition:^BOOL() {
+            return requestCompleted;
+          }];
+
+          [[result shouldNot] beEmpty];
+
+
         });
 
-        it(@"allows you to get the list", ^{
-          [client shouldNotBeNil];
-          NSArray __block *result;
+        it(@"should return 6 things", ^{
+
+          NSArray __block *result = nil;
 
           [client flavors:^(NSArray *records) {
             result = records;
@@ -262,28 +308,18 @@ SPEC_BEGIN(ComputeClientSpec)
             return requestCompleted;
           }];
 
-          [[result shouldNot] beEmpty];
           [[result should] haveCountOf:6];
 
         });
 
+
         context(@"and there is an error",^{
           beforeEach(^{
-            [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
-              if ([request.URL.absoluteString hasSuffix:@"/flavors"]) {
-                NSString *basename = @"nonexistant";
-                NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
-                NSDictionary* headers = [NSDictionary dictionaryWithObject:@"text/json" forKey:@"Content-Type"];
-                id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName statusCode:500 responseTime:0.1 headers:headers];
-                return stubResponse;
-              } else {
-                return nil; // Don't stub
-              }
-            }];
+            [OHHTTPStubs removeLastStub];
+            stubPath(@"/flavors",@"nonexistant",[NSNumber numberWithInteger:500]);
+            requestCompleted = NO;
           });
-          afterEach(^{
-            [OHHTTPStubs removeLastRequestHandler];
-          });
+
           it(@"returns an NSError", ^{
             NSError __block *err;
 
@@ -304,21 +340,11 @@ SPEC_BEGIN(ComputeClientSpec)
 
         context(@"and you want to see flavor details", ^{
           beforeEach(^{
-            [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
-              if ([request.URL.absoluteString hasSuffix:@"/flavors/1"]) {
-                NSString *basename = @"flavor_details";
-                NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
-                id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName contentType:@"text/json" responseTime:0.01];
-                return stubResponse;
-              } else {
-                return nil; // Don't stub
-              }
-            }];
-
+            stubPath(@"/flavors/1",@"flavor_details",NULL);
+            requestCompleted = NO;
           });
           afterEach(^{
-            [OHHTTPStubs removeLastRequestHandler];
-            requestCompleted = NO;
+            [OHHTTPStubs removeLastStub];
           });
 
           it(@"shows you the details", ^{
@@ -342,21 +368,13 @@ SPEC_BEGIN(ComputeClientSpec)
 
           context(@"and there is an error",^{
             beforeEach(^{
-              [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
-                if ([request.URL.absoluteString hasSuffix:@"/flavors/1"]) {
-                  NSString *basename = @"nonexistant";
-                  NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
-                  NSDictionary* headers = [NSDictionary dictionaryWithObject:@"text/json" forKey:@"Content-Type"];
-                  id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName statusCode:500 responseTime:0.1 headers:headers];
-                  return stubResponse;
-                } else {
-                  return nil; // Don't stub
-                }
-              }];
+              stubPath(@"/flavors/1",@"nonexistant",[NSNumber numberWithInteger:500]);
             });
+
             afterEach(^{
-              [OHHTTPStubs removeLastRequestHandler];
+              [OHHTTPStubs removeLastStub];
             });
+
             it(@"returns an NSError", ^{
               NSError __block *err;
               NSDictionary *attribs = [NSDictionary dictionaryWithObjectsAndKeys:@"1", @"flavorId", nil];
@@ -384,20 +402,12 @@ SPEC_BEGIN(ComputeClientSpec)
 
       context(@"and you want to see the servers available", ^{
         beforeEach(^{
-          [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
-            if ([request.URL.absoluteString hasSuffix:@"/servers"]) {
-              NSString *basename = [request.URL.absoluteString lastPathComponent];
-              NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
-              id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName contentType:@"text/json" responseTime:0.01];
-              return stubResponse;
-            } else {
-              return nil; // Don't stub
-            }
-          }];
-
+         stubPath(@"/servers",NULL, NULL);
+         requestCompleted = NO;
         });
+
         afterEach(^{
-          [OHHTTPStubs removeLastRequestHandler];
+          [OHHTTPStubs removeLastStub];
         });
 
         it(@"allows you to get the list", ^{
@@ -421,20 +431,13 @@ SPEC_BEGIN(ComputeClientSpec)
         });
         context(@"and there is an error",^{
           beforeEach(^{
-            [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
-              if ([request.URL.absoluteString hasSuffix:@"/servers"]) {
-                NSString *basename = @"nothere";
-                NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
-                id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName statusCode:500 responseTime:0.001 headers:nil];
-                return stubResponse;
-              } else {
-                return nil; // Don't stub
-              }
-            }];
+            stubPath(@"/servers",@"nonexistant", [NSNumber numberWithInteger:500]);
           });
+
           afterEach(^{
-            [OHHTTPStubs removeLastRequestHandler];
+            [OHHTTPStubs removeLastStub];
           });
+
           it(@"returns an NSError", ^{
             NSError __block *err;
             [client servers:nil
@@ -452,21 +455,14 @@ SPEC_BEGIN(ComputeClientSpec)
         }) ;
         context(@"and you want to see details on a server", ^{
           beforeEach(^{
-            [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
-              if ([request.URL.absoluteString hasSuffix:@"/servers/1"]) {
-                NSString *basename = @"server_details";
-                NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
-                id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName contentType:@"text/json" responseTime:0.01];
-                return stubResponse;
-              } else {
-                return nil; // Don't stub
-              }
-            }];
+            stubPath(@"/servers/1",@"server_details",NULL);
+            requestCompleted = NO;
+          });
 
-          });
           afterEach(^{
-            [OHHTTPStubs removeLastRequestHandler];
+            [OHHTTPStubs removeLastStub];
           });
+
           it(@"gives you the details", ^{
             NSArray __block *result;
             NSDictionary *attribs = [NSDictionary dictionaryWithObjectsAndKeys:@"1", @"serverId", nil];
@@ -487,21 +483,11 @@ SPEC_BEGIN(ComputeClientSpec)
 
           context(@"and there is an error",^{
             beforeEach(^{
-              [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
-                if ([request.URL.absoluteString hasSuffix:@"/servers/1"]) {
-                  NSString *basename = @"nonexistant";
-                  NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
-                  NSDictionary* headers = [NSDictionary dictionaryWithObject:@"text/json" forKey:@"Content-Type"];
-                  id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName statusCode:500 responseTime:0.1 headers:headers];
-                  return stubResponse;
-                } else {
-                  return nil; // Don't stub
-                }
-              }];
+              [OHHTTPStubs removeLastStub];
+              stubPath(@"/servers/1",@"nonexistant", [NSNumber numberWithInteger:500]);
             });
-            afterEach(^{
-              [OHHTTPStubs removeLastRequestHandler];
-            });
+
+
             it(@"returns an NSError", ^{
               NSError __block *err;
               NSDictionary *attribs = [NSDictionary dictionaryWithObjectsAndKeys:@"1", @"serverId", nil];
@@ -528,21 +514,12 @@ SPEC_BEGIN(ComputeClientSpec)
 
       context(@"and you want to terminate a server", ^{
         beforeEach(^{
-          [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
-            if ([request.URL.absoluteString hasSuffix:@"/servers/1"] && [request.HTTPMethod isEqualToString:@"DELETE"]) {
-              NSString *basename = @"nonexistant";
-              NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
-              NSDictionary* headers = [NSDictionary dictionaryWithObject:@"text/json" forKey:@"Content-Type"];
-              id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName statusCode:204 responseTime:0.1 headers:headers];
-              return stubResponse;
-            } else {
-              return nil; // Don't stub
-            }
-          }];
-
+          stubDeletePath(@"/servers/1",@"nonexistant",[NSNumber numberWithInteger:204]);
+          requestCompleted = NO;
         });
+
         afterEach(^{
-          [OHHTTPStubs removeLastRequestHandler];
+          [OHHTTPStubs removeLastStub];
         });
 
         it(@"sends a 204 with no body",^{
@@ -552,7 +529,7 @@ SPEC_BEGIN(ComputeClientSpec)
             success = response;
             requestCompleted = YES;
           } failure:^(NSHTTPURLResponse *response, NSError *error){
-
+            NSLog(@"should not get here");
           } ];
           [KWSpec waitWithTimeout:3.0 forCondition:^BOOL() {
             return requestCompleted;
@@ -564,21 +541,10 @@ SPEC_BEGIN(ComputeClientSpec)
 
         context(@"and there is an error",^{
           beforeEach(^{
-            [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
-              if ([request.URL.absoluteString hasSuffix:@"/servers/1"] && [request.HTTPMethod isEqualToString:@"DELETE"]) {
-                NSString *basename = @"nonexistant";
-                NSString *fullName = [NSString stringWithFormat:@"%@.json", basename];
-                NSDictionary* headers = [NSDictionary dictionaryWithObject:@"text/json" forKey:@"Content-Type"];
-                id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName statusCode:500 responseTime:0.1 headers:headers];
-                return stubResponse;
-              } else {
-                return nil; // Don't stub
-              }
-            }];
+            [OHHTTPStubs removeLastStub];
+            stubDeletePath(@"/servers/1",@"nonexistant",[NSNumber numberWithInteger:500]);
           });
-          afterEach(^{
-            [OHHTTPStubs removeLastRequestHandler];
-          });
+
           it(@"returns an NSError", ^{
             NSError __block *err;
             NSDictionary *attribs = [NSDictionary dictionaryWithObjectsAndKeys:@"1", @"serverId", nil];

@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-HPCSMistTests-OHHTTPStubs.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-HPCSMistTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,22 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0C886695B1B84CB0B8DFA410</key>
+		<key>285E3EBC77B945B385A9F514</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>59EA4BA74A674FD7AAF58BD3</key>
+		<key>654EEB1350EE497FA9DC0DC5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7DB74600A9EA4DFB8699A411</key>
+		<key>C0F4DBFB9F8942DCB53A9B17</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D09847C27B254B71BAB11661</key>
+		<key>C6C03A335B41400682CA0797</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D18850CA481647D1A786220D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

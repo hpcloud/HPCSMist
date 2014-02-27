@@ -13,6 +13,7 @@
 #import "HPCSSecurityConstants.h"
 #import "KWSpec+WaitFor.h"
 #import "KeychainWrapper.h"
+#import "OHHTTPStubsResponse.h"
 
 
 static NSMutableArray *notifications;
@@ -175,21 +176,22 @@ SPEC_BEGIN(IdentityClientSpec)
                 context(@"when sending correct valid credentials", ^{
                   beforeEach(^{
                     [OHHTTPStubs setEnabled:YES];
-                    [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse*(NSURLRequest *request, BOOL onlyCheck)
-                    {
+                    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
                       if ([request.URL.absoluteString hasSuffix:@"/v2.0/tokens"]) {
-                        NSString* basename = [request.URL.absoluteString lastPathComponent];
-                        NSString* fullName = [NSString stringWithFormat:@"%@.json",basename];
-                        id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName contentType:@"text/json" responseTime:0.1];
-                        return stubResponse;
-                      } else {
-                        return nil; // Don't stub
+                        return YES;
+                      } else  {
+                        return NO;
                       }
+                    } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
+                      NSString* basename = [request.URL.absoluteString lastPathComponent];
+                      NSString* fullName = [NSString stringWithFormat:@"%@.json",basename];
+                      id stubResponse = [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(fullName,nil)
+                                                                         statusCode:200
+                                                                            headers:@{@"Content-Type":@"text/json"}];
+                      return stubResponse;
+
                     }];
 
-                  });
-                  afterEach(^{
-                    [OHHTTPStubs removeLastRequestHandler];
                   });
 
                   it(@"should send a service catalog", ^{
@@ -301,25 +303,26 @@ SPEC_BEGIN(IdentityClientSpec)
                 context(@"when sending incorrect credentials", ^{
                   beforeEach(^{
                     [OHHTTPStubs setEnabled:YES];
-                    [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse*(NSURLRequest *request, BOOL onlyCheck)
-                    {
+                    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
                       if ([request.URL.absoluteString hasSuffix:@"/v2.0/tokens"]) {
-                        NSString* basename = @"unauthorized";
-                        NSString* fullName = [NSString stringWithFormat:@"%@.json",basename];
-                        NSDictionary* headers = [NSDictionary dictionaryWithObject:@"text/json" forKey:@"Content-Type"];
-                        id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName statusCode:401 responseTime:0.2 headers:headers];
-                        return stubResponse;
-                      } else {
-                        return nil; // Don't stub
+                        return YES;
+                      } else  {
+                        return NO;
                       }
+                    } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
+                      NSString* basename =  @"unauthorized";
+                      NSString* fullName = [NSString stringWithFormat:@"%@.json",basename];
+                      id stubResponse = [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(fullName,nil)
+                                                                         statusCode:200
+                                                                            headers:@{@"Content-Type":@"text/json"}];
+                      return stubResponse;
+
                     }];
+
                     notifications = [NSMutableArray array];
 
                   });
-                  afterEach(^{
-                    [OHHTTPStubs removeLastRequestHandler];
 
-                  });
                   it(@"sends back an nserror", ^{
                     NSError __block *err;
                     [client authenticate:^(NSArray *serviceCatalog) {
@@ -368,22 +371,25 @@ SPEC_BEGIN(IdentityClientSpec)
                   beforeEach(^{
                     client = [[HPCSIdentityClient alloc] initWithAccessKeyId:@"12345" andSecretKey:@"mykey" andTenantId:@"123"];
                     [OHHTTPStubs setEnabled:YES];
-                    [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse*(NSURLRequest *request, BOOL onlyCheck)
-                    {
+
+                    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
                       if ([request.URL.absoluteString hasSuffix:@"/v2.0/tokens"]) {
-                        NSString* basename = @"tokensApiCreds";
-                        NSString* fullName = [NSString stringWithFormat:@"%@.json",basename];
-                        id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName contentType:@"text/json" responseTime:0.1];
-                        return stubResponse;
-                      } else {
-                        return nil; // Don't stub
+                        return YES;
+                      } else  {
+                        return NO;
                       }
+                    } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
+                      NSString* basename =  @"tokensApiCreds";
+                      NSString* fullName = [NSString stringWithFormat:@"%@.json",basename];
+                      id stubResponse = [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(fullName,nil)
+                                                                         statusCode:200
+                                                                            headers:@{@"Content-Type":@"text/json"}];
+                      return stubResponse;
+
                     }];
 
                   });
-                  afterEach(^{
-                    [OHHTTPStubs removeLastRequestHandler];
-                  });
+
                   it(@"sends back a service catalog",^{
                     NSArray __block *result;
                     [client authenticate:^(NSArray *serviceCatalog) {
@@ -413,17 +419,24 @@ SPEC_BEGIN(IdentityClientSpec)
               NSString *password = @"password";
               NSString *tenantId = @"12345";
               client = [[HPCSIdentityClient alloc] initWithUsername:userName andPassword:password andTenantId:tenantId];
-              [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse*(NSURLRequest *request, BOOL onlyCheck)
-              {
+
+              [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
                 if ([request.URL.absoluteString hasSuffix:@"/v2.0/tokens"]) {
-                  NSString* basename = [request.URL.absoluteString lastPathComponent];
-                  NSString* fullName = [NSString stringWithFormat:@"%@.json",basename];
-                  id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName contentType:@"text/json" responseTime:0.1];
-                  return stubResponse;
-                } else {
-                  return nil; // Don't stub
+                  return YES;
+                } else  {
+                  return NO;
                 }
+              } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
+                NSString* basename = [request.URL.absoluteString lastPathComponent];
+                NSString* fullName = [NSString stringWithFormat:@"%@.json",basename];
+                id stubResponse = [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(fullName,nil)
+                                                                   statusCode:200
+                                                                      headers:@{@"Content-Type":@"text/json"}];
+                return stubResponse;
+
               }];
+
+
 
               NSArray __block *result;
               [client authenticate:^(NSArray *serviceCatalog) {
@@ -445,9 +458,6 @@ SPEC_BEGIN(IdentityClientSpec)
 
             });
 
-            afterEach(^{
-              [OHHTTPStubs removeLastRequestHandler];
-            });
 
             context(@"and your token expires", ^{
               it(@"you can detect expiration via query", ^{
@@ -457,24 +467,25 @@ SPEC_BEGIN(IdentityClientSpec)
             context(@"and you want to invalidate your token", ^{
               __block NSHTTPURLResponse  *successOp;
               beforeEach(^{
-                [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse*(NSURLRequest *request, BOOL onlyCheck)
-                {
+                [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
                   if ([request.URL.absoluteString hasSuffix:@"/v2.0/tokens/HPAuth_4f186cb2e4b04d7c46dc85a3"]) {
-                    NSDictionary *headers = [NSDictionary dictionaryWithObjectsAndKeys:
-                        @"Test Server", @"Server",
-                        @"no-cache", @"Pragma",
-                        @"-1", @"Expires",
-                        @"Thu, 23 Jan 2012 00:07:40 GMT", @"Date",nil];
-                    id stubResponse = [OHHTTPStubsResponse responseWithFile:nil statusCode:204 responseTime:0.2 headers:headers];
-                    return stubResponse;
-                  } else {
-                    return nil; // Don't stub
+                    return YES;
+                  } else  {
+                    return NO;
                   }
-                }];
-              });
+                } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
+                  NSString* basename = [request.URL.absoluteString lastPathComponent];
+                  NSString* fullName = [NSString stringWithFormat:@"%@.json",basename];
+                  id stubResponse = [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(fullName,nil)
+                                                                     statusCode:200
+                                                                        headers:@{@"Content-Type":@"text/json",
+                                                                                  @"Pragma": @"no-cache",
+                                                                                  @"Server": @"Test Server",
+                                                                                  @"Expires" : @"-1",
+                                                                                  @"Date" :  @"Thu, 23 Jan 2012 00:07:40 GMT" }];
+                  return stubResponse;
 
-              afterEach(^{
-                [OHHTTPStubs removeLastRequestHandler];
+                }];
               });
 
              __block int status;
@@ -502,24 +513,23 @@ SPEC_BEGIN(IdentityClientSpec)
               });
               context(@"failure", ^{
                 beforeEach(^{
-                  [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse*(NSURLRequest *request, BOOL onlyCheck)
-                  {
+                  [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
                     if ([request.URL.absoluteString hasSuffix:@"/v2.0/tokens/HPAuth_4f186cb2e4b04d7c46dc85a3"]) {
-                      NSDictionary *headers = [NSDictionary dictionaryWithObjectsAndKeys:
-                              @"Test Server", @"Server",
-                              @"no-cache", @"Pragma",
-                              @"-1", @"Expires",
-                              @"Thu, 23 Jan 2012 00:07:40 GMT", @"Date",nil];
-                      id stubResponse = [OHHTTPStubsResponse responseWithFile:nil statusCode:500 responseTime:0.2 headers:headers];
-                      return stubResponse;
-                    } else {
-                      return nil; // Don't stub
+                      return YES;
+                    } else  {
+                      return NO;
                     }
-                  }];
-                });
+                  } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
+                    id stubResponse = [OHHTTPStubsResponse responseWithData:nil
+                                                                 statusCode:500
+                                                                    headers:@{@"Content-Type":@"text/json",
+                                                                              @"Pragma": @"no-cache",
+                                                                              @"Server": @"Test Server",
+                                                                              @"Expires" : @"-1",
+                                                                              @"Date" :  @"Thu, 23 Jan 2012 00:07:40 GMT" }];
+                    return stubResponse;
 
-                afterEach(^{
-                  [OHHTTPStubs removeLastRequestHandler];
+                  }];
                 });
 
                 it(@"sends NSError", ^{
@@ -552,23 +562,25 @@ SPEC_BEGIN(IdentityClientSpec)
                   NSString *password = @"password";
                   NSString *tenantId = @"12345";
                   client = [[HPCSIdentityClient alloc] initWithUsername:userName andPassword:password andTenantId:tenantId];
-                  [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse*(NSURLRequest *request, BOOL onlyCheck)
-                  {
-                    if ([request.URL.absoluteString hasSuffix:@"/v2.0/tokens"]) {
-                      NSString* basename = @"authNoScopedToken";
-                      NSString* fullName = [NSString stringWithFormat:@"%@.json",basename];
-                      id stubResponse = [OHHTTPStubsResponse responseWithFile:fullName contentType:@"text/json" responseTime:0.1];
-                      return stubResponse;
-                    } else {
-                      return nil; // Don't stub
-                    }
-                  }];
+
+                [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+                  if ([request.URL.absoluteString hasSuffix:@"/v2.0/tokens"]) {
+                    return YES;
+                  } else  {
+                    return NO;
+                  }
+                } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
+                  NSString* basename = @"authNoScopedToken";
+                  NSString* fullName = [NSString stringWithFormat:@"%@.json",basename];
+                  id stubResponse = [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(fullName,nil)
+                                                                     statusCode:200
+                                                                        headers:@{@"Content-Type":@"text/json"}];
+                  return stubResponse;
+
+                }];
                   [notifications removeAllObjects];
                 });
 
-              afterEach(^{
-                [OHHTTPStubs removeLastRequestHandler];
-              });
 
               context(@"and you try to access the nova client", ^{
                 it(@"notifies you that no compute resources are activated", ^{

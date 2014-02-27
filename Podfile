@@ -6,5 +6,6 @@ pod 'AFNetworking','=1.0'
 
 target :HPCSMistTests, :exclusive => true do
   pod 'Kiwi/XCTest'
+  pod 'OHHTTPStubs'
 end
 

@@ -52,15 +52,28 @@
 		AF225A33181199A800B80057 /* HPCSGlanceClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AF225A32181199A800B80057 /* HPCSGlanceClient.m */; };
 		AF3AD32A17048DD000E0BE3E /* HPCSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3AD32917048DD000E0BE3E /* HPCSViewController.m */; };
 		AF4BB8AF167933D10019C57C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF4BB8AE167933D10019C57C /* Security.framework */; };
+		AF8A65A118BFA69A00CB5417 /* authNoScopedToken.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25BD16792B6600454661 /* authNoScopedToken.json */; };
+		AF8A65A218BFA69A00CB5417 /* container_contents.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25BE16792B6600454661 /* container_contents.json */; };
+		AF8A65A318BFA69A00CB5417 /* containers.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25BF16792B6600454661 /* containers.json */; };
+		AF8A65A418BFA69A00CB5417 /* flavor_details.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25C016792B6600454661 /* flavor_details.json */; };
+		AF8A65A518BFA69A00CB5417 /* flavors.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25C116792B6600454661 /* flavors.json */; };
+		AF8A65A618BFA69A00CB5417 /* image_details.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25C216792B6600454661 /* image_details.json */; };
+		AF8A65A718BFA69A00CB5417 /* images.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25C316792B6600454661 /* images.json */; };
+		AF8A65A818BFA69A00CB5417 /* objects.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25C616792B6600454661 /* objects.json */; };
+		AF8A65A918BFA69A00CB5417 /* revokeResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25C716792B6600454661 /* revokeResponse.json */; };
+		AF8A65AA18BFA69A00CB5417 /* server_details.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25C816792B6600454661 /* server_details.json */; };
+		AF8A65AB18BFA69A00CB5417 /* servers.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25C916792B6600454661 /* servers.json */; };
+		AF8A65AC18BFA69A00CB5417 /* tokens.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25CA16792B6600454661 /* tokens.json */; };
+		AF8A65AD18BFA69A00CB5417 /* tokensApiCreds.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25CB16792B6600454661 /* tokensApiCreds.json */; };
+		AF8A65AE18BFA69A00CB5417 /* unauthorized.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1D25CC16792B6600454661 /* unauthorized.json */; };
+		AF8A65AF18BFA69A00CB5417 /* cdnContainerList.json in Resources */ = {isa = PBXBuildFile; fileRef = 155B8DA2A4CCA2D70E3AC818 /* cdnContainerList.json */; };
+		AF8A65B018BFA69A00CB5417 /* cdnOnlyContainerList.json in Resources */ = {isa = PBXBuildFile; fileRef = 155B8B7B24F455AB32409768 /* cdnOnlyContainerList.json */; };
 		AFAA32A917021E990089F7FC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AFAA32A817021E990089F7FC /* main.m */; };
 		AFB3D58B18AE81C700B39BE5 /* HPCSNovaClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D25B816792B6600454661 /* HPCSNovaClientSpec.m */; };
 		AFB3D58C18AE81C800B39BE5 /* HPCSSwiftClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D25B916792B6600454661 /* HPCSSwiftClientSpec.m */; };
 		AFB3D58E18AE81C800B39BE5 /* KWSpec+WaitFor.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D25BB16792B6600454661 /* KWSpec+WaitFor.m */; };
-		AFB3D59018AE81DB00B39BE5 /* OHHTTPStubs.m in Sources */ = {isa = PBXBuildFile; fileRef = AF4BB8C9167A97C20019C57C /* OHHTTPStubs.m */; };
-		AFB3D59218AE81DB00B39BE5 /* OHHTTPStubsResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = AF4BB8CB167A97C20019C57C /* OHHTTPStubsResponse.m */; };
 		AFB3D59318AE81F400B39BE5 /* EnvironmentSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D25B516792B6600454661 /* EnvironmentSpec.m */; };
 		AFB3D59418AE81F400B39BE5 /* HPCSIdentityClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1D25B616792B6600454661 /* HPCSIdentityClientSpec.m */; };
-		AFB3D59518AE81F400B39BE5 /* HPCSCDNClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 155B8F8FB5FBF7CCD632B768 /* HPCSCDNClientSpec.m */; };
 		AFB6B92618AD7E65005A41FB /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF235B22182AA0E20050FB20 /* XCTest.framework */; };
 		AFB6B92718AD7E65005A41FB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1D24F4167927C800454661 /* Foundation.framework */; };
 		AFB6B92818AD7E65005A41FB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1D24F2167927C800454661 /* UIKit.framework */; };
@@ -91,7 +104,6 @@
 		155B8D298A2CD5D020ECC0BF /* HPCSCDNClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPCSCDNClient.h; sourceTree = "<group>"; };
 		155B8D78636BEC6113EA083C /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		155B8DA2A4CCA2D70E3AC818 /* cdnContainerList.json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = cdnContainerList.json; sourceTree = "<group>"; };
-		155B8F8FB5FBF7CCD632B768 /* HPCSCDNClientSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPCSCDNClientSpec.m; sourceTree = "<group>"; };
 		3E595018CD1C4918B7BC6249 /* libPods-HPCSMistSpecs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HPCSMistSpecs.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F8C673EB98845D7BCF23BA7 /* libPods-HPCSMistTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HPCSMistTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B6CE0E57B1E4D57AB466D9B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,10 +179,6 @@
 		AF4BB8AE167933D10019C57C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = ../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk/System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		AF4BB8C5167A40E50019C57C /* scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = scripts; sourceTree = "<group>"; };
 		AF4BB8C6167A46820019C57C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		AF4BB8C8167A97C20019C57C /* OHHTTPStubs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OHHTTPStubs.h; sourceTree = "<group>"; };
-		AF4BB8C9167A97C20019C57C /* OHHTTPStubs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OHHTTPStubs.m; sourceTree = "<group>"; };
-		AF4BB8CA167A97C20019C57C /* OHHTTPStubsResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OHHTTPStubsResponse.h; sourceTree = "<group>"; };
-		AF4BB8CB167A97C20019C57C /* OHHTTPStubsResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OHHTTPStubsResponse.m; sourceTree = "<group>"; };
 		AFAA32A817021E990089F7FC /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AFB6B92518AD7E65005A41FB /* HPCSMistTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HPCSMistTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFEC43993DAE4ABBA4461FA0 /* Pods-HPCSMistTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HPCSMistTests.xcconfig"; path = "Pods/Pods-HPCSMistTests.xcconfig"; sourceTree = SOURCE_ROOT; };
@@ -337,7 +345,6 @@
 		AF1D25B216792B6600454661 /* HPCSMistTests */ = {
 			isa = PBXGroup;
 			children = (
-				AF4BB8C7167A97C20019C57C /* OHHTTPStubs */,
 				AF1D25B816792B6600454661 /* HPCSNovaClientSpec.m */,
 				AF1D25B916792B6600454661 /* HPCSSwiftClientSpec.m */,
 				AF1D25BA16792B6600454661 /* KWSpec+WaitFor.h */,
@@ -347,7 +354,6 @@
 				AF1D25B316792B6600454661 /* InfoPlist.strings */,
 				AF1D25B516792B6600454661 /* EnvironmentSpec.m */,
 				AF1D25B616792B6600454661 /* HPCSIdentityClientSpec.m */,
-				155B8F8FB5FBF7CCD632B768 /* HPCSCDNClientSpec.m */,
 				155B8E1432B6D1BCB39BA21B /* Resources */,
 			);
 			path = HPCSMistTests;
@@ -396,17 +402,6 @@
 				AF235B12182AA0E10050FB20 /* AppKit.framework */,
 			);
 			name = "Other Frameworks";
-			sourceTree = "<group>";
-		};
-		AF4BB8C7167A97C20019C57C /* OHHTTPStubs */ = {
-			isa = PBXGroup;
-			children = (
-				AF4BB8C8167A97C20019C57C /* OHHTTPStubs.h */,
-				AF4BB8C9167A97C20019C57C /* OHHTTPStubs.m */,
-				AF4BB8CA167A97C20019C57C /* OHHTTPStubsResponse.h */,
-				AF4BB8CB167A97C20019C57C /* OHHTTPStubsResponse.m */,
-			);
-			path = OHHTTPStubs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -502,6 +497,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF8A65A118BFA69A00CB5417 /* authNoScopedToken.json in Resources */,
+				AF8A65A218BFA69A00CB5417 /* container_contents.json in Resources */,
+				AF8A65A318BFA69A00CB5417 /* containers.json in Resources */,
+				AF8A65A418BFA69A00CB5417 /* flavor_details.json in Resources */,
+				AF8A65A518BFA69A00CB5417 /* flavors.json in Resources */,
+				AF8A65A618BFA69A00CB5417 /* image_details.json in Resources */,
+				AF8A65A718BFA69A00CB5417 /* images.json in Resources */,
+				AF8A65A818BFA69A00CB5417 /* objects.json in Resources */,
+				AF8A65A918BFA69A00CB5417 /* revokeResponse.json in Resources */,
+				AF8A65AA18BFA69A00CB5417 /* server_details.json in Resources */,
+				AF8A65AB18BFA69A00CB5417 /* servers.json in Resources */,
+				AF8A65AC18BFA69A00CB5417 /* tokens.json in Resources */,
+				AF8A65AD18BFA69A00CB5417 /* tokensApiCreds.json in Resources */,
+				AF8A65AE18BFA69A00CB5417 /* unauthorized.json in Resources */,
+				AF8A65AF18BFA69A00CB5417 /* cdnContainerList.json in Resources */,
+				AF8A65B018BFA69A00CB5417 /* cdnOnlyContainerList.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,9 +631,6 @@
 			files = (
 				AFB3D59318AE81F400B39BE5 /* EnvironmentSpec.m in Sources */,
 				AFB3D59418AE81F400B39BE5 /* HPCSIdentityClientSpec.m in Sources */,
-				AFB3D59518AE81F400B39BE5 /* HPCSCDNClientSpec.m in Sources */,
-				AFB3D59018AE81DB00B39BE5 /* OHHTTPStubs.m in Sources */,
-				AFB3D59218AE81DB00B39BE5 /* OHHTTPStubsResponse.m in Sources */,
 				AFB3D58B18AE81C700B39BE5 /* HPCSNovaClientSpec.m in Sources */,
 				AFB3D58C18AE81C800B39BE5 /* HPCSSwiftClientSpec.m in Sources */,
 				AFB3D58E18AE81C800B39BE5 /* KWSpec+WaitFor.m in Sources */,
@@ -731,6 +739,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -752,6 +761,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

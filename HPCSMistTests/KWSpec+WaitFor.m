@@ -9,11 +9,13 @@
   {
     if ([timeoutDate timeIntervalSinceDate:[NSDate date]] < 0)
     {
+      NSLog(@"timing out of condition");
       return;
     }
 
     [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.1]];
   }
+  NSLog(@"exit condition is true");
 }
 
 
